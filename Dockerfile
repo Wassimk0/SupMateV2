@@ -43,8 +43,8 @@ COPY ./package.json /code/package.json
 # COPY ./webpack.config.js /code/webpack.config.js
 
 # Install Node.js dependencies and build
-RUN npm install
-RUN npm run build
+#RUN npm install
+#RUN npm run build
 
 # Set Django default project name
 ARG PROJ_NAME="cfehome"
