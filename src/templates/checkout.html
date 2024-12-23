@@ -1,0 +1,100 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>Contact Us | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+   <div class="container py-16 md:py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-[42px] sm:text-[52px] font-bold leading-[63px] sm:leading-[78px]">Checkout</h2>
+      <p class="text-lg leading-[27px] text-gray-500 dark:text-gray-400">
+        Complete Your Transaction in Just a Few Clicks.
+      </p>
+    </div>
+    <div class="grid grid-rows-1 sm:grid-cols-3 gap-6">
+      <div class="col-span-3 md:col-span-2">
+        <div class="relative border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 rounded-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-2xl font-semibold mb-8 leading-9">Billing Address</h3>
+              <div class="space-y-4">
+                <input type="text" class="form-input form-input-sm placeholder:opacity-50 !py-[11px] !pe-4" placeholder="Person Name">
+                <input type="text" class="form-input form-input-sm placeholder:opacity-50 !py-[11px] !pe-4" placeholder="Email Address">
+                <input type="text" class="form-input form-input-sm placeholder:opacity-50 !py-[11px] !pe-4" placeholder="Phone No.">
+                <input type="text" class="form-input form-input-sm placeholder:opacity-50 !py-[11px] !pe-4" placeholder="Address">
+              </div>
+            </div>
+            <div x-data="{ activeId: 2 }" class="space-y-4">
+              <h3 class="text-2xl font-semibold mb-8 leading-9">Payment Method</h3>
+              <!-- PayPal Option -->
+              <div :class="{ 'shadow-table': activeId === 1 }" @click="activeId = 1" class="relative border border-gray-100 dark:border-gray-700 p-4 rounded-lg">
+                <div class="flex items-center justify-between gap-2 cursor-pointer" >
+                  <div class="flex items-center gap-2">
+                    <i :class="activeId === 1 ? 'ri-checkbox-circle-line text-primary-500' : 'ri-circle-line'" class="text-2xl leading-none"></i>
+                    <p class="text-sm leading-[21px]">PayPal</p>
+                  </div>
+                  <img src={% static 'assets/images/payment/paypal.svg' %} alt="paypal">
+                </div>
+              </div>
+
+              <!-- Credit/Debit Option -->
+              <div :class="{ 'shadow-table': activeId === 2 }" @click="activeId = 2" class="relative border border-gray-100 dark:border-gray-700 p-4 rounded-lg">
+                <div class="flex items-center justify-between gap-2 cursor-pointer" >
+                  <div class="flex items-center gap-2">
+                    <i :class="activeId === 2 ? 'ri-checkbox-circle-line text-primary-500' : 'ri-circle-line'" class="text-2xl leading-none"></i>
+                    <p class="text-sm leading-[21px]">Credit/Debit</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <img src={% static 'assets/images/payment/master-card.svg' %} alt="master-card">
+                    <img src={% static 'assets/images/payment/visa-2.svg' %} alt="visa">
+                  </div>
+                </div>
+                <div x-show="activeId === 2" class="mt-6">
+                  <input type="text" class="form-input form-input-sm !py-[11px] !pe-4 placeholder:opacity-50" placeholder="Card No">
+                  <div class="flex items-center gap-4 mt-4">
+                    <input type="text" class="form-input form-input-sm !py-[11px] !pe-4 placeholder:opacity-50" placeholder="Expiry Date">
+                    <input type="text" class="form-input form-input-sm !py-[11px] !pe-4 placeholder:opacity-50" placeholder="Card CVC">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-3 md:col-span-1">
+        <div class="relative bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl">
+          <h3 class="text-2xl font-semibold mb-5 leading-9">Summary</h3>
+          <div class="space-y-[13.6px] mb-6">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-16 font-medium text-gray-500 dark:text-gray-400">Subscription</p>
+              <span class="bg-primary-500 dark:bg-primary-500 text-white rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Starter</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-16 font-medium text-gray-500 dark:text-gray-400">Billed in month</p>
+              <h6 class="text-16 leading-6">$14.00</h6>
+            </div>
+            <hr class="border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-16 font-medium text-gray-500 dark:text-gray-400">Total Bill</p>
+              <h6 class="text-16 leading-6">$14.00</h6>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-16 font-medium text-gray-500 dark:text-gray-400">Taxes</p>
+              <h6 class="text-16 leading-6">$1.00</h6>
+            </div>
+            <hr class="border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-16 font-medium text-gray-500 dark:text-gray-400">Total Billed</p>
+              <h3 class="text-2xl font-semibold leading-9">$15.00</h3>
+            </div>
+          </div>
+          <button ripple-color="white" ripple-opacity="0.3" class="ripple w-full btn !py-[5px] btn-primary">Upgrade Plan</button>
+          <p class="pt-6 pb-2 flex items-center justify-center gap-1 text-sm font-medium leading-[21px]">
+            <i class="ri-shield-check-line text-16 leading-none text-success-500"></i>
+            Secure credit card payment
+          </p>
+          <p class="text-gray-500 text-center dark:text-gray-400">This is a secure encrypted payment</p>
+        </div>
+      </div>
+    </div>
+   </div>
+{% endblock content %}

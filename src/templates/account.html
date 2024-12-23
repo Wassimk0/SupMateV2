@@ -1,0 +1,1845 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+  <title>Account | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <section x-data="formData()" class="mx-auto space-y-8 lg:py-8">
+
+    <div class="grid grid-cols-12 gap-6" x-data="{ tab: 1, sidebarOpen: false}">
+      <div class="hidden lg:block z-50 absolute bottom-0 top-0 left-0 w-[230px] lg:w-auto lg:relative lg:col-span-3 justify-start space-y-4" id="filter-sidebar" :class="{ 'hidden': !sidebarOpen }">
+        <div class="h-full !rounded-none card card-dark lg:!rounded-xl">
+          <div class="card-body !px-2 lg:!px-0 !py-4 h-full ">
+            <ul class="flex flex-col">
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 1, 'bg-transparent border-white dark:border-gray-800': tab !== 1}" href="#" @click.prevent="tab = 1; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 1}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,6Zm7.89,12.55L18,14.66A3,3,0,0,0,15.26,13H8.74a3,3,0,0,0-2.69,1.66L4.11,18.55A1,1,0,0,0,5,20H19A1,1,0,0,0,19.89,18.55ZM6.62,18l1.22-2.45a1,1,0,0,1,.9-.55h6.52a1,1,0,0,1,.9.55L17.38,18Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 1, 'text-gray-500': tab !== 1}">
+                    Basic Information
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 2, 'bg-transparent border-white dark:border-gray-800': tab !== 2}" href="#" @click.prevent="tab = 2; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 2}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M18,12m0,0v8H6V12ZM12,2A6,6,0,0,0,6,8v2a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V12a2,2,0,0,0-2-2V8a6,6,0,0,0-6-6ZM8,10V8a4,4,0,0,1,8,0v2Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 2, 'text-gray-500': tab !== 2}">
+                    Password
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 3, 'bg-transparent border-white dark:border-gray-800': tab !== 3}" href="#" @click.prevent="tab = 3; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 3}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M20.21,14.07a2,2,0,0,1-.72-1.64c0-.14,0-.29,0-.43s0-.29,0-.43a2,2,0,0,1,.72-1.64l.8-.66A1,1,0,0,0,21.24,8L20.08,6a1,1,0,0,0-.86-.5.84.84,0,0,0-.35.07l-1,.36a1.89,1.89,0,0,1-.7.13,2,2,0,0,1-1.08-.32,5.48,5.48,0,0,0-.74-.43,2,2,0,0,1-1.06-1.45l-.17-1a1,1,0,0,0-1-.84h-2.3a1,1,0,0,0-1,.84l-.17,1A2,2,0,0,1,8.63,5.31a5.48,5.48,0,0,0-.74.43,2,2,0,0,1-1.08.32,1.89,1.89,0,0,1-.7-.13l-1-.36a.84.84,0,0,0-.35-.07,1,1,0,0,0-.86.5L2.76,8A1,1,0,0,0,3,9.27l.8.66a2,2,0,0,1,.72,1.64c0,.14,0,.29,0,.43s0,.29,0,.43a2,2,0,0,1-.72,1.64l-.8.66A1,1,0,0,0,2.76,16l1.16,2a1,1,0,0,0,.86.5.84.84,0,0,0,.35-.07l1-.36a1.89,1.89,0,0,1,.7-.13,2,2,0,0,1,1.08.32,5.48,5.48,0,0,0,.74.43,2,2,0,0,1,1.06,1.45l.17,1a1,1,0,0,0,1,.84h2.3a1,1,0,0,0,1-.84l.17-1a2,2,0,0,1,1.06-1.45,5.48,5.48,0,0,0,.74-.43,2,2,0,0,1,1.08-.32,1.89,1.89,0,0,1,.7.13l1,.36a.84.84,0,0,0,.35.07,1,1,0,0,0,.86-.5l1.16-2A1,1,0,0,0,21,14.73ZM12,17.5A5.5,5.5,0,1,1,17.5,12,5.5,5.5,0,0,1,12,17.5ZM12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 3, 'text-gray-500': tab !== 3}">
+                    Preference
+                  </span>
+                </a>
+              </li>
+              <!--notification tab 4 -->
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 4, 'bg-transparent border-white dark:border-gray-800': tab !== 4}" href="#" @click.prevent="tab = 4; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 4}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M22,10H18a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V12A2,2,0,0,0,22,10Zm0,10H18V12h4Zm.5-18H1.5A1.5,1.5,0,0,0,0,3.5v13A1.5,1.5,0,0,0,1.5,18H10l-.45.89A2,2,0,0,1,7.74,20H7.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H14V14H2V4H22V8h2V3.5A1.5,1.5,0,0,0,22.5,2Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 4, 'text-gray-500': tab !== 4}">
+                    Recent Devices
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 5, 'bg-transparent border-white dark:border-gray-800': tab !== 5}" href="#" @click.prevent="tab = 5; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 5}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M10,20h4a2,2,0,0,1-4,0Zm9.71-4.29-.83-.83A3,3,0,0,1,18,12.76V10a6,6,0,0,0-1.2-3.6l-.9-1.2A3,3,0,0,0,13.5,4H13V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4h-.5A3,3,0,0,0,8.1,5.2L7.2,6.4A6,6,0,0,0,6,10v2.76a3,3,0,0,1-.88,2.12l-.83.83a1,1,0,0,0-.29.7V17a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1v-.59A1,1,0,0,0,19.71,15.71Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 5, 'text-gray-500': tab !== 5}">
+                    Notifications
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 6, 'bg-transparent border-white dark:border-gray-800': tab !== 6}" href="#" @click.prevent="tab = 6; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 6}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M5.75,11.75C5.75,16.58,8,19.15,8,19.6A.49.49,0,0,1,7.8,20l-.42.28a.47.47,0,0,1-.28.09c-.38,0-1.08-1.08-1.7-2.68a17.32,17.32,0,0,1-1.15-5.84V10A7.87,7.87,0,0,1,12,2a8.11,8.11,0,0,1,1.21.09.49.49,0,0,1,.35.24.5.5,0,0,1,0,.43l-.18.48a.49.49,0,0,1-.54.33A5.14,5.14,0,0,0,12,3.5c-4.91,0-6.21,4.7-6.21,6.43ZM15.7,3a.51.51,0,0,0-.42,0,.51.51,0,0,0-.29.3l-.18.49a.5.5,0,0,0,.22.6,6.19,6.19,0,0,1,3.15,5.39v1.65a.5.5,0,0,0,.5.5h.5a.51.51,0,0,0,.5-.5V9.71A7.74,7.74,0,0,0,15.7,3ZM12.25,9.75h-.5a.5.5,0,0,0-.5.5v1.5a8.48,8.48,0,0,0,.57,3.06.49.49,0,0,0,.29.29.51.51,0,0,0,.42,0l.43-.24a.49.49,0,0,0,.23-.61,7.06,7.06,0,0,1-.44-2.47v-1.5A.5.5,0,0,0,12.25,9.75Zm4.82,8.64a7.08,7.08,0,0,1-2.73-2.13.5.5,0,0,0-.63-.13l-.45.25a.5.5,0,0,0-.16.74,8.72,8.72,0,0,0,3.42,2.66.5.5,0,0,0,.66-.29l.18-.48A.49.49,0,0,0,17.07,18.39ZM9.25,11.93a.47.47,0,0,0-.5-.43h-.5a.5.5,0,0,0-.5.46v0c.13,6,4.74,9.89,5.53,9.89a.5.5,0,0,0,.43-.24l.27-.42a.48.48,0,0,0,.07-.26C14.05,20.35,9.34,18.14,9.25,11.93Zm9.31,3.28a3.76,3.76,0,0,1-2.31-3.46V9.94A4.37,4.37,0,0,0,12,5.5a4.26,4.26,0,0,0-4.24,4v0a.49.49,0,0,0,.5.48h.51a.5.5,0,0,0,.5-.48,2.74,2.74,0,0,1,5.48.23v2a5.13,5.13,0,0,0,3.51,4.92.5.5,0,0,0,.48-.37l.13-.48a.32.32,0,0,0,0-.13A.53.53,0,0,0,18.56,15.21Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 6, 'text-gray-500': tab !== 6}">
+                    Two-step verification
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 7, 'bg-transparent border-white dark:border-gray-800': tab !== 7}" href="#" @click.prevent="tab = 7; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 7}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M8.65,13.94l5.29-5.29a.5.5,0,0,1,.71,0l.7.7a.5.5,0,0,1,0,.71l-5.29,5.29a.5.5,0,0,1-.71,0l-.7-.7A.5.5,0,0,1,8.65,13.94ZM21,7.66V8a4,4,0,0,1-1.18,2.84L17,13.67a1.35,1.35,0,0,1-1.9,0L15,13.56a.5.5,0,0,1,0-.7l3.44-3.44A2,2,0,0,0,19,8V7.66a2,2,0,0,0-.59-1.42l-.65-.65A2,2,0,0,0,16.34,5H16a2,2,0,0,0-1.42.59L11.14,9a.5.5,0,0,1-.7,0l-.11-.11a1.35,1.35,0,0,1,0-1.9l2.83-2.84A4,4,0,0,1,16,3h.34a4,4,0,0,1,2.83,1.17l.66.66A4,4,0,0,1,21,7.66ZM12.86,15a.5.5,0,0,1,.7,0l.11.11a1.35,1.35,0,0,1,0,1.9l-2.85,2.85A4,4,0,0,1,8,21H7.66a4,4,0,0,1-2.83-1.17l-.66-.66A4,4,0,0,1,3,16.35V16a4,4,0,0,1,1.18-2.84L7,10.33a1.35,1.35,0,0,1,1.9,0l.11.11a.5.5,0,0,1,0,.7L5.59,14.58A2,2,0,0,0,5,16v.34a2,2,0,0,0,.59,1.42l.65.65A2,2,0,0,0,7.66,19H8a2,2,0,0,0,1.43-.59Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 7, 'text-gray-500': tab !== 7}">
+                    Connected accounts
+                  </span>
+                </a>
+              </li>
+              <!-- social tab 8 -->
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 8, 'bg-transparent border-white dark:border-gray-800': tab !== 8}" href="#" @click.prevent="tab = 8; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 8}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M16,3H8A5,5,0,0,0,3,8v8a5,5,0,0,0,5,5h8a5,5,0,0,0,5-5V8A5,5,0,0,0,16,3Zm3.25,13A3.26,3.26,0,0,1,16,19.25H8A3.26,3.26,0,0,1,4.75,16V8A3.26,3.26,0,0,1,8,4.75h8A3.26,3.26,0,0,1,19.25,8Zm-1.5-8.75a1,1,0,1,1-1-1A1,1,0,0,1,17.75,7.25ZM12,7.5A4.5,4.5,0,1,0,16.5,12,4.49,4.49,0,0,0,12,7.5Zm0,7.25A2.75,2.75,0,1,1,14.75,12,2.75,2.75,0,0,1,12,14.75Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 8, 'text-gray-500': tab !== 8}">
+                    Social Account
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 9, 'bg-transparent border-white dark:border-gray-800': tab !== 9}" href="#" @click.prevent="tab = 9; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 9}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 9, 'text-gray-500': tab !== 9}">
+                    Billing
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 10, 'bg-transparent border-white dark:border-gray-800': tab !== 10}" href="#" @click.prevent="tab = 10; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 10}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M6,22H18a2,2,0,0,0,2-2V4a2,2,0,0,0-2-2H11.24a3,3,0,0,0-2.12.88L4.88,7.12A3,3,0,0,0,4,9.24V20A2,2,0,0,0,6,22Zm12-2H6V10h5a1,1,0,0,0,1-1V4h6Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 10, 'text-gray-500': tab !== 10}">
+                    Statements
+                  </span>
+                </a>
+              </li>
+              <!--referrals tab 11 -->
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 11, 'bg-transparent border-white dark:border-gray-800': tab !== 11}" href="#" @click.prevent="tab = 11; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 11}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M16.12,5h0l3.69,4L12,18.46,4.19,9,7.88,5h8.24m0-2H7.88a2,2,0,0,0-1.47.65L2.26,8.16A1,1,0,0,0,2,8.84v.3a1,1,0,0,0,.23.64l9,10.86A1,1,0,0,0,12,21H12a1,1,0,0,0,.77-.36l9-10.86A1,1,0,0,0,22,9.14v-.3a1,1,0,0,0-.26-.68L17.59,3.65A2,2,0,0,0,16.12,3Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 11, 'text-gray-500': tab !== 11}">
+                    Referrals
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 12, 'bg-transparent border-white dark:border-gray-800': tab !== 12}" href="#" @click.prevent="tab = 12; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 12}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M20,3H18.59a1,1,0,0,0-.7.29l-7.18,7.18A5.4,5.4,0,0,0,8.5,10,5.5,5.5,0,1,0,14,15.5a5.55,5.55,0,0,0-.46-2.2l.88-.88a1,1,0,0,0,.29-.7V11a.75.75,0,0,1,.22-.53l.26-.26a.75.75,0,0,1,.53-.22H17.5a.5.5,0,0,0,.5-.5V7.73a.75.75,0,0,1,.22-.53l.05,0A.49.49,0,0,1,18.63,7H20.5a.5.5,0,0,0,.5-.5V4A1,1,0,0,0,20,3ZM7.44,18.56a2,2,0,1,1,2-2A2,2,0,0,1,7.44,18.56Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 12, 'text-gray-500': tab !== 12}">
+                    API Keys
+                  </span>
+                </a>
+              </li>
+              <li class="group">
+                <a class="px-4 py-2.5 ltr:border-l-4 rtl:border-r-4 text-sm flex items-center gap-2 transition-transform duration-300 group-hover:border-primary-500 group-hover:bg-gray-50 dark:group-hover:bg-gray-700" :class="{'border-primary-500 bg-gray-50 dark:bg-gray-700  text-primary-500': tab === 13, 'bg-transparent border-white dark:border-gray-800': tab !== 13}" href="#" @click.prevent="tab = 13; sidebarOpen = false">
+                  <span>
+                    <svg :class="{'fill-primary-500': tab === 13}" class="transition-colors duration-300 fill-gray-500 group-hover:fill-primary-500 size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM16.28,18H7.72L7,8H5l.87,12.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H17Z"></path>
+                    </svg>
+                  </span>
+                  <span class="font-medium capitalize transition-colors duration-300 group-hover:text-primary-500" :class="{'text-primary-500': tab === 13, 'text-gray-500': tab !== 13}">
+                    Delete account
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="absolute top-0 left-0 z-30 hidden w-full h-full bg-black bg-opacity-40" id="filter-backdrop" :class="{'hidden': !sidebarOpen}" @click="sidebarOpen = false"></div>
+
+      <!-- btn -->
+      <div class="flex items-center gap-2 text-base font-semibold lg:hidden" @click="sidebarOpen = true">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1wkrfea" tabindex="0" type="button">
+          <svg class="size-5 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1hb73bo" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M8,4.5v3a.5.5,0,0,1-.5.5h-3A.5.5,0,0,1,4,7.5v-3A.5.5,0,0,1,4.5,4h3A.5.5,0,0,1,8,4.5ZM13.5,4h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,4Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,4Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,10Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,16Z"></path>
+          </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+        <span class="font-semibold text-16">More</span>
+      </div>
+      <!--  -->
+      <div class="col-span-12 lg:col-span-9" x-data="formData()">
+
+        <!-- tab 1 -->
+        <div class="space-y-6" x-show="tab === 1">
+          <div>
+            <div class="overflow-hidden card card-dark">
+              <img src={% static 'assets/images/user-cover-pic.png' %} alt="" class="object-cover w-full h-32">
+              <div class="text-center card-body">
+                <div class="relative inline-block -mt-20 bg-white border-2 rounded-full border-primary-500 dark:bg-gray-800">
+                  <img class="size-24 rounded-full m-[3px]" src={% static 'assets/images/user/user-11.png' %} alt="Image Description">
+                  <label for="dropzone-file">
+                    <div class="!cursor-pointer absolute bottom-0 -end-1 size-7 flex justify-center items-center  dark:border-gray-800 bg-primary-500 rounded-full ring-2 ring-white dark:ring-gray-800">
+                      <svg class="w-4 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-c6lyqs fill-white dark:fill-gray-800" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CameraAltIcon">
+                        <circle cx="12" cy="12" r="3.2"></circle>
+                        <path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                      </svg>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden" />
+                  </label>
+                </div>
+                <h4 class="my-2 text-lg font-semibold">Pixy Krovasky</h4>
+                <ul class="flex flex-wrap justify-center gap-2 md:gap-4 text-description">
+                  <li class="gap-1.5 flex ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M23,6.7a1.94,1.94,0,0,0-.46-1.26L20.72,3.27A.74.74,0,0,0,20.15,3h-.3a.74.74,0,0,0-.57.27L18,4.8,16.72,3.27A.74.74,0,0,0,16.15,3h-.3a.74.74,0,0,0-.57.27L13.46,5.44A1.94,1.94,0,0,0,13,6.7V8H7V6.7a1.94,1.94,0,0,0-.46-1.26L4.72,3.27A.74.74,0,0,0,4.15,3h-.3a.74.74,0,0,0-.57.27L1.46,5.44A1.94,1.94,0,0,0,1,6.7V20a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1ZM19,12h2v7H19Zm-2,7H3V7H5V9.5a.5.5,0,0,0,.5.5h9a.5.5,0,0,0,.5-.5V7h2m2,3V7h2v3ZM5.5,14h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,5.5,14Zm8,0h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,13.5,14Zm-4,0h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,9.5,14Z">
+                      </path>
+                    </svg>
+                    <p>Developer</p>
+                  </li>
+                  <li class="flex gap-1 ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                      <path d="M14,10a2,2,0,1,1-2-2A2,2,0,0,1,14,10ZM12,4a6,6,0,0,0-6,6c0,2.8,1.18,3.74,2.82,5A9.17,9.17,0,0,1,12,18.73,9.25,9.25,0,0,1,15.18,15C16.82,13.74,18,12.8,18,10a6,6,0,0,0-6-6m0-2a8,8,0,0,1,8,8c0,6.22-5.05,6.17-6.26,9.78l-.51,1.54a1,1,0,0,1-1,.68h-.56a1,1,0,0,1-1-.68l-.51-1.54C9.05,16.17,4,16.22,4,10a8,8,0,0,1,8-8Z"></path>
+                    </svg>
+                    <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                    </svg>
+                    <p>New York</p>
+                  </li>
+                  <li class="gap-1.5 flex ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                    </svg>
+                    <p>Joined March 17</p>
+                  </li>
+                </ul>
+                <div class="flex flex-wrap items-center justify-between gap-2 mt-12">
+                  <div class="w-52">
+                    <p class="my-1 text-sm text-description text-start">Profile Completion</p>
+                    <div class="flex items-center gap-4">
+                      <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[60%]"></div>
+                      </div>
+                      <span class="text-xs font-medium shrink-0 text-description">60%</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-end gap-2">
+                      <button ripple-opacity="0.3" ripple-color="black" class="text-gray-900 btn btn-sm ripple btn-secondary hover:bg-gray-200 focus:bg-gray-200 dark:text-white bg-gray-main dark:bg-gray-700">Follow<div class="rippleContainer"></div></button>
+                      <button ripple-opacity="0.3" ripple-background="#000" class="btn btn-sm ripple btn-primary">Hire Me<div class="rippleContainer"></div></button>
+                      <button ripple-opacity="0.3" ripple-color="black" class="text-gray-900 btn btn-sm btn-secondary hover:bg-gray-200 focus:bg-gray-200 dark:text-white bg-gray-main dark:bg-gray-700">
+                        <div class="transform rotate-90 ripple"><i class="ri-more-2-fill "></i></div>
+                        <div class="rippleContainer"></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card card-dark">
+              <h2 class="px-6 py-4 text-sm font-semibold border-b dark:border-gray-600">Basic Information</h2>
+              <div class="card-body">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group">
+
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="name" id="name" :class="{'border-red-100': form1.errors.firstName , 'border-gray-200 , dark:border-gray-600': !form1.errors.firstName}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  x-model="form1.firstName" @input="validateForm1()" />
+                    <label for="name" :class="{'text-red-100': form1.errors.firstName , 'text-gray-500 , dark:text-gray-400': !form1.errors.firstName}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
+                    <span x-show="form1.errors.firstName" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.firstName"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" :class="{'border-red-100': form1.errors.lastName , 'border-gray-200 , dark:border-gray-600': !form1.errors.lastName}" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required  x-model="form1.lastName" @input="validateForm1()"/>
+                    <label for="name" :class="{'text-red-100': form1.errors.lastName , 'text-gray-500 , dark:text-gray-400': !form1.errors.lastName}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last Name</label>
+                    <span x-show="form1.errors.lastName" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.lastName"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="email" name="email" id="email" :class="{'border-red-100': form1.errors.email , 'border-gray-200 , dark:border-gray-600': !form1.errors.email}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required x-model="form1.email" @input="validateForm1()" />
+                    <label for="name" :class="{'text-red-100': form1.errors.email , 'text-gray-500 , dark:text-gray-400': !form1.errors.email}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                    <span x-show="form1.errors.email" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.email"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="number" name="number" id="number" :class="{'border-red-100': form1.errors.phone , 'border-gray-200 , dark:border-gray-600': !form1.errors.phone}" class="[&::-webkit-inner-spin-button]:appearance-none peer block p-3 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-200 hover:border-black dark:hover:border-white appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required  x-model="form1.phone" @input="validateForm1()"/>
+                    <label for="number" :class="{'text-red-100': form1.errors.phone , 'text-gray-500 , dark:text-gray-400': !form1.errors.phone}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone</label>
+                    <span x-show="form1.errors.phone" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.phone"></span>
+                  </div>
+                  <!-- Organization -->
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="text" id="text" :class="{'border-red-100': form1.errors.organization , 'border-gray-200 , dark:border-gray-600': !form1.errors.organization}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required  x-model="form1.organization" @input="validateForm1()"/>
+                    <label for="name" :class="{'text-red-100': form1.errors.organization , 'text-gray-500 , dark:text-gray-400': !form1.errors.organization}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Organization</label>
+                    <span x-show="form1.errors.organization" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.organization"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="text" id="text" :class="{'border-red-100': form1.errors.departments , 'border-gray-200 , dark:border-gray-600': !form1.errors.departments}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required x-model="form1.departments" @input="validateForm1()"/>
+                    <label for="name" :class="{'text-red-100': form1.errors.departments , 'text-gray-500 , dark:text-gray-400': !form1.errors.departments}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Departments</label>
+                    <span x-show="form1.errors.departments" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.departments"></span>
+                  </div>
+
+                  <!-- Country -->
+                  <div class="relative z-0 w-full mb-5 group">
+                    <select id="countries" name="countries" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer dark:text-white dark:border-gray-600 dark:focus:border-primary-600 focus:outline-none focus:ring-0 hover:border-black dark:hover:border-white focus:border-primary-600 dark:bg-gray-800" x-model="form1.countries" @change="validateForm1()">
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>United Arab</option>
+                    </select>
+                    <label for="number" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Country</label>
+                    <span x-show="form1.errors.countries" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.countries"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="text" id="text" :class="{'border-red-100': form1.errors.state , 'border-gray-200 , dark:border-gray-600': !form1.errors.state}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required x-model="form1.state" @input="validateForm1()" />
+                    <label for="name" :class="{'text-red-100': form1.errors.state , 'text-gray-500 , dark:text-gray-400': !form1.errors.state}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">State</label>
+                    <span x-show="form1.errors.state" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.state"></span>
+                  </div>
+                  <!-- address -->
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="text" id="text" :class="{'border-red-100': form1.errors.address , 'border-gray-200 , dark:border-gray-600': !form1.errors.address}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required x-model="form1.address" @input="validateForm1()"/>
+                    <label for="name" :class="{'text-red-100': form1.errors.address , 'text-gray-500 , dark:text-gray-400': !form1.errors.address}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Address</label>
+                    <span x-show="form1.errors.address" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.address"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="text" id="text" :class="{'border-red-100': form1.errors.zipcode , 'border-gray-200 , dark:border-gray-600': !form1.errors.zipcode}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" "  required x-model="form1.zipcode" @input="validateForm1()"/>
+                    <label for="name" :class="{'text-red-100': form1.errors.zipcode , 'text-gray-500 , dark:text-gray-400': !form1.errors.zipcode}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
+                    <span x-show="form1.errors.zipcode" class="px-3 mt-1 text-xs text-red-100" x-text="form1.errors.zipcode"></span>
+                  </div>
+                  <!-- btn -->
+                  <div class="flex gap-3">
+                    <button class="btn ripple btn-primary" @click="validateForm1($event)" >Save Changes</button>
+                    <button @click="resetForm1()" class="ripple btn btn-outline-primary">Cancle</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-2 -->
+        <div class="space-y-6" x-show="tab === 2">
+          <div>
+            <div class="card card-dark">
+              <h2 class="p-6 text-sm font-semibold border-b dark:border-gray-600">Change Your Password</h2>
+              <div class="card-body">
+                <form class="grid grid-cols-1 md:grid-cols-2">
+                  <div class="space-y-6 *:relative *:mb-6 *:group">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="password" name="name" id="name" :class="{ 'border-red-100': form2.errors.currentPassword , 'border-gray-200': !form2.errors.currentPassword}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="....." required  x-model="form2.currentPassword" @input="validateForm2()"/>
+                      <label for="name" :class="{ 'text-red-100': form2.errors.currentPassword , 'text-gray-500': !form2.errors.currentPassword}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Current Password</label>
+                      <span x-show="form2.errors.currentPassword" class="px-3 mt-1 text-xs text-red-100" x-text="form2.errors.currentPassword"></span>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="password" name="name" id="name" :class="{ 'border-red-100': form2.errors.newPassword , 'border-gray-200': !form2.errors.newPassword}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="....." required x-model="form2.newPassword" @input="validateForm2()"/>
+                      <label for="name" :class="{ 'text-red-100': form2.errors.newPassword , 'text-gray-500': !form2.errors.newPassword}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">New Password</label>
+                      <span x-show="form2.errors.newPassword" class="px-3 mt-1 text-xs text-red-100" x-text="form2.errors.newPassword"></span>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="password" name="name" id="name" :class="{ 'border-red-100': form2.errors.confirmPassword , 'border-gray-200': !form2.errors.confirmPassword}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="....." required x-model="form2.confirmPassword" @input="validateForm2()" />
+                      <label for="name" :class="{ 'text-red-100': form2.errors.confirmPassword , 'text-gray-500': !form2.errors.confirmPassword}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Conform Password</label>
+                      <span x-show="form2.errors.confirmPassword" class="px-3 mt-1 text-xs text-red-100" x-text="form2.errors.confirmPassword"></span>
+                    </div>
+                    <div class="flex gap-3">
+                      <button class="btn ripple btn-primary" @click="validateForm2($event)">Save Changes</button>
+                      <button class="ripple btn btn-outline-primary">Cancle</button>
+                    </div>
+                    <div class="pt-4">
+                      <h5 class="text-sm font-medium">Password requirements:</h5>
+                      <p class="mt-1 text-xs font-normal text-description">Ensure that these requirements are met:</p>
+                      <ul class="mt-4 *:flex *:gap-2 *:items-center *:text-xs *:text-description space-y-2">
+                        <li>
+                          <span class="flex-shrink-0 inline-block w-2 h-2 rounded-full bg-primary-500"></span>
+                          <span>Minimum 8 characters long - the more, the better</span>
+                        </li>
+                        <li>
+                          <span class="flex-shrink-0 inline-block w-2 h-2 rounded-full bg-primary-500"></span>
+                          <span>At least one lowercase character</span>
+                        </li>
+                        <li>
+                          <span class="flex-shrink-0 inline-block w-2 h-2 rounded-full bg-primary-500"></span>
+                          <span>At least one lowercase character</span>
+                        </li>
+                        <li>
+                          <span class="flex-shrink-0 inline-block w-2 h-2 rounded-full bg-primary-500"></span>
+                          <span>At least one number, symbol, or whitespace character</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-3 -->
+        <div class="space-y-6" x-show="tab === 3">
+          <div>
+            <div class="card card-dark">
+              <h2 class="p-6 text-sm font-semibold border-b dark:border-gray-600">General Preferences</h2>
+              <div class="card-body !pb-0">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group">
+                  <div class="relative z-0 w-full mb-5 group">
+                    <select id="countries" name="countries" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer dark:text-white dark:border-gray-600 dark:focus:border-primary-600 focus:outline-none focus:ring-0 hover:border-black dark:hover:border-white focus:border-primary-600 dark:bg-gray-800" x-model="form3.language" @change="validateForm3()">
+                      <option>English</option>
+                      <option>Bangla</option>
+                      <option>Hindi</option>
+                    </select>
+                    <label for="number" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Languages</label>
+                    <span x-model="form3.errors.language" class="px-3 mt-1 text-xs text-red-100" x-text="form3.errors.language"></span>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="12:40 AM" readonly/>
+                    <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time Zone</label>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between pt-4">
+                      <div>
+                        <h5 class="text-sm font-medium">Early release</h5>
+                        <p class="mt-1 text-xs font-normal text-description">Get included on new features.</p>
+                        <label for="togglePrimary01" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                      </div>
+                      <div class="relative">
+                        <label for="togglePrimary01" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                          <div class="relative">
+                            <input type="checkbox" id="togglePrimary01" class="sr-only peer" checked />
+                            <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50 dark:peer-checked:bg-primary-15"></div>
+                            <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                          </div>
+                        </label>
+                      </div>
+                      </label>
+                    </div>
+                    <div class="flex items-center justify-between pt-4">
+                      <div>
+                        <h5 class="text-sm font-medium">See info about people who view my profile</h5>
+                        <p class="mt-1 text-xs font-normal text-description">More about viewer info.</p>
+                        <label for="togglePrimary01" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                      </div>
+                      <div class="relative">
+                        <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                          <div class="relative">
+                            <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked />
+                            <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50 dark:peer-checked:bg-primary-15"></div>
+                            <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                          </div>
+                        </label>
+                      </div>
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <h2 class="p-6 pt-0 text-sm font-semibold border-b dark:border-gray-600">Email Preferences</h2>
+              <div class="space-y-4 card-body">
+                <div class="flex items-center gap-2">
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01" >
+                  </div> 
+                  <div>
+                    <h5 class="text-sm font-medium">Successful Payments</h5>
+                    <p class="mt-1 text-xs font-normal text-description">Receive a notification for every successful payment.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01" checked>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-medium">Payouts</h5>
+                    <p class="mt-1 text-xs font-normal text-description">Receive a notification for every initiated payout.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01" checked>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-medium">Fee Collection</h5>
+                    <p class="mt-1 text-xs font-normal text-description">Receive a notification for every initiated payout.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01">
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-medium">Invoice Payments</h5>
+                    <p class="mt-1 text-xs font-normal text-description">Receive a notification for every initiated payout.</p>
+                  </div>
+                </div>
+                <div class="flex gap-3 pt-6">
+                  <button class="btn ripple btn-primary">Save Changes<div class="rippleContainer"></div></button>
+                  <button class="ripple btn btn-outline-primary">Cancle<div class="rippleContainer"></div></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-4 -->
+        <div class="space-y-6" x-show="tab === 4">
+          <div>
+            <div class="card card-dark">
+              <div class="flex flex-wrap items-center justify-between gap-2 p-6">
+                <h5 class="text-sm font-semibold">Recent Devices</h5>
+                <p class="text-xs">View and manage devices where you're currently logged in.</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-table">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr class="*:text-description *:font-medium *:bg-gray-50 *:dark:bg-gray-700">
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Browser</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Device</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Location </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Recent Activity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/chrome.svg' %} class="size-5" alt="">
+                            <p>Chrome on Windows</p>
+                          </div>
+                        </td>
+                        <td> Dell XPS 12 </td>
+                        <td> New York, USA
+                          <span class="px-2 py-1 chip chip-outline-success btn-sm text-13">Success</span>
+                        </td>
+                        <td> Now </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/mozilla.svg' %} class="size-5" alt="">
+                            <p>Mozilla Firefox</p>
+                          </div>
+                        </td>
+                        <td> Acer Aspire 300 </td>
+                        <td> New York, USA </td>
+                        <td> 15 June 2020 </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/apple.svg' %} class="size-5" alt="">
+                            <p>Safari Browser</p>
+                          </div>
+                        </td>
+                        <td> Macbook Pro 2020 </td>
+                        <td> London, UK </td>
+                        <td> 05 October 2020 </td>
+                      </tr>
+                      <tr class="*:py-6 *:dark:bg-gray-800 *:dark:text-white ">
+                        <td class="p-6 dark:bg-gray-800 dark:text-white dark:border-gray-700">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/apple.svg' %} class="size-5" alt="">
+                            <p>Apple Browser</p>
+                          </div>
+                        </td>
+                        <td> IPhone 13 Pro Max </td>
+                        <td> Manchester, UK </td>
+                        <td> 05 October 2000 </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-5 -->
+        <div class="space-y-6" x-show="tab === 5">
+          <div>
+            <div class="card card-dark">
+              <div class="p-6">
+                <h5 class="text-sm font-semibold">Notifications</h5>
+                <p class="mt-2 text-xs">We need permission from your browser to show notifications. <a href="#!" class="text-primary-500">Request permission</a></p>
+              </div>
+              <div class="bg-white rounded-lg shadow-table">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr class="*:text-description *:font-medium *:bg-gray-50 *:dark:bg-gray-700">
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Type</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Email</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Email </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">App</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6 text-sm font-normal"> New for you </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6 text-sm font-normal"> Account activity </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6 text-sm font-normal"> A new browser used to sign in </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6 text-sm font-normal"> A new device is linked </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:dark:bg-gray-800 *:dark:text-white ">
+                        <td class="p-6 text-sm font-normal"> A new device connected </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="btn-primary-icon-hover size-9">
+                            <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02">
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-body dark:bg-gray-800">
+                  <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-4 *:group">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <select id="countries" name="countries" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer dark:text-white dark:border-gray-600 dark:focus:border-primary-600 focus:outline-none focus:ring-0 hover:border-black dark:hover:border-white focus:border-primary-600 dark:bg-gray-800">
+                        <option>Always</option>
+                      </select>
+                      <label for="number" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">When should we send you notifications?</label>
+                    </div>
+                  </form>
+                  <p>In order to cut back on noise, email notifications are grouped together and only sent when you're idle or offline.</p>
+                  <div class="flex gap-3 pt-12">
+                    <button class="btn ripple btn-primary">Save Changes<div class="rippleContainer"></div></button>
+                    <button class="ripple btn btn-outline-primary">Cancle<div class="rippleContainer"></div></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-6 -->
+        <div class="space-y-6" x-show="tab === 6">
+          <div>
+            <div class="card card-dark">
+              <div class="border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <h5 class="text-sm font-medium">Two-step verification</h5>
+                  <div class="relative">
+                    <label for="togglePrimary13" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                      <div class="relative">
+                          <input type="checkbox" id="togglePrimary13" class="sr-only peer" checked="">
+                          <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] peer-checked:bg-primary-300 dark:peer-checked:bg-primary-15 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                          <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <p class="mt-3 text-xs font-normal text-description">Start by entering your password so that we know it's you. Then we'll walk you through two more simple steps.</p>
+              </div>
+              <div class="card-body !pb-0">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group">
+                  <div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="Enter Current Passwords" required="">
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Account Password</label>
+                    </div>
+                    <p class="text-xs font-normal mt-2.5 text-description">This is the password you use to log in to your Front account.</p>
+                    <div class="flex gap-3 pt-8">
+                      <button class="btn ripple btn-primary" >Save Changes<div class="rippleContainer"></div></button>
+                      <button class="ripple btn btn-outline-primary">Cancle<div class="rippleContainer"></div></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-7 -->
+        <div class="space-y-6" x-show="tab === 7">
+          <div>
+            <div class="card card-dark">
+              <div class="border-b dark:border-gray-600 card-body">
+                <div>
+                  <h5 class="text-sm font-medium">Connected accounts</h5>
+                  <p class="text-xs font-normal mt-1.5 text-description">Two-factor authentication adds to log in, in you'll need to provide a 4 digit amazing code. <a href="#!" class="text-primary-500">Learn More</a></p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/f.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Facebook</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">Plan properly your workflow</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/t.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Twitter</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">Keep eye on on your Repositories</p>
+                  </div>
+                </div>
+                <div>
+                  <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/i.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Instagram</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">Keep up with the stories</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/cloud.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Sound Cloud</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">Playlist to get you by</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- tab-8 -->
+        <div class="space-y-6" x-show="tab === 8">
+          <div>
+            <div class="card card-dark">
+              <div class="border-b dark:border-gray-600 card-body">
+                <div>
+                  <h5 class="text-sm font-medium">Social Account</h5>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/f.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Facebook</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">www.facebook.com/ui-lib</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/t.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Twitter</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">www.twitter.com/ui-lib</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b dark:border-gray-600 card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/in.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Linkedin</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">www.linkedin.com/ui-lib</p>
+                  </div>
+                </div>
+                <div>
+                    <label for="togglePrimary11" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                        <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                        <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between card-body">
+                <div class="flex gap-5">
+                  <img src={% static 'assets/images/profile-page/sky.svg' %} class="rounded-full size-10" alt="">
+                  <div>
+                    <h5 class="text-sm font-medium">Skype</h5>
+                    <p class="text-xs font-normal mt-1.5 text-description">www.skype.com/ui-lib</p>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary"> Connect </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- tab-9 -->
+        <div class="space-y-6" x-show="tab === 9">
+          <div>
+            <div class="card card-dark">
+              <h2 class="p-6 text-sm font-semibold border-b dark:border-gray-600"> Billing </h2>
+              <div class="card-body !pb-4">
+                <div class="p-4 border bg-primary-500 text-primary-500 bg-opacity-10 border-primary-500 rounded-2xl">
+                  <div class="justify-between gap-2 md:flex">
+                    <div class="gap-3 sm:flex">
+                      <svg class="flex-shrink-0 w-6 fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="InfoIcon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+                      </svg>
+                      <div>
+                        <p class="font-medium text-16">We Need Your Attention</p>
+                        <p class="text-xs font-semibold mt-1.5">Your payment was declined. To start using tools, please add Payment Method</p>
+                      </div>
+                    </div>
+                    <button class="flex-shrink-0 mt-4 btn btn-primary md:mt-0">Add Payment Method</button>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 mt-6 md:grid-cols-2">
+                  <div>
+                    <div class="text-sm flex items-center justify-between gap-4 py-1.5">
+                      <p class="font-medium ">Users</p>
+                      <span class="font-normal shrink-0 text-primary-500">50%</span>
+                    </div>
+                    <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                      <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[50%]"></div>
+                    </div>
+                    <p class="mt-2 text-xs font-normal text-description"> 14 Users remaining until your plan requires update </p>
+                    <div class="pt-5">
+                      <h5 class="text-sm font-medium"> Active until Dec 09, 2021 </h5>
+                      <p class="mt-1 text-xs font-normal text-description"> We will send you a notification upon Subscription expiration </p>
+                    </div>
+                    <div class="pt-5">
+                      <h5 class="text-sm font-medium">$24.99 Per Month</h5>
+                      <p class="mt-1 text-xs font-normal text-description">Extended Pro Package. Up to 100 Agents & 25 Projects</p>
+                    </div>
+                    <div class="flex gap-3 pt-8">
+                      <button class="btn ripple btn-primary">Upgrade Plan<div class="rippleContainer"></div></button>
+                      <button class="ripple btn btn-outline-primary">Cancle<div class="rippleContainer"></div></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="p-6 text-sm font-semibold "> Payment Methods </h2>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr class="*:text-description *:font-medium *:bg-gray-50 *:dark:bg-gray-700">
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Card</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Name</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Expire Date </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/paypal.svg' %} class="w-10" alt="">
+                            <p class="text-sm font-medium text-black dark:text-white">Paypal **** 1679</p>
+                          </div>
+                        </td>
+                        <td> Marcus Morris </td>
+                        <td> 09/24/2022 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/paypal.svg' %} class="w-10" alt="">
+                            <p class="text-sm font-medium text-black dark:text-white">Paypal **** 1679</p>
+                          </div>
+                        </td>
+                        <td> Marcus Morris </td>
+                        <td> 09/24/2022 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:dark:bg-gray-800 *:dark:text-gray-200">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <img src={% static 'assets/images/profile-page/paypal.svg' %} class="w-10" alt="">
+                            <p class="text-sm font-medium text-black dark:text-white">Paypal **** 1679</p>
+                          </div>
+                        </td>
+                        <td> Marcus Morris </td>
+                        <td> 09/24/2022 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h2 class="p-6 text-sm font-semibold !pb-0"> Billing Address </h2>
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2 card-body">
+                <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-2xl">
+                  <div class="flex flex-wrap justify-between gap-2">
+                    <div>
+                      <div class="flex gap-2">
+                        <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ebpl2q" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M12.17,5l6.54,6.54a1,1,0,0,1,.29.7V19H16V13a1,1,0,0,0-1-1H9a1,1,0,0,0-1,1v6H5V12.24a1,1,0,0,1,.29-.7L11.83,5h.34m.42-2H11.41a1,1,0,0,0-.7.29L3.88,10.12A3,3,0,0,0,3,12.24V20a1,1,0,0,0,1,1H9a1,1,0,0,0,1-1V14.25a.25.25,0,0,1,.25-.25h3.5a.25.25,0,0,1,.25.25V20a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V12.24a3,3,0,0,0-.88-2.12L13.29,3.29a1,1,0,0,0-.7-.29Z"></path>
+                        </svg>
+                        <span>Home</span>
+                      </div>
+                      <p class="mt-1 text-description max-w-56">Ap #285-7193 Ullamcorper Avenue Amesbury HI 93373 US</p>
+                    </div>
+                    <div class="flex gap-4">
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                        </svg>
+                      </button>
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-2xl">
+                  <div class="flex flex-wrap justify-between gap-2">
+                    <div>
+                      <div class="flex gap-2">
+                        <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ebpl2q" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M12.17,5l6.54,6.54a1,1,0,0,1,.29.7V19H16V13a1,1,0,0,0-1-1H9a1,1,0,0,0-1,1v6H5V12.24a1,1,0,0,1,.29-.7L11.83,5h.34m.42-2H11.41a1,1,0,0,0-.7.29L3.88,10.12A3,3,0,0,0,3,12.24V20a1,1,0,0,0,1,1H9a1,1,0,0,0,1-1V14.25a.25.25,0,0,1,.25-.25h3.5a.25.25,0,0,1,.25.25V20a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V12.24a3,3,0,0,0-.88-2.12L13.29,3.29a1,1,0,0,0-.7-.29Z"></path>
+                        </svg>
+                        <span>Home</span>
+                      </div>
+                      <p class="mt-1 text-description max-w-56">Ap #285-7193 Ullamcorper Avenue Amesbury HI 93373 US</p>
+                    </div>
+                    <div class="flex gap-4">
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                        </svg>
+                      </button>
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-2xl">
+                  <div class="flex flex-wrap justify-between gap-2">
+                    <div>
+                      <div class="flex gap-2">
+                        <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ebpl2q" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M12.17,5l6.54,6.54a1,1,0,0,1,.29.7V19H16V13a1,1,0,0,0-1-1H9a1,1,0,0,0-1,1v6H5V12.24a1,1,0,0,1,.29-.7L11.83,5h.34m.42-2H11.41a1,1,0,0,0-.7.29L3.88,10.12A3,3,0,0,0,3,12.24V20a1,1,0,0,0,1,1H9a1,1,0,0,0,1-1V14.25a.25.25,0,0,1,.25-.25h3.5a.25.25,0,0,1,.25.25V20a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V12.24a3,3,0,0,0-.88-2.12L13.29,3.29a1,1,0,0,0-.7-.29Z"></path>
+                        </svg>
+                        <span>Home</span>
+                      </div>
+                      <p class="mt-1 text-description max-w-56">Ap #285-7193 Ullamcorper Avenue Amesbury HI 93373 US</p>
+                    </div>
+                    <div class="flex gap-4">
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                        </svg>
+                      </button>
+                      <button class="btn-dark-icon-hover ">
+                        <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                          <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
+                    <div>
+                      <p class="text-sm font-bold">Enter a new address</p>
+                      <p class="mt-1 text-description max-w-56">Add your new destination..</p>
+                    </div>
+                    <button class="flex-shrink-0 btn btn-primary btn-sm">New Address</button>
+                  </div>
+                </div>
+              </div>
+              <h2 class="p-6 text-sm font-semibold "> Billing History </h2>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr>
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Description</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Amount</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Invoice </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Date</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <p class="text-sm font-medium text-black dark:text-white">Invoice for Octavia</p>
+                          </div>
+                        </td>
+                        <td> $890 </td>
+                        <td>
+                          <p class="inline-block px-2 pt-1 rounded-full bg-gray-50 dark:bg-gray-700"> PDF </p>
+                        </td>
+                        <td> Nov 12, 2021 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <p class="text-sm font-medium text-black dark:text-white">Invoice for Uko</p>
+                          </div>
+                        </td>
+                        <td> $420 </td>
+                        <td>
+                          <p class="inline-block px-2 pt-1 rounded-full bg-gray-50 dark:bg-gray-700"> DOC </p>
+                        </td>
+                        <td> Nov 10, 2021 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <p class="text-sm font-medium text-black dark:text-white">Invoice for Stocky</p>
+                          </div>
+                        </td>
+                        <td> $590 </td>
+                        <td>
+                          <p class="inline-block px-2 pt-1 rounded-full bg-gray-50 dark:bg-gray-700"> PDF </p>
+                        </td>
+                        <td> Nov 24, 2021 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <p class="text-sm font-medium text-black dark:text-white">Invoice for Aatrox</p>
+                          </div>
+                        </td>
+                        <td> $750 </td>
+                        <td>
+                          <p class="inline-block px-2 pt-1 rounded-full bg-gray-50 dark:bg-gray-700"> DOC </p>
+                        </td>
+                        <td> Nov 19, 2021 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <div class="flex items-center gap-2">
+                            <p class="text-sm font-medium text-black dark:text-white">Invoice for Octavia</p>
+                          </div>
+                        </td>
+                        <td> $890 </td>
+                        <td>
+                          <p class="inline-block px-2 pt-1 rounded-full bg-gray-50 dark:bg-gray-700"> PDF </p>
+                        </td>
+                        <td> Nov 12, 2021 </td>
+                        <td>
+                          <div class="flex gap-3">
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                              </svg>
+                            </button>
+                            <button class="btn-dark-icon-hover ">
+                              <svg class="size-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-10 -->
+        <div class="space-y-6" x-show="tab === 10">
+          <div>
+            <div class="card card-dark">
+              <h2 class="p-6 text-sm font-semibold border-b dark:border-gray-600"> Earnings </h2>
+              <div class="p-6">
+                <p class="pb-4 text-description">Last <span class="text-primary-500">15</span> day earnings calculated</p>
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <div class="flex flex-wrap gap-4">
+                    <div class="w-full p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600 sm:w-32">
+                      <svg class="w-6 mx-auto fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M10.15,9.44a.48.48,0,0,1,.7,0l2.65,2.65,6.94-6.94a.5.5,0,0,1,.71,0l.7.7a.5.5,0,0,1,0,.71l-8,8a.48.48,0,0,1-.7,0L10.5,11.91,3.56,18.85a.5.5,0,0,1-.71,0l-.7-.7a.5.5,0,0,1,0-.71Z"></path>
+                      </svg>
+                      <p class="font-semibold py-1.5">$4,550</p>
+                      <p class="text-description ">Net Earnings</p>
+                    </div>
+                    <div class="w-full p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600 sm:w-32">
+                      <svg class="w-6 mx-auto fill-yellow-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z" focusable="false" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21,10.47a.51.51,0,0,1-.13.37.52.52,0,0,1-.37.16h-1a.5.5,0,0,1-.5-.48A6,6,0,0,0,13.47,5,.5.5,0,0,1,13,4.53v-1a.52.52,0,0,1,.16-.37A.51.51,0,0,1,13.53,3,8,8,0,0,1,21,10.47ZM18.48,13h-1a.5.5,0,0,0-.5.48A6,6,0,1,1,10.54,7a.5.5,0,0,0,.46-.5v-1a.5.5,0,0,0-.52-.5,8,8,0,1,0,8.5,8.5A.5.5,0,0,0,18.48,13Z"></path>
+                      </svg>
+                      <p class="font-semibold py-1.5">$80</p>
+                      <p class="text-description ">Change</p>
+                    </div>
+                    <div class="w-full p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600 sm:w-32">
+                      <svg class="w-6 mx-auto fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fhllnu" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M13,13.5a.5.5,0,0,1-.5.5h-4a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h4a.5.5,0,0,1,.5.5Zm3-4a.5.5,0,0,1-.5.5h-7A.5.5,0,0,1,8,9.5v-1A.5.5,0,0,1,8.5,8h7a.5.5,0,0,1,.5.5ZM19,2H5A1,1,0,0,0,4,3V19.26a1.05,1.05,0,0,0,.29.71l1.89,1.88a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L9,20a.5.5,0,0,1,.35-.15A.51.51,0,0,1,9.7,20l1.81,1.81a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L14.32,20a.5.5,0,0,1,.35-.15A.51.51,0,0,1,15,20l1.81,1.81a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L19.71,20a1,1,0,0,0,.29-.7V3A1,1,0,0,0,19,2ZM18,18.86l-.66.66h0l-.74-.73-.16-.16h0l-.34-.34a1,1,0,0,0-.7-.29H14a1,1,0,0,0-.71.29L12,19.53l-1.24-1.24a1,1,0,0,0-.7-.29H8.61a1,1,0,0,0-.7.29L6.68,19.52h0L6,18.84V4H18Z"></path>
+                      </svg>
+                      <p class="font-semibold py-1.5">$2,850</p>
+                      <p class="text-description ">Fees</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary"> Withdraw $4,550 </button>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-4 px-6 py-4 dark:border-gray-700">
+                <h2 class="text-sm font-semibold "> Statement </h2>
+                <div class="relative inline-flex hs-dropdown ">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-togglebtn btn-outline-secondary rounded-lg px-3 py-2.5 dark:bg-transparent border-gray-200  hover:bg-white dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white flex gap-1 focus:border-primary-500 focus:bg-white">
+                    <span>2022</span>
+                    <span>
+                      <svg class="w-6 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-uigehb" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon">
+                        <path d="M7 10l5 5 5-5z"></path>
+                      </svg></span>
+                  </button>
+                  <div class="hs-dropdown-menu min-w-28 transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 hidden" aria-labelledby="hs-dropdown-with-dividers" style="">
+                    <div class="p-2">
+                      <a class="dropdown-item" href="#"> 2022 </a>
+                      <a class="dropdown-item" href="#"> 2021 </a>
+                      <a class="dropdown-item" href="#"> 2020 </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr>
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Date</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Order ID</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Order Details</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Amount</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Invoice</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2 dark:bg-gray-600 bg-gray-200 text-[#9ca3af]">
+                            <span><svg class="w-5 fill-[#9ca3af] MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2">
+                            <span><svg class="w-5 fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2">
+                            <span><svg class="w-5 fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2">
+                            <span><svg class="w-5 fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2">
+                            <span><svg class="w-5 fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:dark:bg-gray-800 ">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Nov 12, 2021</p>
+                        </td>
+                        <td> 202745788 </td>
+                        <td> The Icon of full icon set </td>
+                        <td> $650 </td>
+                        <td>
+                          <button class="btn btn-primary btn-sm flex-shrink-0 flex items-center gap-2 !px-2">
+                            <span><svg class="w-5 fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                              </svg></span> Download
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-11 -->
+        <div class="space-y-6" x-show="tab === 11">
+          <div>
+            <div class="card card-dark">
+              <h2 class="p-6 text-sm font-semibold border-b dark:border-gray-600"> Referrals </h2>
+              <div class="p-6">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:gap-6">
+                  <div class="p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600">
+                    <svg class="w-6 mx-auto fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M10.15,9.44a.48.48,0,0,1,.7,0l2.65,2.65,6.94-6.94a.5.5,0,0,1,.71,0l.7.7a.5.5,0,0,1,0,.71l-8,8a.48.48,0,0,1-.7,0L10.5,11.91,3.56,18.85a.5.5,0,0,1-.71,0l-.7-.7a.5.5,0,0,1,0-.71Z"></path>
+                    </svg>
+                    <p class="font-semibold py-1.5">$85,460</p>
+                    <p class="text-description ">Net Earnings</p>
+                  </div>
+                  <div class="p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600">
+                    <svg class="w-6 mx-auto fill-success-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n30qv9" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                    </svg>
+                    <p class="font-semibold py-1.5">$44,550</p>
+                    <p class="text-description ">Balance</p>
+                  </div>
+                  <div class="p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600">
+                    <svg class="w-6 mx-auto fill-red-100 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ywiz3v" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM15.82,8.49a.5.5,0,0,0-.7,0l-4.74,4.74-1.5-1.49a.48.48,0,0,0-.7,0l-.53.53a.5.5,0,0,0,0,.71L10,15.35a.48.48,0,0,0,.7,0l5.62-5.62a.5.5,0,0,0,0-.71Z"></path>
+                    </svg>
+                    <p class="font-semibold py-1.5">$4,550</p>
+                    <p class="text-description ">Avg Deal Size</p>
+                  </div>
+                  <div class="p-2 text-sm text-center border border-gray-200 rounded-md dark:border-gray-600">
+                    <svg class="w-6 mx-auto fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fhllnu" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M17,12.19v-.38a.77.77,0,0,0-.22-.53L11.64,6.15a.5.5,0,0,0-.71,0l-.71.71a.49.49,0,0,0,0,.7L13.67,11H3.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H13.67l-3.45,3.44a.5.5,0,0,0,0,.71l.71.7a.5.5,0,0,0,.71,0l5.14-5.13A.75.75,0,0,0,17,12.19ZM14.67,12ZM19,3H13.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H19V19H13.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H19a2,2,0,0,0,2-2V5A2,2,0,0,0,19,3Z"></path>
+                    </svg>
+                    <p class="font-semibold py-1.5">$4,550</p>
+                    <p class="text-description ">Referral Signup</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 mx-6 border bg-primary-500 text-primary-500 bg-opacity-10 border-primary-500 rounded-2xl">
+                <div class="items-center justify-between gap-2 md:flex">
+                  <div class="gap-3 sm:flex">
+                    <svg class="flex-shrink-0 w-6 fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="InfoIcon">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+                    </svg>
+                    <div>
+                      <p class="font-medium text-16">We Need Your Attention</p>
+                      <p class="text-xs font-semibold mt-1.5">Writing headlines for blog posts is as much an art as it is a science, and warrants its own post, but for now, all I’d advise is experimenting what works for your audience, especially if it’s not resonating with your audience</p>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0">
+                    <button class="mt-4 btn btn-primary md:mt-0">Withdraw $44,550</button>
+                  </div>
+                </div>
+              </div>
+              <div class="grid items-center grid-cols-1 gap-4 p-6 md:grid-cols-2">
+                <div>
+                  <h2 class="text-sm font-semibold ">Your Referral Link</h2>
+                  <p class="mt-1 text-sm">
+                    Plan your blog post by choosing a topic, creating an outline conduct research, and checking facts
+                  </p>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 xl:gap-3 rounded-2xl">
+                    <span class="text-xs text-description">https://Example.com/reffer/?refid=345re66787k8</span>
+                    <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ContentCopyIcon">
+                      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-4 px-6 py-4 dark:border-gray-700">
+                <h2 class="text-sm font-semibold "> Referred Users </h2>
+                <div class="relative inline-flex hs-dropdown ">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-togglebtn btn-outline-secondary rounded-lg px-3 py-2.5 dark:bg-transparent border-gray-200  hover:bg-white dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white flex gap-1 focus:border-primary-500 focus:bg-white">
+                    <span>2022</span>
+                    <span>
+                      <svg class="w-6 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-uigehb" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon">
+                        <path d="M7 10l5 5 5-5z"></path>
+                      </svg></span>
+                  </button>
+                  <div class="hs-dropdown-menu min-w-28 transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 hidden" aria-labelledby="hs-dropdown-with-dividers" style="">
+                    <div class="p-2">
+                      <a class="dropdown-item" href="#"> 2022 </a>
+                      <a class="dropdown-item" href="#"> 2021 </a>
+                      <a class="dropdown-item" href="#"> 2020 </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr>
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Order ID</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> User</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Date </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Bonus</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Profit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">678935899</p>
+                        </td>
+                        <td> Marcus Harris </td>
+                        <td> Nov 12, 2021 </td>
+                        <td> 15% </td>
+                        <td>
+                          <p class="text-success-500">	$1,200.00</p>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">678935900</p>
+                        </td>
+                        <td> 	Robert Smith </td>
+                        <td> Nov 14, 2021 </td>
+                        <td> 53% </td>
+                        <td>
+                          <p class="text-success-500">	$2,400.00</p>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">678935901</p>
+                        </td>
+                        <td> Williams Brown </td>
+                        <td> Nov 15, 2021 </td>
+                        <td> 76% </td>
+                        <td>
+                          <p class="text-success-500">	$1,200.00</p>
+                        </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">678935902</p>
+                        </td>
+                        <td> Robert Smith </td>
+                        <td> The Icon of full icon set </td>
+                        <td> Nov 14, 2021 </td>
+                        <td>
+                          <p class="text-success-500">	53%</p>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-12 -->
+        <div class="space-y-6" x-show="tab === 12">
+          <div>
+            <div class="card card-dark">
+              <div class="flex justify-between p-6 border-b dark:border-gray-600">
+                <h2 class="text-sm font-semibold"> API Overview </h2>
+                <div class="relative">
+                  <label for="togglePrimary21" class="flex items-center gap-2 cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                      <input type="checkbox" id="togglePrimary21" class="sr-only peer" checked="">
+                      <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50 dark:peer-checked:bg-primary-15"></div>
+                      <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                    </div>
+                    <span>Test Mode</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
+                  <div>
+                    <h2 class="mb-1 text-sm font-semibold">How to set Api</h2>
+                    <p class="text-xs font-normal text-description">Use images to enhance your post, improve its flow, add humor and explain complex topics</p>
+                    <button ripple-opacity="0.3" class="mt-4 btn btn-primary ripple">Get Started<div class="rippleContainer"></div></button>
+                  </div>
+                  <div>
+                    <h2 class="mb-1 text-sm font-semibold">Developer Tools</h2>
+                    <p class="text-xs font-normal text-description">Plan your blog post by choosing a topic, creating an outline conduct research, and checking facts</p>
+                    <button ripple-opacity="0.3" class="mt-4 btn btn-primary ripple">Create Rule<div class="rippleContainer"></div></button>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 mx-6 border bg-primary-500 text-primary-500 bg-opacity-10 border-primary-500 rounded-2xl">
+                <div class="gap-3 sm:flex">
+                  <svg class="flex-shrink-0 w-6 fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M19.71,15.71l-.83-.83A3,3,0,0,1,18,12.76V10a6,6,0,0,0-1.2-3.6l-.9-1.2A3,3,0,0,0,13.5,4H13V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4h-.5A3,3,0,0,0,8.1,5.2L7.2,6.4A6,6,0,0,0,6,10v2.76a3,3,0,0,1-.88,2.12l-.83.83a1,1,0,0,0-.29.7V17a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1v-.59A1,1,0,0,0,19.71,15.71ZM13,14.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5Zm-.22-3.72a.25.25,0,0,1-.25.22H11.47a.25.25,0,0,1-.25-.22l-.4-3.22a.5.5,0,0,1,.5-.56h1.36a.5.5,0,0,1,.5.56ZM12,22a2,2,0,0,0,2-2H10A2,2,0,0,0,12,22Z"></path>
+                  </svg>
+                  <div>
+                    <p class="font-medium text-16">Two Factor Authentication</p>
+                    <p class="text-xs font-semibold mt-1.5">Adds an extra layer of security to your account. To log in, in you'll need to provide a 4 digit amazing and create outstanding products to serve your clients Learn More.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-4 p-6 dark:border-gray-700">
+                <h2 class="text-sm font-semibold "> Login Sessions</h2>
+                <div class="relative inline-flex hs-dropdown ">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-togglebtn btn-outline-secondary rounded-lg px-3 py-2.5 dark:bg-transparent border-gray-200  hover:bg-white dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white flex gap-1 focus:border-primary-500 focus:bg-white">
+                    <span>2022</span>
+                    <span>
+                      <svg class="w-6 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-uigehb" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon">
+                        <path d="M7 10l5 5 5-5z"></path>
+                      </svg></span>
+                  </button>
+                  <div class="hs-dropdown-menu min-w-28 transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 hidden" aria-labelledby="hs-dropdown-with-dividers" style="">
+                    <div class="p-2">
+                      <a class="dropdown-item" href="#"> 2022 </a>
+                      <a class="dropdown-item" href="#"> 2021 </a>
+                      <a class="dropdown-item" href="#"> 2020 </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr>
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Location</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Status</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Device </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">IP Address</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">USA(5)</p>
+                        </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-success-500"> Ok </p>
+                        </td>
+                        <td> Chrome - Windows </td>
+                        <td> 236.125.56.78 </td>
+                        <td> 2 mins ago </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">United Kingdom(10)</p>
+                        </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-success-500"> Ok </p>
+                        </td>
+                        <td> Safari - Mac OS </td>
+                        <td> 236.125.56.79 </td>
+                        <td> 4 mins ago </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Norway(8)</p>
+                        </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-error-500"> Ok </p>
+                        </td>
+                        <td> Firefox - Windows </td>
+                        <td> 236.125.56.74 </td>
+                        <td> 10 mins ago </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-4 p-6 dark:border-gray-700">
+                <h2 class="text-sm font-semibold "> API Keys</h2>
+              </div>
+              <div class="bg-white rounded-lg">
+                <div class="overflow-x-auto">
+                  <table class="table border-spacing-0">
+                    <thead>
+                      <tr>
+                        <th class="p-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Label</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> API Keys </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700"> Created </th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Status</th>
+                        <th class="py-6 font-medium text-description bg-gray-50 dark:bg-gray-700">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">none set</p>
+                        </td>
+                        <td>
+                          <div class="flex gap-6">
+                            <p class="text-xs text-description"> fftt456765gjkkjhi83093985 </p>
+                            <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M18,16V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V16a2,2,0,0,0,2,2H16A2,2,0,0,0,18,16ZM4,4H16V16H4ZM20,6V18a2,2,0,0,1-2,2H6a2,2,0,0,0,2,2H18a4,4,0,0,0,4-4V8A2,2,0,0,0,20,6Z"></path>
+                            </svg>
+                          </div>
+                        </td>
+                        <td> Nov 12, 2021 </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-success-500"> Active </p>
+                        </td>
+                        <td> <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg> </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Navitare</p>
+                        </td>
+                        <td>
+                          <div class="flex gap-6">
+                            <p class="text-xs text-description"> jk076590ygghgh324vd33 </p>
+                            <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M18,16V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V16a2,2,0,0,0,2,2H16A2,2,0,0,0,18,16ZM4,4H16V16H4ZM20,6V18a2,2,0,0,1-2,2H6a2,2,0,0,0,2,2H18a4,4,0,0,0,4-4V8A2,2,0,0,0,20,6Z"></path>
+                            </svg>
+                          </div>
+                        </td>
+                        <td> Nov 14, 2021 </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-success-500"> Active </p>
+                        </td>
+                        <td> <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg> </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Docs API Key</p>
+                        </td>
+                        <td>
+                          <div class="flex gap-6">
+                            <p class="text-xs text-description"> fftt456765gjkkjhi83093985 </p>
+                            <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M18,16V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V16a2,2,0,0,0,2,2H16A2,2,0,0,0,18,16ZM4,4H16V16H4ZM20,6V18a2,2,0,0,1-2,2H6a2,2,0,0,0,2,2H18a4,4,0,0,0,4-4V8A2,2,0,0,0,20,6Z"></path>
+                            </svg>
+                          </div>
+                        </td>
+                        <td> Nov 14, 2021 </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-error-500"> Active </p>
+                        </td>
+                        <td> <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg> </td>
+                      </tr>
+                      <tr class="*:py-6 *:text-gray-500 *:dark:text-gray-200 *:border-b *:dark:bg-gray-800 *:dark:border-gray-700">
+                        <td class="p-6">
+                          <p class="text-sm font-medium text-black dark:text-white">Remore Interface</p>
+                        </td>
+                        <td>
+                          <div class="flex gap-6">
+                            <p class="text-xs text-description"> jk076590ygghgh324vd33 </p>
+                            <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M18,16V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V16a2,2,0,0,0,2,2H16A2,2,0,0,0,18,16ZM4,4H16V16H4ZM20,6V18a2,2,0,0,1-2,2H6a2,2,0,0,0,2,2H18a4,4,0,0,0,4-4V8A2,2,0,0,0,20,6Z"></path>
+                            </svg>
+                          </div>
+                        </td>
+                        <td>Nov 15, 2021 </td>
+                        <td>
+                          <p class="inline-block p-1 px-3 text-sm font-medium text-white rounded-full bg-success-500"> Active </p>
+                        </td>
+                        <td> <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab-13 -->
+        <div class="space-y-6" x-show="tab === 13">
+          <div>
+            <div class="card card-dark">
+              <div class="p-6 border-b dark:border-gray-600">
+                <h2 class="text-sm font-semibold ">Delete Your Account</h2>
+                <p class="mt-1 text-13">
+                  When you delete your account, you lose access to Front account services, and we permanently delete your personal data. You can cancel the deletion for 14 days.
+                </p>
+              </div>
+              <div class="card-body">
+                <form class="grid grid-cols-1 md:grid-cols-2">
+                  <div class="space-y-6 *:relative *:mb-6 *:group">
+                    <div class="flex items-center">
+                      <div class="btn-primary-icon-hover size-9">
+                        <input type="checkbox" class="text-primary-500 " name="hs-default-checkbox-13" id="hs-default-checkbox-13">
+                      </div>
+                      <label for="hs-default-checkbox-02" class="text-xs font-semibold text-gray-900 cursor-pointer dark:text-white">Confirm that I want to delete my account.</label>
+                    </div>
+                    <div class="flex gap-3">
+                      <button class="btn ripple btn-error">Delete</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+{% block js %}
+  <script src={% static 'public/js/form-validaton.js' %}></script>
+{% endblock js %}

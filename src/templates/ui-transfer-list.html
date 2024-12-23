@@ -1,0 +1,61 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Transfer List | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Transfer List" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Basic
+          </div>
+          <div class="flex items-center justify-center gap-4 flex-wrap">
+            <div class="shadow-sm bg-white dark:bg-transparent rounded-xl h-[200px] w-[200px] max-h-full overflow-auto text-gray-900 dark:text-gray-200" data-simplebar>
+              <ul class="list1 py-2">
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 1 </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 2  </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 3  </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 4 </li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-4">
+              <button class="btn btn-sm w-16 relative h-8 btn-outline-primary">
+                <input type='button' class="h-full w-full absolute inset-0" value='>>' id='move_all_right' />
+              </button>
+              <button class="btn btn-sm w-16 relative h-8 btn-outline-primary">
+                <input type='button' class="h-full w-full absolute inset-0" value='>' id='move_right' />
+              </button>
+              <button class="btn btn-sm w-16 relative h-8 btn-outline-primary">
+                <input type='button' class="h-full w-full absolute inset-0" value='<' id='move_left' />
+              </button>
+              <button class="btn btn-sm w-16 relative h-8 btn-outline-primary">
+                <input type='button' class="h-full w-full absolute inset-0" value='<<' id='move_all_left' />
+              </button>
+            </div>
+            <div class="shadow-sm bg-white dark:bg-transparent rounded-xl h-[200px] w-[200px] max-h-full overflow-auto text-gray-900 dark:text-gray-200" data-simplebar>
+              <ul class="list2">
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 5 </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 6  </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 7  </li>
+                <li class="py-1 px-4 flex items-center gap-3 cursor-pointer"> <div class="btn-primary-icon-hover size-9"><input type="checkbox" class="text-primary-500"></div> List item 8 </li>
+              </ul>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+
+
+    </div>
+   </div>
+{% endblock content %}
+{% block js %}
+<script src={% static 'vite/assets/js/ui-transfer-list.js' %}></script>
+{% endblock js %}

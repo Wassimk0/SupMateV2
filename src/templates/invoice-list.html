@@ -1,0 +1,413 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+  <title>Invoice List | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+    <div class="mt-6">
+      <div class="card card-dark">
+        <div class="pt-5 px-4">
+          <div class="flex justify-between items-center flex-wrap gap-4">
+            <div class="flex gap-2 items-center">
+              <div class="bg-primary-100 p-2 rounded-md w-10">
+                <svg class="fill-primary-500 MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-11qib6v" focusable="false" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13,13.5a.5.5,0,0,1-.5.5h-4a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h4a.5.5,0,0,1,.5.5Zm3-4a.5.5,0,0,1-.5.5h-7A.5.5,0,0,1,8,9.5v-1A.5.5,0,0,1,8.5,8h7a.5.5,0,0,1,.5.5ZM19,2H5A1,1,0,0,0,4,3V19.26a1.05,1.05,0,0,0,.29.71l1.89,1.88a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L9,20a.5.5,0,0,1,.35-.15A.51.51,0,0,1,9.7,20l1.81,1.81a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L14.32,20a.5.5,0,0,1,.35-.15A.51.51,0,0,1,15,20l1.81,1.81a.47.47,0,0,0,.35.15h.29a.47.47,0,0,0,.35-.15L19.71,20a1,1,0,0,0,.29-.7V3A1,1,0,0,0,19,2ZM18,18.86l-.66.66h0l-.74-.73-.16-.16h0l-.34-.34a1,1,0,0,0-.7-.29H14a1,1,0,0,0-.71.29L12,19.53l-1.24-1.24a1,1,0,0,0-.7-.29H8.61a1,1,0,0,0-.7.29L6.68,19.52h0L6,18.84V4H18Z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-16 font-semibold text-black dark:text-white">Invoice List</p>
+              </div>
+            </div>
+            <div>
+              <a href="create-invoice.html" class="btn btn-primary btn-text-icon"> <i class="ri-add-line text-xl leading-none"></i> Add New Invoice </a>
+            </div>
+          </div>
+          <!-- search -->
+          <div class="flex items-center justify-between gap-4 md:gap-6 py-6">
+            <div class="flex gap-4 flex-grow ">
+              <div class="relative z-0 group flex-shrink-0 ">
+                <div class="w-32 md:!w-40">
+                  <select data-hs-select='{
+                  "hasSearch": false,
+                  "placeholder": "Status",
+                  "toggleTag": "<button type=\"button\" aria-expanded=\"false\"><span class=\"me-2 flex items-center\" data-icon></span><span class=\"text-gray-800 dark:text-neutral-200 \" data-title></span></button>",
+                  "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-3 ps-[14px] pe-[43px] text-sm border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+                  "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+                  "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+                  "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"me-2\" data-icon></div><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+                  "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+                }' class="hidden">
+                    <option value="">All</option>
+                    <option value="AL"> All </option>
+                    <option value="AL"> Pending </option>
+                    <option value="AL"> Complete </option>
+                  </select>
+                </div>
+              </div>
+              <div class="relative z-0 w-full group">
+                <input type="text" name="name" id="name" class="peer block p-3 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-200 hover:border-black dark:hover:border-white appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="">
+                <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Search invoice by name...</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card ">
+            <div id="invoice_list_table_tabs-11">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="invoice-list-11" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 ">
+                        <div class="flex gap-1.5 items-center dark:text-white">
+                          <span class="font-semibold">Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700">
+                        <p class="font-semibold dark:text-white">Email</p>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700">
+                        <p class="font-semibold dark:text-white">Date</p>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700">
+                        <p class="font-semibold dark:text-white">Status</p>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700">
+                        <p class="font-semibold dark:text-white">Edit</p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-4.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Alan Mask </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> eZGqnlGjC6Jdby6 </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200">alan03@gmail.com</p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Dec 02, 2021 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <span class="chip chip-success !py-1">Complete</span>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-7.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Justin Dormer </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> -3MSQe-arcVns4I </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> dormer25@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Dec 02, 2021 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <span class="chip chip-success !py-1">Complete</span>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-3.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Kyle Walker </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> SluZ5zKrdddr4sj </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> walker22@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Dec 02, 2021 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <span class="chip chip-success !py-1">Complete</span>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Kyle Williams </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> PuoZA1OEVNkm_no </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> kyle21@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Dec 02, 2021 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <span class="chip chip-error !py-1">Pending</span>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-1.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Natalie Dormer </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> lxuQk9o69eHWmQX </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> Mike1203@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Dec 02, 2021 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <span class="chip chip-error !py-1">Pending</span>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                <div class="flex items-center md:justify-end gap-2">
+                  <div class="flex items-center">
+                    <label for="custom_length">Rows per page:</label>
+
+                    <!-- Select -->
+                    <select id="custom_length" data-hs-select='{
+                                "placeholder": "Select option...",
+                                "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                                "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                                "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                                "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                                "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                                "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                            }' class="hidden">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                    </select>
+                  </div>
+                  <div class="inline-block me-7">
+                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                  </div>
+                  <div class="custom-pagination-controls">
+                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <span id="custom_page_info"></span>
+                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/table-invoice.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,1657 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Dashboard CRM | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+    <div class="card card-dark overflow-hidden mt-4">
+        <img src={% static 'assets/images/user-cover-pic.png' %} alt="" class="w-full h-32 object-cover">
+        <div class="card-body text-center !pb-0">
+            <div class="relative inline-block mx-auto rounded-full -mt-[70px] bg-gradient-to-r from-gray-200  to-primary-500 size-24 flex justify-center items-center">
+                <img class="size-[92px] rounded-full bg-white dark:bg-gray-800 p-[2px]" src={% static 'assets/images/user/user-11.png' %} alt="Image Description">
+                <label for="dropzone-file">
+                    <div class="!cursor-pointer absolute bottom-0 -end-1 size-7 flex justify-center items-center dark:border-gray-800 bg-primary-500 rounded-full ring-2 ring-white dark:ring-gray-800">
+                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-c6lyqs w-4 fill-white dark:fill-gray-800" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CameraAltIcon">
+                            <circle cx="12" cy="12" r="3.2"></circle>
+                            <path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                        </svg>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden" />
+                </label>
+            </div>
+            
+            <h4 class="text-lg font-semibold mb-2 mt-4">Pixy Krovasky</h4>
+            <ul class=" flex gap-2 md:gap-4 flex-wrap justify-center text-description">
+                <li class="gap-1.5 flex ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M23,6.7a1.94,1.94,0,0,0-.46-1.26L20.72,3.27A.74.74,0,0,0,20.15,3h-.3a.74.74,0,0,0-.57.27L18,4.8,16.72,3.27A.74.74,0,0,0,16.15,3h-.3a.74.74,0,0,0-.57.27L13.46,5.44A1.94,1.94,0,0,0,13,6.7V8H7V6.7a1.94,1.94,0,0,0-.46-1.26L4.72,3.27A.74.74,0,0,0,4.15,3h-.3a.74.74,0,0,0-.57.27L1.46,5.44A1.94,1.94,0,0,0,1,6.7V20a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1ZM19,12h2v7H19Zm-2,7H3V7H5V9.5a.5.5,0,0,0,.5.5h9a.5.5,0,0,0,.5-.5V7h2m2,3V7h2v3ZM5.5,14h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,5.5,14Zm8,0h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,13.5,14Zm-4,0h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,9.5,14Z">
+                        </path>
+                    </svg>
+                    <p>Developer</p>
+                </li>
+                <li class="gap-1 flex ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <path d="M14,10a2,2,0,1,1-2-2A2,2,0,0,1,14,10ZM12,4a6,6,0,0,0-6,6c0,2.8,1.18,3.74,2.82,5A9.17,9.17,0,0,1,12,18.73,9.25,9.25,0,0,1,15.18,15C16.82,13.74,18,12.8,18,10a6,6,0,0,0-6-6m0-2a8,8,0,0,1,8,8c0,6.22-5.05,6.17-6.26,9.78l-.51,1.54a1,1,0,0,1-1,.68h-.56a1,1,0,0,1-1-.68l-.51-1.54C9.05,16.17,4,16.22,4,10a8,8,0,0,1,8-8Z"></path>
+                    </svg>
+                    <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                    </svg>
+                    <p>New York</p>
+                </li>
+                <li class="gap-1.5 flex ">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18gnwm2 fill-gray-500 dark:fill-dark-15" width="14" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                    </svg>
+                    <p>Joined March 17</p>
+                </li>
+            </ul>
+            <div class="mt-8 mb-6 max-w-[420px] space-y-2 md:space-y-0 md:flex flex-wrap mx-auto gap-2 md:gap-5 *:border *:border-gray-200 *:dark:border-gray-700 *:rounded-lg *:px-7 *:py-4 *:whitespace-nowrap">
+                <div>
+                    <h5 class="text-16 font-semibold text-primary-500">$4,550</h5>
+                    <p class="text-sm font-normal text-description">Earnings</p>
+                </div>
+                <div>
+                    <h5 class="text-16 font-semibold text-success-600">60</h5>
+                    <p class="text-sm font-normal text-description">Projects</p>
+                </div>
+                <div>
+                    <h5 class="text-16 font-semibold text-warning-600">$2,800</h5>
+                    <p class="text-sm font-normal text-description">Success Rate</p>
+                </div>
+            </div>
+            <div class="tabs">
+                <nav class="nav flex !flex-nowrap overflow-x-auto md:justify-center border-none" aria-label="Tabs" role="tablist">
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500  dark:text-gray-400 active" id="basic-tabs-item-11" data-hs-tab="#basic-tabs-11" aria-controls="basic-tabs-11" role="tab">
+                        Overview
+                    </button>
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-22" data-hs-tab="#basic-tabs-22" aria-controls="basic-tabs-22" role="tab">
+                        Projects
+                    </button>
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-33" data-hs-tab="#basic-tabs-33" aria-controls="basic-tabs-33" role="tab">
+                        Compaigns
+                    </button>
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-44" data-hs-tab="#basic-tabs-44" aria-controls="basic-tabs-44" role="tab">
+                        Documents
+                    </button>
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-55" data-hs-tab="#basic-tabs-55" aria-controls="basic-tabs-55" role="tab">
+                        Connections
+                    </button>
+                    <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-66" data-hs-tab="#basic-tabs-66  " aria-controls="basic-tabs-66" role="tab">
+                        Activity
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div id="basic-tabs-11" role="tabpanel" aria-labelledby="basic-tabs-item-11">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12 lg:col-span-8 xl:col-span-9">
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="text-16 font-semibold">Summary</p>
+                                <div class="hs-dropdown relative inline-flex">
+                                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                                        <i class="ri-more-2-fill text-gray-400"></i>
+                                    </button>
+                                    <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                                        <div class="p-2">
+                                            <a class="dropdown-item" href="#!">
+                                                Create
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Edit
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="py-4 text-description">The new iPad combines the power and capability of a computer with the ease of use and versatility you’d never expect from one.
+                            </p>
+                            <p class="text-description">And now it’s even more versatile, with a larger 10.2‑inch Retina display, support he new iPad combines the power and capability of a computer with the ease of use and versatility you’d never expect
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="text-16 font-semibold">Skills</p>
+                                <div class="hs-dropdown relative inline-flex">
+                                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                                        <i class="ri-more-2-fill text-gray-400"></i>
+                                    </button>
+                                    <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                                        <div class="p-2">
+                                            <a class="dropdown-item" href="#!">
+                                                Create
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Edit
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <div x-data="{ skillGrid: [
+                                    {
+                                        skillType: 'Graphic Design',
+                                        skillRate : '40',
+                                    },
+                                    {
+                                        skillType: 'Font and dev',
+                                        skillRate : '32',
+                                    },
+                                    {
+                                        skillType: 'figma design',
+                                        skillRate : '50',
+                                    },
+                                    {
+                                        skillType: 'Font and dev',
+                                        skillRate : '32',
+                                    },
+                                    {
+                                        skillType: 'Graphic Design',
+                                        skillRate : '40',
+                                    },
+                                    {
+                                        skillType: 'figma design',
+                                        skillRate : '50',
+                                    },
+                                    
+                                ] }">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 rounded-lg gap-4">
+                                        <template x-for="(skillGrid, index) in skillGrid" :key="index">
+                                            <div class="rounded-lg flex overflow-hidden">
+                                                <p class="py-3 px-3 text-sm flex-grow font-medium capitalize bg-[#f3f4f6] dark:bg-[#4b5563]" x-text="skillGrid.skillType"></p>
+                                                <p class="py-3 px-3 font-semibold flex-shrink-0 bg-[#e5e7eb] dark:bg-[#374151] text-description" x-text="skillGrid.skillRate"></p>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <p class="text-16 font-semibold mb-4">Teams</p>
+                            <div class="overflow-x-auto">
+                                <table class="table border-spacing-0 overflow-x-auto">
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-2">
+                                                <div class="flex gap-4 items-center">
+                                                    <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                            <path d="M10.67,3a2,2,0,0,1,1.42.59l7.62,7.62a1,1,0,0,1,.29.7v.18a1,1,0,0,1-.29.7l-7.62,7.62a2,2,0,0,1-1.42.59H4a1,1,0,0,1-1-1V18.51a1,1,0,0,1,.42-.81l3.32-2.37A3,3,0,0,0,8,12.88V11.12A3,3,0,0,0,6.74,8.67L3.42,6.3A1,1,0,0,1,3,5.49V4A1,1,0,0,1,4,3Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-sm">
+                                                        <p class="font-semibold text-black dark:text-white">SRB Themes</p>
+                                                        <p class="text-description">Software Engineers</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-gray-500 dark:text-white p-2">Formed Jan 12, 2021</td>
+                                            <td class="p-2">
+                                                <div class="flex justify-center items-center -space-x-1.5 rtl:space-x-reverse">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <div class="size-7 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-black flex items-center justify-center text-7">+3</div>
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="text-13 font-medium rounded-full p-1 text-[#374151] dark:text-white bg-[#f3f4f6] dark:bg-[#374151] text-center">30 members</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2">
+                                                <div class="flex gap-4 items-center">
+                                                    <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fhllnu fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                            <path d="M16,5c0.1,0,0.2,0,0.3,0.1l1.7,1.7c1.3,1.3,2.1,3.1,2.1,4.9V13c0,3.3-2.7,6-6,6h-4c-3.3,0-6-2.7-6-6v-1
+                                                            c0-1.3,0.6-2.4,1.6-3.2C6.3,8.3,7.1,8,8,8h1.3c0.5,0,1,0.2,1.4,0.6l0.1,0.1c0.6,0.6,1.3,0.9,2.1,0.9c1.7,0,3-1.3,3-3L16,5L16,5
+                                                                M16,3L16,3c-1.1,0-2,0.9-2,2v1.6c0,0.6-0.5,1-1,1c-0.2,0-0.5-0.1-0.7-0.3l-0.1-0.1C11.4,6.4,10.4,6,9.3,6H8C6.7,6,5.4,6.4,4.4,7.2
+                                                            h0C2.9,8.3,2,10.1,2,12v1c0,4.4,3.6,8,8,8h4c4.4,0,8-3.6,8-8v-1.3c0-2.4-0.9-4.7-2.6-6.4l-1.7-1.7C17.3,3.3,16.6,3,16,3L16,3z
+                                                                M7.5,13C6.7,13,6,12.3,6,11.5S6.7,10,7.5,10S9,10.7,9,11.5S8.3,13,7.5,13z M9.5,17C8.7,17,8,16.3,8,15.5S8.7,14,9.5,14
+                                                            s1.5,0.7,1.5,1.5S10.3,17,9.5,17z M14.5,17c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S15.3,17,14.5,17z M16.5,13
+                                                            c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5S17.3,13,16.5,13z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-sm">
+                                                        <p class="font-semibold text-black dark:text-white">Team Uko</p>
+                                                        <p class="text-description">Visual Designers</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-gray-500 dark:text-white p-2">Formed Jan 22, 2021</td>
+                                            <td class="p-2">
+                                                <div class="flex justify-center items-center -space-x-1.5 rtl:space-x-reverse">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <div class="size-7 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-black flex items-center justify-center text-7">+3</div>
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="text-13 font-medium rounded-full p-1 text-[#374151] dark:text-white bg-[#f3f4f6] dark:bg-[#374151] text-center">30 members</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2">
+                                                <div class="flex gap-4 items-center">
+                                                    <div class="bg-yellow-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z fill-yellow-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                            <path d="M12,20a6,6,0,0,1-6-6c0-2.47,1.61-5.28,4.91-8.59L12,4.33Zm.15-18h-.3a.75.75,0,0,0-.53.22L9.5,4C6.86,6.64,4,10.19,4,14a8,8,0,0,0,16,0c0-3.81-2.86-7.36-5.5-10L12.68,2.18A.75.75,0,0,0,12.15,2Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-sm">
+                                                        <p class="font-semibold text-black dark:text-white">Team Olly</p>
+                                                        <p class="text-description">Web Developers</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-gray-500 dark:text-white p-2">Formed Jan 12, 2021</td>
+                                            <td class="p-2">
+                                                <div class="flex justify-center items-center -space-x-1.5 rtl:space-x-reverse">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                    <div class="size-7 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-black flex items-center justify-center text-7">+3</div>
+                                                </div>
+                                            </td>
+                                            <td class="p-2">
+                                                <div class="text-13 font-medium rounded-full p-1 text-[#374151] dark:text-white bg-[#f3f4f6] dark:bg-[#374151] text-center">30 members</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="text-16 font-semibold">Hobbies</p>
+                                <div class="hs-dropdown relative inline-flex">
+                                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                                        <i class="ri-more-2-fill text-gray-400"></i>
+                                    </button>
+                                    <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                                        <div class="p-2">
+                                            <a class="dropdown-item" href="#!">
+                                                Create
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Edit
+                                            </a>
+                                            <a class="dropdown-item" href="#!">
+                                                Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-5 mt-6">
+                                <div x-data="
+                                { skillGrid: [
+                                    {skillType: 'Dota 2',},{skillType: 'Dog',},
+                                    {skillType: 'Basketball'},{skillType: 'Football'},{skillType: 'Football',},
+                                    {skillType: 'Skateboarding',},
+                                    {skillType: 'Rock Climbing'},
+                                    {skillType: 'Painting',},{skillType: 'Cars'},
+                                    {skillType: 'Video Games'},
+                                    {skillType: 'Climbing'},{skillType: 'Climbing',},
+                                ] }">
+                                    <div class="flex flex-wrap gap-3">
+                                        <template x-for="(skillGrid, index) in skillGrid" :key="index">
+                                            <p class="py-1.5 px-2.5 text-13 rounded-full font-medium capitalize bg-[#f3f4f6] dark:bg-[#4b5563] text-text-description" x-text="skillGrid.skillType"></p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="text-16 font-semibold">Post</p>
+                                <button class="btn border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Create a post</span></button>
+                            </div>
+                            <div>
+                                <div x-data="
+                                { postGrid: [
+                                    {
+                                        postTitle: 'The International on the way 2021',
+                                        postTag: 'Esports',
+                                        postDate: 'Publish on Nov 21, 2021',
+                                        postImage: 'static/assets/images/profile-page/1.png',
+                                    },
+                                    {
+                                        postTitle: 'Global Warming Conclusion',
+                                        postTag: 'Environment',
+                                        postDate: 'Publish on Aug 21, 2021',
+                                        postImage: 'static/assets/images/profile-page/2.png',
+                                    },
+                                    {
+                                        postTitle: 'Crypto is the future',
+                                        postTag: 'Environment',
+                                        postDate: 'Publish on Jun 21, 2021',
+                                        postImage: 'static/assets/images/profile-page/3.png',
+                                    }
+                                    
+                                ] }">
+                                    <div class="flex flex-wrap-reverse space-y-6">
+                                        <template x-for="(postGrid, index) in postGrid" :key="index">
+                                            <div class="flex justify-between items-center gap-3 w-full">
+                                                <div class="text-sm">
+                                                    <p class="font-semibold" x-text="postGrid.postTitle"></p>
+                                                    <p class="text-description my-1" x-text="postGrid.postTag"></p>
+                                                    <div class="flex gap-1.5 items-center text-description">
+                                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-e2phl6 size-4 fill-gray-500 dark:fill-dark-15" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                            <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                                                        </svg>
+                                                        <span class="text-xs" x-text="postGrid.postDate"></span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <img :src="postGrid.postImage" class="flex-shrink-0 w-[120px] md:w-[127px] rounded-lg" alt="">
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-body ">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="text-16 font-semibold">Portfolio</p>
+                                <button class="btn border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Add New</span></button>
+                            </div>
+                            <div class="mt-6">
+                                <div x-data="
+                                { postGrid: [
+                                    {
+                                        postTitle: 'Hollow Purple',
+                                        postTag: 'Minimal',
+                                        postImage: 'static/assets/images/profile-page/port-1.png',
+                                    },
+                                    {
+                                        postTitle: 'Red Blood',
+                                        postTag: 'Dark',
+                                        postImage: 'static/assets/images/profile-page/port-2.png',  
+                                    },
+                                    {
+                                        postTitle: 'Lime Blue',
+                                        postTag: 'Minimal',
+                                        postImage: 'static/assets/images/profile-page/port-3.png',
+                                    },
+                                    
+                                ] }">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <template x-for="(postGrid, index) in postGrid" :key="index">
+                                            <div class="relative">
+                                                <img :src="postGrid.postImage" class="rounded-t-lg" alt="">
+                                                <div class="absolute top-2.5 right-2.5 text-xs p-2 bg-white rounded-md text-center dark:bg-gray-700">
+                                                    <p class="font-semibold">12</p>
+                                                    <p class="text-description">Jan</p>
+                                                </div>
+                                                <div class="p-4">
+                                                    <div class="flex justify-between items-center">
+                                                        <div>
+                                                            <p class="text-13 font-medium inline-block px-2 py-[2px] bg-primary-500 rounded-full text-white" x-text="postGrid.postTag"></p>
+                                                        </div>
+                                                        <div class="flex gap-1.5">
+                                                            <button class="btn btn-outline-secondary hover:bg-white hover:border-gray-200 !rounded-lg !p-1 dark:bg-transparent border-gray-200 dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-gray-700">
+                                                                <svg class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-11qib6v size-6 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DownloadIcon">
+                                                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"></path>
+                                                                </svg>
+                                                            </button>
+                                                            <button class="btn btn-outline-secondary hover:bg-white hover:border-gray-200 !rounded-lg !p-1 dark:bg-transparent border-gray-200 dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-gray-700">
+                                                                <svg class="MuiSvgIcon-root MuiSvgIcon-colorAction MuiSvgIcon-fontSizeMedium css-m5367z fill-gray-500 size-6" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="FavoriteBorderIcon">
+                                                                    <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="text-sm font-semibold mt-3" x-text="postGrid.postTitle"></h6>
+                                                    <p class="text-xs text-description mt-[2px]">12.00 Nov 21, 2021</p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-4 xl:col-span-3">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-1 sm:gap-5 lg:gap-0">
+                        <div class="card card-dark">
+                            <div class="card-body ">
+                                <p class="text-16 font-semibold">My Connections</p>
+                                <div x-data="{ skillGrid: [
+                                    { skillType: 'Martha Hawk' },
+                                    { skillType: 'Smantha Hoopes' },
+                                    { skillType: 'Chris Pine' },
+                                    { skillType: 'Sun Myi' },
+                                ] }">
+                                    <div class="space-y-6">
+                                        <template x-for="(skillGrid, index) in skillGrid" :key="index">
+                                            <div class="flex gap-2 items-center">
+                                                <img class="size-10" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                <div>
+                                                    <h4 class="text-sm font-semibold" x-text="skillGrid.skillType"></h4>
+                                                    <p class="text-xs font-medium mt-1">Developer</p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-dark">
+                            <div class="card-body ">
+                                <div class="flex items-center justify-between gap-2 mb-5">
+                                    <p class="text-16 font-semibold">Additional Details</p>
+                                    <div class="hs-dropdown relative inline-flex">
+                                        <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                                            <i class="ri-more-2-fill text-gray-400"></i>
+                                        </button>
+                                        <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                                            <div class="p-2">
+                                                <a class="dropdown-item" href="#!">
+                                                    Create
+                                                </a>
+                                                <a class="dropdown-item" href="#!">
+                                                    Edit
+                                                </a>
+                                                <a class="dropdown-item" href="#!">
+                                                    Delete
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-gray-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ebpl2q fill-gray-400" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M20,4H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6A2,2,0,0,0,20,4Zm0,2V8.9l-7.35,5.15a1.14,1.14,0,0,1-1.3,0L4,8.9V6ZM4,18V11l6.35,4.44a2.88,2.88,0,0,0,3.3,0L20,11v7Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Email</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">Uilib@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-primary-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M12,3a9,9,0,1,0,9,9A9,9,0,0,0,12,3Zm6.92,8H16.35a14.12,14.12,0,0,0-1.18-5.23A7,7,0,0,1,18.92,11Zm-6.47,8L12,19l-.45,0c-.91-.57-2-2.76-2.14-6h5.18C14.41,16.22,13.36,18.41,12.45,19Zm-3-8c.18-3.22,1.23-5.41,2.14-6L12,5l.45,0c.91.57,2,2.76,2.14,6ZM8.83,5.77A14.12,14.12,0,0,0,7.65,11H5.08A7,7,0,0,1,8.83,5.77ZM5.08,13H7.65a14.12,14.12,0,0,0,1.18,5.23A7,7,0,0,1,5.08,13Zm10.09,5.23A14.12,14.12,0,0,0,16.35,13h2.57A7,7,0,0,1,15.17,18.23Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Language</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">English, Spanish</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-orange-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fvw02k fill-orange-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,6Zm7.89,12.55L18,14.66A3,3,0,0,0,15.26,13H8.74a3,3,0,0,0-2.69,1.66L4.11,18.55A1,1,0,0,0,5,20H19A1,1,0,0,0,19.89,18.55ZM6.62,18l1.22-2.45a1,1,0,0,1,.9-.55h6.52a1,1,0,0,1,.9.55L17.38,18Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Nickname</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">Pixy</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-success-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n30qv9 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M21,6a2,2,0,0,0-2-2H18V2.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V4H8V2.5A.5.5,0,0,0,7.5,2h-1a.5.5,0,0,0-.5.5V4H5A2,2,0,0,0,3,6V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2ZM19,19H5V8H19Zm-7.5-9a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5Zm-4,2h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v1A.5.5,0,0,0,7.5,12Zm5,4a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5Zm2.5-.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Join Date</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">Aug 15th, 2021</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-red-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ywiz3v fill-red-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M10,14v-.5a.5.5,0,0,1,.5-.5h3a.5.5,0,0,1,.5.5V14a1,1,0,0,1-1,1H11A1,1,0,0,1,10,14ZM22,9V19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V9A2,2,0,0,1,4,7H7V5A2,2,0,0,1,9,3h6a2,2,0,0,1,2,2V7h3A2,2,0,0,1,22,9ZM9,7h6V5H9ZM20,9H4V19H20Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Work History</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">Theme Forest</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="bg-yellow-500 bg-opacity-10 p-1 rounded-md w-8">
+                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z fill-yellow-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                                <path d="M22,9.92V20.5a.5.5,0,0,1-.5.5h-.75a.5.5,0,0,1-.5-.5V11.6l-7.14,5.14a1.49,1.49,0,0,1-.84.26h-.54a1.49,1.49,0,0,1-.84-.26L2.22,10.49A.49.49,0,0,1,2,10.08V9.92a.49.49,0,0,1,.22-.41l8.67-6.25A1.49,1.49,0,0,1,11.73,3h.54a1.49,1.49,0,0,1,.84.26l8.67,6.25A.49.49,0,0,1,22,9.92Zm-9.73,8.83h-.54a3.33,3.33,0,0,1-1.87-.59L6,15.37V17c0,2.21,2.69,4,6,4s6-1.79,6-4V15.37l-3.9,2.81A3.25,3.25,0,0,1,12.27,18.75Z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-sm">
+                                            <p class="text-description text-xs">Education</p>
+                                            <p class="font-semibold text-black dark:text-white mt-1">Cambridge University</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="basic-tabs-22" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-22">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28 !fill-[#6950e8]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M10.28,11.32a2.94,2.94,0,0,0,1-.71,2.78,2.78,0,0,0,.57-1.83,3.17,3.17,0,0,0-.57-1.9A3.8,3.8,0,0,0,8,5.56H2.75A.75.75,0,0,0,2,6.31V17.25a.76.76,0,0,0,.75.75H7.6a8.76,8.76,0,0,0,1.76-.17,3.48,3.48,0,0,0,1.41-.62,3.6,3.6,0,0,0,.88-1,3.66,3.66,0,0,0,.55-2,3.24,3.24,0,0,0-.49-1.82A2.76,2.76,0,0,0,10.28,11.32ZM4.87,7.72H7.19a4.73,4.73,0,0,1,1.47.19,1.12,1.12,0,0,1,.66,1.15,1.16,1.16,0,0,1-.5,1.09,2.48,2.48,0,0,1-1.32.31H4.87Zm3.89,8.05A2.73,2.73,0,0,1,7.5,16H4.87V12.5H7.54a3.18,3.18,0,0,1,1.25.22,1.44,1.44,0,0,1,.79,1.41A1.69,1.69,0,0,1,8.76,15.77ZM15.5,7.5h4A.5.5,0,0,0,20,7V6.5a.5.5,0,0,0-.5-.5h-4a.5.5,0,0,0-.5.5V7A.5.5,0,0,0,15.5,7.5Zm6.36,6.24a.5.5,0,0,0,.14-.35,8.44,8.44,0,0,0-.08-1.27,4.32,4.32,0,0,0-.71-1.84A3.62,3.62,0,0,0,19.67,9a5,5,0,0,0-2.09-.42,4.28,4.28,0,0,0-3.19,1.24,4.82,4.82,0,0,0-1.23,3.55,4.31,4.31,0,0,0,1.36,3.57A4.87,4.87,0,0,0,17.66,18,4.31,4.31,0,0,0,21,16.7a3.28,3.28,0,0,0,.8-1.29.24.24,0,0,0,0-.22.23.23,0,0,0-.2-.1H19.78a.51.51,0,0,0-.42.22,1.64,1.64,0,0,1-.34.39,2,2,0,0,1-1.3.41,2.29,2.29,0,0,1-1.28-.34,2.09,2.09,0,0,1-.93-1.88h6A.51.51,0,0,0,21.86,13.74Zm-6.3-1.24a2.39,2.39,0,0,1,.62-1.38,1.87,1.87,0,0,1,1.4-.52,2,2,0,0,1,1.38.49,1.94,1.94,0,0,1,.62,1.41Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-primary-500 rounded-full text-white">Pandding</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Create Minimal Logo </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[70%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">70%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-primary-500 bg-opacity-10  text-primary-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-success-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n30qv9 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M21,11.56a4.11,4.11,0,0,0-.15-1.1l-1.44-5A2,2,0,0,0,17.49,4h-11A2,2,0,0,0,4.59,5.45l-1.44,5A4.11,4.11,0,0,0,3,11.56V19a1,1,0,0,0,1,1H5a1,1,0,0,0,1-1V18H18v1a1,1,0,0,0,1,1h1a1,1,0,0,0,1-1ZM6.27,5.93a.25.25,0,0,1,.24-.18h11a.25.25,0,0,1,.24.18L18.89,10H5.11ZM8,14a1,1,0,0,1-1,1H6a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7a1,1,0,0,1,1,1Zm11,0a1,1,0,0,1-1,1H17a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-success-500 rounded-full text-white">Completed</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Digital Marketing </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[50%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">50%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-success-500 bg-opacity-10  text-success-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-warning-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z fill-warning-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M23,19.5a.5.5,0,0,0-.5-.5H20V8a1,1,0,0,0-1-1H15V4a1,1,0,0,0-1-1H10A1,1,0,0,0,9,4v7H5a1,1,0,0,0-1,1v7H1.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h21a.5.5,0,0,0,.5-.5ZM16.5,9h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,9Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,13Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,17Zm-5-8h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,11.5,9Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,11.5,13ZM13,5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1A.5.5,0,0,1,13,5.5ZM7.5,19h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1A.5.5,0,0,1,7.5,19Zm0-4h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1A.5.5,0,0,1,7.5,15ZM11,18.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,11,18.5Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-warning-500 rounded-full text-white">Running</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Social Media Marketing </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-warning-500 text-xs text-white text-center whitespace-nowrap w-[100%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">100%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-warning-500 bg-opacity-10  text-warning-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-success-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n30qv9 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M20.71,3.72l-.43-.43A1,1,0,0,0,19.39,3l-5.5,1a3.89,3.89,0,0,0-2.36,1.41L9.37,8.19A3,3,0,0,0,5.91,9.28l-2.82,4a.5.5,0,0,0,.12.69l.41.29a3,3,0,0,0,4.18-.74l.63-.89,2.91,2.91-.89.63a3,3,0,0,0-.74,4.18l.29.41a.5.5,0,0,0,.69.12l4-2.82a3,3,0,0,0,1.09-3.46l2.75-2.16A3.89,3.89,0,0,0,20,10.11l1-5.5A1,1,0,0,0,20.71,3.72ZM16.56,9.56a1.5,1.5,0,1,1,0-2.12A1.49,1.49,0,0,1,16.56,9.56ZM7.82,16.88a.5.5,0,0,1,0,.71L4.56,20.85a.5.5,0,0,1-.71,0l-.7-.7a.5.5,0,0,1,0-.71l3.26-3.26a.5.5,0,0,1,.71,0Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-success-500 rounded-full text-white">Completed</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> WordPress Development </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[50%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">50%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-success-500 bg-opacity-10  text-success-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-warning-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z fill-warning-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M21,8.92v.16a.49.49,0,0,1-.22.41l-7.67,5.25a1.49,1.49,0,0,1-.84.26h-.54a1.49,1.49,0,0,1-.84-.26L3.22,9.49A.49.49,0,0,1,3,9.08V8.92a.49.49,0,0,1,.22-.41l7.67-5.25A1.49,1.49,0,0,1,11.73,3h.54a1.49,1.49,0,0,1,.84.26l7.67,5.25A.49.49,0,0,1,21,8.92Zm-2.33,4.14L16.9,14.27,18,15l-5.85,4h-.22L6,15l1.06-.73L5.33,13.06,3.22,14.51a.49.49,0,0,0-.22.41v.16a.49.49,0,0,0,.22.41l7.67,5.25a1.49,1.49,0,0,0,.84.26h.54a1.49,1.49,0,0,0,.84-.26l7.67-5.25a.49.49,0,0,0,.22-.41v-.16a.49.49,0,0,0-.22-.41Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-warning-500 rounded-full text-white">Running</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Landing Page Design </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-warning-500 text-xs text-white text-center whitespace-nowrap w-[100%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">100%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-warning-500 bg-opacity-10  text-warning-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm3.73,14.6a.5.5,0,0,1-.49.4H9.3a.25.25,0,0,1-.24-.3l.64-3.18-1.38.39A.26.26,0,0,1,8,13.67v-1a.5.5,0,0,1,.36-.48l1.71-.49.85-4.26a.5.5,0,0,1,.49-.4H13.7a.25.25,0,0,1,.24.3l-.69,3.45,1.43-.41a.26.26,0,0,1,.32.24v1a.5.5,0,0,1-.36.48l-1.76.51-.53,2.64H15.7a.25.25,0,0,1,.24.3Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-primary-500 rounded-full text-white">Pandding</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> UI Kit Design </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[70%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">70%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-primary-500 bg-opacity-10  text-primary-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-warning-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-h5yd9z fill-warning-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M19,11.07V3.12a1.05,1.05,0,0,0-.29-.71l-.12-.12A1.05,1.05,0,0,0,17.88,2H9.93a2,2,0,0,0-1.42.59L1.29,9.81a1,1,0,0,0,0,1.41l8.49,8.49a1,1,0,0,0,1.41,0l7.22-7.22A2,2,0,0,0,19,11.07ZM14,9a2,2,0,1,1,2-2A2,2,0,0,1,14,9Zm8.71-2.59-.12-.12A1.05,1.05,0,0,0,21.88,6H21v5.9a2,2,0,0,1-.59,1.42l-7.58,7.57.89.89a.75.75,0,0,0,1.06,0l7-7A4,4,0,0,0,23,11.9V7.12A1.05,1.05,0,0,0,22.71,6.41Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-warning-500 rounded-full text-white">Running</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Dashboard Design </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-warning-500 text-xs text-white text-center whitespace-nowrap w-[100%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">100%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-warning-500 bg-opacity-10  text-warning-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M20,12.12a2.27,2.27,0,0,1-2.13,2.25h0a.25.25,0,0,0-.24.25v.13a2.25,2.25,0,0,1-4.44.49h0L13,14.57a.11.11,0,0,0-.11-.08.11.11,0,0,0-.09.1l0,1.47,0,1.48v.77a5.51,5.51,0,0,1-.1.9,5,5,0,0,1-1.48,2.65.51.51,0,0,1-.77-.07L10,21a.5.5,0,0,1,.06-.65A3.08,3.08,0,0,0,11,18.81a2.1,2.1,0,0,0,.08-.56l0-.71,0-1.48,0-1.47a.11.11,0,0,0-.09-.1.11.11,0,0,0-.11.08l-.15.67h0a2.25,2.25,0,0,1-4.44-.49v-.12h0a.25.25,0,0,0-.24-.25A2.25,2.25,0,0,1,6,9.89H6c.17-.05.61,0,.61-.29s-.43-.26-.73-.37h0a2.39,2.39,0,0,1,.52-4.72h.15a.24.24,0,0,0,.25-.25,2.39,2.39,0,0,1,4.76-.15h0l.2,1.71a.25.25,0,0,0,.5,0l.2-1.71h0a2.39,2.39,0,0,1,4.76.16.25.25,0,0,0,.25.24h.15a2.39,2.39,0,0,1,.52,4.72h0c-.31.11-.73,0-.73.37s.45.25.61.29h0A2.25,2.25,0,0,1,20,12.12Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-primary-500 rounded-full text-white">Pandding</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> App Design Project </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[70%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">70%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-primary-500 bg-opacity-10  text-primary-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="bg-success-500 bg-opacity-10 p-1.5 rounded-md w-9">
+                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n30qv9 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M18,2H6A4,4,0,0,0,2,6V21.5a.5.5,0,0,0,.5.5.49.49,0,0,0,.35-.15l3-3A3,3,0,0,1,8,18H18a4,4,0,0,0,4-4V6A4,4,0,0,0,18,2Zm-2.94,8.62-3.89,2.6A.75.75,0,0,1,10,12.6V7.4a.75.75,0,0,1,1.17-.62l3.89,2.6A.74.74,0,0,1,15.06,10.62Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-13 font-medium inline-block px-2 py-[2px] bg-success-500 rounded-full text-white">Completed</p>
+                            </div>
+                        </div>
+                        <h5 class="py-4 text-16 font-semibold"> Admin Dashboard Design </h5>
+                        <p class="text-description"> Minimalistic logo for fitness appk, the project will get brand identity when the get recognized... </p>
+                        <div class="flex items-center gap-4 py-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[50%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">50%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                                <img class="size-8 rounded-full z-40 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <img class="size-8 rounded-full z-10 bg-white dark:bg-gray-600 p-0.5" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                <div class="size-8 rounded-full z-0 bg-success-500 bg-opacity-10  text-success-500 flex items-center justify-center text-7 border border-white dark:border-gray-700">+2</div>
+                            </div>
+                            <p class="text-description font-semibold flex-shrink-0 items-center"> Due In 2 Days </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="basic-tabs-33" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-33">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9sbgi fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M10.59,20.41,12,19h3.17a2,2,0,0,0,1.42-.59l3.82-3.82A2,2,0,0,0,21,13.17V4a1,1,0,0,0-1-1H5.19a1,1,0,0,0-.93.65l-1,2.67A4.23,4.23,0,0,0,3,7.73V18a1,1,0,0,0,1,1H7v1a1,1,0,0,0,1,1H9.17A2,2,0,0,0,10.59,20.41ZM6,16V5H19v8.17L16.17,16h-4l-2,2H9V16Zm4.5-3h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,10.5,13Zm5,0h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,15.5,13Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Twitch Post </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $5,000</h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-error-500"> -40.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-success-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1bb8m87 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path class="cls-1" d="M22,12A10,10,0,0,1,12,22a9.82,9.82,0,0,1-2.25-.26.48.48,0,0,1-.34-.28.49.49,0,0,1,0-.44l.15-.29a5.91,5.91,0,0,0,.56-1.54l.66-3.1a3.94,3.94,0,0,0,2.92,1.07c3.09,0,5.17-2.42,5.17-6,0-3.43-3-6-6.88-6s-6.88,2.7-6.88,6a5.48,5.48,0,0,0,1.78,4,.49.49,0,0,0,.49.12.47.47,0,0,0,.34-.37l.2-.9a.52.52,0,0,0-.11-.43,3.61,3.61,0,0,1-.94-2.38c0-2.35,2.29-4.26,5.12-4.26s5.12,1.79,5.12,4.26c0,2.07-.89,4.27-3.41,4.27a2.14,2.14,0,0,1-2.36-1.93l.65-3a1.8,1.8,0,0,0-.21-1.51A1.06,1.06,0,0,0,11,8.55c-1.47,0-1.55,2.47-1.55,3a10.42,10.42,0,0,0,.16,1.94L8.33,19.26a5.74,5.74,0,0,0-.13,1.49.34.34,0,0,1-.14.28.31.31,0,0,1-.31,0A10,10,0,1,1,22,12Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Pinterest Posts </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $2,350 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-success-500"> 26.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9sbgi fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path class="cls-1" d="M22,6.45a8,8,0,0,1-1.85,1.78c0,.18,0,.36,0,.55A12.2,12.2,0,0,1,7.78,21a12.24,12.24,0,0,1-5.45-1.26.25.25,0,0,1-.15-.23V19.4a.26.26,0,0,1,.26-.26A8.86,8.86,0,0,0,7.56,17.3a4.37,4.37,0,0,1-3.89-2.56.26.26,0,0,1,.26-.36,4,4,0,0,0,1.52-.14A4.36,4.36,0,0,1,2,10.43a.26.26,0,0,1,.36-.26,4,4,0,0,0,1.58.34A4.28,4.28,0,0,1,2.23,5.57a.54.54,0,0,1,.91-.18,12.36,12.36,0,0,0,8.41,3.88,4,4,0,0,1-.12-1,4.36,4.36,0,0,1,7.51-2.94,8.69,8.69,0,0,0,2.39-.83.17.17,0,0,1,.18,0,.17.17,0,0,1,0,.18,4.37,4.37,0,0,1-1.76,2,8.58,8.58,0,0,0,2-.48.16.16,0,0,1,.18,0A.17.17,0,0,1,22,6.45Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Twitter Followers </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $1,356 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-success-500"> 26.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-error-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9sbgi fill-error-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M10.59,20.41,12,19h3.17a2,2,0,0,0,1.42-.59l3.82-3.82A2,2,0,0,0,21,13.17V4a1,1,0,0,0-1-1H5.19a1,1,0,0,0-.93.65l-1,2.67A4.23,4.23,0,0,0,3,7.73V18a1,1,0,0,0,1,1H7v1a1,1,0,0,0,1,1H9.17A2,2,0,0,0,10.59,20.41ZM6,16V5H19v8.17L16.17,16h-4l-2,2H9V16Zm4.5-3h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,10.5,13Zm5,0h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,15.5,13Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Reddit Awards </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $4,000 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-error-500"> -40.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-error-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-gray-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-18m3bis fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M20,4.49l-1.46-.15a64.12,64.12,0,0,0-13.14,0L4,4.49A3.38,3.38,0,0,0,1,7.9v8.2a3.38,3.38,0,0,0,3,3.41l1.46.15a64.12,64.12,0,0,0,13.14,0L20,19.51a3.38,3.38,0,0,0,3-3.41V7.9A3.38,3.38,0,0,0,20,4.49Zm-5,8.13-3.89,2.6A.75.75,0,0,1,10,14.6V9.4a.75.75,0,0,1,1.17-.62l3.89,2.6A.74.74,0,0,1,15.06,12.62Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Youtube Subscribers
+                                </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $968 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-error-500"> -40.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-gray-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-5vgd72 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M10.59,20.41,12,19h3.17a2,2,0,0,0,1.42-.59l3.82-3.82A2,2,0,0,0,21,13.17V4a1,1,0,0,0-1-1H5.19a1,1,0,0,0-.93.65l-1,2.67A4.23,4.23,0,0,0,3,7.73V18a1,1,0,0,0,1,1H7v1a1,1,0,0,0,1,1H9.17A2,2,0,0,0,10.59,20.41ZM6,16V5H19v8.17L16.17,16h-4l-2,2H9V16Zm4.5-3h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,10.5,13Zm5,0h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,15.5,13Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Twitch Post </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $3,650 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-error-500"> -40.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9sbgi fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path class="cls-1" d="M22,6.45a8,8,0,0,1-1.85,1.78c0,.18,0,.36,0,.55A12.2,12.2,0,0,1,7.78,21a12.24,12.24,0,0,1-5.45-1.26.25.25,0,0,1-.15-.23V19.4a.26.26,0,0,1,.26-.26A8.86,8.86,0,0,0,7.56,17.3a4.37,4.37,0,0,1-3.89-2.56.26.26,0,0,1,.26-.36,4,4,0,0,0,1.52-.14A4.36,4.36,0,0,1,2,10.43a.26.26,0,0,1,.36-.26,4,4,0,0,0,1.58.34A4.28,4.28,0,0,1,2.23,5.57a.54.54,0,0,1,.91-.18,12.36,12.36,0,0,0,8.41,3.88,4,4,0,0,1-.12-1,4.36,4.36,0,0,1,7.51-2.94,8.69,8.69,0,0,0,2.39-.83.17.17,0,0,1,.18,0,.17.17,0,0,1,0,.18,4.37,4.37,0,0,1-1.76,2,8.58,8.58,0,0,0,2-.48.16.16,0,0,1,.18,0A.17.17,0,0,1,22,6.45Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Twitter Followers </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $680 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-success-500"> 26.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-primary-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-success-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-9sbgi fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M10.59,20.41,12,19h3.17a2,2,0,0,0,1.42-.59l3.82-3.82A2,2,0,0,0,21,13.17V4a1,1,0,0,0-1-1H5.19a1,1,0,0,0-.93.65l-1,2.67A4.23,4.23,0,0,0,3,7.73V18a1,1,0,0,0,1,1H7v1a1,1,0,0,0,1,1H9.17A2,2,0,0,0,10.59,20.41ZM6,16V5H19v8.17L16.17,16h-4l-2,2H9V16Zm4.5-3h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,10.5,13Zm5,0h1a.5.5,0,0,0,.5-.5v-4a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5v4A.5.5,0,0,0,15.5,13Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Reddit Awards </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $1,340 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-error-500"> -40.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-success-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm">
+                        <div class="flex justify-between items-center gap-2">
+                            <div class="flex gap-2 items-center">
+                                <div class="bg-error-500 bg-opacity-10 p-1.5 rounded-md w-8">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1bb8m87 fill-error-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path class="cls-1" d="M22,12A10,10,0,0,1,12,22a9.82,9.82,0,0,1-2.25-.26.48.48,0,0,1-.34-.28.49.49,0,0,1,0-.44l.15-.29a5.91,5.91,0,0,0,.56-1.54l.66-3.1a3.94,3.94,0,0,0,2.92,1.07c3.09,0,5.17-2.42,5.17-6,0-3.43-3-6-6.88-6s-6.88,2.7-6.88,6a5.48,5.48,0,0,0,1.78,4,.49.49,0,0,0,.49.12.47.47,0,0,0,.34-.37l.2-.9a.52.52,0,0,0-.11-.43,3.61,3.61,0,0,1-.94-2.38c0-2.35,2.29-4.26,5.12-4.26s5.12,1.79,5.12,4.26c0,2.07-.89,4.27-3.41,4.27a2.14,2.14,0,0,1-2.36-1.93l.65-3a1.8,1.8,0,0,0-.21-1.51A1.06,1.06,0,0,0,11,8.55c-1.47,0-1.55,2.47-1.55,3a10.42,10.42,0,0,0,.16,1.94L8.33,19.26a5.74,5.74,0,0,0-.13,1.49.34.34,0,0,1-.14.28.31.31,0,0,1-.31,0A10,10,0,1,1,22,12Z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-description font-semibold flex-shrink-0 items-center"> Pinterest Posts </p>
+                            </div>
+                            <div class="hs-dropdown relative inline-flex">
+                                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-8">
+                                    <i class="ri-more-2-fill trnsform rotate-90 text-gray-400"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-center justify-between py-4">
+                            <h5 class="text-2xl font-bold flex-shrink-0"> $4,120 </h5>
+                            <p class="text-description">
+                                <span class="font-semibold text-success-500"> 26.5% </span>
+                                <span>Subscriber growth</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700" role="progressbar" id="determinate" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="transition-width transition duration-300 ease-in-out flex flex-col justify-center rounded-full overflow-hidden bg-error-500 text-xs text-white text-center whitespace-nowrap w-[40%]"></div>
+                            </div>
+                            <span class="shrink-0 text-xs font-semibold">40%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="basic-tabs-44" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-44">
+            <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                <p class="text-16 font-semibold">My Documents <span class="text-description text-base font-medium">(100+ Resources)
+                    </span>
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <form>
+                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none ">
+                                <svg class="w-4 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1dkl02v fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M20.85,19.44l-4-4a2.44,2.44,0,0,0-.43-.35l-1-.69h0A7,7,0,1,0,10,17a7,7,0,0,0,4.37-1.53h0l.75,1a2.6,2.6,0,0,0,.3.36l4,4a.5.5,0,0,0,.71,0l.7-.7A.5.5,0,0,0,20.85,19.44ZM10,15a5,5,0,1,1,5-5A5,5,0,0,1,10,15Z"></path>
+                                </svg>
+                            </div>
+                            <input type="search" id="default-search" class="block w-full py-2.5 ps-10 pr-4 text-sm text-gray-900 border border-gray-200 focus:border-gray-200 focus:ring-0 focus:outline-none rounded-xl bg-white placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white" placeholder="Search...." required />
+                        </div>
+                    </form>
+                    <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary">File Manager<div class="rippleContainer"></div></button>
+                </div>
+            </div>
+            <div x-data="
+            { docsGrid: [
+                {docsTitle: 'Customer', docsSubtitle: '7 files'},
+                {docsTitle: 'Buyer', docsSubtitle: '25 files'},
+                {docsTitle: 'Documents', docsSubtitle: '18 files'},
+                {docsTitle: 'File Manager', docsSubtitle: '27 files'},
+                {docsTitle: 'Apps', docsSubtitle: '13 files'},
+                {docsTitle: 'Apk File', docsSubtitle: '6 files'},
+                {docsTitle: 'Finance', docsSubtitle: '25 files'},
+                {docsTitle: 'CRM Project', docsSubtitle: '15 files'},
+                ] }">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
+                    <template x-for="(docsGrid, index) in docsGrid" :key="index">
+                        <div class="card card-dark">
+                            <div class="card-body text-sm text-center">
+                                <div class="flex justify-center">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-135ln59 fill-gray-500" width="64" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M20,6H14.41a1,1,0,0,1-.7-.29L12.29,4.29a1,1,0,0,0-.7-.29H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V8A2,2,0,0,0,20,6Z"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="text-15 font-semibold" x-text="docsGrid.docsTitle"> </h5>
+                                <p class="text-description" x-text="docsGrid.docsSubtitle"> </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+
+            </div>
+            <div x-data="
+            { docsGrid: [
+                {docsImg:'static/assets/images/profile-page/html.svg', docsTitle: 'Project HTML', docsSubtitle: '7 files'},
+                {docsImg:'static/assets/images/profile-page/css.svg', docsTitle: 'Project CSS', docsSubtitle: '7 files'},
+                {docsImg:'static/assets/images/profile-page/jpg.svg', docsTitle: 'Project JPG', docsSubtitle: '12 files'},
+                {docsImg:'static/assets/images/profile-page/pdf.svg', docsTitle: 'Project PDF', docsSubtitle: '12 files'},
+                ] }">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
+                    <template x-for="(docsGrid, index) in docsGrid" :key="index">
+                        <div class="card card-dark">
+                            <div class="card-body text-sm text-center">
+                                <div class="flex justify-center mb-2">
+                                    <img :src="docsGrid.docsImg" width="74" />
+                                </div>
+                                <h5 class="text-15 font-semibold" x-text="docsGrid.docsTitle"> </h5>
+                                <p class="text-description" x-text="docsGrid.docsSubtitle"> </p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="basic-tabs-55" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-55">
+            <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                <p class="text-16 font-semibold">My Documents <span class="text-description text-base font-normal">(100+ Resources)
+                    </span>
+                </p>
+                <div class="hs-dropdown relative inline-flex">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-togglebtn btn-outline-secondary rounded-lg px-3 py-2.5 dark:bg-transparent border-gray-200  hover:bg-white dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white flex gap-1 focus:border-primary-500 focus:bg-white">
+                        <span>Active</span>
+                        <span>
+                            <svg class="w-6 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-uigehb" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon">
+                                <path d="M7 10l5 5 5-5z"></path>
+                            </svg></span>
+                    </button>
+                    <div class="hs-dropdown-menu min-w-28 transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 hidden" aria-labelledby="hs-dropdown-with-dividers" style="">
+                        <div class="p-2">
+                            <a class="dropdown-item" href="#">
+                                Active
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                Deactive
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-11.png' %} class="size-10 mx-auto" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Miphoshka</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple  border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connect</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-10.png' %} class="size-10 mx-auto" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Tim Carrey</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple btn-primary gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connected</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-9.png' %} class="size-10 mx-auto" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Edward Norton</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple  border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connect</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-8.png' %} class="size-10 mx-auto" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Eva Mendes</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple btn-primary gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connected</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-7.png' %} class="size-10 mx-auto rounded-full" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Vida Lao</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple  border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connect</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-dark">
+                    <div class="card-body text-sm text-center">
+                        <div class="">
+                            <img src={% static 'assets/images/user/user-6.png' %} class="size-10 mx-auto rounded-full" alt="">
+                            <div class="mt-3">
+                                <h5 class="font-semibold text-sm">Angelina</h5>
+                                <p class="text-xs font-normal">Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 md:px-10 mt-4">
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM13,7V6.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V7A2,2,0,0,0,9,9v.81a2,2,0,0,0,.73,1.54l3.43,2.83a.22.22,0,0,1,.09.19v.88h-2.5v-1a.5.5,0,0,0-.5-.5H9.5a.5.5,0,0,0-.5.5V15a2,2,0,0,0,2,2v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V17a2,2,0,0,0,2-2v-.81a2,2,0,0,0-.73-1.54L10.84,9.82a.22.22,0,0,1-.09-.19V8.75h2.5v1a.5.5,0,0,0,.5.5h.75a.5.5,0,0,0,.5-.5V9A2,2,0,0,0,13,7Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$14,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="text-center border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                                <svg class="w-6 fill-gray-500 mx-auto MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M8,13v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,1,1-1H7A1,1,0,0,1,8,13Zm5-9H11a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V5A1,1,0,0,0,13,4Zm6,4H17a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V9A1,1,0,0,0,19,8Z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1">$26,500</p>
+                                <p class="text-xs font-normal text-description">Avg Income</p>
+                            </div>
+                            <div class="col-span-2 mt-3">
+                                <button class="w-full btn ripple  border-gray-200 hover:border-opacity-50 dark:text-white dark:border-gray-700 gap-1 flex items-center justify-center">
+                                    <span>
+                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c size-5 dark:fill-white" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                                        </svg>
+                                    </span>
+                                    <span>Connect</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="basic-tabs-66" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-66">
+            <div class="card card-dark">
+                <div class="flex flex-wrap justify-between items-center gap-4 p-6 border-b border-gray-200 dark:border-gray-700">
+                    <p class="text-16 font-semibold">My Documents <span class="text-description text-base font-normal">(100+ Resources)
+                        </span>
+                    </p>
+                    <div class="hs-dropdown relative inline-flex ">
+                        <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-togglebtn btn-outline-secondary rounded-lg px-3 py-2.5 dark:bg-transparent border-gray-200  hover:bg-white dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white flex gap-1 focus:border-primary-500 focus:bg-white">
+                            <span>Today</span>
+                            <span>
+                                <svg class="w-6 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-uigehb" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon">
+                                    <path d="M7 10l5 5 5-5z"></path>
+                                </svg></span>
+                        </button>
+                        <div class="hs-dropdown-menu min-w-28 transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 hidden" aria-labelledby="hs-dropdown-with-dividers" style="">
+                            <div class="p-2">
+                                <a class="dropdown-item" href="#"> Today </a>
+                                <a class="dropdown-item" href="#"> Month </a>
+                                <a class="dropdown-item" href="#"> Year </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="overflow-x-auto">
+                        <div class="w-full flex gap-x-3">
+                            <div class="flex-grow-0 flex-shrink-1 relative last:after:hidden after:absolute after:top-9 after:bottom-0 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                                <div class="relative mt-2.5 z-10 size-7 rounded-full border border-white bg-gray-300 dark:bg-gray-100 flex justify-center items-center">
+                                    <svg class="w-4 fill-gray-600 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1onz2cg" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M15,16a4,4,0,0,0,4-4V6a4,4,0,0,0-4-4H5A4,4,0,0,0,1,6V18.5a.5.5,0,0,0,.5.5.49.49,0,0,0,.35-.15l2-2A3,3,0,0,1,6,16ZM21,6v8a4,4,0,0,1-4,4H5a2,2,0,0,0,2,2H18a3,3,0,0,1,2.13.88l2,2a.49.49,0,0,0,.35.15.5.5,0,0,0,.5-.5V8A2,2,0,0,0,21,6Z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 grow pt-0.5 pb-8">
+                                <p class="text-sm font-semibold mb-1 text-gray-900 dark:text-white">
+                                    There are 2 new tasks for you in Alphp Plus project:
+                                </p>
+                                <p class="flex gap-2 items-center">
+                                    <span class="text-xs text-description">Added at 4.23 PM by</span>
+                                    <img src={% static 'assets/images/user/user-11.png' %} class="size-4 flex-shrink-0" />
+                                </p>
+                                <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-2 mt-4">
+                                    <table class="table border-spacing-0 overflow-x-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2">
+                                                    <p class="font-normal text-black dark:text-white">Meeting with customer</p>
+                                                </td>
+                                                <td class="text-gray-500 dark:text-white p-2">
+                                                    <div class="flex gap-4 justify-center">
+                                                        <div class="text-13 font-medium rounded-full px-2 py-1 inline-block text-[#374151] dark:text-white bg-[#f3f4f6] dark:bg-[#374151] text-center">Application</div>
+                                                        <div class="flex justify-center items-center -space-x-1.5 rtl:space-x-reverse">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-10.png' %} alt="">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-10" src={% static 'assets/images/user/user-9.png' %} alt="">
+                                                            <div class="size-7 rounded-full bg-primary-500 text-primary-500 bg-opacity-10 dark:text-primary-500 dark:bg-primary-100 flex items-center justify-center text-7">+2</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 flex gap-2 justify-end">
+                                                    <button class="btn ripple btn-primary rounded-xl chip">In Progress</button>
+                                                    <button class="btn ripple btn-outline-dark rounded-xl chip chip-outline-gray px-4 border-gray-200 dark:border-gray-700 dark:text-white">View</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-2 mt-4">
+                                    <table class="table border-spacing-0 overflow-x-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2">
+                                                    <p class="font-normal text-black dark:text-white">Project Delivery</p>
+                                                </td>
+                                                <td class="text-gray-500 dark:text-white p-2">
+                                                    <div class="flex gap-4 justify-center">
+                                                        <div class="text-13 font-medium rounded-full px-2 py-1 inline-block text-[#374151] dark:text-white bg-[#f3f4f6] dark:bg-[#374151] text-center">Application</div>
+                                                        <div class="flex justify-center items-center -space-x-1.5 rtl:space-x-reverse">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-10.png' %} alt="">
+                                                            <img class="size-7 rounded-full bg-white dark:bg-gray-600 p-0.5 z-10" src={% static 'assets/images/user/user-9.png' %} alt="">
+                                                            <div class="size-7 rounded-full bg-primary-500 text-primary-500 bg-opacity-10 dark:text-primary-500 dark:bg-primary-100 flex items-center justify-center text-7">+2</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 flex gap-2 justify-end">
+                                                    <button class="btn ripple btn-success rounded-xl chip">Complete</button>
+                                                    <button class="btn ripple btn-outline-dark rounded-xl chip chip-outline-gray px-4 border-gray-200 dark:border-gray-700 dark:text-white">View</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="w-full flex gap-x-3 pt-1">
+                            <div class="flex-grow-0 flex-shrink-1 relative last:after:hidden after:absolute after:top-9 after:bottom-0 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                                <div class="relative mt-2.5 z-10 size-7 rounded-full border border-white bg-gray-300 dark:bg-gray-100 flex justify-center items-center">
+                                    <svg class="w-4 fill-gray-600 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1onz2cg" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M20.34,9.14l-1.44.51a2,2,0,0,0-1,.78l-2.13,3.2a3,3,0,0,0-.52,1.69v1.49a1,1,0,0,1-.29.71l-.42.41a1,1,0,0,1-1.41,0L6.07,10.86a1,1,0,0,1,0-1.41L6.48,9a1,1,0,0,1,.71-.29H8.68a3,3,0,0,0,1.69-.52l3.2-2.13a2,2,0,0,0,.78-1l.51-1.44a1,1,0,0,1,1.65-.37l4.2,4.2A1,1,0,0,1,20.34,9.14ZM4.43,17.44a3,3,0,0,0-.67,1L3,20.27a.5.5,0,0,0,.11.54l0,0a.5.5,0,0,0,.54.11l1.81-.72a3,3,0,0,0,1-.67l2.91-2.91L7.35,14.52Z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 grow pt-0.5 pb-8">
+                                <p class="text-sm font-semibold mb-1 text-gray-900 dark:text-white">
+                                    Invitation for crafting engaging designs that speak human workshop
+                                </p>
+                                <p class="flex gap-2 items-center">
+                                    <span class="text-xs text-description">Added at 4.23 PM by</span>
+                                    <img src={% static 'assets/images/user/user-11.png' %} class="size-4 flex-shrink-0" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-x-3 pt-1">
+                            <div class="flex-grow-0 flex-shrink-1 relative last:after:hidden after:absolute after:top-9 after:bottom-0 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                                <div class="relative mt-2.5 z-10 size-7 rounded-full border border-white bg-gray-300 dark:bg-gray-100 flex justify-center items-center">
+                                    <span class="w-4 fill-gray-600 MuiTimelineDot-root MuiTimelineDot-filled MuiTimelineDot-filledGrey css-po6iq1"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1onz2cg" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="M8.65,13.94l5.29-5.29a.5.5,0,0,1,.71,0l.7.7a.5.5,0,0,1,0,.71l-5.29,5.29a.5.5,0,0,1-.71,0l-.7-.7A.5.5,0,0,1,8.65,13.94ZM21,7.66V8a4,4,0,0,1-1.18,2.84L17,13.67a1.35,1.35,0,0,1-1.9,0L15,13.56a.5.5,0,0,1,0-.7l3.44-3.44A2,2,0,0,0,19,8V7.66a2,2,0,0,0-.59-1.42l-.65-.65A2,2,0,0,0,16.34,5H16a2,2,0,0,0-1.42.59L11.14,9a.5.5,0,0,1-.7,0l-.11-.11a1.35,1.35,0,0,1,0-1.9l2.83-2.84A4,4,0,0,1,16,3h.34a4,4,0,0,1,2.83,1.17l.66.66A4,4,0,0,1,21,7.66ZM12.86,15a.5.5,0,0,1,.7,0l.11.11a1.35,1.35,0,0,1,0,1.9l-2.85,2.85A4,4,0,0,1,8,21H7.66a4,4,0,0,1-2.83-1.17l-.66-.66A4,4,0,0,1,3,16.35V16a4,4,0,0,1,1.18-2.84L7,10.33a1.35,1.35,0,0,1,1.9,0l.11.11a.5.5,0,0,1,0,.7L5.59,14.58A2,2,0,0,0,5,16v.34a2,2,0,0,0,.59,1.42l.65.65A2,2,0,0,0,7.66,19H8a2,2,0,0,0,1.43-.59Z"></path>
+                                        </svg></span>
+                                </div>
+                            </div>
+                            <div class="flex-1 grow pt-0.5 pb-8">
+                                <p class="text-sm font-semibold mb-1 text-gray-900 dark:text-white">
+                                    Invitation for crafting engaging designs that speak human workshop
+                                </p>
+                                <p class="flex gap-2 items-center">
+                                    <span class="text-xs text-description">Added at 4.23 PM by</span>
+                                    <img src={% static 'assets/images/user/user-9.png' %} class="size-4 flex-shrink-0" />
+                                </p>
+                                <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-4 mt-4 flex flex-nowrap">
+                                    <div class="flex gap-2 flex-shrink-0 w-[180px] md:w-[220px]">
+                                        <img src={% static 'assets/images/profile-page/pdf.svg' %} class="size-10" />
+                                        <div>
+                                            <h5 class="text-sm font-medium text-primary-500">Finance KPI App</h5>
+                                            <p class="text-xs text-description">90 mb</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 flex-shrink-0 w-[180px] md:w-[220px]">
+                                        <img src={% static 'assets/images/profile-page/css.svg' %} class="size-10" />
+                                        <div>
+                                            <h5 class="text-sm font-medium text-primary-500">Css File Yoga App</h5>
+                                            <p class="text-xs text-description">90 mb</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 flex-shrink-0 w-[180px] md:w-[220px]">
+                                        <img src={% static 'assets/images/profile-page/jpg.svg' %} class="size-10" />
+                                        <div>
+                                            <h5 class="text-sm font-medium text-primary-500">All JPGS From Yoga App</h5>
+                                            <p class="text-xs text-description">90 mb</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-x-3 pt-1">
+                            <div class="flex-grow-0 flex-shrink-1 relative last:after:hidden after:absolute after:top-9 after:bottom-0 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                                <div class="relative mt-2.5 z-10 size-7 rounded-full border border-white bg-gray-300 dark:bg-gray-100 flex justify-center items-center">
+                                    <svg class="w-4 fill-gray-600 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1onz2cg" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M21,8.92v.16a.49.49,0,0,1-.22.41l-7.67,5.25a1.49,1.49,0,0,1-.84.26h-.54a1.49,1.49,0,0,1-.84-.26L3.22,9.49A.49.49,0,0,1,3,9.08V8.92a.49.49,0,0,1,.22-.41l7.67-5.25A1.49,1.49,0,0,1,11.73,3h.54a1.49,1.49,0,0,1,.84.26l7.67,5.25A.49.49,0,0,1,21,8.92Zm-2.33,4.14L16.9,14.27,18,15l-5.85,4h-.22L6,15l1.06-.73L5.33,13.06,3.22,14.51a.49.49,0,0,0-.22.41v.16a.49.49,0,0,0,.22.41l7.67,5.25a1.49,1.49,0,0,0,.84.26h.54a1.49,1.49,0,0,0,.84-.26l7.67-5.25a.49.49,0,0,0,.22-.41v-.16a.49.49,0,0,0-.22-.41Z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 grow pt-0.5 pb-8">
+                                <p class="text-sm font-semibold mb-1 text-gray-900 dark:text-white">
+                                    Task <span class="text-primary-500">#45890</span> merged with <span class="text-primary-500">#45890</span> in “Ads Pro Admin Dashboard project:
+                                </p>
+                                <p class="flex gap-2 items-center">
+                                    <span class="text-xs text-description">Added at 4.23 PM by</span>
+                                    <img src={% static 'assets/images/user/user-11.png' %} class="size-4 flex-shrink-0" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-x-3 pt-1">
+                            <div class="flex-grow-0 flex-shrink-1 relative last:after:hidden after:absolute after:top-9 after:bottom-0 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                                <div class="relative mt-2.5 z-10 size-7 rounded-full border border-white bg-gray-300 dark:bg-gray-100 flex justify-center items-center">
+                                    <svg class="w-4 fill-gray-600 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1onz2cg" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 grow pt-0.5 pb-8">
+                                <p class="text-sm font-semibold mb-1 text-gray-900 dark:text-white">
+                                    3 new application design concepts added:
+                                </p>
+                                <p class="flex gap-2 items-center">
+                                    <span class="text-xs text-description">Created at 4.30 by</span>
+                                    <img src={% static 'assets/images/user/user-10.png' %} class="size-4 flex-shrink-0" />
+                                </p>
+                                <div class="border border-gray-200 dark:border-gray-700 w-max rounded-2xl w-full p-4 mt-4 gap-4 flex flex-nowrap">
+                                    <img src={% static 'assets/images/profile-page/1.png' %} class="w-[180px] md:w-[220px] flex-shrink-0" />
+                                    <img src={% static 'assets/images/profile-page/2.png' %} class="w-[180px] md:w-[220px] flex-shrink-0" />
+                                    <img src={% static 'assets/images/profile-page/3.png' %} class="w-[180px] md:w-[220px] flex-shrink-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+{% endblock %}
+

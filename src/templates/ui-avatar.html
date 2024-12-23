@@ -1,0 +1,207 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Avatar | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Avatar" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20 mt-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Image Avatar
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <img class="size-10 rounded-full" src={% static 'assets/images/avatar/001-man.svg' %} alt="">
+              <img class="size-10 rounded-full" src={% static 'assets/images/avatar/002-girl.svg' %} alt="">
+              <img class="size-10 rounded-full" src={% static 'assets/images/avatar/003-boy.svg' %} alt="">
+              <img class="size-10 rounded-full" src={% static 'assets/images/avatar/004-woman.svg' %} alt="">
+              <img class="size-10 rounded-full" src={% static 'assets/images/avatar/005-man-1.svg' %} alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Letter Avatar
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-900 flex items-center justify-center text-3">A</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Default
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-primary-main text-white dark:text-gray-900 flex items-center justify-center text-3">B</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Primary
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-warning-main text-white dark:text-gray-900 flex items-center justify-center text-3">C</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Warning
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-success-main text-white dark:text-gray-900 flex items-center justify-center text-3">D</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Success
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-error-main text-white dark:text-gray-900 flex items-center justify-center text-3">E</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Error
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-info-main text-white dark:text-gray-900 flex items-center justify-center text-3">E</div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Info
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Icon Avatar
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Default
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-primary-main text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Primary
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-warning-main text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Warning
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-success-main text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Success
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-error-main text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Error
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-info-main text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Info
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Variants
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-full bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Circular
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <img class="hs-tooltip-toggle size-10 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/avatar.png' %} alt="">
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Bordered
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Square
+                </span>
+              </div>
+              <div class="hs-tooltip [--placement:bottom]">
+                <div class="hs-tooltip-toggle size-10 rounded-[4px] bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-900 flex items-center justify-center text-3"><i class="ri-folder-fill"></i></div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  Rounded
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Grouped
+            </div>
+            <div class="flex justify-center items-center">
+              <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 -ml-2" src={% static 'assets/images/user/user-10.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 -ml-2" src={% static 'assets/images/user/user-11.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 -ml-2" src={% static 'assets/images/user/user-13.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 -ml-2" src={% static 'assets/images/user/user-15.png' %} alt="">
+              <div class="size-9 rounded-full bg-gray-400 dark:bg-gray-600 text-white flex items-center justify-center text-7 -ml-2">+3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              With Badge
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-3">
+              <div class="relative inline-block">
+                <img class="size-10 rounded-full" src={% static 'assets/images/user/user-10.png' %} alt="Image Description">
+                <span class="absolute bottom-0 end-0 block size-2.5 rounded-full ring-2 ring-white bg-teal-400 dark:ring-neutral-900"></span>
+              </div>
+              <div class="relative inline-block">
+                <img class="size-10 rounded-full" src={% static 'assets/images/user/user-13.png' %} alt="Image Description">
+                <img class="absolute -bottom-1 -end-1 block size-[18px] rounded-full ring-2 ring-white dark:ring-neutral-900" src={% static 'assets/images/user/user-11.png' %} alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Sizes
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-3">
+              <img class="size-5 rounded-full" src={% static 'assets/images/user/user-10.png' %} alt="Image Description">
+              <img class="size-[30px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="Image Description">
+              <img class="size-10 rounded-full" src={% static 'assets/images/user/user-13.png' %} alt="Image Description">
+              <img class="size-[50px] rounded-full" src={% static 'assets/images/user/user-15.png' %} alt="Image Description">
+              <img class="size-[60px] rounded-full" src={% static 'assets/images/user/user-13.png' %} alt="Image Description">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}

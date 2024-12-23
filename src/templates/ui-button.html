@@ -1,0 +1,684 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Buttons | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Buttons" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="tabs">
+        <nav class="nav" aria-label="Tabs" role="tablist">
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+            Buttons
+          </button>
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+            Loading Button
+          </button>
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+            Floating Action Button
+          </button>
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-4" data-hs-tab="#basic-tabs-4" aria-controls="basic-tabs-4" role="tab">
+            Group Buttons
+          </button>
+        </nav>
+      
+        <div class="tab-content !px-0 !bg-transparent !shadow-none !mt-5">
+
+          <div id="basic-tabs-1" role="tabpanel" aria-labelledby="basic-tabs-item-1">
+            
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Contained Button
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button ripple-opacity="0.3" class="btn ripple btn-dark bg-gray-900 dark:bg-white dark:text-black hover:bg-gray-800">Default</button>
+                  <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary">Primary</button>
+                  <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-secondary text-gray-900 hover:bg-gray-200 focus:bg-gray-200 dark:text-white bg-gray-main dark:bg-gray-700">Secondary</button>
+                  <button ripple-opacity="0.3" class="btn ripple btn-warning">Warning</button>
+                  <button ripple-opacity="0.3" class="btn ripple btn-error">Error</button>
+                  <button ripple-opacity="0.3" class="btn ripple btn-success">Success</button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Outlined Button
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-outline-dark dark:text-white dark:border-white">Default</button>
+                  <button class="btn btn-outline-primary">Primary</button>
+                  <button class="btn btn-outline-secondary dark:bg-transparent border-gray-200 hover:border-transparent hover:bg-transparent dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white">Secondary</button>
+                  <button class="btn btn-outline-warning">Warning</button>
+                  <button class="btn btn-outline-error">Error</button>
+                  <button class="btn btn-outline-success">Success</button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Text Button
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-text-dark dark:text-white">Default</button>
+                  <button class="btn btn-text-primary">Primary</button>
+                  <button class="btn btn-text-secondary text-black hover:text-black dark:text-gray-600">Secondary</button>
+                  <button class="btn btn-text-warning">Warning</button>
+                  <button class="btn btn-text-error">Error</button>
+                  <button class="btn btn-text-success">Success</button> 
+                </div>
+              </div>
+            </div>
+      
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  With Icon
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-primary btn-text-icon">
+                    <i class="ri-add-line text-xl leading-none"></i>
+                    Icon Start
+                  </button>
+                  <button class="btn btn-outline-primary btn-text-icon">
+                    Icon End
+                    <i class="ri-add-line text-xl leading-none"></i>
+                  </button>
+                  <button class="btn btn-text-primary btn-text-icon">
+                    Icon End With Text 
+                    <i class="ri-add-line text-xl leading-none"></i>
+                  </button> 
+                </div>
+              </div>
+            </div>
+      
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Icon Button
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn-dark-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-primary-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-secondary-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-success-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-warning-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-error-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                  <button class="btn-info-icon-hover size-10">
+                    <i class="ri-folder-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Sizes
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-lg btn-primary">Large</button>
+                  <button class="btn btn-primary">Medium</button>
+                  <button class="btn btn-sm btn-primary">Small</button>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+          <div id="basic-tabs-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-2">
+            
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Contained
+                </div>
+
+                <div class="flex items-center gap-6 flex-wrap">
+
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-secondary disabled:bg-gray-200 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-secondary disabled:bg-gray-200 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>Loading...</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-secondary disabled:bg-gray-200 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                      <span>Start</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-secondary disabled:bg-gray-200 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>End</span>
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Outlined
+                </div>
+
+                <div class="flex items-center gap-6 flex-wrap">
+
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-outline-secondary border-gray-900/10 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-outline-secondary border-gray-900/10 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>Loading...</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-outline-secondary border-gray-900/10 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                      <span>Start</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-outline-secondary border-gray-900/10 min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>End</span>
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Text
+                </div>
+
+                <div class="flex items-center gap-6 flex-wrap">
+
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-text-secondary min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-text-secondary min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>Loading...</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-text-secondary min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                      <span>Start</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-6 flex-wrap">
+                    <button class="btn btn-text-secondary min-w-[75px] h-[38px] flex justify-center text-gray-400 items-center gap-2" disabled> 
+                      <span>End</span>
+                      <span class="animate-spin inline-block size-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="basic-tabs-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-3">
+            
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Default
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-primary btn-float-primary rounded-full shadow-z1 size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                  <button class="btn btn-secondary btn-float-secondary bg-gray-main shadow-z1 text-black rounded-full size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                  <button class="btn btn-warning btn-float-warning rounded-full shadow-z1 size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                  <button class="btn btn-error btn-float-error rounded-full shadow-z1 size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                  <button class="btn btn-success btn-float-success rounded-full shadow-z1 size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                  <button class="btn btn-dark btn-float-dark bg-gray-300 hover:bg-[#f5f5f5] text-black shadow-z1 rounded-full size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card mt-8">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Extended
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <button class="btn btn-lg btn-primary shadow-z1 btn-float-primary flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Primary</span>
+                  </button>
+                  <button class="btn btn-lg btn-secondary bg-gray-main text-black shadow-z1 btn-float-secondary flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Secondary</span>
+                  </button>
+                  <button class="btn btn-lg btn-warning shadow-z1 btn-float-warning flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Warning</span>
+                  </button>
+                  <button class="btn btn-lg btn-error shadow-z1 btn-float-error flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Error</span>
+                  </button>
+                  <button class="btn btn-lg btn-success shadow-z1 btn-float-success flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Success</span>
+                  </button>
+                  <button class="btn btn-lg btn-dark shadow-z1 bg-gray-300 hover:bg-[#f5f5f5] text-black btn-float-dark flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Default</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Default
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+
+                  <button class="btn btn-sm py-[2px] btn-primary shadow-z1 btn-float-primary flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-xl"></i>
+                    <span>Small</span>
+                  </button>
+
+                  <button class="btn btn-primary shadow-z1 btn-float-primary flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl leading-6"></i>
+                    <span>Medium</span>
+                  </button>
+                  
+                  <button class="btn btn-lg btn-primary shadow-z1 btn-float-primary flex items-center rounded-3xl gap-1 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                    <span>Large</span>
+                  </button>
+                  
+                  <button class="btn btn-primary btn-float-primary rounded-full flex justify-center items-center shadow-z1 size-10 font-normal">
+                    <i class="ri-add-line text-xl"></i>
+                  </button>
+
+                  <button class="btn btn-primary btn-float-primary rounded-full flex justify-center items-center shadow-z1 size-12 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+
+                  <button class="btn btn-primary btn-float-primary rounded-full flex justify-center items-center shadow-z1 size-14 font-normal">
+                    <i class="ri-add-line text-2xl"></i>
+                  </button>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div id="basic-tabs-4" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-4">
+            
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Contained
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-primary px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-primary px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-primary px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-success px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-success px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-success px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-warning px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-warning px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-warning px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-error px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-error px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-error px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Outlined
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-primary px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 border-gray-200 dark:text-white border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-error px-4 py-2 border rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-error px-4 py-2 border-t border-b">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-error px-4 py-2 border rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Text
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="border-0 btn-group-outline-primary px-4 py-2 rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-4 py-2 border-x">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-4 py-2 rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 dark:text-white rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 border-x border-gray-200 dark:text-white">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-2 text-gray-900 dark:text-white rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-success px-4 py-2 rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border-x">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 border-x">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-warning px-4 py-2 rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-error px-4 py-2 rounded-s-[10px]">
+                      One
+                    </button>
+                    <button type="button" class="btn-group-outline-error px-4 py-2 border-x">
+                      Two
+                    </button>
+                    <button type="button" class="btn-group-outline-error px-4 py-2 rounded-e-[10px]">
+                      Three
+                    </button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="card component-card">
+              <div class="card-body">
+                <div class="mb-4 card-title">
+                  Sizes
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-sm btn-group-primary px-2 py-1 border rounded-s-[10px]">
+                      Small
+                    </button>
+                    <button type="button" class="btn-sm btn-group-primary px-2 py-1 border-t border-b">
+                      Small
+                    </button>
+                    <button type="button" class="btn-sm btn-group-primary px-2 py-1 border rounded-e-[10px]">
+                      Small
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border rounded-s-[10px]">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border-t border-b">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border rounded-e-[10px]">
+                      Medium
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-success px-4 py-2 border rounded-s-[10px]">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-success px-4 py-2 border-t border-b">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-success px-4 py-2 border rounded-e-[10px]">
+                      Large
+                    </button>
+                  </div>
+                 
+                </div>
+                <div class="flex items-center gap-6 flex-wrap py-4">
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-primary px-2 py-1 border rounded-s-[10px]">
+                      Small
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-2 py-1 border-t border-b">
+                      Small
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-2 py-1 border rounded-e-[10px]">
+                      Small
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border rounded-s-[10px]">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border-t border-b">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 border-gray-200 dark:text-white border rounded-e-[10px]">
+                      Medium
+                    </button>
+                  </div>
+                  <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border rounded-s-[10px]">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border-t border-b">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border rounded-e-[10px]">
+                      Large
+                    </button>
+                  </div>
+                  
+                </div>
+                <div class="flex items-center gap-6 flex-wrap">
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="border-0 btn-group-outline-primary px-2 py-1 rounded-s-[10px]">
+                      Small
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-2 py-1 border-x">
+                      Small
+                    </button>
+                    <button type="button" class="btn-group-outline-primary px-2 py-1 rounded-e-[10px]">
+                      Small
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 dark:text-white rounded-s-[10px]">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 border-x border-gray-200 dark:text-white">
+                      Medium
+                    </button>
+                    <button type="button" class="btn-group-outline-secondary px-4 py-[6px] text-gray-900 dark:text-white rounded-e-[10px]">
+                      Medium
+                    </button>
+                  </div>
+                  <div class="inline-flex" role="group">
+                    <button type="button" class="btn-group-outline-success px-4 py-2 rounded-s-[10px]">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 border-x">
+                      Large
+                    </button>
+                    <button type="button" class="btn-group-outline-success px-4 py-2 rounded-e-[10px]">
+                      Large
+                    </button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+
+      
+
+    </div>
+   </div>
+{% endblock content %}

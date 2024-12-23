@@ -1,0 +1,65 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>Register | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="relative min-h-screen">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+    <div class="bg-primary-500 flex items-center justify-center h-full">
+      <div class="text-white p-8 sm:p-12 max-w-[700px]">
+        <img class="w-20" src={% static 'assets/images/logo/logo-white-svg.svg' %} alt="logo-white">
+        <h3 class="mt-6 text-4xl font-semibold max-w-[450px] leading-[54px]">Technology is best when it brings people together.</h3>
+        <hr class="border-primary-400 my-6 border-b-[1px]">
+        <div class="my-8">
+          <h6 class="text-xl font-semibold leading-[30px]">You are in a good company</h6>
+          <p class="text-sm leading-[21px]">A product is something a brand is something that is bought by the customer.</p>
+        </div>
+        <img src={% static 'assets/images/footer-brands.svg' %} alt="footer-brands">
+      </div>
+    </div>
+    <div class="bg-white dark:bg-gray-800 dark:text-white flex items-center justify-center h-full">
+      <div class="p-8 max-w-[550px]">
+        <h5 class="text-2xl md:text-3xl">Sign up for 14 days free trial</h5>
+        <p class="mt-2 mb-12 text-sm text-gray-500 dark:text-gray-400">No risk, no obligations, no credit-card required.</p>
+        <form x-data="{ 
+          email: '', 
+          emailError: false,
+          hasInteractedWithEmail: false,
+          validateField(field) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            this.emailError = !emailPattern.test(this.email);
+          },
+          validateAllFields() {
+              this.hasInteractedWithEmail = true;
+              this.validateField('email');
+          },
+          validateAndSubmit() {
+              this.validateAllFields();
+          }
+        }" @submit.prevent="validateAndSubmit">
+          <div>
+            <h6 class="text-16 font-semibold mb-2 leading-6">Register with your email id</h6>
+            <div>
+                <input type="email" id="emailInput" x-model="email" @blur="hasInteractedWithEmail = true; validateField('email')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': emailError && hasInteractedWithEmail, 'focus:!ring-error-500': emailError && hasInteractedWithEmail }" value="demo@example.com" placeholder="Enter your work email" >
+                <p x-show="emailError && hasInteractedWithEmail" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Email is Required!</p>
+            </div>
+            <button type="submit" ripple-opacity="0.3" ripple-color="white" class="btn ripple btn-primary w-full mt-6">Sign up via Email</button>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 leading-[21px]">
+              By signing up, you agree
+              <a href="#!" class="text-primary-500 font-medium">Terms of Service</a>
+              & your consent to receiving email communications from Sales handy.
+            </p>
+          </div>
+        </form>
+        <div class="py-8 flex items-center text-sm text-gray-500 before:flex-1 before:border-t before:border-gray-200 before:me-5 after:flex-1 after:border-t after:border-gray-200 after:ms-5 dark:text-gray-400 dark:before:border-gray-700 dark:after:border-gray-700">Already have an account?</div>
+        
+        <a href="login.html">
+          <button class="btn btn-primary btn-sm w-full bg-primary-50 text-primary-500 hover:bg-primary-50 hover:bg-opacity-60 dark:hover:bg-primary-500/5">Log In</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

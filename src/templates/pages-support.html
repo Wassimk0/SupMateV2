@@ -1,0 +1,997 @@
+{% extends "partials/page-layout.html" %} {% load static %}
+{% block title %}
+<title>Support page | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="pt-6">
+
+    <div class="card card-dark">
+      <div class="card-body">
+        <div class="flex flex-wrap flex-col md:flex-row items-center gap-6">
+          <div class="px-8">
+            <img src={% static 'assets/images/illustration/support.svg' %} alt="support">
+          </div>
+          <div class="flex-1">
+            <h6 class="text-xl leading-[30px] font-semibold mb-4">How Can We Help You?</h6>
+            <div class="relative">
+              <input type="text" class="form-input form-input-sm !ps-10 placeholder:opacity-50 !pe-3 !py-[11px] w-full max-w-[350px]" placeholder="Ask your questions">
+              <i class="absolute start-[14px] top-1/2 -translate-y-1/2 ri-search-line text-lg leading-none text-gray-500 dark:text-gray-100/50"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-between gap-4 w-full bg-gray-100 rounded-2xl p-4 transition dark:bg-gray-700 mt-8">
+          <nav class="flex flex-wrap gap-x-16 gap-y-4" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+            <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-primary-500 hs-tab-active:dark:text-primary-500 dark:hs-tab-active:bg-gray-600 rounded-lg py-2 px-4 font-semibold text-gray-500 leading-4  active" id="segment-item-1" aria-selected="true" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
+              OVERVIEW
+            </button>
+            <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-primary-500 hs-tab-active:dark:text-primary-500 dark:hs-tab-active:bg-gray-600 rounded-lg py-2 px-4 font-semibold text-gray-500 leading-4 " id="segment-item-2" aria-selected="false" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
+              TICKETS
+            </button>
+            <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-primary-500 hs-tab-active:dark:text-primary-500 dark:hs-tab-active:bg-gray-600 rounded-lg py-2 px-4 font-semibold text-gray-500 leading-4 " id="segment-item-3" aria-selected="false" data-hs-tab="#segment-3" aria-controls="segment-3" role="tab">
+              FAQ
+            </button>
+            <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-primary-500 hs-tab-active:dark:text-primary-500 dark:hs-tab-active:bg-gray-600 rounded-lg py-2 px-4 font-semibold text-gray-500 leading-4 " id="segment-item-4" aria-selected="false" data-hs-tab="#segment-4" aria-controls="segment-4" role="tab">
+              CONTACT
+            </button>
+          </nav>
+          <a href="pages-create-ticket.html" ripple-opacity="0.3" ripple-color="white" class="ripple btn btn-primary btn-sm text-13 leading-5 h-[30px]">Create Ticket</a>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="mt-3">
+
+      <div id="segment-1" role="tabpanel" aria-labelledby="segment-item-1">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+
+          <div class="card card-dark h-max">
+            <div class="card-body">
+              
+              <div class="flex justify-between items-center gap-8 mb-6">
+                <h6 class="text-lg font-semibold">Support Tickets</h6>
+                <div class="hs-dropdown relative inline-flex">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hs-accordion-group tw-accordion space-y-4" data-hs-accordion-always-open>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0 active" id="hs-basic-heading-support-ticket-one">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">What admin theme does?</p>
+                      <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">HTML 5</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-support-ticket-one" class="hs-accordion-content">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-support-ticket-two">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How Extended License works?</p>
+                      <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">ReactJS</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-support-ticket-two" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-support-ticket-three">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How to install on a local machine?</p>
+                      <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">ReactJS</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-support-ticket-three" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-support-ticket-four">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How long the license is valid?</p>
+                      <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">PHP</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-support-ticket-four" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="card card-dark h-max">
+            <div class="card-body">
+              
+              <div class="flex justify-between items-center gap-8 mb-6">
+                <h6 class="text-lg font-semibold">FAQs</h6>
+                <div class="hs-dropdown relative inline-flex">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hs-accordion-group tw-accordion space-y-4" data-hs-accordion-always-open>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0 active" id="hs-basic-heading-faqs-one">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">What admin theme does?</p>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-faqs-one" class="hs-accordion-content">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-faqs-two">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How Extended License works?</p>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-faqs-two" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-faqs-three">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How to install on a local machine?</p>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-faqs-three" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-faqs-four">
+                  <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                    <div class="flex items-center text-start">
+                      <p class="leading-[21px] font-medium">How long the license is valid?</p>
+                    </div>
+                    <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                    <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                  </button>
+                  <div id="hs-basic-collapse-faqs-four" class="hs-accordion-content hidden">
+                    <div class="mt-1 mb-6">
+                      <p>By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card card-dark">
+          <div class="card-body relative">
+            <h6 class="text-lg font-semibold mb-6">Products Documentations</h6>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4">
+              <ul class="list-disc pl-4 *:leading-6 *:h-[39px] *:pb-2 text-gray-500 text-16">
+                <li>Requirements</li>
+                <li>Install</li>
+                <li>Start</li>
+                <li>Build</li>
+                <li>Folder Structure</li>
+                <li>Color</li>
+                <li>Components</li>
+              </ul>
+              <ul class="list-disc pl-4 *:leading-6 *:h-[39px] *:pb-2 text-gray-500 text-16">
+                <li>Routing Implementation</li>
+                <li>Routing Files</li>
+                <li>Using Auth or Guest Guard</li>
+                <li>Navigations</li>
+                <li>Environment Variables</li>
+                <li>Mock server Note</li>
+                <li>How to remove mock server</li>
+              </ul>
+              <ul class="list-disc pl-4 *:leading-6 *:h-[39px] *:pb-2 text-gray-500 text-16">
+                <li>Fake API</li>
+                <li>Settings</li>
+              </ul>
+            </div>
+
+            <img class="absolute bottom-0 right-0 hidden sm:block" src={% static 'assets/images/illustration/support-2.svg' %} alt="illustration">
+          </div>
+        </div>
+
+      </div>
+      
+      <div id="segment-2" class="hidden" role="tabpanel" aria-labelledby="segment-item-2">
+        <div class="grid grid-cols-12 grid-rows-1 gap-x-6">
+          <div class="col-span-12 lg:col-span-9">
+            <div class="card card-dark">
+              <div class="card-body">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="relative w-full">
+                    <input type="text" class="form-input form-input-sm !ps-10 placeholder:opacity-50 !pe-3 !py-[11px] w-full max-w-[350px]" placeholder="Search">
+                    <i class="absolute start-[14px] top-1/2 -translate-y-1/2 ri-search-line text-lg leading-none text-gray-500 dark:text-gray-100/50"></i>
+                  </div>
+                  <div class="flex items-center gap-2">
+
+                    <div ripple-opacity="0.2" ripple-color="black" class="ripple text-sm leading-none cursor-pointer flex items-center gap-2 rounded-md bg-gray-50 dark:bg-gray-700 py-1 px-2 text-gray-500 dark:text-gray-400">
+                      <i class="ri-equalizer-line text-xl leading-none"></i>
+                      Filter
+                    </div>
+                    <div class="hs-dropdown relative inline-flex">
+                      <button ripple-opacity="0.1" ripple-color="black" id="hs-dropdown-with-dividers" type="button" class="ripple hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                        <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                      </button>
+                    
+                      <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                        <div class="p-2">
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Create
+                          </a>
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Edit
+                          </a>
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Delete
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <h6 class="text-lg leading-[27px] font-semibold mt-8 mb-4">All Tickets</h6>
+                <div class="hs-accordion-group tw-accordion space-y-4" data-hs-accordion-always-open>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0 active" id="hs-basic-heading-all-ticket-one">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How Extended License works?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">ReactJS</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-one" class="hs-accordion-content">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-two">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">What admin theme does?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">HTML 5</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-two" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-three">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How to install on a local machine?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">ReactJS</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-three" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-four">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How can I import Google fonts?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">Laravel</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-four" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-five">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How long the license is valid?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">PHP</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-five" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-six">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How many end projects I can build?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">Python</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-six" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-seven">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">Admin theme authentication to node.js / strapi backend</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">Laravel</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-seven" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-eight">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How many end projects I can build?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">HTML 5</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-eight" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-ticket-nine">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How to use Admin theme with Django Framework?</p>
+                        <span class="ms-2 bg-gray-100 dark:bg-gray-700 text-nowrap rounded text-xs font-medium text-gray-500 px-2 leading-[18px]">ReactJS</span>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-ticket-nine" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <nav class="pagination justify-center" x-data="{ 
+                    currentPage: 1, 
+                    totalPages: 5, // Set your total pages here
+                    get pages() {
+                      return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+                    },
+                    isDisabled(page) {
+                      return page === this.currentPage || (page === 1 && this.currentPage === 1) || (page === this.totalPages && this.currentPage === this.totalPages);
+                    }
+                  }">
+                    <button 
+                      type="button" 
+                      ripple-opacity="0.1"
+                      ripple-color="black"
+                      class="page-item ripple !rounded-lg" 
+                      :class="{ 'opacity-[0.38] pointer-events-none': currentPage === 1 }" 
+                      @click="if (currentPage > 1) currentPage--"
+                    >
+                      <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+                    </button>
+                    <template x-for="page in pages" :key="page">
+                      <button 
+                        type="button" 
+                        ripple-opacity="0.3"
+                        ripple-color="white"
+                        class="page-item ripple !rounded-lg" 
+                        :class="{ 'bg-primary-500 text-white border-primary-500 hover:!bg-primary-600': page === currentPage }" 
+                        @click="currentPage = page"
+                      >
+                        <span x-text="page"></span>
+                      </button>
+                    </template>
+                    <button 
+                      type="button" 
+                      ripple-opacity="0.1"
+                      ripple-color="black"
+                      class="page-item ripple !rounded-lg" 
+                      :class="{ 'opacity-[0.38] pointer-events-none': currentPage === totalPages }" 
+                      @click="if (currentPage < totalPages) currentPage++"
+                    >
+                      <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+                    </button>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="card card-dark">
+              <div class="card-body">
+                <h6 class="text-lg leading-[27px] font-semibold mb-6">More Channel</h6>
+                <div class="flex flex-col space-y-4">
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/twitter-round.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Latest News</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/github.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">GitHub Access</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/linkedin.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Social Media</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/instagram-round.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Social Media</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card card-dark">
+              <div class="card-body">
+                <h6 class="text-lg leading-[27px] font-semibold mb-6">Documentations</h6>
+                <div class="flex flex-col space-y-4">
+                  <ul class="*:leading-[21px] font-medium space-y-5 text-gray-500 text-sm *:flex *:items-center *:gap-2">
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Quick Start
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Folder Structure
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Color
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Components
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Routing
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Navigations
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Environment Variables
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Mock Axios Adapter
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Setting
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="segment-3" class="hidden" role="tabpanel" aria-labelledby="segment-item-3">
+        <div class="grid grid-cols-12 grid-rows-1 gap-x-6">
+          <div class="col-span-12 lg:col-span-9">
+            <div class="card card-dark">
+              <div class="card-body">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="relative w-full">
+                    <input type="text" class="form-input form-input-sm !ps-10 placeholder:opacity-50 !pe-3 !py-[11px] w-full max-w-[350px]" placeholder="Search">
+                    <i class="absolute start-[14px] top-1/2 -translate-y-1/2 ri-search-line text-lg leading-none text-gray-500 dark:text-gray-100/50"></i>
+                  </div>
+                  <div class="flex items-center gap-2">
+
+                    <div ripple-opacity="0.2" ripple-color="black" class="ripple text-sm leading-none cursor-pointer flex items-center gap-2 rounded-md bg-gray-50 dark:bg-gray-700 py-1 px-2 text-gray-500 dark:text-gray-400">
+                      <i class="ri-equalizer-line text-xl leading-none"></i>
+                      Filter
+                    </div>
+                    <div class="hs-dropdown relative inline-flex">
+                      <button ripple-opacity="0.1" ripple-color="black" id="hs-dropdown-with-dividers" type="button" class="ripple hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                        <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                      </button>
+                    
+                      <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                        <div class="p-2">
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Create
+                          </a>
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Edit
+                          </a>
+                          <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                            Delete
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <h6 class="text-lg leading-[27px] font-semibold mt-8 mb-4">All FAQs</h6>
+                <div class="hs-accordion-group tw-accordion space-y-4" data-hs-accordion-always-open>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0 active" id="hs-basic-heading-all-faqs-one">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How Extended License works?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-one" class="hs-accordion-content">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-two">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">What admin theme does?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-two" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-three">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How to install on a local machine?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-three" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-four">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How can I import Google fonts?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-four" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-five">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How long the license is valid?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-five" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-six">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How many end projects I can build?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-six" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-seven">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">Admin theme authentication to node.js / strapi backend</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-seven" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-eight">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How many end projects I can build?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-eight" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hs-accordion !border !border-gray-100 dark:!border-gray-700 !py-0" id="hs-basic-heading-all-faqs-nine">
+                    <button class="hs-accordion-toggle py-3 hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100 !leading-[24px]">
+                      <div class="flex items-center text-start">
+                        <p class="leading-[21px] font-medium">How to use Admin theme with Django Framework?</p>
+                      </div>
+                      <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                    </button>
+                    <div id="hs-basic-collapse-all-faqs-nine" class="hs-accordion-content hidden">
+                      <div class="mt-1 mb-6">
+                        <p>By Uko to save tons and more to time money projects are listed and outstanding. By Uko to save tons and more to time money projects are listed and outstanding.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <nav class="pagination justify-center" x-data="{ 
+                    currentPage: 1, 
+                    totalPages: 5, // Set your total pages here
+                    get pages() {
+                      return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+                    },
+                    isDisabled(page) {
+                      return page === this.currentPage || (page === 1 && this.currentPage === 1) || (page === this.totalPages && this.currentPage === this.totalPages);
+                    }
+                  }">
+                    <button 
+                      type="button" 
+                      ripple-opacity="0.1"
+                      ripple-color="black"
+                      class="page-item ripple !rounded-lg" 
+                      :class="{ 'opacity-[0.38] pointer-events-none': currentPage === 1 }" 
+                      @click="if (currentPage > 1) currentPage--"
+                    >
+                      <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+                    </button>
+                    <template x-for="page in pages" :key="page">
+                      <button 
+                        type="button" 
+                        ripple-opacity="0.3"
+                        ripple-color="white"
+                        class="page-item ripple !rounded-lg" 
+                        :class="{ 'bg-primary-500 text-white border-primary-500 hover:!bg-primary-600': page === currentPage }" 
+                        @click="currentPage = page"
+                      >
+                        <span x-text="page"></span>
+                      </button>
+                    </template>
+                    <button 
+                      type="button" 
+                      ripple-opacity="0.1"
+                      ripple-color="black"
+                      class="page-item ripple !rounded-lg" 
+                      :class="{ 'opacity-[0.38] pointer-events-none': currentPage === totalPages }" 
+                      @click="if (currentPage < totalPages) currentPage++"
+                    >
+                      <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+                    </button>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="card card-dark">
+              <div class="card-body">
+                <h6 class="text-lg leading-[27px] font-semibold mb-6">More Channel</h6>
+                <div class="flex flex-col space-y-4">
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/twitter-round.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Latest News</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/github.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">GitHub Access</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/linkedin.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Social Media</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <img class="size-6" src={% static 'assets/images/social-media/instagram-round.svg' %} alt="social-media">
+                    <div>
+                      <h6 class="text-16 leading-6">Social Media</h6>
+                      <p class="text-gray-500 dark:text-gray-400">
+                        Follow us at 
+                        <a href="#!" class="text-primary-500">UI-Lib</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card card-dark">
+              <div class="card-body">
+                <h6 class="text-lg leading-[27px] font-semibold mb-6">Documentations</h6>
+                <div class="flex flex-col space-y-4">
+                  <ul class="*:leading-[21px] font-medium space-y-5 text-gray-500 text-sm *:flex *:items-center *:gap-2">
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Quick Start
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Folder Structure
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Color
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Components
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Routing
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Navigations
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Environment Variables
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Mock Axios Adapter
+                    </li>
+                    <li>
+                      <span class="size-2 rounded-full bg-gray-300"></span>
+                      Setting
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="segment-4" class="hidden" role="tabpanel" aria-labelledby="segment-item-4">
+        <div class="card card-dark">
+          <div class="card-body">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h6 class="text-lg font-semibold mb-8">Send us Email</h6>
+
+                <form x-data="{ 
+                  name: '', 
+                  email: '', 
+                  subject: '', 
+                  nameError: false,
+                  emailError: false,
+                  subjectError: false,
+                  hasInteractedWithName: false,
+                  hasInteractedWithEmail: false,
+                  hasInteractedWithSubject: false,
+                  validateField(field) {
+                      if (field === 'name') {
+                          this.nameError = this.name.trim() === '';
+                      } else if (field === 'email') {
+                          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                          this.emailError = !emailPattern.test(this.email);
+                      } else if (field === 'subject') {
+                          this.subjectError = this.subject.trim() === '';
+                      }
+                  },
+                  validateAllFields() {
+                      this.hasInteractedWithName = true;
+                      this.hasInteractedWithEmail = true;
+                      this.hasInteractedWithSubject = true;
+  
+                      this.validateField('name');
+                      this.validateField('email');
+                      this.validateField('subject');
+                  },
+                  validateAndSubmit() {
+                      this.validateAllFields();
+  
+                      if (!this.nameError && !this.emailError && !this.subjectError) {
+                          // Submit the form if no errors
+                          // e.g., this.$refs.form.submit(); or perform your submit logic here
+                      }
+                  }
+                }" @submit.prevent="validateAndSubmit" class="space-y-6">
+                  <div>
+                      <input type="text" id="nameInput" x-model="name" @blur="hasInteractedWithName = true; validateField('name')"  :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': nameError && hasInteractedWithName, 'focus:!ring-error-500': nameError && hasInteractedWithName }" placeholder="Name*" >
+                      <p x-show="nameError && hasInteractedWithName" class="mt-1 px-3.5 text-xs text-error-500 leading-5">First Name is Required!</p>
+                  </div>
+                  <div>
+                      <input type="text" id="emailInput" x-model="email" @blur="hasInteractedWithEmail = true; validateField('email')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': emailError && hasInteractedWithEmail, 'focus:!ring-error-500': emailError && hasInteractedWithEmail }" placeholder="Email*" >
+                      <p x-show="emailError && hasInteractedWithEmail" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Email is Required!</p>
+                  </div>
+                  <div>
+                      <input type="text" id="subjectInput" x-model="subject" @blur="hasInteractedWithSubject = true; validateField('subject')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': subjectError && hasInteractedWithSubject, 'focus:!ring-error-500': subjectError && hasInteractedWithSubject }" placeholder="Subject*" >
+                      <p x-show="subjectError && hasInteractedWithSubject" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Subject is Required!</p>
+                  </div>
+                  <textarea rows="5" type="text" class="form-input form-input-sm !py-[11px] !pe-4 placeholder:opacity-50" placeholder="Message" ></textarea>
+              
+                  <button type="submit" ripple-opacity="0.3" ripple-color="white" class="btn ripple btn-primary min-w-32 mt-6">Submit</button>
+              </form>
+
+              </div>
+              <div class="card card-dark h-max">
+                <div class="card-body !p-2">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.7375391255605!2d91.85643162915974!3d24.906932698467063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375055a8dba315db%3A0xfed40d384aacd295!2sUI%20Lib!5e0!3m2!1sen!2sbd!4v1676372525624!5m2!1sen!2sbd" loading="lazy" allowfullscreen width="100%" height="400" allow="fullscreen"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-700 flex items-center justify-center mt-6 py-6 rounded-2xl flex-col">
+              <h6 class="text-16 leading-6 font-semibold">Follow More</h6>
+              <div class="flex items-center text-gray-500 dark:text-gray-400">
+                <button ripple-opacity="0.1" ripple-color="black" class="ripple btn-gray-icon-hover size-10">
+                    <i class="ri-facebook-fill text-2xl"></i>
+                </button>
+                <button ripple-opacity="0.1" ripple-color="black" class="ripple btn-gray-icon-hover size-10">
+                    <i class="ri-twitter-fill text-2xl"></i>
+                </button>
+                <button ripple-opacity="0.1" ripple-color="black" class="ripple btn-gray-icon-hover size-10">
+                    <i class="ri-linkedin-box-fill text-2xl"></i>
+                </button>
+                <button ripple-opacity="0.1" ripple-color="black" class="ripple btn-gray-icon-hover size-10">
+                    <i class="ri-github-fill text-2xl"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  
+  </div>
+
+{% endblock content %}

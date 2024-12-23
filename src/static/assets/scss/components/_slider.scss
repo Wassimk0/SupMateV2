@@ -1,0 +1,83 @@
+.noUi-target {
+    &.slider {
+        @apply shadow-none border-0;
+    }
+    &.noUi-horizontal {
+        @apply h-1;
+    }
+    .noUi-base {
+        @apply bg-primary-200 shadow-none rounded-full;
+        .noUi-handle {
+            @apply bg-primary-500 size-5 -top-2 border-0 rounded-full shadow-none after:hidden before:hidden cursor-pointer;
+            .noUi-tooltip {
+                @apply bg-gray-600 text-white border-0 rounded-lg -top-9 -left-[12px] py-1 px-4 text-sm font-medium leading-5 after:absolute after:bg-gray-600 after:size-3 after:left-1/4 after:translate-x-1/2 after:rotate-45 after:-bottom-[5px];
+            }
+        }
+        .noUi-origin {
+            .noUi-tooltip {
+                @apply -top-9 -left-4 bottom-full mb-2;
+            }
+            &.noUi-connect {
+                @apply bg-primary-500;
+            }
+            &.noUi-background {
+                @apply bg-primary-200 shadow-none;
+            }
+        }
+    }
+    &.disabled {
+        @apply pointer-events-none;
+        .noUi-base {
+            @apply bg-gray-400;
+            .noUi-handle {
+                @apply bg-gray-400;
+            }
+            .noUi-origin {
+                @apply bg-gray-200;
+            }
+        } 
+    }
+    &.primary {
+        .noUi-base {
+            @apply bg-primary-500;
+            .noUi-handle {
+                @apply bg-primary-500;
+            }
+            .noUi-origin {
+                @apply bg-primary-200;
+            }
+        } 
+    }
+    &.smallSizes {
+        &.noUi-horizontal {
+            @apply h-0.5;
+        }
+        .noUi-base {
+            .noUi-handle {
+                @apply size-3 -top-[5px] -left-[5px];
+            }
+        }
+    }
+    .noUi-pips {
+        @apply p-0 -mt-[3px] z-10;
+        .noUi-marker-horizontal {
+            &.noUi-marker-large {
+                @apply h-0.5 bg-primary-500;
+            }
+            &.noUi-value {
+                @apply text-xs font-medium text-gray-500 leading-[17px];
+            }
+        }
+    }
+}
+
+.gallery-thumbs {
+    .swiper-wrapper {
+        .swiper-slide {
+            @apply opacity-50;
+            &.swiper-slide-thumb-active {
+                @apply opacity-100 relative before:absolute before:w-full before:h-1 before:bg-primary-500 before:-bottom-1.5;
+            }
+        }
+    }
+}

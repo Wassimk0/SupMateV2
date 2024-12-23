@@ -1,0 +1,1865 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+  <title>UI User List | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="mt-6">
+    <div class="card card-dark">
+      <div class="p-4">
+        <div class="flex justify-between items-center flex-wrap gap-4 w-full">
+          <div class="flex justify-between w-full md:w-auto">
+            <div class="flex gap-2 items-center">
+              <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md w-10">
+                <svg class="fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M14,9.5A2.5,2.5,0,1,1,16.5,12,2.5,2.5,0,0,1,14,9.5ZM9,11A3,3,0,1,0,6,8,3,3,0,0,0,9,11Zm5.45,3.66A3,3,0,0,0,11.76,13H6.24a3,3,0,0,0-2.69,1.66L2.11,17.55A1,1,0,0,0,3,19H15a1,1,0,0,0,.89-1.45Zm7.44,2.89-.95-1.9A3,3,0,0,0,18.26,14H16.35l1.33,2.66A3,3,0,0,1,17.83,19H21A1,1,0,0,0,21.89,17.55Z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-16 font-normal text-black dark:text-white">Users</p>
+              </div>
+            </div>
+            <div class="md:hidden">
+              <a href="add-user.html" class="btn btn-primary btn-text-icon"> <i class="ri-add-line text-xl leading-none"></i> Add New User </a>
+            </div>
+          </div>
+          <div class="tabs overflow-hidden">
+            <nav class="nav flex !flex-nowrap overflow-x-auto md:justify-center border-none" aria-label="Tabs" role="tablist">
+              <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500  dark:text-gray-400 active" id="basic-tabs-item-11" data-hs-tab="#basic-tabs-11" aria-controls="basic-tabs-11" role="tab">
+                All Users
+              </button>
+              <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-22" data-hs-tab="#basic-tabs-22" aria-controls="basic-tabs-22" role="tab">
+                Editor
+              </button>
+              <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-33" data-hs-tab="#basic-tabs-33" aria-controls="basic-tabs-33" role="tab">
+                Contributor
+              </button>
+              <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-44" data-hs-tab="#basic-tabs-44" aria-controls="basic-tabs-44" role="tab">
+                Administrator
+              </button>
+              <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-55" data-hs-tab="#basic-tabs-55" aria-controls="basic-tabs-55" role="tab">
+                Subscriber
+              </button>
+            </nav>
+          </div>
+          <div class="hidden md:block">
+            <a href="add-user.html" class="btn btn-primary btn-text-icon"> <i class="ri-add-line text-xl leading-none"></i> Add New User </a>
+          </div>
+        </div>
+        <!-- search -->
+        <div class="flex justify-between items-center pt-6 pb-2 gap-2">
+          <div class="relative w-auto md:w-[400px]">
+            <div class="absolute top-2.5 flex items-center ps-4 pointer-events-none ">
+              <svg class="w-6 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1dkl02v fill-gray-400" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M20.85,19.44l-4-4a2.44,2.44,0,0,0-.43-.35l-1-.69h0A7,7,0,1,0,10,17a7,7,0,0,0,4.37-1.53h0l.75,1a2.6,2.6,0,0,0,.3.36l4,4a.5.5,0,0,0,.71,0l.7-.7A.5.5,0,0,0,20.85,19.44ZM10,15a5,5,0,1,1,5-5A5,5,0,0,1,10,15Z"></path>
+              </svg>
+            </div>
+            <input type="search" id="default-search" class="block w-full py-2.5 ps-12 pr-4 text-sm text-gray-900 border border-gray-200 focus:ring-0 focus:outline-none rounded-md placeholder:font-light bg-white placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:border-primary-500 dark:focus:border-primary-500 hover:border-black dark:hover:border-white" placeholder="Search...." required="">
+          </div>
+          <div class="tabs flex flex-shrink-0">
+            <nav class="nav border-none !flex flex-shrink-0 !gap-6 md:!gap-8" aria-label="Tabs" role="tablist" x-data="{ activeTab: 'tab1' }">
+              <a href="user-list.html" class="rtl:-ml-4 nav-item hs-tab-active:font-semibold hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                <svg :class="{ 'fill-primary-500 ': activeTab === 'tab1' }" class="w-6 fill-gray-400 dark:text-dark-15" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M21,5.5v1a.5.5,0,0,1-.5.5H9.5A.5.5,0,0,1,9,6.5v-1A.5.5,0,0,1,9.5,5h11A.5.5,0,0,1,21,5.5ZM20.5,11H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,11Zm0,6H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,17ZM5,4A2,2,0,1,0,7,6,2,2,0,0,0,5,4Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,16Z"></path>
+                </svg>
+              </a>
+              <a href="user-grid.html" class="ltr:-ml-4 nav-item hs-tab-active:font-semiboldhs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                <svg :class="{ 'fill-primary-500 ': activeTab === 'tab2' }" class="w-6 fill-gray-400 dark:text-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M8,4.5v3a.5.5,0,0,1-.5.5h-3A.5.5,0,0,1,4,7.5v-3A.5.5,0,0,1,4.5,4h3A.5.5,0,0,1,8,4.5ZM13.5,4h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,4Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,4Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,10Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,16Z"></path>
+                </svg>
+              </a>
+
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content">
+        <div id="basic-tabs-11"  role="tabpanel" aria-labelledby="basic-tabs-item-11">
+          <div class="card ">
+            <div id="user_list_table_tabs-11">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="user_list_table-11" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 ">
+                        <div class="flex gap-1.5 items-center dark:text-white">
+                          <span class="font-semibold">Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700"><p class="dark:text-white font-semibold">Email</p></th>
+                      <th class="bg-gray-100 dark:bg-gray-700"><p class="dark:text-white font-semibold">Company</p></th>
+                      <th class="bg-gray-100 dark:bg-gray-700"><p class="dark:text-white font-semibold">Role</p></th>
+                      <th class="bg-gray-100 dark:bg-gray-700"> <p class="dark:text-white font-semibold">Actions</p> </th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/1.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Amanda Montgomery </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #CEqmLNf9WjM </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200">montgomery@ya.com</p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Meta </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Subscriber </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/s-1.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Chelsey Dietrich </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #DosSKpjRxOP </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> lucio_Hettinger@annie.ca </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Keebler LLC </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Subscriber </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clementine Bauch </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #VACOOmoeWyxP </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> athan@yesenia.net </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Jacobson </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clementine Bauch </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #akaBZL5m5Lj </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> athan@yesenia.net </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Jacobson </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-6.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clifford Caldwell </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #66CoRSh1eQD </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> clifford-c@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Disney </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-6.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clifford Caldwell </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #66CoRSh1eQD </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-gray-500 dark:text-gray-200"> clifford-c@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Disney </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td>
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                <div class="flex items-center md:justify-end gap-2">
+                  <div class="flex items-center">
+                    <label for="custom_length">Rows per page:</label>
+  
+                    <!-- Select -->
+                    <select id="custom_length" data-hs-select='{
+                              "placeholder": "Select option...",
+                              "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                              "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                              "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                              "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                              "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                          }' class="hidden">
+                      <option value="5" selected>5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                    </select>
+                  </div>
+                  <div class="inline-block me-7">
+                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                  </div>
+                  <div class="custom-pagination-controls">
+                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <span id="custom_page_info"></span>
+                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="basic-tabs-22" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-22">
+          <div class="card ">
+            <div id="user_list_table_tabs-22">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="user_list_table-22" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">
+                        <div class="flex gap-1.5 items-center">
+                          <span>Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Email</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Company</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Role</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Leanne Graham </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #_aCdZoo2xSO </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	sincere@april.biz </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> Crona </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-1.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #fkki_JgjwEO </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> Google Inc </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-2.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #q6cBWeVZIGd </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> Seek </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-3.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #ppgxPwRuh3S </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> SRB Themes </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-4.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #7ZmGReIxe_L </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> SRB Themes </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-3.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #ppgxPwRuh3S </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> SRB Themes </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-4.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Zachary Gomez </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #7ZmGReIxe_L </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> 	zachary-gomez@gmail.com </p>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> SRB Themes </p>
+                      </td>
+                      <td class="py-0"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Editor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                  <div class="flex items-center md:justify-end gap-2">
+                    <div class="flex items-center">
+                      <label for="custom_length">Rows per page:</label>
+    
+                      <!-- Select -->
+                      <select id="custom_length" data-hs-select='{
+                                "placeholder": "Select option...",
+                                "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                                "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                                "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                                "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                                "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                                "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                            }' class="hidden">
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                      </select>
+                    </div>
+                    <div class="inline-block me-7">
+                      <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                    </div>
+                    <div class="custom-pagination-controls">
+                      <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                        <i class="ri-arrow-left-s-line"></i>
+                      </button>
+                      <span id="custom_page_info"></span>
+                      <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                        <i class="ri-arrow-right-s-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="basic-tabs-33" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-33">
+          <div class="card ">
+            <div id="user_list_table_tabs-33">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="user_list_table-33" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">
+                        <div class="flex gap-1.5 items-center">
+                          <span>Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Email</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Company</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Role</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clementine Bauch </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #VACOOmoeWyxP </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> athan@yesenia.net </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Jacobson </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clementine Bauch </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #akaBZL5m5Lj </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> athan@yesenia.net </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Jacobson </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-6.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Clifford Caldwell </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #66CoRSh1eQD </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> clifford-c@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Disney </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-8.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Richard Gregory </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #5tctW0dht06 </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> gregory@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Microsoft </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/c-4.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Ervin Howell </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #CGTU-mk0xgo </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> #CGTU-mk0xgo </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Deckow-Crist </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Contributor </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                <div class="flex items-center justify-end gap-2">
+                  <div class="flex items-center">
+                    <label for="custom_length">Rows per page:</label>
+  
+                    <!-- Select -->
+                    <select id="custom_length" data-hs-select='{
+                              "placeholder": "Select option...",
+                              "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                              "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                              "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                              "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                              "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                          }' class="hidden">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                    </select>
+                  </div>
+                  <div class="inline-block me-7">
+                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                  </div>
+                  <div class="custom-pagination-controls">
+                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <span id="custom_page_info"></span>
+                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="basic-tabs-44"  class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-44">
+          <div class="card ">
+            <div id="user_list_table_tabs-44">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="user_list_table-44" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">
+                        <div class="flex gap-1.5 items-center">
+                          <span>Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Email</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Company</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Role</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Richard Gregory </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #hJdMmi-XW-b </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> gregory@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Alibaba </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Administrator </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-3.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Lester Holland </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #WiiFzcbNyV5 </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> #WiiFzcbNyV5 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> #WiiFzcbNyV5 </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Administrator </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/e-5.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Leanne Graham </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #AJ_S8rp1CS7 </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> sincere@april.biz </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Crona </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Administrator </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                <div class="flex items-center justify-end gap-2">
+                  <div class="flex items-center">
+                    <label for="custom_length">Rows per page:</label>
+  
+                    <!-- Select -->
+                    <select id="custom_length" data-hs-select='{
+                              "placeholder": "Select option...",
+                              "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                              "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                              "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                              "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                              "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                          }' class="hidden">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                    </select>
+                  </div>
+                  <div class="inline-block me-7">
+                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                  </div>
+                  <div class="custom-pagination-controls">
+                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <span id="custom_page_info"></span>
+                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="basic-tabs-55" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-55">
+          <div class="card ">
+            <div id="user_list_table_tabs-55">
+              <div class="main_delete_selected hidden">
+                <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+                  <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+                  <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                    <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="responsive-table">
+                <table id="user_list_table-55" class="table !w-full">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white" style="width: 48px;">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">
+                        <div class="flex gap-1.5 items-center">
+                          <span>Name</span>
+                          <svg class="w-4 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-15c4iet" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+                          </svg>
+                        </div>
+                      </th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Email</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Company</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Role</th>
+                      <th class="bg-gray-100 dark:bg-gray-700 dark:text-white font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="dark:bg-gray-800">
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/s-2.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Patricia Lebsack </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #RzL-T4dq2LY </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> julianne.OConner@kory.org </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> julianne.OConner@kory.org </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Subscriber </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-7.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Lester Holland </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #9PaoctbP_Sn </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200"> lester75@gmail.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Squarespace </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Subscriber </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/s-1.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Chelsey Dietrich </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #DosSKpjRxOP </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200">lucio_Hettinger@annie.ca </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Keebler LLC </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Keebler LLC </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-4.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Max Allison </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #kblkUheZKBw </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200">max-allison@pochta.io </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Linkedin </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200"> Subscriber </p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-0">
+                        <div class="btn-primary-icon-hover size-9">
+                          <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <div class="flex gap-2 py-4 w-max">
+                          <div class="flex-shrink-0">
+                            <img src={% static 'assets/images/avatar/g-2.svg' %} class="w-10" alt="">
+                          </div>
+                          <div>
+                            <h4 class="border-b border-transparent hover:border-black text-sm font-medium text-gray-900 dark:text-gray-200"> Amanda Montgomery </h4>
+                            <p class="leading-5 text-13 text-gray-500 dark:text-gray-200"> #CEqmLNf9WjM </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-0">
+                        <p class="text-gray-500 dark:text-gray-200">montgomery@ya.com </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200">
+                        <p class="text-gray-500 dark:text-gray-200"> Meta </p>
+                      </td>
+                      <td class="text-secondary-main dark:text-gray-200"> 
+                        <p class="text-gray-500 dark:text-gray-200">Subscriber</p>
+                      </td>
+                      <td class="py-0">
+                        <div class="hs-dropdown relative inline-flex">
+                          <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-10">
+                            <i class="ri-more-2-fill text-gray-400"></i>
+                          </button>
+                          <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                            <div class="p-2">
+                              <a class="dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                  </svg>
+                                  <span>Edit</span>
+                                </div>
+                              </a>
+                              <a class="delete_selected dropdown-item" href="#!">
+                                <div class="flex gap-2">
+                                  <svg class="w-5 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                                  </svg>
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="p-4  dark:bg-gray-800">
+                <div class="flex items-center justify-end gap-2">
+                  <div class="flex items-center">
+                    <label for="custom_length">Rows per page:</label>
+  
+                    <!-- Select -->
+                    <select id="custom_length" data-hs-select='{
+                              "placeholder": "Select option...",
+                              "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                              "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                              "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                              "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                              "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                          }' class="hidden">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                    </select>
+                  </div>
+                  <div class="inline-block me-7">
+                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                  </div>
+                  <div class="custom-pagination-controls">
+                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <span id="custom_page_info"></span>
+                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/table-user-list.js' %}></script>
+{% endblock js %}

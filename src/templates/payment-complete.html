@@ -1,0 +1,43 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Payment Complete | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="card card-dark">
+    <div class="p-8 text-center">
+      <div>
+        <img src={% static 'assets/images/products/payment.svg' %} class="mx-auto" alt="">
+      </div>
+      <div class="mt-8 text-16  xl:max-w-[440px] mx-auto">
+        <div class="border-b dark:border-gray-600 pb-6 mb-6">
+          <p class="text-3xl font-semibold">Thanks for placing order 🎉</p>
+          <p class="text-primary-500">#AOSIDY2</p>
+          <p>We will contact you soon <br />
+            when the shipment arrives</p>
+        </div>
+        <div>
+          <div class="flex gap-4">
+            <button class="btn btn-outline-secondary flex gap-2 hover:border-gray-50 items-center dark:bg-transparent border-gray-200  hover:bg-transparent dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white">
+              <span>
+                <svg class="w-5 dark:fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M8.22,12.72A.75.75,0,0,1,8,12.19v-.38a.77.77,0,0,1,.22-.53l5.14-5.13a.5.5,0,0,1,.71,0l.71.71a.49.49,0,0,1,0,.7L10.33,12l4.45,4.44a.5.5,0,0,1,0,.71l-.71.7a.5.5,0,0,1-.71,0Z"></path>
+                </svg>
+              </span>
+              Continue Shopping
+            </button>
+            <button ripple-opacity="0.3" class="btn ripple btn-success flex items-center gap-2">
+              <span>
+                <svg class="fill-white w-5 items-center MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                </svg>
+              </span>
+              Download as PDF<div class="rippleContainer"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

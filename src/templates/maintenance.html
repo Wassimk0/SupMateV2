@@ -1,0 +1,20 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>Maintenance | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="container py-12">
+  <div class="text-center">
+    <h2 class="text-[42px] sm:text-[52px] font-bold leading-[63px] dark:text-white sm:leading-[78px]">Maintenance underway</h2>
+    <p class="text-lg leading-[27px] text-gray-500 dark:text-gray-400 mt-1">
+      QuickFrame is Undergoing maintenance for future growth.
+    </p>
+    <div class="py-16 max-w-[600px] mx-auto">
+      <img class="w-full" src={% static 'assets/images/pages/maintenance.svg' %} alt="maintenance">
+    </div>
+    <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px] mt-2">Go Home</button>
+  </div>
+</div>
+
+{% endblock content %}

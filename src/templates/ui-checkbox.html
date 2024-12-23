@@ -1,0 +1,169 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Checkbox | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Checkbox" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20 space-y-12">
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Basic
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap">
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01">
+            </div>
+            
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" checked>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="indeterminate size-[18px] text-primary-500 pointer-events-none" id="hs-default-checkbox-12" checked>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-03" id="hs-default-checkbox-03" disabled>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[18px] text-gray-500" name="hs-default-checkbox-04" id="hs-default-checkbox-04" disabled checked>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="indeterminate size-[18px] text-primary-500" id="hs-default-checkbox-13" checked disabled>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Colors
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap">
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="text-primary-500" name="hs-default-checkbox-05" id="hs-default-checkbox-05" checked>
+            </div>
+            
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="text-gray-900 dark:text-gray-400" name="hs-default-checkbox-06" id="hs-default-checkbox-06" checked>
+            </div>
+            
+            <div class="btn-success-icon-hover size-9">
+              <input type="checkbox" class="text-success-500" name="hs-default-checkbox-07" id="hs-default-checkbox-07" checked>
+            </div>
+            
+            <div class="btn-warning-icon-hover size-9">
+              <input type="checkbox" class="text-warning-500" name="hs-default-checkbox-08" id="hs-default-checkbox-08" checked>
+            </div>
+            
+            <div class="btn-error-icon-hover size-9">
+              <input type="checkbox" class="text-error-500" name="hs-default-checkbox-09" id="hs-default-checkbox-09" checked>
+            </div>
+            
+            <div class="btn-info-icon-hover size-9">
+              <input type="checkbox" class="text-info-500" name="hs-default-checkbox-10" id="hs-default-checkbox-10" checked>
+            </div>
+
+            <div class="btn-secondary-icon-hover size-9">
+              <input type="checkbox" class="text-gray-500" name="hs-default-checkbox-11" id="hs-default-checkbox-11" checked>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Label
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap">
+
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-9">
+                <input type="checkbox" class="text-primary-500" name="hs-default-checkbox-12" id="hs-default-checkbox-12" checked>
+              </div>
+              <label for="hs-default-checkbox-01" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Primary</label>
+            </div>
+
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-9">
+                <input type="checkbox" class="text-gray-900 dark:text-gray-400" name="hs-default-checkbox-13" id="hs-default-checkbox-13" checked>
+              </div>
+              <label for="hs-default-checkbox-02" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Secondary</label>
+            </div>
+
+            <div class="flex items-center">
+              <div class="btn-success-icon-hover size-9">
+                <input type="checkbox" class="text-success-500" name="hs-default-checkbox-14" id="hs-default-checkbox-14" checked>
+              </div>
+              <label for="hs-default-checkbox-03" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Success</label>
+            </div>
+
+            <div class="flex items-center">
+              <div class="btn-warning-icon-hover size-9">
+                <input type="checkbox" class="text-warning-500" name="hs-default-checkbox-15" id="hs-default-checkbox-15" checked>
+              </div>
+              <label for="hs-default-checkbox-04" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Warning</label>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Sizes & Custom Icon
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap">
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[15px] text-primary-500" name="hs-default-checkbox-16" id="hs-default-checkbox-16" checked>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-17" id="hs-default-checkbox-17" checked>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <div class="img-checkbox heart flex">
+                <input type="checkbox" id="heart1" checked />
+                <label class="size-6" for="heart1"></label>
+              </div>
+            </div>
+
+            <div class="btn-primary-icon-hover size-9">
+              <div class="img-checkbox bookmark flex">
+                <input type="checkbox" id="bookmark1" checked />
+                <label class="size-6" for="bookmark1"></label>
+              </div>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}

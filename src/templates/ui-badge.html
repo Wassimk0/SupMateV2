@@ -1,0 +1,160 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Badge | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Badge" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Basic
+            </div>
+  
+            <div class="flex gap-5 items-center flex-wrap justify-center">
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="absolute top-0 end-0 flex justify-center items-center h-5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 translate-x-1/2">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="absolute top-0 end-0 flex justify-center items-center h-5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 translate-x-1/2 bg-error-500 text-white">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-info-500 text-black">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-primary-500 text-white">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-gray-300 text-black">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-success-500 text-white">
+                  4
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-warning-500 text-white">
+                  4
+                </span>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Maximum Value
+            </div>
+  
+            <div class="flex gap-10 items-center flex-wrap justify-center">
+             
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-primary-500 text-white">
+                  99+
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-primary-500 text-white">
+                  999+
+                </span>
+              </div>
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge bg-primary-500 text-white">
+                  9999+
+                </span>
+              </div>
+
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Dot Badge
+            </div>
+  
+            <div class="flex gap-10 items-center flex-wrap justify-center">
+             
+              <div class="relative inline-flex justify-center items-center size-6">
+                <i class="ri-mail-fill text-xl"></i>
+                <span class="badge badge-sm bg-primary-500 text-white"></span>
+              </div>
+
+              <div class="relative inline-flex justify-center items-center">
+                <p class="text-16 text-gray-900 dark:text-gray-200">QuickFrame</p>
+                <span class="badge badge-sm bg-primary-500 text-white"></span>
+              </div>
+
+            </div>
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Badge Overlap
+            </div>
+  
+            <div class="flex gap-10 items-center flex-wrap justify-center">
+             
+              <div class="relative inline-flex justify-center items-center">
+                <span class="bg-gray-400 size-10"></span>
+                <span class="badge badge-lg bg-primary-500 text-white"></span>
+              </div>
+              <div class="relative inline-flex justify-center items-center">
+                <span class="bg-gray-400 size-10"></span>
+                <span class="badge badge-sm bg-primary-500 text-white"></span>
+              </div>
+              <div class="relative inline-flex justify-center items-center">
+                <span class="bg-gray-400 rounded-full size-10"></span>
+                <span class="badge badge-lg badge-circle bg-primary-500 text-white"></span>
+              </div>
+              <div class="relative inline-flex justify-center items-center">
+                <span class="bg-gray-400 rounded-full size-10"></span>
+                <span class="badge badge-sm badge-circle bg-primary-500 text-white"></span>
+              </div>
+
+
+            </div>
+  
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+   </div>
+{% endblock content %}

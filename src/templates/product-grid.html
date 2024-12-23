@@ -1,0 +1,280 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+  <title>Product Grid | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="mt-6">
+    <div class="md:flex justify-between items-center flex-wrap md:gap-4 md:mb-8">
+      <div class="flex justify-between">
+        <div class="flex gap-2 items-center">
+          <div class="bg-primary-500 bg-opacity-10 p-1.5 rounded-md size-10">
+            <svg class="fill-primary-500 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M22.5,10h-4L12.73,2.3a.77.77,0,0,0-.6-.3h-.26a.77.77,0,0,0-.6.3L5.5,10h-4a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H2l1.71,7.65A3,3,0,0,0,6.6,22H17.4a3,3,0,0,0,2.92-2.35L22,12h.47a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,22.5,10ZM8,10l4-5.33L16,10Z"></path>
+            </svg>
+          </div>
+          <p class="text-16 font-semibold">Products</p>
+        </div>
+        <a href="add-user.html" class="btn btn-primary btn-text-icon md:hidden"> <i class="ri-add-line text-xl leading-none"></i> Add Product</a>
+      </div>
+      <div class="tabs overflow-hidden mt-2">
+        <nav class="nav flex justify-between !flex-nowrap overflow-x-auto md:justify-center " aria-label="Tabs" role="tablist">
+          <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500  dark:text-gray-400 active" id="basic-tabs-item-11" data-hs-tab="#basic-tabs-11" aria-controls="basic-tabs-11" role="tab">
+            Active
+          </button>
+          <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-11" data-hs-tab="#basic-tabs-11" aria-controls="basic-tabs-11" role="tab">
+            Draft
+          </button>
+          <button type="button" class="whitespace-nowrap nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:hs-tab-active:text-primary-500 dark:text-gray-400 " id="basic-tabs-item-11" data-hs-tab="#basic-tabs-11" aria-controls="basic-tabs-11" role="tab">
+            Assembly
+          </button>
+        </nav>
+      </div>
+      <a href="add-user.html" class="btn btn-primary btn-text-icon hidden md:block"> <i class="ri-add-line text-xl leading-none"></i> Add Product</a>
+    </div>
+    <div>
+      <!-- search -->
+      <div class="flex items-center justify-between gap-4 md:gap-6 py-6">
+        <div class="relative w-[400px]">
+          <div class="absolute top-2.5 flex items-center ps-4 pointer-events-none ">
+            <svg class="w-6 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1dkl02v fill-gray-400" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20.85,19.44l-4-4a2.44,2.44,0,0,0-.43-.35l-1-.69h0A7,7,0,1,0,10,17a7,7,0,0,0,4.37-1.53h0l.75,1a2.6,2.6,0,0,0,.3.36l4,4a.5.5,0,0,0,.71,0l.7-.7A.5.5,0,0,0,20.85,19.44ZM10,15a5,5,0,1,1,5-5A5,5,0,0,1,10,15Z"></path>
+            </svg>
+          </div>
+          <input type="search" id="default-search" class="block w-full py-2.5 ps-12 pr-4 text-sm text-gray-900 border border-gray-200 focus:ring-0 focus:outline-none rounded-md placeholder:font-light bg-transparent placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:border-primary-500 dark:focus:border-primary-500 hover:border-black dark:hover:border-white" placeholder="Search...." required="">
+        </div>
+        <div class="tabs flex-shrink-0">
+          <nav class="nav border-none" aria-label="Tabs" role="tablist" x-data="{ activeTab: 'tab2' }">
+            <a href="product-list.html" class="rtl:-ml-4 nav-item hs-tab-active:font-semibold hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+              <svg :class="{ 'fill-primary-500 ': activeTab === 'tab1' }" class="w-6 fill-gray-400 dark:text-dark-15" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M21,5.5v1a.5.5,0,0,1-.5.5H9.5A.5.5,0,0,1,9,6.5v-1A.5.5,0,0,1,9.5,5h11A.5.5,0,0,1,21,5.5ZM20.5,11H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,11Zm0,6H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,17ZM5,4A2,2,0,1,0,7,6,2,2,0,0,0,5,4Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,16Z"></path>
+              </svg>
+            </a>
+            <a href="product-grid.html" class="ltr:-ml-4 nav-item hs-tab-active:font-semiboldhs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+              <svg :class="{ 'fill-primary-500 ': activeTab === 'tab2' }" class="w-6 fill-gray-500 dark:text-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M8,4.5v3a.5.5,0,0,1-.5.5h-3A.5.5,0,0,1,4,7.5v-3A.5.5,0,0,1,4.5,4h3A.5.5,0,0,1,8,4.5ZM13.5,4h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,4Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,4Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,10Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,16Z"></path>
+              </svg>
+            </a>
+
+          </nav>
+        </div>
+      </div>
+
+      <div class="tab-content">
+        <div id="basic-tabs-11" role="tabpanel" aria-labelledby="basic-tabs-item-11">
+          <div x-data="{ postGrid: [
+                                      {
+                                        cardImg: 'static/assets/images/products/p-1.png',
+                                          cardTitle: 'Typewriter',
+                                          cardPrice: '$94',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/apple-watch.png',
+                                          cardTitle: 'Typewriter',
+                                          cardPrice: '$94',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/headset-2.png',
+                                          cardTitle: 'Skull Candy',
+                                          cardPrice: '$121',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/3.png',
+                                          cardTitle: 'Ear Buds Pro',
+                                          cardPrice: '$152',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/camera.png',
+                                          cardTitle: 'Nikon Pro Camera',
+                                          cardPrice: '$15',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/shoe-10.png',
+                                          cardTitle: 'Nike Air Max',
+                                          cardPrice: '$247',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/play-station.png',
+                                          cardTitle: 'Play Station 4',
+                                          cardPrice: '$68',
+                                      },
+                                      {
+                                        cardImg: 'static/assets/images/products/macbook.png',
+                                          cardTitle: 'Macbook Pro',
+                                          cardPrice: '$18',
+                                      },
+                                      
+                                  ] }">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6">
+              <template x-for="(postGrid, index) in postGrid" :key="index">
+                <div class="card overflow-hidden rounded-xl card-dark relative group" x-data="{ checked: false }">
+                  <div class="btn-primary-icon-hover size-9 absolute m-4 z-50">
+                    <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-01" id="hs-default-checkbox-01" @click="checked = !checked">
+                  </div>
+                  <div class="relative h-[200px]  overflow-hidden">
+                    <img :src="postGrid.cardImg" class="w-full h-full ease-in-out duration-300  group-hover:scale-125 group-hover:transform" alt="">
+                    <div x-show="checked" class="absolute top-0 left-0 w-full h-full bg-primary-100 bg-opacity-50 flex gap-2 items-center justify-center text-white text-xl">
+                      <div class="absolute top-0 right-0 m-4 flex gap-2">
+                        <div>
+                          <a href="#!" class="  size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                            <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                            <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                              <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-4 text-sm text-center">
+                    <p class="mb-1 font-semibold" x-text="postGrid.cardTitle"></p>
+                    <p class="font-normal text-description" x-text="postGrid.cardPrice">$94</p>
+                  </div>
+
+                </div>
+              </template>
+            </div>
+
+          </div>
+          <!--  -->
+          <div x-data="{ showMore: false }">
+
+            <!-- Additional Product Grid -->
+            <div x-show="showMore" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 mt-6">
+              <div class="card overflow-hidden rounded-xl card-dark relative group" x-data="{ checked: false }">
+                <div class="btn-primary-icon-hover size-9 absolute m-4 z-50">
+                  <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" @click="checked = !checked">
+                </div>
+                <div class="relative h-[200px] overflow-hidden">
+                  <img src={% static 'assets/images/products/airbud-4.png' %} class="w-full h-full ease-in-out duration-300 group-hover:scale-125 group-hover:transform" alt="">
+                  <div x-show="checked" class="absolute top-0 left-0 w-full h-full bg-primary-100 bg-opacity-50 flex gap-2 items-center justify-center text-white text-xl">
+                    <div class="absolute top-0 right-0 m-4 flex gap-2">
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 text-sm text-center">
+                  <p class="mb-1 font-semibold">Apple Airpods Pro</p>
+                  <p class="font-normal text-description">$253</p>
+                </div>
+              </div>
+              <div class="card overflow-hidden rounded-xl card-dark relative group" x-data="{ checked: false }">
+                <div class="btn-primary-icon-hover size-9 absolute m-4 z-50">
+                  <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" @click="checked = !checked">
+                </div>
+                <div class="relative h-[200px] overflow-hidden">
+                  <img src={% static 'assets/images/products/4.png' %} class="w-full h-full ease-in-out duration-300 group-hover:scale-125 group-hover:transform" alt="">
+                  <div x-show="checked" class="absolute top-0 left-0 w-full h-full bg-primary-100 bg-opacity-50 flex gap-2 items-center justify-center text-white text-xl">
+                    <div class="absolute top-0 right-0 m-4 flex gap-2">
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 text-sm text-center">
+                  <p class="mb-1 font-semibold">Logitech Mouse</p>
+                  <p class="font-normal text-description">$294</p>
+                </div>
+              </div>
+              <div class="card overflow-hidden rounded-xl card-dark relative group" x-data="{ checked: false }">
+                <div class="btn-primary-icon-hover size-9 absolute m-4 z-50">
+                  <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" @click="checked = !checked">
+                </div>
+                <div class="relative h-[200px] overflow-hidden">
+                  <img src={% static 'assets/images/products/shoe-3.png' %} class="w-full h-full ease-in-out duration-300 group-hover:scale-125 group-hover:transform" alt="">
+                  <div x-show="checked" class="absolute top-0 left-0 w-full h-full bg-primary-100 bg-opacity-50 flex gap-2 items-center justify-center text-white text-xl">
+                    <div class="absolute top-0 right-0 m-4 flex gap-2">
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 text-sm text-center">
+                  <p class="mb-1 font-semibold">Nike Flyknit</p>
+                  <p class="font-normal text-description">$203</p>
+                </div>
+              </div>
+              <div class="card overflow-hidden rounded-xl card-dark relative group" x-data="{ checked: false }">
+                <div class="btn-primary-icon-hover size-9 absolute m-4 z-50">
+                  <input type="checkbox" class="size-[18px] text-primary-500" name="hs-default-checkbox-02" id="hs-default-checkbox-02" @click="checked = !checked">
+                </div>
+                <div class="relative h-[200px] overflow-hidden">
+                  <img src={% static 'assets/images/products/camera-2.png' %} class="w-full h-full ease-in-out duration-300 group-hover:scale-125 group-hover:transform" alt="">
+                  <div x-show="checked" class="absolute top-0 left-0 w-full h-full bg-primary-100 bg-opacity-50 flex gap-2 items-center justify-center text-white text-xl">
+                    <div class="absolute top-0 right-0 m-4 flex gap-2">
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="#!" class=" size-7 p-2 rounded-full bg-white flex items-center justify-center dark:bg-gray-800">
+                          <svg class="w-3 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1oyi95s" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 text-sm text-center">
+                  <p class="mb-1 font-semibold">Red Dragon Camera</p>
+                  <p class="font-normal text-description">$357</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center mt-3 mb-8">
+              <a href="#!" @click="showMore = true" :class="{'pointer-events-none ': showMore}" class="btn btn-primary btn-text-icon ">Load More Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+/* 
+Template Name: QuickFrame - Admin & Dashboard Template
+Author: SRBThemes
+Version: 1.0.0
+*/
+
+@import "fonts/fonts";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "components/accordian"; 
+@import "components/badge";
+@import "components/card";
+@import "components/tooltip";
+@import "components/tabs";
+@import "components/menu";
+@import "components/pagination";
+@import "components/popover";
+@import "components/form";
+@import "components/slider";
+@import "components/common";
+
+.chart-container .apexcharts-bar-area {
+    clip-path: inset(0% 0% -4px 0% round 7px);
+}
+
+.todo-list .simplebar-content {
+    @apply h-full;
+}
+
+.gradient-text{
+    background: linear-gradient(300deg, rgb(105, 80, 232) 0%, rgb(251, 97, 134) 25%, rgb(105, 80, 232) 50%, rgb(251, 97, 134) 75%, rgb(105, 80, 232) 100%) 0% 0% / 150% text;
+    -webkit-text-fill-color: transparent;
+    animation: 6s ease-in-out 0s infinite alternate none running animation-fd7d0o;
+}
+
+@keyframes animation-fd7d0o {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.tPagination .swiper-pagination-bullet{
+    @apply bg-gray-400 border-4 border-transparent w-2 h-2 rounded-full flex items-center justify-center;
+}
+.tPagination .swiper-pagination-bullet-active{
+    @apply w-4 h-4 border-4 border-[#f0edfd] dark:bg-gray-700 bg-primary-500 rounded-full;
+}
+.ql-snow{
+    @apply rounded-t-lg border-gray-200 dark:border-gray-600 focus:ring-0 focus:border-primary-500 ;
+ }

@@ -1,0 +1,131 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Add User | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+    <div class="grid grid-cols-12 mt-6 gap-x-6">
+      <div class="col-span-12 lg:col-span-4 ">
+        <div class="card card-dark">
+          <div class="card-body">
+            <div class="flex items-center justify-center w-24 h-24 mx-auto bg-gray-100 rounded-full dark:bg-gray-700">
+              <div class="relative flex items-center justify-center bg-gray-200 border border-white rounded-full w-14 h-14 dark:bg-gray-600 dark:border-gray-800">
+                <label for="dropzone-file">
+                  <div class="!cursor-pointer size-7 flex justify-center items-center dark:ring-gray-800">
+                    <svg class="fill-[#9ca3af] MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1n57ana" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="PhotoCameraIcon">
+                      <circle cx="12" cy="12" r="3.2"></circle>
+                      <path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" class="hidden">
+                </label>
+              </div>
+            </div>
+            <p class="mx-auto mt-4 text-sm text-center text-description max-w-52">Allowed *.jpeg, *.jpg, *.png, *.gif max size of 3.1 MB</p>
+            <ul class="xl:px-9 space-y-2.5 mt-10 mb-2 sm:max-w-[260px] lg:max-w-full mx-auto">
+              <li class="py-2">
+                <label for="togglePrimary11" class="flex items-center justify-between gap-2 cursor-pointer select-none text-16 text-dark dark:text-white">
+                  <span class="text-sm font-semibold">Public Profile</span>
+                  <div class="relative">
+                    <input type="checkbox" id="togglePrimary11" class="sr-only peer" checked="">
+                    <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                    <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                  </div>
+                </label>
+              </li>
+              <li class="py-2">
+                <label for="togglePrimary12" class="flex items-center justify-between gap-2 cursor-pointer select-none text-16 text-dark dark:text-white">
+                  <span class="text-sm font-semibold">Banned</span>
+                  <div class="relative">
+                    <input type="checkbox" id="togglePrimary12" class="sr-only peer" checked="">
+                    <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                    <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                  </div>
+                </label>
+                <p class="mt-2 text-xs text-description">Apply disable account</p>
+              </li>
+              <li class="py-2">
+                <label for="togglePrimary12" class="flex items-center justify-between gap-2 cursor-pointer select-none text-16 text-dark dark:text-white">
+                  <span class="text-sm font-semibold">Email Verified</span>
+                  <div class="relative">
+                    <input type="checkbox" id="togglePrimary12" class="sr-only peer" checked="">
+                    <div class="block w-[41px] bg-gray-300 rounded-full h-[22px] dark:peer-checked:bg-primary-15 peer-checked:bg-primary-300 dark:bg-gray-600 peer-disabled:opacity-50"></div>
+                    <div class="absolute transition -translate-y-1/2 bg-white rounded-full size-4 left-1 top-1/2 peer-checked:translate-x-full peer-checked:bg-primary-500 peer-disabled:opacity-50"></div>
+                  </div>
+                </label>
+                <p class="mt-2 text-xs text-description">Disabling this will automatically send the user a verification email</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 gap-5 lg:col-span-8">
+        <div class="card card-dark">
+          <div class="card-body ">
+            <form x-data="formData()" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group"  >
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form5.errors.name, 'border-gray-200 , dark:border-gray-600': !form5.errors.name }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.name" @input="validateForm5()" />
+                <label for="name" :class="form5.errors.name ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ">First Name</label>
+                <span x-show="form5.errors.name" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.name"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="email" id="email" :class="{ 'border-red-100': form5.errors.email, 'border-gray-200 , dark:border-gray-600': !form5.errors.email }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.email" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.email ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email Address</label>
+                <span x-show="form5.errors.email" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.email"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="number" name="number" id="number" :class="{ 'border-red-100': form5.errors.phone, 'border-gray-200 , dark:border-gray-600': !form5.errors.phone }" class="[&::-webkit-inner-spin-button]:appearance-none peer block p-3 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-200 hover:border-black dark:hover:border-white appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=""   x-model="form5.phone" @input="validateForm5()"/>
+                <label for="number" :class="form5.errors.phone ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
+                <span x-show="form5.errors.phone" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.phone"></span>
+              </div>
+              <!-- Organization -->
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="Country" name="text" id="text" :class="{ 'border-red-100': form5.errors.country, 'border-gray-200 , dark:border-gray-600': !form5.errors.country }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.country" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.country ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Country</label>
+                <span x-show="form5.errors.country" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.country"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="text" id="text" :class="{ 'border-red-100': form5.errors.state, 'border-gray-200 , dark:border-gray-600': !form5.errors.state }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.state" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.state ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">State/Region</label>
+                <span x-show="form5.errors.state" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.state"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="text" id="text" :class="{ 'border-red-100': form5.errors.city, 'border-gray-200 , dark:border-gray-600': !form5.errors.city }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.city" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.city ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+                <span x-show="form5.errors.city" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.city"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="text" id="text" :class="{ 'border-red-100': form5.errors.address, 'border-gray-200 , dark:border-gray-600': !form5.errors.address }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=""  x-model="form5.address" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.address ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Address</label>
+                <span x-show="form5.errors.address" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.address"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="text" id="text" :class="{ 'border-red-100': form5.errors.zipcode, 'border-gray-200 , dark:border-gray-600': !form5.errors.zipcode }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0" placeholder=" " value=""   x-model="form5.zipcode" @input="validateForm5()"/>
+                <label for="name" :class="form5.errors.zipcode ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
+                <span x-show="form5.errors.zipcode" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.zipcode"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group md:col-span-2">
+                <textarea name="about" id="about" rows="9" :class="{ 'border-red-100': form5.errors.about, 'border-gray-200 , dark:border-gray-600': !form5.errors.about }" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black focus:border-primary-500 dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 placeholder-:text-black dark:placeholder:text-white" placeholder=" " x-model="form5.about" @input="validateForm5()"></textarea>
+                <label for="about" :class="form5.errors.about ? 'text-red-100' : 'text-gray-500 , dark:text-gray-400'" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">About</label>
+                <span x-show="form5.errors.about" class="mt-1 text-xs text-red-100 px-3" x-text="form5.errors.about"></span>
+              </div>
+              
+              <!-- btn -->
+              <button type="button" class="btn ripple btn-primary w-28 !mb-0" @click="validateForm5()">Create User</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock content %}
+{% block js %}
+<script src={% static 'public/js/form-validaton.js' %}></script>
+{% endblock js %}

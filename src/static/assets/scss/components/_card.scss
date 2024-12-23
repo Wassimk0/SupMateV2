@@ -1,0 +1,23 @@
+.card {
+  @apply rounded-2xl mb-6 shadow-card bg-white;
+
+  .card-title {
+    @apply text-4 mb-6 font-semibold;
+  }
+
+  &.component-card {
+    @apply bg-gray-50 dark:bg-gray-800  text-gray-800 dark:text-white shadow-none border border-dashed border-gray-200 dark:border-gray-600;
+    
+    .card-body {
+      @apply p-8;
+    }
+  }
+
+  &.card-dark {
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-200 dark:border-gray-600;
+
+    .card-body {
+      @apply p-6;
+    }
+  }
+}

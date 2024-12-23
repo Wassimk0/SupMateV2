@@ -1,0 +1,12 @@
+.badge {
+    @apply absolute top-0 end-0 flex justify-center items-center h-5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 translate-x-1/2;
+    &.badge-sm {
+        @apply size-2.5 p-0;
+    }
+    &.badge-lg {
+        @apply size-5 p-0;
+    }
+    &.badge-circle {
+        @apply -translate-y-1/4 translate-x-1/4;
+    }
+}

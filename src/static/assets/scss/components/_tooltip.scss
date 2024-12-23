@@ -1,0 +1,31 @@
+.hs-tooltip {
+    @apply relative;
+    .hs-tooltip-content {
+        @apply transition-opacity inline-block absolute invisible z-10 py-1 px-1.5 bg-gray-900 text-xs font-medium text-white rounded-md dark:bg-gray-700;
+    }
+    &.tooltip-arrow {
+        .hs-tooltip-content::before {
+            @apply content-[''] absolute bg-gray-900 dark:bg-gray-700 h-2 w-2.5;
+        }
+        &.arrow-top {
+            .hs-tooltip-content::before {
+                @apply -bottom-1 -translate-x-2/4 rotate-45 left-2/4;
+            }
+        }
+        &.arrow-right {
+            .hs-tooltip-content::before {
+                @apply -left-1 -translate-y-2/4 rotate-45 top-2/4;
+            }
+        }
+        &.arrow-bottom {
+            .hs-tooltip-content::before {
+                @apply -top-1 -translate-x-2/4 rotate-45 left-2/4;
+            }
+        }
+        &.arrow-left {
+            .hs-tooltip-content::before {
+                @apply -right-1 -translate-y-2/4 rotate-45 top-2/4;
+            }
+        }
+    }
+}

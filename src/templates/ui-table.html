@@ -1,0 +1,526 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Accordian | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Accordian" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+  <div class="container px-6 max-w-[1200px] mx-auto">
+
+    <div class="py-20 space-y-12">
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Basic
+          </div>
+          <div class="shadow-table rounded-lg bg-white dark:bg-transparent" x-data="{ data: [
+            { dessert: 'Eclair', calories: 262, fat: '16', carbs: '24', protein: '6' },
+            { dessert: 'Cupcake', calories: 305, fat: '3.7', carbs: '67', protein: '4.3' },
+            { dessert: 'Gingerbread', calories: 356, fat: '16', carbs: '49', protein: '3.9' },
+            { dessert: 'Frozen yoghurt', calories: 159, fat: '6', carbs: '24', protein: '4' },
+            { dessert: 'Ice cream sandwich', calories: 237, fat: '9', carbs: '37', protein: '4.3' }
+        ] }">
+            <div class="overflow-x-auto">
+              <table class="table border-spacing-0">
+                <thead>
+                  <tr>
+                    <th>Dessert (100g serving)</th>
+                    <th class="text-right">Calories</th>
+                    <th class="text-right">Fat (g)</th>
+                    <th class="text-right">Carbs (g)</th>
+                    <th class="text-right">Protein (g)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="(item, index) in data" :key="index">
+                    <tr>
+                      <td x-text="item.dessert"></td>
+                      <td class="text-right" x-text="item.calories"></td>
+                      <td class="text-right" x-text="item.fat"></td>
+                      <td class="text-right" x-text="item.carbs"></td>
+                      <td class="text-right" x-text="item.protein"></td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-body">
+          <div class="card-title pb-0 p-6">
+            Sorting & selecting
+          </div>
+
+          <div id="sorting_selecting_main">
+          <div class="main_delete_selected hidden">
+            <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-primary-100 dark:bg-gray-700">
+              <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+              <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+                <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+              </button>
+            </div>
+          </div>
+          <div class="responsive-table">
+            <table id="sorting_selecting" class="table !w-full">
+              <thead class="!bg-gray-100 dark:!bg-gray-700">
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <th>Dessert (100g serving)</th>
+                  <th>Calories</th>
+                  <th>Fat (g)</th>
+                  <th>Carbs (g)</th>
+                  <th>Protein (g)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Cupcake</td>
+                  <td>305</td>
+                  <td>3.7</td>
+                  <td>67</td>
+                  <td>4.3</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="btn-primary-icon-hover size-9">
+                      <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                    </div>
+                  </td>
+                  <td>Donut</td>
+                  <td>452</td>
+                  <td>25</td>
+                  <td>51</td>
+                  <td>4.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex justify-end items-center gap-2 px-6 pb-3">
+            <div class="flex items-center">
+              <label for="custom_length">Rows per page:</label>
+
+              <!-- Select -->
+              <select id="custom_length" data-hs-select='{
+                        "placeholder": "Select option...",
+                        "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                        "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                        "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                        "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                        "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                    }' class="hidden">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+              </select>
+            </div>
+            <div class="inline-block me-7">
+              <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+            </div>
+            <div class="custom-pagination-controls">
+              <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                <i class="ri-arrow-left-s-line"></i>
+              </button>
+              <span id="custom_page_info"></span>
+              <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                <i class="ri-arrow-right-s-line"></i>
+              </button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Sticky Header
+          </div>
+          <div class="shadow-table rounded-lg bg-white dark:bg-transparent">
+            <div class="h-[416px]" data-simplebar>
+              <table class="table border-spacing-0 relative">
+                <thead class="sticky top-0">
+                  <tr>
+                    <th>Name</th>
+                    <th>ISO Code</th>
+                    <th class="text-right">Population</th>
+                    <th class="text-right">Size (km²)</th>
+                    <th class="text-right">Density</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>India</td>
+                    <td>IN</td>
+                    <td class="text-right">1,324,171,354</td>
+                    <td class="text-right">3,287,263</td>
+                    <td class="text-right">402.82</td>
+                  </tr>
+                  <tr>
+                    <td>China</td>
+                    <td>CN</td>
+                    <td class="text-right">1,403,500,365</td>
+                    <td class="text-right">9,596,961</td>
+                    <td class="text-right">146.24</td>
+                  </tr>
+                  <tr>
+                    <td>Italy</td>
+                    <td>IT</td>
+                    <td class="text-right">60,483,973	</td>
+                    <td class="text-right">301,340</td>
+                    <td class="text-right">200.72</td>
+                  </tr>
+                  <tr>
+                    <td>United States</td>
+                    <td>US</td>
+                    <td class="text-right">327,167,434</td>
+                    <td class="text-right">9,833,520</td>
+                    <td class="text-right">33.27</td>
+                  </tr>
+                  <tr>
+                    <td>Canada</td>
+                    <td>CA</td>
+                    <td class="text-right">37,602,103</td>
+                    <td class="text-right">9,984,670</td>
+                    <td class="text-right">3.77</td>
+                  </tr>
+                  <tr>
+                    <td>Australia</td>
+                    <td>AU</td>
+                    <td class="text-right">25,475,400</td>
+                    <td class="text-right">7,692,024</td>
+                    <td class="text-right">3.31</td>
+                  </tr>
+                  <tr>
+                    <td>Germany</td>
+                    <td>DE</td>
+                    <td class="text-right">83,019,200</td>
+                    <td class="text-right">357,578</td>
+                    <td class="text-right">232.17</td>
+                  </tr>
+                  <tr>
+                    <td>Ireland</td>
+                    <td>IE</td>
+                    <td class="text-right">4,857,000</td>
+                    <td class="text-right">70,273	</td>
+                    <td class="text-right">69.12</td>
+                  </tr>
+                  <tr>
+                    <td>Mexico</td>
+                    <td>MX</td>
+                    <td class="text-right">126,577,691</td>
+                    <td class="text-right">1,972,550</td>
+                    <td class="text-right">64.17</td>
+                  </tr>
+                  <tr>
+                    <td>Japan</td>
+                    <td>JP</td>
+                    <td class="text-right">126,317,000</td>
+                    <td class="text-right">377,973</td>
+                    <td class="text-right">334.20</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="px-4 py-2">
+              <div class="flex flex-wrap items-center md:justify-end gap-2">
+                <div class="flex items-center">
+                  <label for="custom_length">Rows per page:</label>
+
+                  <!-- Select -->
+                  <select id="custom_length" data-hs-select='{
+                            "placeholder": "Select option...",
+                            "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                            "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                            "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                            "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                            "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                            "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                        }' class="hidden">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                  </select>
+                </div>
+                <div class="inline-block me-7">
+                  <div class="custom-info" id="custom_info">1–10 of 15</div>
+                </div>
+                <div class="custom-pagination-controls">
+                  <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                    <i class="ri-arrow-left-s-line"></i>
+                  </button>
+                  <span id="custom_page_info"></span>
+                  <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none">
+                    <i class="ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Collapsible
+          </div>
+          <div class="shadow-table rounded-lg bg-white dark:bg-transparent">
+            <div class="overflow-x-auto">
+              <table class="table border-spacing-0">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Dessert (100g serving)</th>
+                    <th class="text-right">Calories</th>
+                    <th class="text-right">Fat (g)</th>
+                    <th class="text-right">Carbs (g)</th>
+                    <th class="text-right">Protein (g)</th>
+                  </tr>
+                </thead>
+                <tbody x-data="{ openSections: {} }">
+                  <tr>
+                    <td>
+                      <div @click="openSections['item1'] = !openSections['item1']" class="btn-primary-icon-hover size-9 drop-arrow cursor-pointer">
+                        <i :class="openSections['item1'] ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"></i>
+                      </div>
+                    </td>
+                    <td>Eclair</td>
+                    <td class="text-right">262</td>
+                    <td class="text-right">16</td>
+                    <td class="text-right">24</td>
+                    <td class="text-right">6</td>
+                  </tr>
+                  <tr x-show="openSections['item1']" x-transition:enter="transition-all" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-screen" x-transition:leave="transition-all" x-transition:leave-start="max-h-screen" x-transition:leave-end="max-h-0">
+                    <td colspan="6" class="py-0">
+                      <table class="table inner-table">
+                        <thead class="bg-transparent">
+                          <tr>
+                            <th class="pb-2 pt-0" colspan="6">History</th>
+                          </tr>
+                          <tr class="*:font-medium *:py-1.5">
+                            <td>Date</td>
+                            <td>Customer</td>
+                            <td class="text-end">Amount</td>
+                            <td class="text-end">Total price ($)</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="*:py-1.5">
+                            <td>2020-01-05</td>
+                            <td>11091700</td>
+                            <td class="text-end">3</td>
+                            <td class="text-end">11.97</td>
+                          </tr>
+                          <tr class="*:py-1.5">
+                            <td>2020-01-02</td>
+                            <td>Anonymous</td>
+                            <td class="text-end">1</td>
+                            <td class="text-end">3.99</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div @click="openSections['item2'] = !openSections['item2']" class="btn-primary-icon-hover size-9 drop-arrow cursor-pointer">
+                        <i :class="openSections['item2'] ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"></i>
+                      </div>
+                    </td>
+                    <td>Eclair</td>
+                    <td class="text-right">262</td>
+                    <td class="text-right">16</td>
+                    <td class="text-right">24</td>
+                    <td class="text-right">6</td>
+                  </tr>
+                  <tr x-show="openSections['item2']" x-transition:enter="transition-all" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-screen" x-transition:leave="transition-all" x-transition:leave-start="max-h-screen" x-transition:leave-end="max-h-0">
+                    <td colspan="6" class="py-0">
+                      <table class="table inner-table">
+                        <thead class="bg-transparent">
+                          <tr>
+                            <th class="pb-2 pt-0" colspan="6">History</th>
+                          </tr>
+                          <tr class="*:font-medium *:py-1.5">
+                            <td>Date</td>
+                            <td>Customer</td>
+                            <td class="text-end">Amount</td>
+                            <td class="text-end">Total price ($)</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="*:py-1.5">
+                            <td>2020-01-05</td>
+                            <td>11091700</td>
+                            <td class="text-end">3</td>
+                            <td class="text-end">11.97</td>
+                          </tr>
+                          <tr class="*:py-1.5">
+                            <td>2020-01-02</td>
+                            <td>Anonymous</td>
+                            <td class="text-end">1</td>
+                            <td class="text-end">3.99</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock content %}
+{% block js %}
+<script type="module" src={% static 'vite/assets/js/ui-table.js' %}></script>
+{% endblock js %}

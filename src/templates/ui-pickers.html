@@ -1,0 +1,375 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Accordian | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Accordian" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+  <div class="container">
+
+    <div class="py-20">
+
+      <div class="tabs">
+        <nav class="nav" aria-label="Tabs" role="tablist">
+          <button type="button"
+            class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active"
+            id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+            Date Picker
+          </button>
+          <button type="button"
+            class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400"
+            id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+            Time Picker
+          </button>
+          <button type="button"
+            class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400"
+            id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+            Date Time Picker
+          </button>
+        </nav>
+
+        <div class="tab-content !px-0 !bg-transparent !shadow-none !mt-5">
+
+          <div id="basic-tabs-1" role="tabpanel" aria-labelledby="basic-tabs-item-1">
+
+            <div class="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+              <div>
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Basic
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="datePicker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">For
+                          Desktop</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input name="name" id="datePicker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">For
+                          Mobile</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="datePicker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">For
+                          Responsive</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Static Date
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="year_picker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Year
+                          only</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="month_picker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Month
+                          only</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="full_date"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Year,
+                          Month and Date</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="order_date"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Invert
+                          the order of view</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="name" id="datePicker"
+                          class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                          placeholder=" " required />
+                        <label for="name"
+                          class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Just
+                          Date</label>
+                        <span
+                          class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                          <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card component-card h-max">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Static Date
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="static_picker"
+                        class="block w-full mb-6 p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Year
+                        only</label>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="basic-tabs-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-2">
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      
+              <div class="card component-card">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Basic
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="timePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                      With AM/PM (12 hours)</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input name="name" id="timePicker24"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        Without AM/PM (24 hours)</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card component-card">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Static Date
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="timePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        For Mobile</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="timePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        For desktop</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="timePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Responsive</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card component-card">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Static Date
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="timePicker_static"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">Year
+                        only</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="basic-tabs-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-3">  
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          
+              <div class="card component-card">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Basic
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="dateTimePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                      With AM/PM (12 hours)</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card component-card">
+                <div class="card-body">
+                  <div class="mb-4 card-title">
+                    Responsiveness
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="dateTimePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        For Mobile</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="dateTimePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        For desktop</label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="dateTimePicker12"
+                        class="block w-full p-3 pe-10 leading-[30px] text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500"
+                        placeholder=" " required />
+                      <label for="name"
+                        class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-16 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-90 top-[18px] bg-gray-50 dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7">
+                        Responsive
+                      </label>
+                      <span
+                        class="absolute leading-normal text-gray-500 -translate-y-1/2 size-10 btn-gray-icon-hover end-1 top-1/2 dark:text-gray-400 text-16">
+                        <i class="text-xl font-normal cursor-pointer ri-calendar-2-line"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}
+{% block js %}
+<script type="module" src={% static 'vite/assets/js/ui-pickers.js' %}></script>
+{% endblock js %}

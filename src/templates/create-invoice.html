@@ -1,0 +1,151 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Create Invoice | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="mt-6">
+    <div class="card card-dark">
+      <div class="card-body" x-data="formData()">
+        <p class="mb-4 font-semibold text-16">Order Status</p>
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <div class="flex items-center gap-2.5 flex-wrap" x-data="{ selected: 'pending' }">
+              <div class="flex items-center gap-1">
+                <div class="btn-primary-icon-hover">
+                  <input type="radio" class="radio-primary size-4" name="hs-default-radio" id="hs-default-radio-01" value="pending" @change="selected = 'pending'" :checked="selected === 'pending'">
+                </div>
+                <label for="hs-default-radio-01" :class="{ 'font-semibold': selected === 'pending' }" class="text-gray-900 cursor-pointer ms-2 text-6 dark:text-white">
+                  Pending
+                </label>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="btn-primary-icon-hover">
+                  <input type="radio" class="radio-primary size-4" name="hs-default-radio" id="hs-default-radio-02" value="processing" @change="selected = 'processing'" :checked="selected === 'processing'">
+                </div>
+                <label for="hs-default-radio-02" :class="{ 'font-semibold': selected === 'processing' }" class="text-gray-900 cursor-pointer ms-2 text-6 dark:text-white">
+                  Processing
+                </label>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="btn-primary-icon-hover">
+                  <input type="radio" class="radio-primary size-4" name="hs-default-radio" id="hs-default-radio-03" value="delivered" @change="selected = 'delivered'" :checked="selected === 'delivered'">
+                </div>
+                <label for="hs-default-radio-03" :class="{ 'font-semibold': selected === 'delivered' }" class="text-gray-900 cursor-pointer ms-2 text-6 dark:text-white">
+                  Delivered
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <a href="invoice-list.html" class="text-black border-gray-200 btn btn-outline-secondary dark:bg-transparent hover:border-gray-50 hover:border-transparent hover:bg-transparent dark:border-gray-700 hover:text-black dark:text-white dark:hover:border-white">Cancle</a>
+            <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary" @click="validateForm6()">Save<div class="rippleContainer"></div></button>
+          </div>
+        </div>
+        <!--  -->
+        <form class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 *:relative *:mb-6 *:group mt-6 border-b dark:border-gray-700 mb-1.5 pb-1.5">
+          <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="204" required="">
+            <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Order Number</label>
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="name" id="Order_Status-datepicker" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="08/09/2024" required="">
+            <span><svg class="w-6 absolute top-2.5 end-2 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CalendarMonthOutlinedIcon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"></path></svg></span>
+            <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Order Date</label>
+          </div>
+        </form>
+        <!--  -->
+        <div class="grid grid-cols-12">
+          <div class="col-span-12 xl:col-span-8">
+            <form  class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group mt-6 border-b dark:border-gray-700 mb-1.5 pb-1.5">
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.to , 'border-gray-200 , dark:border-gray-600 ':!form6.errors.to}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.to" @input="validateForm6()">
+                <label for="name" :class="{ 'text-red-100': form6.errors.to , 'text-gray-500': !form6.errors.to}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill to</label>
+                <span x-show="form6.errors.to" x-text="form6.errors.to" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.from , 'border-gray-200 , dark:border-gray-600 ': !form6.errors.from}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.from" @input="validateForm6()">
+                <label for="name" :class="{'text-red-100': form6.errors.from , 'text-gray-500': !form6.errors.from}"   class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill from</label>
+                <span x-show="form6.errors.from" x-text="form6.errors.from" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.address , 'border-gray-200 , dark:border-gray-600 ': !form6.errors.address}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.address" @input="validateForm6()">
+                <label for="name" :class="{ 'text-red-100': form6.errors.address , 'text-gray-500': !form6.errors.address}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill to Address</label>
+                <span x-show="form6.errors.address" x-text="form6.errors.address" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.address1 , 'border-gray-200 , dark:border-gray-600 ': !form6.errors.address1}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.address1" @input="validateForm6()">
+                <label for="name" :class="{ 'text-red-100': form6.errors.address1 , 'text-gray-500': !form6.errors.address1}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill from Address</label>
+                <span x-show="form6.errors.address1" x-text="form6.errors.address1" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.phone , 'border-gray-200 , dark:border-gray-600 ': !form6.errors.phone}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.phone" @input="validateForm6()">
+                <label for="name" :class="{ 'text-red-100': form6.errors.phone , 'text-gray-500': !form6.errors.phone}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill to Phone</label>
+                <span x-show="form6.errors.phone" x-text="form6.errors.phone" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+              <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="name" id="name" :class="{ 'border-red-100': form6.errors.phone1 , 'border-gray-200 , dark:border-gray-600 ': !form6.errors.phone1}" class="block w-full p-3 text-sm text-gray-900 bg-transparent border rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="" x-model="form6.phone1" @input="validateForm6()">
+                <label for="name" :class="{ 'text-red-100': form6.errors.phone1 , 'text-gray-500': !form6.errors.phone1}" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bill from Phone</label>
+                <span x-show="form6.errors.phone1" x-text="form6.errors.phone1" class="mt-1 text-xs text-red-100 px-3"></span>
+              </div>
+            </form>
+          </div>
+          <div class="col-span-12 xl:col-span-4"></div>
+        </div>
+        <!--  -->
+        <button ripple-opacity="0.3" ripple-background="#000" class="mt-6 btn btn-sm ripple btn-primary">Add New Item<div class="rippleContainer"></div></button>
+        <form class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-2 *:relative *:group mt-6 border-b dark:border-gray-700 mb-3 pb-3">
+          <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="" required="">
+            <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Name</label>
+          </div>
+          <div class="flex gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+              <input type="number" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="0" required="">
+              <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Price</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+              <input type="number" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="0" required="">
+              <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Quantity</label>
+            </div>
+
+          </div>
+          <div>
+            <button class="w-6 mx-2 mt-2 fill-gray-500 dark:fill-dark-15 MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-oyc4nd" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dgk7aa" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M20,4.5v1a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,5.5v-1A.5.5,0,0,1,4.5,4H9V3a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V4h4.5A.5.5,0,0,1,20,4.5ZM5.87,20.14a2,2,0,0,0,2,1.86h8.28a2,2,0,0,0,2-1.86L19,8H5Z"></path>
+              </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+          </div>
+        </form>
+        <!--  -->
+        <div class="mt-6">
+          <p class="mb-4 font-semibold text-16">Amount</p>
+          <div class="xl:max-w-[340px]">
+            <div class="pb-4 space-y-2 text-sm font-medium border-b dark:border-gray-700">
+              <div class="flex justify-between">
+                <p>Subtotal</p>
+                <p>$428.00</p>
+              </div>
+              <div class="flex justify-between">
+                <p>Discount (BLACKFRIDAY)</p>
+                <p>-$8.00</p>
+              </div>
+              <div class="flex justify-between">
+                <p>VAT</p>
+                <p>$20.00</p>
+              </div>
+            </div>
+            <div class="flex justify-between pt-4 font-semibold text-16">
+              <p>Total</p>
+              <p>$20.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/invoice-flatpickr.js' %}></script>
+  <script src={% static 'public/js/form-validaton.js' %}></script>
+{% endblock js %}

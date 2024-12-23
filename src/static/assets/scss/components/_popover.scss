@@ -1,0 +1,5 @@
+.popover {
+    .popover-content {
+        @apply transition-opacity inline-block absolute z-10 p-6 bg-white text-sm rounded-xl shadow-card dark:bg-gray-800 text-gray-900 dark:text-gray-200;
+    }
+}

@@ -1,0 +1,176 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Apps Chat | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="grid grid-rows-1 mt-6 lg:grid-cols-3 gap-x-6">
+    <div class="hidden lg:block">
+      {% include "partials/apps-chat-sidebar.html" %}
+    </div>
+    
+    <div class="lg:col-span-2">
+      <div class="overflow-hidden card card-dark">
+        <div class="card-body">
+          <div class="flex items-center justify-between gap-4 md:gap-8">
+            <div class="flex gap-3">
+              <img class="rounded-full size-10" src={% static 'assets/images/user/user-19.png' %} alt="user">
+              <div>
+                <p class="font-semibold leading-none text-16">Aiony Haust</p>
+                <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Online</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div ripple-opacity="0.1" ripple-color="black" class="ripple size-[30px] p-2 rounded-full flex items-center justify-center cursor-pointer">
+                <i class="text-lg ri-search-line text-gray-900/60 dark:text-gray-100/50"></i>
+              </div>
+              <div ripple-opacity="0.1" ripple-color="black" class="ripple size-[30px] border border-gray-200 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700 p-2 rounded-full flex items-center justify-center cursor-pointer">
+                <i class="text-lg ri-more-fill text-gray-900/60 dark:text-gray-100/50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-700">
+        <div class="h-[calc(100vh-346px)]" data-simplebar>
+          <div class="flex flex-col px-6 py-4 space-y-8">
+            <div class="absolute top-5 left-0 flex lg:hidden justify-center items-center cursor-pointer p-[5px] bg-primary-500 rounded-lg ltr:rounded-s-none rtl:rounded-e-none" tabindex="0" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-chat-sidebar" data-hs-overlay="#hs-offcanvas-chat-sidebar">
+              <i class="leading-none text-white ri-arrow-right-s-line text-16"></i>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%] ltr:text-right rtl:text-left place-self-end">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <p class="text-sm font-semibold leading-none">
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                  You
+                </p>
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+              </div>
+              <div class="px-6 py-4 text-white rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none bg-primary-500">
+                Sure! Ready to help.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%]">
+              <div class="flex items-center gap-3 mb-2">
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-19.png' %} alt="user">
+                <p class="text-sm font-semibold leading-none">
+                  Aiony Haust
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                </p>
+              </div>
+              <div class="px-6 py-4 ml-10 bg-gray-100 rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none dark:bg-gray-700">
+                Apple Business Chat, or Business Chat, allows customers to interact with a business.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%] ltr:text-right rtl:text-left place-self-end">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <p class="text-sm font-semibold leading-none">
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                  You
+                </p>
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+              </div>
+              <div class="px-6 py-4 text-white rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none bg-primary-500">
+                Sure! Ready to help.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%]">
+              <div class="flex items-center gap-3 mb-2">
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-19.png' %} alt="user">
+                <p class="text-sm font-semibold leading-none">
+                  Aiony Haust
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                </p>
+              </div>
+              <div class="px-6 py-4 ml-10 bg-gray-100 rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none dark:bg-gray-700">
+                Apple Business Chat, or Business Chat, allows customers to interact with a business.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%] ltr:text-right rtl:text-left place-self-end">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <p class="text-sm font-semibold leading-none">
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                  You
+                </p>
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+              </div>
+              <div class="px-6 py-4 text-white rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none bg-primary-500">
+                Sure! Ready to help.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%]">
+              <div class="flex items-center gap-3 mb-2">
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-19.png' %} alt="user">
+                <p class="text-sm font-semibold leading-none">
+                  Aiony Haust
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                </p>
+              </div>
+              <div class="px-6 py-4 ml-10 bg-gray-100 rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none dark:bg-gray-700">
+                Apple Business Chat, or Business Chat, allows customers to interact with a business.
+              </div>
+            </div>
+            <div class="max-w-[80%] md:max-w-[70%] lg:max-w-[60%] ltr:text-right rtl:text-left place-self-end">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <p class="text-sm font-semibold leading-none">
+                  <span class="text-xs font-normal text-gray-500 dark:text-gray-400 ms-1">
+                    11:29 AM
+                  </span>
+                  You
+                </p>
+                <img class="size-[27px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+              </div>
+              <div class="px-6 py-4 text-white rounded-2xl ltr:rounded-tl-none rtl:rounded-tr-none bg-primary-500">
+                Sure! Ready to help.
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-700">
+        <div class="px-6 py-4">
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <input placeholder="Type Something....." type="text" class="w-full h-8 text-sm bg-transparent border-0 ps-0 focus:outline-offset-0 focus:ring-0 focus:outline-0 placeholder:opacity-50 dark:placeholder:text-white">
+            <div ripple-opacity="0.1" ripple-color="black" class="flex-shrink-0 ripple size-9 border border-gray-200 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700 p-1.5 rounded-full flex items-center justify-center cursor-pointer">
+              <i class="text-xl text-gray-400 ri-mic-fill dark:text-gray-100/50"></i>
+            </div>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div ripple-opacity="0.1" ripple-color="black" class="flex items-center justify-center border border-gray-200 rounded-full cursor-pointer ripple size-9 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700">
+                <i class="text-xl text-gray-400 ri-camera-fill dark:text-gray-100/50"></i>
+              </div>
+              <label for="dropzone-file">
+                <div class="flex items-center justify-center border border-gray-200 rounded-full cursor-pointer ripple size-9 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700">
+                  <i class="text-lg text-gray-400 ri-attachment-line dark:text-gray-100/50"></i>
+                </div>
+                <input id="dropzone-file" type="file" class="hidden">
+            </label>
+              <div ripple-opacity="0.1" ripple-color="black" class="flex items-center justify-center border border-gray-200 rounded-full cursor-pointer ripple size-9 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700">
+                <i class="text-xl text-gray-400 ri-add-fill dark:text-gray-100/50"></i>
+              </div>
+            </div>
+            <button ripple-opacity="0.1" ripple-color="white" class="ripple btn text-[13px] leading-5 btn-primary btn-sm">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hs-offcanvas-chat-sidebar" class="hs-overlay hs-overlay-backdrop-open:bg-transparent dark:hs-overlay-backdrop-open:bg-transparent hs-overlay-backdrop-open:bg-modal dark:hs-overlay-backdrop-open:bg-modal hidden fixed top-0 start-0 bottom-0 z-[80]" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-chat-sidebar-label">
+      <div class="h-full p-0 bg-white dark:bg-gray-800">
+        {% include "partials/apps-chat-sidebar.html" %}
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

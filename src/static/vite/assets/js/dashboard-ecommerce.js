@@ -1,0 +1,1 @@
+import{A as e,d as r,n as a,p as t}from"./charts.js";import"./_commonjsHelpers.js";document.addEventListener("DOMContentLoaded",async function(){new e(document.querySelector("#daily_sales_chart"),r).render(),new e(document.querySelector("#apex_area1"),a).render(),new e(document.querySelector("#returning_rate_chat"),t).render()});

@@ -1,0 +1,105 @@
+<div class="card-body w-[260px] h-full border-r border-gray-200 dark:border-gray-700">
+  <a href="apps-email-compose.html">
+    <button ripple-opacity="0.3" ripple-color="white" class="btn py-[5px] w-full btn-primary ripple">
+      <i class="ri-pencil-fill text-lg leading-none me-1"></i>
+      Compose
+    </button>
+  </a>
+  <div class="flex flex-col mt-8">
+    <div @click="changeTab('all-mail')" :class="{ 'text-primary-500': activeTab === 'all-mail', 'text-gray-400': activeTab !== 'all-mail' }" class="flex items-center justify-between py-3 text-primary-500 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px]" focusable="false" aria-hidden="true" viewBox="0 0 14 12" fill="none">
+          <path d="M0.58333 2.60707C0.615197 2.60707 0.666661 2.63641 0.666661 2.70975V8.33475C0.666661 9.81581 1.8329 11.0446 3.30554 11.0446H11.0833C11.1151 11.0446 11.1666 11.0739 11.1666 11.1472C11.1666 11.2206 11.1151 11.2499 11.0833 11.2499H3.30554C1.7716 11.2499 0.5 9.95999 0.5 8.33475V2.70975C0.5 2.63641 0.551464 2.60707 0.58333 2.60707Z" fill="currentColor" stroke="currentColor"></path>
+          <path opacity="0.4" d="M2.35002 1.8736L7.69722 5.96679C7.83333 6.06975 7.9986 6.12751 8.16631 6.12751C8.33402 6.12751 8.4993 6.07226 8.63541 5.96679L13.9826 1.8736C13.8732 1.09514 13.2267 0.5 12.4441 0.5H3.88856C3.10592 0.5 2.4594 1.09514 2.35002 1.8736ZM13.9996 2.86049L9.09964 6.60965C8.82985 6.81808 8.50173 6.92857 8.16631 6.92857C7.8309 6.92857 7.50277 6.81808 7.23298 6.60965L2.33301 2.86049V7.73214C2.33301 8.61858 3.03057 9.33928 3.88856 9.33928H12.4441C13.302 9.33928 13.9996 8.61858 13.9996 7.73214V2.86049Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">All Mail</p>
+      </div>
+    </div>
+    <div @click="changeTab('inbox')" :class="{ 'text-primary-500': activeTab === 'inbox', 'text-gray-400': activeTab !== 'inbox' }" class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px]" focusable="false" aria-hidden="true" viewBox="0 0 14 13" fill="none">
+          <path d="M12.6875 1C13.1112 1 13.5 1.37058 13.5 1.88462C13.5 2.17315 13.3713 2.43636 13.1642 2.60061L7.21588 7.30701C7.21573 7.30713 7.21558 7.30724 7.21543 7.30736C7.0853 7.4094 6.9147 7.4094 6.78458 7.30736C6.78442 7.30724 6.78427 7.30713 6.78412 7.30701L0.835971 2.60078C0.835862 2.60069 0.835753 2.6006 0.835645 2.60052C0.628784 2.43605 0.5 2.17275 0.5 1.88462C0.5 1.37051 0.888623 1 1.3125 1H12.6875Z" fill="currentColor" stroke="currentColor"></path>
+          <path opacity="0.4" d="M0.525 3.91531L6.475 8.623C6.78672 8.86819 7.21328 8.86819 7.525 8.623L13.475 3.91531C13.8059 3.65281 14 3.24319 14 2.80762V10.6538C14 11.672 13.2152 12.4999 12.25 12.4999H1.75C0.783399 12.4999 0 11.672 0 10.6538V2.80762C0 3.24319 0.194496 3.65281 0.525 3.91531Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">Inbox</p>
+      </div>
+      <span class="px-2 text-13 leading-6 whitespace-nowrap bg-gray-100 dark:bg-gray-700 rounded-2xl">
+        (16)
+      </span>
+    </div>
+    <div  @click="changeTab('sent')" :class="{ 'text-primary-500': activeTab === 'sent', 'text-gray-400': activeTab !== 'sent' }" class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px] fill-current" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="m4 8.25 7.51 1-7.5-3.22zm.01 9.72 7.5-3.22-7.51 1z" opacity=".3"></path>
+          <path d="M2.01 3 2 10l15 2-15 2 .01 7L23 12 2.01 3zM4 8.25V6.03l7.51 3.22-7.51-1zm.01 9.72v-2.22l7.51-1-7.51 3.22z"></path>
+        </svg>
+        <p class="text-16 leading-none">Sent</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px] fill-current" focusable="false" aria-hidden="true" viewBox="0 0 14 15" fill="none">
+          <path opacity="0.4" d="M11.8444 6.21435L8.28579 2.65576L1.60386 9.34043C1.31917 9.62512 1.11113 9.97824 0.996162 10.3642L0.0271321 13.66C-0.0413023 13.8899 0.0216573 14.139 0.194112 14.3088C0.366566 14.4785 0.61293 14.5414 0.84287 14.4757L4.13593 13.5067C4.5219 13.3917 4.87502 13.1837 5.15971 12.899L11.8444 6.21435ZM2.44423 10.3697L3.06562 10.1206V10.9965C3.06562 11.2374 3.26271 11.4345 3.5036 11.4345H4.37956L4.13046 12.0559C4.02096 12.1408 3.89778 12.2037 3.76638 12.2448L1.62576 12.8744L2.25535 10.7365C2.29368 10.6024 2.35937 10.4792 2.44423 10.3724V10.3697ZM8.6307 4.99348C8.80042 5.1632 8.80042 5.44241 8.6307 5.61213L4.68888 9.55394C4.51916 9.72366 4.23995 9.72366 4.07023 9.55394C3.90052 9.38423 3.90052 9.10502 4.07023 8.9353L8.01205 4.99348C8.18177 4.82376 8.46098 4.82376 8.6307 4.99348Z" fill="currentColor"></path>
+          <path d="M13.4872 2.09452C14.1716 2.77886 14.1716 3.8875 13.4872 4.57184L11.8448 6.21427L8.2862 2.65568L9.92863 1.01326C10.613 0.328914 11.7216 0.328914 12.406 1.01326L13.4845 2.09178L13.4872 2.09452ZM8.63111 5.61205L4.68929 9.55386C4.51958 9.72358 4.24036 9.72358 4.07065 9.55386C3.90093 9.38415 3.90093 9.10493 4.07065 8.93522L8.01247 4.9934C8.18218 4.82368 8.46139 4.82368 8.63111 4.9934C8.80083 5.16312 8.80083 5.44233 8.63111 5.61205Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">Draft</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px] fill-current" focusable="false" aria-hidden="true" viewBox="0 0 14 15" fill="none">
+          <path d="M2.85529 13.5619L2.85583 13.5586L3.50802 9.55087L3.54888 9.29982L3.37002 9.11897L0.608925 6.32703C0.511177 6.22538 0.473936 6.07393 0.518911 5.93107C0.563368 5.79173 0.675961 5.70188 0.796765 5.68422L0.796767 5.68423L0.799692 5.68378L4.60624 5.10422L4.8695 5.06414L4.98315 4.82332L6.47502 1.66232L6.49598 12.2291L3.35876 13.9576C3.35844 13.9578 3.35812 13.958 3.35779 13.9582C3.24318 14.0201 3.10547 14.0107 2.99897 13.9319C2.89131 13.8523 2.83046 13.7082 2.85529 13.5619Z" fill="currentColor" stroke="currentColor"></path>
+          <path opacity="0.4" d="M3.23913 14.498C3.21262 14.5007 3.18346 14.5007 3.1543 14.498H3.23913ZM6.99584 12.5242V0.500011L6.99849 0.5C7.32459 0.5 7.62152 0.691175 7.76203 0.992327L9.46673 4.60992L13.2765 5.18948C13.592 5.23595 13.8571 5.46559 13.9578 5.77997C14.0586 6.09709 13.9764 6.44154 13.7484 6.67665L10.9859 9.47056L11.638 13.4783C11.6911 13.8063 11.5585 14.1398 11.296 14.3339C11.0336 14.528 10.6863 14.5526 10.4026 14.3968L6.99849 12.5242H6.99584Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">Starred</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px] fill-current" focusable="false" aria-hidden="true" viewBox="0 0 14 15" fill="none">
+          <path d="M7.15674 7.71944C7.15674 7.80709 7.08792 7.8759 7.00028 7.8759C6.91263 7.8759 6.84382 7.80709 6.84382 7.71944V4.65597C6.84382 4.56833 6.91263 4.49951 7.00028 4.49951C7.08792 4.49951 7.15674 4.56833 7.15674 4.65597V7.71944ZM6.625 10.1265C6.625 9.91846 6.79228 9.75118 7.00028 9.75118C7.20827 9.75118 7.37556 9.91846 7.37556 10.1265C7.37556 10.3345 7.20827 10.5017 7.00028 10.5017C6.79228 10.5017 6.625 10.3345 6.625 10.1265Z" fill="currentColor" stroke="currentColor"></path>
+          <path opacity="0.4" d="M3.84393 1.07679C4.21319 0.707482 4.71374 0.5 5.23617 0.5H8.76463C9.28706 0.5 9.78761 0.707482 10.1569 1.07679L13.4228 4.34404C13.792 4.7133 13.9999 5.21385 13.9999 5.73628V9.26474C13.9999 9.78718 13.792 10.2877 13.4228 10.657L10.1569 13.9229C9.78761 14.2921 9.28706 14.5 8.76463 14.5H5.23617C4.71374 14.5 4.21319 14.2921 3.84393 13.9229L0.576682 10.657C0.207479 10.2877 0 9.78718 0 9.26474V5.73628C0 5.21385 0.207479 4.7133 0.576682 4.34404L3.84393 1.07679ZM6.34394 4.63124V7.69472C6.34394 8.08312 6.63661 8.35117 7.0004 8.35117C7.36419 8.35117 7.65686 8.08312 7.65686 7.69472V4.63124C7.65686 4.29207 7.36419 3.97478 7.0004 3.97478C6.63661 3.97478 6.34394 4.29207 6.34394 4.63124ZM7.0004 9.22645C6.51626 9.22645 6.12512 9.64221 6.12512 10.1017C6.12512 10.6105 6.51626 10.977 7.0004 10.977C7.48454 10.977 7.87568 10.6105 7.87568 10.1017C7.87568 9.64221 7.48454 9.22645 7.0004 9.22645Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">Spam</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <svg class="size-[18px] fill-current" focusable="false" aria-hidden="true" viewBox="0 0 12 15" fill="none">
+          <path d="M7.9292 1.20296L7.9292 1.20296L7.93009 1.20476L8.12294 1.59605L8.26043 1.875H8.57143H11.1429C11.3309 1.875 11.5 2.0329 11.5 2.25C11.5 2.4671 11.3309 2.625 11.1429 2.625H0.857143C0.669651 2.625 0.5 2.46679 0.5 2.25C0.5 2.03321 0.669651 1.875 0.857143 1.875H3.42857H3.73957L3.87706 1.59605L4.06991 1.20476L4.06992 1.20476L4.0708 1.20296C4.13316 1.07513 4.25801 1 4.3875 1H7.6125C7.74199 1 7.86684 1.07513 7.9292 1.20296Z" fill="currentColor" stroke="currentColor"></path>
+          <path opacity="0.4" d="M11.1431 12.75C11.1431 13.7152 10.3744 14.5 9.42885 14.5H2.57171C1.62483 14.5 0.857422 13.7152 0.857422 12.75V3.125H11.1431V12.75ZM3.85742 5.3125C3.85742 5.07187 3.66456 4.875 3.42885 4.875C3.19314 4.875 3.00028 5.07187 3.00028 5.3125V11.4375C3.00028 11.6781 3.19314 11.875 3.42885 11.875C3.66456 11.875 3.85742 11.6781 3.85742 11.4375V5.3125ZM6.42885 5.3125C6.42885 5.07187 6.23599 4.875 6.00028 4.875C5.76456 4.875 5.57171 5.07187 5.57171 5.3125V11.4375C5.57171 11.6781 5.76456 11.875 6.00028 11.875C6.23599 11.875 6.42885 11.6781 6.42885 11.4375V5.3125ZM9.00028 5.3125C9.00028 5.07187 8.80742 4.875 8.57171 4.875C8.33599 4.875 8.14314 5.07187 8.14314 5.3125V11.4375C8.14314 11.6781 8.33599 11.875 8.57171 11.875C8.80742 11.875 9.00028 11.6781 9.00028 11.4375V5.3125Z" fill="currentColor"></path>
+        </svg>
+        <p class="text-16 leading-none">Trash</p>
+      </div>
+    </div>
+  </div>
+  <p class="mt-8 mb-2 text-sm font-semibold">
+    Labels
+  </p>
+  <div class="flex flex-col">
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <span class="size-2.5 me-2 rounded-full bg-primary-500"></span>
+        <p class="text-16 leading-none">Personal</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <span class="size-2.5 me-2 rounded-full bg-success-500"></span>
+        <p class="text-16 leading-none">Company</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <span class="size-2.5 me-2 rounded-full bg-warning-500"></span>
+        <p class="text-16 leading-none">Important</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-between py-3 text-gray-400 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <span class="size-2.5 me-2 rounded-full bg-error-500"></span>
+        <p class="text-16 leading-none">Private</p>
+      </div>
+    </div>
+  </div>
+</div>

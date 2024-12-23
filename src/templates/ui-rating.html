@@ -1,0 +1,125 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Ratting | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Ratting" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-16">
+
+      <div class="grid grid-cols-3 gap-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Controlled
+            </div>
+            
+            <div class="rating-star *:cursor-pointer flex flex-wrap gap-1 items-center text-2xl text-yellow-400">
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i> 
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+            </div>
+  
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Read Only
+            </div>
+            
+            <div class="*:cursor-pointer flex flex-wrap gap-1 items-center text-2xl text-yellow-400">
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i> 
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+            </div>
+  
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Disabled
+            </div>
+            
+            <div class="*:cursor-pointer flex flex-wrap gap-1 items-center text-2xl text-yellow-400 opacity-50">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i> 
+              <i class="ri-star-line"></i>
+              <i class="ri-star-line"></i>
+            </div>
+  
+  
+          </div>
+        </div>
+  
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Custom Icon
+            </div>
+  
+            <div class="*:cursor-pointer rating-heart flex gap-1 items-center text-2xl text-yellow-400">
+              <i class="ri-heart-line hover:scale-125 transition duration-100 ease-linears"></i>
+              <i class="ri-heart-line hover:scale-125 transition duration-100 ease-linears"></i>
+              <i class="ri-heart-line hover:scale-125 transition duration-100 ease-linears"></i> 
+              <i class="ri-heart-line hover:scale-125 transition duration-100 ease-linears"></i>
+              <i class="ri-heart-line hover:scale-125 transition duration-100 ease-linears"></i>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Sizes
+            </div>
+            
+            <div class="rating-star *:cursor-pointer flex flex-wrap gap-1 items-center text-3xl text-yellow-400">
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i> 
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+            </div>
+            <div class="rating-star *:cursor-pointer flex flex-wrap gap-1 items-center text-2xl text-yellow-400 mt-3">
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i> 
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+            </div>
+            <div class="rating-star *:cursor-pointer flex flex-wrap gap-1 items-center text-lg text-yellow-400 mt-3">
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-fill hover:scale-125 transition duration-100 ease-linear"></i> 
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+              <i class="ri-star-line hover:scale-125 transition duration-100 ease-linear"></i>
+            </div>
+  
+  
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}
+{% block js %}
+  <script src={% static 'vite/assets/js/ui-rating.js' %}></script>
+{% endblock js %}

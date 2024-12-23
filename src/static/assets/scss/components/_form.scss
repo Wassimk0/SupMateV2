@@ -1,0 +1,97 @@
+input[type=radio] {
+    @apply cursor-pointer border-2 focus:ring-current disabled:pointer-events-none outline-none disabled:opacity-50 bg-transparent checked:bg-none;
+    &.radio-primary {
+        @apply text-primary-500 checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#6950e8,_0_0_#0000] ;
+    }
+    &.radio-success {
+        @apply text-success-500 checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#11b886,_0_0_#0000] ;
+    }
+    &.radio-warning {
+        @apply text-warning-500 checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#FEBF06,_0_0_#0000] ;
+    }
+    &.radio-error {
+        @apply text-error-500 checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#EF4770,_0_0_#0000] ;
+    }
+    &.radio-info {
+        @apply text-info-500 checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#8C8DFF,_0_0_#0000] ;
+    }
+    &.radio-default {
+        @apply text-[#6b7280] checked:shadow-[0_0_0_2px_#fff,_0_0_0_calc(2px_+_2px)_#6b7280,_0_0_#0000] ;
+    }
+}
+
+input[type=checkbox] {
+    @apply cursor-pointer border-2 rounded-[4px] focus:ring-0 bg-transparent checked:ring-0 checked:ring-offset-0 focus:ring-offset-0 checked:shadow-none disabled:opacity-20 disabled:pointer-events-none outline-none;
+    &.indeterminate {
+        @apply bg-[url("./../images/others/indeterminate.svg")];
+    }
+}
+
+.rating {
+    @apply gap-3;
+    input{
+        @apply border-0;
+    }
+}
+
+.img-checkbox {
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+      @apply hidden;
+    }
+  
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        @apply relative cursor-pointer;
+    }
+  
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+        @apply content-[''] w-6 h-6 absolute left-0 top-0;
+    }
+  
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after {
+        @apply content-[''] w-6 h-6 absolute left-0 top-0;
+    }
+  
+    [type="checkbox"]:not(:checked) + label:after {
+        @apply opacity-0 scale-0;
+    }
+
+    
+    &.bookmark {
+        [type="checkbox"]:not(:checked) + label:before,
+        [type="checkbox"]:checked + label:before {
+            @apply bg-[url("./../images/others/bookmark-line.svg")];
+        }
+    
+        [type="checkbox"]:not(:checked) + label:after,
+        [type="checkbox"]:checked + label:after {
+            @apply bg-[url("./../images/others/bookmark-fill.svg")];
+        }
+    }
+
+    
+    &.heart {
+        [type="checkbox"]:not(:checked) + label:before,
+        [type="checkbox"]:checked + label:before {
+            @apply bg-[url("./../images/others/heart-line.svg")];
+        }
+    
+        [type="checkbox"]:not(:checked) + label:after,
+        [type="checkbox"]:checked + label:after {
+            @apply bg-[url("./../images/others/heart-fill.svg")];
+        }
+    }
+}
+
+.form-input {
+    @apply bg-transparent p-4 pe-16 block w-full border-gray-200 rounded-lg text-16 hover:border-gray-900 focus:border-primary-500 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:hover:border-white dark:text-white dark:placeholder-white dark:focus:border-primary-500 dark:focus:ring-primary-500;
+    &.error{
+        @apply border-error-500 text-error-500 placeholder:text-error-500 hover:border-error-500 focus:ring-error-500 focus:border-error-500 dark:border-error-500 dark:hover:border-error-500 dark:text-error-500 dark:placeholder-error-500 dark:focus:border-error-500 dark:focus:ring-error-500;
+    }
+    &.form-input-sm {
+        @apply py-3 text-sm;
+    }
+}

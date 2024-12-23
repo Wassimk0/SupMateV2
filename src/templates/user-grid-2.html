@@ -1,0 +1,453 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>UI User Grid 2 | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="grid grid-cols-12 mt-6 card card-dark" x-data="{ data: [
+    { 
+      id: 1,
+      uImg :'static/assets/images/avatar/g-1.svg',  uName: 'Zachary Gomez', 
+      uComany: 'Editor', 
+      },
+    { 
+      id: 2,
+      uImg :'static/assets/images/avatar/g-2.svg',  uName: 'Amanda Montgomery', 
+      uComany: 'Subscriber', 
+    },
+    { 
+      uImg :'static/assets/images/avatar/g-3.svg',  uName: 'Lester Holland',  
+      uComany: 'Subscriber', 
+    },
+    { 
+      id: 3,
+      uImg :'static/assets/images/avatar/g-4.svg',  uName: 'lester75@gmail.com', 
+      uComany: 'Subscriber', 
+    },
+    { 
+      id: 4,
+      uImg :'static/assets/images/avatar/g-5.svg',  uName: 'Richard Gregory', 
+      uComany: 'Subscriber', 
+      },
+    { 
+      id: 5,
+      uImg :'static/assets/images/avatar/g-6.svg',  uName: 'Clifford Caldwell', 
+      uComany: 'Contributor', 
+    },
+    { 
+      id: 6,
+      uImg :'static/assets/images/avatar/g-7.svg',  uName: 'Lester Holland', 
+      uComany: 'Subscriber', 
+    },
+    { 
+      id: 7,
+      uImg :'static/assets/images/avatar/c-2.svg',  uName: 'Richard Gregory', 
+      uComany: 'Subscriber', 
+    },
+    { 
+      id: 8,
+      uImg :'static/assets/images/avatar/c-3.svg',  uName: 'Max Allison', 
+      uComany: 'Subscriber', 
+    },
+    { 
+      id: 9,
+      uImg :'static/assets/images/avatar/e-2.svg',  uName: 'Zachary Gomez', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 10,
+      uImg :'static/assets/images/avatar/e-3.svg',  uName: 'Zachary Gomez', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 11,
+      uImg :'static/assets/images/avatar/e-4.svg',  uName: 'Zachary Gomez', 
+      uComany: 'Editor', 
+    },
+
+    { 
+      id: 12,
+      uImg :'static/assets/images/avatar/e-5.svg',  uName: 'Leanne Graham', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 13,
+      uImg :'static/assets/images/avatar/c-4.svg',  uName: 'Ervin Howell', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 14,
+      uImg :'static/assets/images/avatar/c-5.svg',  uName: 'Clementine Bauch', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 15,
+      uImg :'static/assets/images/avatar/e-5.svg',  uName: 'Leanne Graham', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 16,
+      uImg :'static/assets/images/avatar/c-4.svg',  uName: 'Ervin Howell', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 17,
+      uImg :'static/assets/images/avatar/c-5.svg',  uName: 'Clementine Bauch', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 18,
+      uImg :'static/assets/images/avatar/e-5.svg',  uName: 'Leanne Graham', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 19,
+      uImg :'static/assets/images/avatar/s-1.svg',  uName: 'Chelsey Dietrich', 
+      uComany: 'Editor', 
+    },
+    { 
+      id: 20,
+      uImg :'static/assets/images/avatar/s-2.svg',  uName: 'Patricia Lebsack', 
+      uComany: 'Editor', 
+    },
+] ,
+selectedData:{
+  id: 0,
+  selectedName: '',
+  selectedRole: '',
+  selectedImg: '',
+},
+setdata(item){
+  this.selectedData.id = item.id
+  this.selectedData.selectedName = item.uName
+  this.selectedData.selectedRole = item.uComany
+  this.selectedData.selectedImg = item.uImg
+}
+}">
+    <div class="col-span-12 lg:col-span-9">
+      <div class="">
+        <div class="card-body">
+          <!-- search -->
+          <div class="flex flex-wrap justify-between">
+            <div class="relative w-[400px]">
+              <div class="absolute top-2.5 flex items-center ps-4 pointer-events-none ">
+                <svg class="w-6 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1dkl02v fill-gray-400" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M20.85,19.44l-4-4a2.44,2.44,0,0,0-.43-.35l-1-.69h0A7,7,0,1,0,10,17a7,7,0,0,0,4.37-1.53h0l.75,1a2.6,2.6,0,0,0,.3.36l4,4a.5.5,0,0,0,.71,0l.7-.7A.5.5,0,0,0,20.85,19.44ZM10,15a5,5,0,1,1,5-5A5,5,0,0,1,10,15Z"></path>
+                </svg>
+              </div>
+              <input type="search" id="default-search" class="block w-full py-2.5 ps-12 pr-4 text-sm text-gray-900 border border-gray-200 focus:ring-0 focus:outline-none rounded-md placeholder:font-light bg-white placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:border-primary-500 dark:focus:border-primary-500 hover:border-black dark:hover:border-white" placeholder="Search...." required="">
+            </div>
+            <div>
+              <div class="tabs">
+                <nav class="border-none nav" aria-label="Tabs" role="tablist" x-data="{ activeTab: 'tab2' }">
+                  <a href="user-list-2.html" class="rtl:-ml-4 nav-item hs-tab-active:font-semibold hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                    <svg :class="{ 'fill-primary-500 ': activeTab === 'tab1' }" class="w-6 fill-gray-500 dark:text-dark-15" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M21,5.5v1a.5.5,0,0,1-.5.5H9.5A.5.5,0,0,1,9,6.5v-1A.5.5,0,0,1,9.5,5h11A.5.5,0,0,1,21,5.5ZM20.5,11H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,11Zm0,6H9.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,20.5,17ZM5,4A2,2,0,1,0,7,6,2,2,0,0,0,5,4Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm0,6a2,2,0,1,0,2,2A2,2,0,0,0,5,16Z"></path>
+                    </svg>
+                  </a>
+                  <a href="user-grid-2.html" class="ltr:-ml-4 nav-item hs-tab-active:font-semiboldhs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                    <svg :class="{ 'fill-primary-500 ': activeTab === 'tab2' }" class="w-6 fill-gray-500 dark:text-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-sm0m28" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M8,4.5v3a.5.5,0,0,1-.5.5h-3A.5.5,0,0,1,4,7.5v-3A.5.5,0,0,1,4.5,4h3A.5.5,0,0,1,8,4.5ZM13.5,4h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,4Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,4Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,10Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,10Zm-12,6h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,7.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,13.5,16Zm6,0h-3a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,19.5,16Z"></path>
+                    </svg>
+                  </a>
+
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+            <template x-for="(item, index) in data" :key="index">
+              <div class="border border-gray-200 rounded-lg dark:border-gray-700 cursor-pointer" @click="setdata(item)" :class="selectedData.id === item.id ? 'bg-primary-500 text-white' : ''">
+                <div class="p-4">
+                  <div class="flex justify-between gap-1">
+                    <div class="flex gap-2">
+                      <img :src="item.uImg" class="w-10" alt="">
+                      <div>
+                        <h4 class="text-sm font-medium" :class="selectedData.id === item.id ? 'text-white' : 'text-gray-900 dark:text-gray-200'" x-text="item.uName"></h4>
+                        <p class="mt-1 text-13" :class="selectedData.id === item.id ? 'text-white' : 'text-secondary-main'" x-text="item.uComany"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <nav class="justify-center mt-10 pagination">
+            <button type="button" class="page-item !rounded-lg" disabled="">
+              <i class="text-xl ri-arrow-left-s-line text-primary-500"></i>
+            </button>
+            <button type="button" class="page-item !rounded-lg bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+            <button type="button" class="page-item !rounded-lg">
+              <i class="text-xl ri-arrow-right-s-line text-primary-500"></i>
+            </button>
+          </nav>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 p-6 bg-gray-100 lg:col-span-3 dark:bg-gray-800">
+      <!--  -->
+      <div x-show="selectedData.id == 0" class="h-full">
+        <div class="h-full">
+          <button class="flex justify-center w-full btn btn-primary btn-text-icon" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-alert-backdrop-modal" data-hs-overlay="#hs-alert-backdrop-modal">
+            <i class="text-xl leading-none ri-add-line"></i>
+            Add Contact
+          </button>
+          <div>
+            <div id="hs-alert-backdrop-modal" class="hs-overlay hs-overlay-backdrop-open:bg-transparent dark:hs-overlay-backdrop-open:bg-transparent hs-overlay-backdrop-open:bg-modal dark:hs-overlay-backdrop-open:bg-modal hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-label">
+              <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-[600px] sm:w-full m-3 sm:mx-auto min-h-[calc(100%-1.5rem)] flex items-center">
+                <div class="flex flex-col w-full bg-white pointer-events-auto shadow-dialog rounded-xl dark:bg-gray-800">
+                  <p class="p-6 pb-8 font-semibold text-gray-900 text-16 dark:text-gray-200">
+                    Add Contact
+                  </p>
+                  <div class="">
+                    <div class="relative size-20 inline-blockmt-4 mx-auto bg-[#f3f4f6] rounded-full mb-12">
+                      <img class="size-20 rounded-full m-[3px]" src={% static 'assets/images/avatar/1.svg' %} alt="Image Description">
+                      <label for="dropzone-file">
+                        <div class="!cursor-pointer absolute bottom-1 -end-2 size-6 flex justify-center items-center  dark:border-gray-800 bg-primary-500 rounded-full ring-2 ring-white dark:ring-gray-800">
+                          <svg class="w-4 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-c6lyqs fill-white dark:fill-gray-800" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CameraAltIcon">
+                            <circle cx="12" cy="12" r="3.2"></circle>
+                            <path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                          </svg>
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden">
+                      </label>
+                    </div>
+                    <div class="card-body">
+                      <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group">
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="Zachary Gomez">
+                          <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="">
+                          <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last Name</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="text" name="text" id="text" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="">
+                          <svg class="w-6 absolute top-2.5 right-2 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CalendarMonthOutlinedIcon">
+                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                          </svg>
+                          <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Birthday</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="text" name="text" id="text" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="Google Inc" required="">
+                          <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="email" name="email" id="email" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="" value="zachary-gomez@gmail.com">
+                          <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                          <input type="number" name="number" id="number" class="[&amp;::-webkit-inner-spin-button]:appearance-none peer block p-3 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 hover:border-black dark:hover:border-white appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="" value="(01) 4563 4556">
+                          <label for="number" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
+                        </div>
+
+                        <!-- btn -->
+                        <div class="flex gap-3">
+                          <button class="btn ripple btn-primary">Save<div class="rippleContainer"></div></button>
+                          <button class="btn btn-outline-dark border-gray-200 dark:text-white dark:border-white">Cancle<div class="rippleContainer"></div></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='h-full flex justify-center items-center text-16'>
+            <p>No Data</p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="" x-show="selectedData.id != 0">
+        <button class="flex justify-center w-full btn btn-primary btn-text-icon" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-alert-backdrop-modals" data-hs-overlay="#hs-alert-backdrop-modals">
+          <i class="text-xl leading-none ri-add-line"></i>
+          Add Contact
+        </button>
+        <div id="hs-alert-backdrop-modals" class="hs-overlay hs-overlay-backdrop-open:bg-transparent dark:hs-overlay-backdrop-open:bg-transparent hs-overlay-backdrop-open:bg-modal dark:hs-overlay-backdrop-open:bg-modal hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-label">
+          <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-[600px] sm:w-full m-3 sm:mx-auto min-h-[calc(100%-1.5rem)] flex items-center">
+            <div class="flex flex-col w-full bg-white pointer-events-auto shadow-dialog rounded-xl dark:bg-gray-800">
+              <p class="p-6 pb-8 font-semibold text-gray-900 text-16 dark:text-gray-200">
+                Add Contact
+              </p>
+              <div class="">
+                <div class="relative size-20 inline-blockmt-4 mx-auto bg-[#f3f4f6] rounded-full mb-12">
+                  <img class="size-20 rounded-full m-[3px]" src={% static 'assets/images/avatar/1.svg' %} alt="Image Description">
+                  <label for="dropzone-file">
+                    <div class="!cursor-pointer absolute bottom-1 -end-2 size-6 flex justify-center items-center  dark:border-gray-800 bg-primary-500 rounded-full ring-2 ring-white dark:ring-gray-800">
+                      <svg class="w-4 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-c6lyqs fill-white dark:fill-gray-800" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CameraAltIcon">
+                        <circle cx="12" cy="12" r="3.2"></circle>
+                        <path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                      </svg>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden">
+                  </label>
+                </div>
+                <div class="card-body">
+                  <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 *:relative *:mb-6 *:group">
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="Zachary Gomez">
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="name" id="name" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="">
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last Name</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="text" id="text" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="">
+                      <svg class="w-6 absolute top-2.5 right-2 fill-gray-500 dark:fill-dark-15  MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CalendarMonthOutlinedIcon">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                      </svg>
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Birthday</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="text" id="text" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " value="Google Inc" required="">
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="email" name="email" id="email" class="block w-full p-3 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none peer hover:border-black dark:hover:border-white dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="" value="zachary-gomez@gmail.com">
+                      <label for="name" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                      <input type="number" name="number" id="number" class="[&amp;::-webkit-inner-spin-button]:appearance-none peer block p-3 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 hover:border-black dark:hover:border-white appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-500" placeholder=" " required="" value="(01) 4563 4556">
+                      <label for="number" class="absolute text-sm px-1 ltr:ml-2 rtl:mr-2 text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 bg-white dark:bg-gray-800 z-10 origin-[0] peer-focus:font-medium peer-focus:text-primary-500 peer-focus:dark:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
+                    </div>
+
+                    <!-- btn -->
+                    <div class="flex gap-3">
+                      <button class="btn ripple btn-primary">Save<div class="rippleContainer"></div></button>
+                      <button class="btn btn-outline-dark border-gray-200 dark:text-white dark:border-white">Cancle<div class="rippleContainer"></div></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-8">
+          <div>
+            <button aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-alert-backdrop-modals" data-hs-overlay="#hs-alert-backdrop-modals">
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1m4xmbe" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M16.81,10a.5.5,0,0,1,0,.7L8.75,18.79a2,2,0,0,1-.68.45L3.73,21a.5.5,0,0,1-.54-.11l0,0A.5.5,0,0,1,3,20.27l1.72-4.34a2,2,0,0,1,.45-.68l8.07-8.07a.5.5,0,0,1,.71,0ZM20.56,4.1l-.66-.66A1.5,1.5,0,0,0,18.84,3h-.76A1.5,1.5,0,0,0,17,3.44L15.19,5.27a.5.5,0,0,0,0,.7L18,8.82a.5.5,0,0,0,.71,0L20.56,7A1.5,1.5,0,0,0,21,5.92V5.16A1.5,1.5,0,0,0,20.56,4.1Z"></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="bg-white hs-dropdown-toggle btn-dark-icon-hover size-10 dark:bg-gray-700">
+                <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1m4xmbe" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M18,10a2,2,0,1,1-2,2A2,2,0,0,1,18,10Zm-4,2a2,2,0,1,0-2,2A2,2,0,0,0,14,12ZM8,12a2,2,0,1,0-2,2A2,2,0,0,0,8,12Z"></path>
+                </svg>
+              </button>
+              <div class="hs-dropdown-menu min-w-24 max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a class="dropdown-item" href="#!">
+                    <span>
+                      <svg class="w-5 fill-gray-500 dark:fill-gray-15 MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-18zfaoc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DeleteOutlineIcon">
+                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"></path>
+                      </svg>
+                    </span>
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto bg-white rounded-full size-32">
+          <img :src="selectedData.selectedImg" class="rounded-full size-32" alt="">
+        </div>
+        <div class="mt-4 text-center">
+          <p class="text-base font-semibold" x-text="selectedData.selectedName">Amanda Montgomery</p>
+          <p class="mt-1 text-sm text-description" x-text="selectedData.selectedRole">Subscriber</p>
+        </div>
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M19,9H13V6.72A2,2,0,0,0,14,5a6.65,6.65,0,0,0-1.46-2.8.48.48,0,0,0-.4-.2h-.28a.48.48,0,0,0-.4.2A6.65,6.65,0,0,0,10,5a2,2,0,0,0,1,1.72V9H5a2,2,0,0,0-2,2v6a1,1,0,0,0,1,1v3a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1V18a1,1,0,0,0,1-1V11A2,2,0,0,0,19,9ZM18,20H6V17.87a4,4,0,0,0,2.26-1.59,4.93,4.93,0,0,0,7.48,0A4,4,0,0,0,18,17.87Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">June 3, 1996</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M8,8a4,4,0,1,1,4,4A4,4,0,0,1,8,8ZM19.89,18.55l-1.44-2.89A3,3,0,0,0,15.76,14H8.24a3,3,0,0,0-2.69,1.66L4.11,18.55A1,1,0,0,0,5,20H19A1,1,0,0,0,19.89,18.55Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">Female</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M23,19.5a.5.5,0,0,0-.5-.5H20V8a1,1,0,0,0-1-1H15V4a1,1,0,0,0-1-1H10A1,1,0,0,0,9,4v7H5a1,1,0,0,0-1,1v7H1.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h21a.5.5,0,0,0,.5-.5ZM16.5,9h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,9Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,13Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,16.5,17Zm-5-8h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,11.5,9Zm0,4h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1A.5.5,0,0,1,11.5,13ZM13,5.5v1a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1A.5.5,0,0,1,13,5.5ZM7.5,19h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1A.5.5,0,0,1,7.5,19Zm0-4h-1a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1A.5.5,0,0,1,7.5,15ZM11,18.5v-1a.5.5,0,0,1,.5-.5h1a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,11,18.5Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">Meta</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M20,4H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6A2,2,0,0,0,20,4Zm0,7-6.35,4.45a2.88,2.88,0,0,1-3.3,0L4,11V8.9l7.35,5.15a1.14,1.14,0,0,0,1.3,0L20,8.9Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">montgomery@ya.com</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M17,21a10.07,10.07,0,0,1-4.74-1.19l-.45-.25a18,18,0,0,1-7.33-7.33l-.25-.45A10.07,10.07,0,0,1,3,7V6.33a2,2,0,0,1,.59-1.42L5.28,3.22a.75.75,0,0,1,1.18.15L8.71,7.23a1,1,0,0,1-.16,1.21L6.66,10.33a.5.5,0,0,0-.09.59l.35.66a13.53,13.53,0,0,0,5.5,5.49l.66.36a.5.5,0,0,0,.59-.09l1.89-1.89a1,1,0,0,1,1.21-.16l3.86,2.25a.75.75,0,0,1,.15,1.18l-1.69,1.69a2,2,0,0,1-1.42.59Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">(01) 4563 4556</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M14,14c-4.72,0-9.5,2-10,4.59a.5.5,0,0,1-.49.41h-.1a.46.46,0,0,1-.32-.13A.5.5,0,0,1,3,18.54,11.22,11.22,0,0,1,14,8V5.42a.49.49,0,0,1,.15-.36l.2-.2a.5.5,0,0,1,.71,0l5.79,5.79a.48.48,0,0,1,0,.7l-5.79,5.79a.5.5,0,0,1-.71,0l-.2-.2a.49.49,0,0,1-.15-.36Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">http://carriepage.com</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12,2A9.76,9.76,0,0,0,2,11.5,9.22,9.22,0,0,0,4.71,18a1,1,0,0,1,.29.7V21a1,1,0,0,0,.45.84h0a1,1,0,0,0,.94.09L9.1,20.79a1,1,0,0,1,.61-.05A10.18,10.18,0,0,0,12,21a9.76,9.76,0,0,0,10-9.5A9.76,9.76,0,0,0,12,2Zm5.5,7.21-2.62,4a1.49,1.49,0,0,1-1.25.68H13.2a1.49,1.49,0,0,1-.91-.31L10.1,11.89l-3,2.25a.43.43,0,0,1-.56,0,.5.5,0,0,1-.07-.63L9.1,9.54a1.51,1.51,0,0,1,1.26-.67h.21a1.48,1.48,0,0,1,.91.3l2.3,1.76,3.06-2.34a.43.43,0,0,1,.56,0l0,0A.43.43,0,0,1,17.5,9.21Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">(01) 4563 4556</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M16.5,6h-3a1,1,0,0,0-1,1v3h4a.35.35,0,0,1,.34.46l-.74,2.2a.5.5,0,0,1-.47.34H12.5v7.5a.5.5,0,0,1-.5.5H9.5a.5.5,0,0,1-.5-.5V13H7.5a.5.5,0,0,1-.5-.5v-2a.5.5,0,0,1,.5-.5H9V7a4,4,0,0,1,4-4h3.5a.5.5,0,0,1,.5.5v2A.5.5,0,0,1,16.5,6Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">facebook-carrie-page</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M20.91,13.22A9.73,9.73,0,0,0,21,12a9,9,0,0,0-9-9,9.73,9.73,0,0,0-1.22.09,5.5,5.5,0,0,0-7.69,7.69A9.73,9.73,0,0,0,3,12a9,9,0,0,0,9,9,9.73,9.73,0,0,0,1.22-.09,5.5,5.5,0,0,0,7.69-7.69Zm-4.51,3a3.8,3.8,0,0,1-1.73,1.32A6.77,6.77,0,0,1,12,18,6.44,6.44,0,0,1,9,17.35a3.86,3.86,0,0,1-1.4-1.26A2.72,2.72,0,0,1,7,14.53a1.07,1.07,0,0,1,.36-.81,1.21,1.21,0,0,1,.89-.34,1.11,1.11,0,0,1,.75.27,2,2,0,0,1,.5.74,3.91,3.91,0,0,0,.49.87,1.76,1.76,0,0,0,.71.56,2.89,2.89,0,0,0,1.24.23,3,3,0,0,0,1.72-.46,1.24,1.24,0,0,0,.63-1.07A1.08,1.08,0,0,0,14,13.7a2.35,2.35,0,0,0-.91-.51q-.59-.18-1.56-.39a12,12,0,0,1-2.24-.68A3.7,3.7,0,0,1,7.79,11a2.72,2.72,0,0,1-.56-1.73,2.87,2.87,0,0,1,.58-1.75A3.63,3.63,0,0,1,9.47,6.4,7.05,7.05,0,0,1,12,6a6.56,6.56,0,0,1,2,.27A4.15,4.15,0,0,1,15.37,7a2.87,2.87,0,0,1,.83.94,2,2,0,0,1,.27,1,1.25,1.25,0,0,1-1.23,1.21,1,1,0,0,1-.73-.24A2.59,2.59,0,0,1,14,9.19a2.91,2.91,0,0,0-.77-1,2.37,2.37,0,0,0-1.42-.33,2.62,2.62,0,0,0-1.48.37,1,1,0,0,0-.53.82A.8.8,0,0,0,10,9.6a1.5,1.5,0,0,0,.51.39,4.12,4.12,0,0,0,.69.27l1.18.29a18,18,0,0,1,1.88.5,6,6,0,0,1,1.46.67,3,3,0,0,1,1,1A3.13,3.13,0,0,1,17,14.27,3.29,3.29,0,0,1,16.4,16.2Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">carrie-page</p>
+          </li>
+          <li class="flex gap-3">
+            <span>
+              <svg class="w-5 fill-gray-500 dark:fill-dark-15 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-174sne7" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12,2A10,10,0,0,0,3.9,17.86L3,20.6a.49.49,0,0,0,.12.51l0,0a.51.51,0,0,0,.51.13l2.85-.92A10,10,0,1,0,12,2Zm5.82,14.12a2.81,2.81,0,0,1-2,1.41c-.52.11-1.21.2-3.5-.75a12.43,12.43,0,0,1-5-4.4,5.69,5.69,0,0,1-1.19-3,3.21,3.21,0,0,1,1-2.44,1.49,1.49,0,0,1,1-.36l.33,0c.29,0,.44,0,.64.49s.82,2,.89,2.16a.57.57,0,0,1,.05.54,1.85,1.85,0,0,1-.33.46c-.14.17-.29.3-.43.48a.47.47,0,0,0-.12.63,8.94,8.94,0,0,0,1.62,2,7.34,7.34,0,0,0,2.35,1.45.62.62,0,0,0,.7-.11,10,10,0,0,0,.78-1,.56.56,0,0,1,.72-.21c.27.09,1.7.8,2,.94s.49.22.56.34A2.5,2.5,0,0,1,17.82,16.12Z"></path>
+              </svg>
+            </span>
+            <p class="text-gray-500">+1 (345) 556-2248</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% extends "partials/page-layout.html" %} {% load static %}
+{% block title %}
+<title>Create Ticket Page | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="max-w-[900px] mx-auto py-6">
+
+    <div class="card card-dark">
+      <div class="card-body">
+        <h6 class="text-lg leading-[27px] font-semibold">Create Ticket</h6>
+        <p class="text-gray-500 dark:text-gray-400 mb-6">Please include as many details as possible about your question or problem.</p>
+        <ul class="list-disc ps-4 mb-8 *:pb-1">
+          <li>Screenshots/Screen Recording is very helpful.</li>
+          <li>You can use snipboard.io to share screenshots.</li>
+          <li>And loom.com for screen recording.</li>
+        </ul>
+
+        <form x-data="{ 
+          email: '', 
+          lname: '', 
+          fname: '', 
+          emailError: false,
+          lnameError: false,
+          fnameError: false,
+          hasInteractedWithFname: false,
+          hasInteractedWithLname: false,
+          hasInteractedWithEmail: false,
+          validateField(field) {
+              if (field === 'fname') {
+                  this.fnameError = this.fname.trim() === '';
+              } else if (field === 'lname') {
+                  this.lnameError = this.lname.trim() === '';
+              } else if (field === 'email') {
+                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                  this.emailError = !emailPattern.test(this.email);
+              }
+          },
+          validateAllFields() {
+              this.hasInteractedWithFname = true;
+              this.hasInteractedWithLname = true;
+              this.hasInteractedWithEmail = true;
+
+              this.validateField('fname');
+              this.validateField('lname');
+              this.validateField('email');
+          },
+          validateAndSubmit() {
+              this.validateAllFields();
+
+              if (!this.fnameError && !this.lnameError && !this.emailError) {
+                  // Submit the form if no errors
+                  // e.g., this.$refs.form.submit(); or perform your submit logic here
+              }
+          }
+        }" @submit.prevent="validateAndSubmit" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <input type="text" x-model="fname" @blur="hasInteractedWithFname = true; validateField('fname')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': fnameError && hasInteractedWithFname, 'focus:!ring-error-500': fnameError && hasInteractedWithFname }" placeholder="First Name*">
+                <p x-show="fnameError && hasInteractedWithFname" class="mt-1 px-3.5 text-xs text-error-500 leading-5">First Name is Required!</p>
+            </div>
+            <div>
+                <input type="text" x-model="lname" @blur="hasInteractedWithLname = true; validateField('lname')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': lnameError && hasInteractedWithLname, 'focus:!ring-error-500': lnameError && hasInteractedWithLname }" placeholder="Last Name*">
+                <p x-show="lnameError && hasInteractedWithLname" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Last Name is Required!</p>
+            </div>
+          </div>
+          <div>
+            <input type="text" x-model="email" @blur="hasInteractedWithEmail = true; validateField('email')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': emailError && hasInteractedWithEmail, 'focus:!ring-error-500': emailError && hasInteractedWithEmail }" placeholder="Email*">
+            <p x-show="emailError && hasInteractedWithEmail" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Email is Required!</p>
+          </div>
+          <select class="bg-transparent relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-[11px] ps-[14px] pe-[43px] text-sm border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500">
+            <option value="biponi" selected>Biponi</option>
+            <option value="bazaar">Bazaar</option>
+            <option value="stocky">Stocky</option>
+          </select>
+          <input type="text" class="form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50" placeholder="Subject*">
+          <textarea rows="6" class="form-input form-input-sm !py-[11px] !pe-4 placeholder:opacity-50" placeholder="Message*"></textarea>
+          <div class="flex items-center gap-4 mt-6">
+            <button type="submit" ripple-opacity="0.3" ripple-color="white" class="btn ripple btn-primary">Submit</button>
+            <button type="button" ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-secondary dark:bg-transparent border-gray-200 hover:bg-transparent dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white">Cancel</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,126 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>Contact Us | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="relative min-h-screen">
+  <div class="py-12 bg-[linear-gradient(270.02deg,rgb(14,20,33)55.41%,rgb(39,11,99)100.36%)] text-white">
+    <div class="container">
+      <div class="grid gap-x-4 gap-y-8 grid-cols-1 md:grid-cols-2 items-center">
+        <div>
+          <h2 class="text-center text-[42px] sm:text-[52px] font-bold leading-[63px] sm:leading-[78px] mb-6">Find Your Dream Job!</h2>
+          <div class="relative bg-white text-gray-500 rounded-lg max-w-[450px]">
+            <i class="ri-search-line absolute start-3 top-1/2 -translate-y-1/2 text-xl leading-none"></i>
+            <input type="text" class="form-input form-input-sm !ps-10 placeholder:opacity-50" placeholder="Search Job">
+          </div>
+        </div>
+        <div class="text-center w-full">
+          <img class="text-center mx-auto" src={% static 'assets/images/pages/career.svg' %} alt="career">
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="container py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-[42px] sm:text-[52px] font-bold leading-[63px] sm:leading-[78px]">Available Jobs</h2>
+      <p class="text-lg leading-[27px] text-gray-500 dark:text-gray-400">
+        Join our dynamic team of professionals and shape the future of IT Industry.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">Software Engineer</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">UI and UX Designer</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">Digital Marketer</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">Digital Marketer</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">Graphic Designer</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+      <div class="relative border border-gray-100 hover:border-primary-500 hover:shadow-table transition-all ease-in-out duration-200 dark:border-gray-700 bg-white dark:hover:border-primary-500 dark:bg-gray-800 p-6 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4 leading-9">HR Manager</h3>
+        <p class="text-16 text-gray-500 dark:text-gray-400 leading-6 mb-12">
+          We are actively seeking a talented and passionate software engineer to join our team.
+        </p>
+        <div class="flex flex-row flex-wrap items-center mb-6 gap-2">
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Full-time</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">Remote</span>
+          <span class="bg-gray-100 dark:bg-gray-700 rounded-full text-nowrap text-13 font-medium leading-4 px-3 py-2">$500/monthly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-outline-primary">View Details</button>
+          <button ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px]">Apply this job</button>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+
+{% endblock content %}

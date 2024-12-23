@@ -1,0 +1,404 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI AutoComplete | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="AutoComplete" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Combo Box
+            </div>
+            <div>
+              <select data-hs-select='{
+              "hasSearch": false,
+              "placeholder": "Combo Box",
+              "toggleTag": "<button type=\"button\" aria-expanded=\"false\"><span class=\"me-2 flex items-center\" data-icon></span><span class=\"text-gray-800 dark:text-neutral-200 \" data-title></span></button>",
+              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-4 ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-500 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+              "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+              "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+              "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"me-2\" data-icon></div><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+              "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+            }' class="hidden">
+              <option value="1">The Shawshank Redemption</option>
+              <option value="2"> The Godfather </option>
+              <option value="3"> The Godfather: Part II </option>
+              <option value="4"> The Dark Knight </option>
+              <option value="5"> 12 Angry Men </option>
+              <option value="6"> Schindler's List </option>
+              <option value="7"> Pulp Fiction </option>
+              <option value="8"> The Lord of the Rings: The Return of the King </option>
+              <option value="9"> The Good, the Bad and the Ugly </option>
+              <option value="10"> Fight Club </option>
+              <option value="11"> The Lord of the Rings: The Fellowship of the Ring </option>
+              <option value="12"> Star Wars: Episode V - The Empire Strikes Back </option>
+              <option value="13"> City of God </option>
+              <option value="14"> Se7en </option>
+              <option value="15"> The Silence of the Lambs </option>
+              <option value="16"> It's a Wonderful Life </option>
+              <option value="17"> Life Is Beautiful </option>
+              <option value="18"> Terminator 2: Judgment Day </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Country Select
+            </div>
+  
+           <!-- Select -->
+          <select data-hs-select='{
+            "hasSearch": false,
+            "placeholder": "Select country...",
+            "toggleTag": "<button type=\"button\" aria-expanded=\"false\"><span class=\"me-2 flex items-center\" data-icon></span><span class=\"text-gray-800 dark:text-neutral-200 \" data-title></span></button>",
+            "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-[15px] ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+            "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+            "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+            "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"me-2\" data-icon></div><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+            "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+          }' class="hidden">
+            <option value="">Choose</option>
+            <option value="AF" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/af.png\" alt=\"Afghanistan\" />"}'>
+              Afghanistan
+            </option>
+            <option value="AX" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/ax.png\" alt=\"Aland Islands\" />"}'>
+              Aland Islands
+            </option>
+            <option value="AL" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/al.png\" alt=\"Albania\" />"}'>
+              Albania
+            </option>
+            <option value="DZ" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/dz.png\" alt=\"Algeria\" />"}'>
+              Algeria
+            </option>
+            <option value="AS" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/as.png\" alt=\"American Samoa\" />"}'>
+              American Samoa
+            </option>
+            <option value="AD" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/ad.png\" alt=\"Andorra\" />"}'>
+              Andorra
+            </option>
+            <option value="AO" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/ao.png\" alt=\"Angola\" />"}'>
+              Angola
+            </option>
+            <option value="AI" data-hs-select-option='{
+              "icon": "<img class=\"inline-block h-4 max-w-6\" src=\"static/assets/images/flags/ai.png\" alt=\"Anguilla\" />"}'>
+              Anguilla
+            </option>
+          </select>
+          <!-- End Select -->
+  
+          </div>
+        </div>
+
+        <div class="card component-card mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Free Solo
+            </div>
+  
+            <div class="relative" data-hs-combo-box>
+              <div class="relative">
+                <div data-hs-combo-box-toggle>
+                  <input class="py-[15px] ps-[14px] pe-[43px] text-16 block w-full bg-transparent border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500" type="text" role="combobox" aria-expanded="false" value="Argentina" data-hs-combo-box-input>
+                </div>
+                <div class="hidden hs-combo-box-active:flex absolute inset-y-0 end-3 items-center z-20" aria-label="Close" data-hs-combo-box-close>
+                  <button class="btn-secondary-icon-hover size-7 me-1">
+                    <i class="ri-close-line font-medium text-gray-900/50 dark:text-gray-100/50"></i>
+                  </button>
+                </div>
+                <div class="absolute z-50 w-full max-h-72 p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700" style="display: none;" data-hs-combo-box-output>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="0" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Shawshank Redemption" data-hs-combo-box-value>The Shawshank Redemption</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="1" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Godfather" data-hs-combo-box-value>The Godfather</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="2" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Godfather: Part II" data-hs-combo-box-value>The Godfather: Part II</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="3" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Dark Knight" data-hs-combo-box-value>The Dark Knight</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="4" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="12 Angry Men" data-hs-combo-box-value>12 Angry Men</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="5" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Schindler's List" data-hs-combo-box-value>Schindler's List</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="6" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Pulp Fiction" data-hs-combo-box-value>Pulp Fiction</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="7" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Lord of the Rings: The Return of the King" data-hs-combo-box-value>The Lord of the Rings: The Return of the King</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="8" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Good, the Bad and the Ugly" data-hs-combo-box-value>The Good, the Bad and the Ugly</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="9" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Fight Club" data-hs-combo-box-value>Fight Club</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="10" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Lord of the Rings: The Fellowship of the Ring" data-hs-combo-box-value>The Lord of the Rings: The Fellowship of the Ring</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="11" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Star Wars: Episode V - The Empire Strikes Back" data-hs-combo-box-value>Star Wars: Episode V - The Empire Strikes Back</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="12" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="City of God" data-hs-combo-box-value>City of God</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="13" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Se7en" data-hs-combo-box-value>Se7en</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="14" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="The Silence of the Lambs" data-hs-combo-box-value>The Silence of the Lambs</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="15" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="It's a Wonderful Life" data-hs-combo-box-value>It's a Wonderful Life</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="16" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Life Is Beautiful" data-hs-combo-box-value>Life Is Beautiful</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="17" data-hs-combo-box-output-item>
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Terminator 2: Judgment Day" data-hs-combo-box-value>Terminator 2: Judgment Day</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Controlled
+            </div>
+            <div class="relative" data-hs-combo-box>
+              <div class="relative">
+                <div data-hs-combo-box-toggle>
+                  <input class="py-[15px] ps-[14px] pe-[43px] text-16 block w-full bg-transparent border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500" type="text" role="combobox" aria-expanded="false" value="Albania" data-hs-combo-box-input="">
+                </div>
+                <div class="hidden hs-combo-box-active:flex absolute inset-y-0 end-8 items-center z-20" aria-label="Close">
+                  <button class="btn-secondary-icon-hover size-7 me-1" data-hs-combo-box-close>
+                    <i class="ri-close-line font-medium text-gray-900/50 dark:text-gray-100/50"></i>
+                  </button>
+                </div>
+                <div class="absolute top-1/2 end-3 -translate-y-1/2" aria-expanded="false" data-hs-combo-box-toggle>
+                  <button class="btn-secondary-icon-hover size-6">
+                    <i class="ri-arrow-down-s-line font-bold text-gray-900/50 dark:text-gray-100/50 hs-combo-box-active:rotate-180"></i>
+                  </button>
+                </div>
+                <div class="absolute z-50 w-full max-h-72 p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2" style="display: none;" data-hs-combo-box-output>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="0" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Argentina" data-hs-combo-box-value>Argentina</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="1" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Brazil" data-hs-combo-box-value>Brazil</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="2" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="China" data-hs-combo-box-value>China</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="3" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="USA" data-hs-combo-box-value>USA</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="3" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="Italy" data-hs-combo-box-value>Italy</span>
+                    </div>
+                  </div>
+                  <div class="cursor-pointer flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700" tabindex="3" data-hs-combo-box-output-item="">
+                    <div class="flex justify-between items-center w-full">
+                      <span data-hs-combo-box-search-text="France" data-hs-combo-box-value>France</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="mt-2">Selected: {"code":"AD","label":"Andorra","phone":"376"}</p>
+          </div>
+        </div>
+
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Multiple values
+            </div>
+
+          <!-- Select -->
+          <select multiple="" data-hs-select='{
+            "placeholder": "Tags",
+            "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+            "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+            "mode": "tags",
+            "wrapperClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center flex-wrap text-nowrap w-full cursor-pointer border py-[5px] min-h-[56px] ps-[9px] pe-[43px] text-16 border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+            "tagsItemTemplate": "<div class=\"flex-nowrap relative z-10 chip chip-primary pe-0 m-[3px] py-[5px] gap-1 ps-3 flex items-center max-w-[130px]\"><div class=\"whitespace-nowrap me-1 truncate\" data-title></div><span class=\"size-4 cursor-pointer me-1 flex justify-center items-center bg-white rounded-full text-primary-500 opacity-80 hover:opacity-100 cursor-pointer\" data-remove><i class=\"ri-close-line font-semibold text-base\"></i></span></div>",
+            "tagsInputClasses": "py-0 px-2 bg-transparent border-none focus:ring-0 rounded-lg order-1 text-sm outline-none dark:placeholder-neutral-500 dark:text-neutral-400",
+            "optionTemplate": "<div class=\"flex items-center\"><div class=\"text-sm font-semibold text-gray-800 dark:text-neutral-200 truncate\" data-title></div></div>",
+            "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"          
+          }' class="hidden">
+              <option value="1">The Shawshank Redemption</option>
+              <option value="2"> The Godfather </option>
+              <option value="3"> The Godfather: Part II </option>
+              <option value="4"> The Dark Knight </option>
+              <option value="5"> 12 Angry Men </option>
+              <option value="6"> Schindler's List </option>
+              <option value="7"> Pulp Fiction </option>
+              <option value="8"> The Lord of the Rings: The Return of the King </option>
+              <option value="9"> The Good, the Bad and the Ugly </option>
+              <option value="10"> Fight Club </option>
+              <option value="11"> The Lord of the Rings: The Fellowship of the Ring </option>
+              <option value="12"> Star Wars: Episode V - The Empire Strikes Back </option>
+              <option value="13"> City of God </option>
+              <option value="14"> Se7en </option>
+              <option value="15"> The Silence of the Lambs </option>
+              <option value="16"> It's a Wonderful Life </option>
+              <option value="17"> Life Is Beautiful </option>
+              <option value="18"> Terminator 2: Judgment Day </option>
+          </select>
+          <!-- End Select -->
+  
+          </div>
+        </div>
+
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Creatable values
+            </div>
+            <div>
+              <select data-hs-select='{
+              "hasSearch": false,
+              "placeholder": "Creatable values",
+              "toggleTag": "<button type=\"button\" aria-expanded=\"false\"><span class=\"me-2 flex items-center\" data-icon></span><span class=\"text-gray-800 dark:text-neutral-200 \" data-title></span></button>",
+              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-4 ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-500 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+              "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+              "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+              "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"me-2\" data-icon></div><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+              "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+            }' class="hidden">
+                <option value="1">The Shawshank Redemption</option>
+                <option value="2"> The Godfather </option>
+                <option value="3"> The Godfather: Part II </option>
+                <option value="4"> The Dark Knight </option>
+                <option value="5"> 12 Angry Men </option>
+                <option value="6"> Schindler's List </option>
+                <option value="7"> Pulp Fiction </option>
+                <option value="8"> The Lord of the Rings: The Return of the King </option>
+                <option value="9"> The Good, the Bad and the Ugly </option>
+                <option value="10"> Fight Club </option>
+                <option value="11"> The Lord of the Rings: The Fellowship of the Ring </option>
+                <option value="12"> Star Wars: Episode V - The Empire Strikes Back </option>
+                <option value="13"> City of God </option>
+                <option value="14"> Se7en </option>
+                <option value="15"> The Silence of the Lambs </option>
+                <option value="16"> It's a Wonderful Life </option>
+                <option value="17"> Life Is Beautiful </option>
+                <option value="18"> Terminator 2: Judgment Day </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card dark:bg-gray-800 mb-0">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Asynchronous Request
+            </div>
+            <div>
+              <select data-hs-select='{
+              "hasSearch": false,
+              "placeholder": "Asynchronous Request",
+              "toggleTag": "<button type=\"button\" aria-expanded=\"false\"><span class=\"me-2 flex items-center\" data-icon></span><span class=\"text-gray-800 dark:text-neutral-200 \" data-title></span></button>",
+              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-4 ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-500 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+              "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+              "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+              "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"me-2\" data-icon></div><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+              "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+            }' class="hidden">
+                <option value="1">The Shawshank Redemption</option>
+                <option value="2"> The Godfather </option>
+                <option value="3"> The Godfather: Part II </option>
+                <option value="4"> The Dark Knight </option>
+                <option value="5"> 12 Angry Men </option>
+                <option value="6"> Schindler's List </option>
+                <option value="7"> Pulp Fiction </option>
+                <option value="8"> The Lord of the Rings: The Return of the King </option>
+                <option value="9"> The Good, the Bad and the Ugly </option>
+                <option value="10"> Fight Club </option>
+                <option value="11"> The Lord of the Rings: The Fellowship of the Ring </option>
+                <option value="12"> Star Wars: Episode V - The Empire Strikes Back </option>
+                <option value="13"> City of God </option>
+                <option value="14"> Se7en </option>
+                <option value="15"> The Silence of the Lambs </option>
+                <option value="16"> It's a Wonderful Life </option>
+                <option value="17"> Life Is Beautiful </option>
+                <option value="18"> Terminator 2: Judgment Day </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}

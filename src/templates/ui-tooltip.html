@@ -1,0 +1,218 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Tooltip | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Tooltip" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Basic
+            </div>
+  
+            <div class="flex items-center gap-2">
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-delete-bin-7-fill text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Delete
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-add-line text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Add
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-search-line text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Search
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Arrow
+            </div>
+  
+            <div class="flex items-center gap-2">
+              <div class="hs-tooltip tooltip-arrow arrow-bottom inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-delete-bin-7-fill text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Delete
+                </span>
+              </div>
+              <div class="hs-tooltip tooltip-arrow arrow-bottom inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-add-line text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Add
+                </span>
+              </div>
+              <div class="hs-tooltip tooltip-arrow arrow-bottom inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover size-[36px] ">
+                  <i class="ri-search-line text-lg text-gray-500"></i>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Search
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Placement
+            </div>
+  
+            <div class="flex items-center gap-2">
+              <div class="hs-tooltip inline-block [--placement:top]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Top</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Top
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:right]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Right</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Right
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Bottom</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Bottom
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:left]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Left</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Left
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Placement With Arrow
+            </div>
+  
+            <div class="flex items-center gap-2">
+              <div class="hs-tooltip inline-block [--placement:top]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Top</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  <div class="relative tooltip-main">
+                    Top
+                  </div>
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:right]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Right</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Right
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Bottom</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Bottom
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:left]">
+                <div class="btn-gray-icon-hover w-full px-3.5 py-1.5 rounded-[10px]">
+                  <span class="text-sm text-primary-500 font-semibold">Left</span>
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Left
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+  
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Variable Width
+            </div>
+  
+            <div class="flex flex-col w-full gap-2">
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover text-sm leading-6 font-medium w-full px-3.5 py-1.5 rounded-[10px]">
+                  Default Width [300px]
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 max-w-[300px]" role="tooltip">
+                  Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae justo.
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover text-sm leading-6 font-medium w-full px-3.5 py-1.5 rounded-[10px]">
+                  Custom Width [500px]
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 max-w-[500px]" role="tooltip">
+                  Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae justo.
+                </span>
+              </div>
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover text-sm leading-6 font-medium w-full px-3.5 py-1.5 rounded-[10px]">
+                  No wrapping
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae justo.
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+.text-description {
+    @apply text-gray-500 dark:text-dark-15;
+}
+
+@keyframes animation-loader {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    50% {
+        background-position: 400% 0%;
+    }
+
+    100% {
+        background-position: 0px 0px;
+    }
+}
+
+.loader-shadow::after,
+.loader-shadow::before {
+    background: linear-gradient(45deg, rgb(89, 43, 231), rgb(105, 80, 232), rgb(241, 245, 249), rgb(239, 71, 112), rgb(144, 122, 241)) 0% 0% / 300%;
+    animation: 20s linear 0s infinite normal none running animation-loader;
+}

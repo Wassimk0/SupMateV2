@@ -1,0 +1,381 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Tree View | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Tree View" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div class="card component-card mb-0">
+          <div class="card-body">
+            <div class="card-title">
+              Basic
+            </div>
+            <!-- Tree Root -->
+            <div class="hs-accordion-treeview-root max-w-[400px] max-h-52 overflow-y-auto" data-simplebar="">
+              <!-- 1st Level Accordion Group -->
+              <div class="hs-accordion-group treeview-root" data-hs-accordion-always-open>
+                <!-- 1st Level Accordion -->
+                <div class="hs-accordion" id="hs-basic-tree-heading-one">
+                  <!-- 1st Level Accordion Heading -->
+                  <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                    <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-collapse-one">
+                      <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                    </button>
+                    <span class="text-16 text-gray-800 dark:text-neutral-200">
+                      Components
+                    </span>
+                  </div>
+                  <!-- End 1st Level Accordion Heading -->
+
+                  <!-- 1st Level Collapse -->
+                  <div id="hs-basic-tree-collapse-one" class="hidden hs-accordion-content w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-heading-one">
+                    <!-- 2nd Level Accordion Group -->
+                    <div class="hs-accordion-group ps-7">
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-one">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-one">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            Mui
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-one" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-one">
+                          <!-- 3rd Level Accordion Group -->
+                          <div class="hs-accordion-group ps-7">
+
+                            <!-- 3rd Level Accordion -->
+                            <div class="hs-accordion" id="hs-basic-tree-sub-level-two-heading-three">
+                              <!-- 3rd Level Heading -->
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Alert
+                                </span>
+                              </div>
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Avatar
+                                </span>
+                              </div>
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Button
+                                </span>
+                              </div>
+                              <!-- End 3rd Level Heading -->
+
+                            </div>
+                            <!-- End 3rd Level Accordion -->
+                          </div>
+                          <!-- End 3rd Level Accordion Group -->
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- Ed 2nd Level Nested Accordion -->
+
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-two">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-two">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            Flexbox
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-two">
+                          <div class="ms-3 ps-3">
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                Flex Between
+                              </span>
+                            </div>
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                Flex Center
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- End 2nd Level Nested Accordion -->
+
+                    </div>
+                    <!-- 2nd Level Accordion Group -->
+                  </div>
+                  <!-- End 1st Level Collapse -->
+                </div>
+                <!-- End 1st Level Accordion -->
+
+                <!-- 1st Level Accordion -->
+                <div class="hs-accordion" id="hs-basic-tree-heading-two">
+                  <!-- 1st Level Accordion Heading -->
+                  <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                    <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-collapse-two">
+                      <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                    </button>
+                    <span class="text-16 text-gray-800 dark:text-neutral-200">
+                      Documents
+                    </span>
+                  </div>
+                  <!-- End 1st Level Accordion Heading -->
+
+                  <!-- 1st Level Collapse -->
+                  <div id="hs-basic-tree-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-heading-two">
+                    <div class="ms-3 ps-3">
+                      <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                        <span class="text-16 text-gray-800 dark:text-neutral-200">
+                          OSS
+                        </span>
+                      </div>
+
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-two">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-two">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            MUI
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-two">
+                          <div class="ms-3 ps-3">
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                index.js
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- End 2nd Level Nested Accordion -->
+                      
+                    </div>
+                  </div>
+                  <!-- End 1st Level Collapse -->
+                   
+                </div>
+                <!-- End 1st Level Accordion -->
+
+                
+              </div>
+              <!-- End 1st Level Accordion Group -->
+            </div>
+            <!-- End Tree Root -->
+          </div>
+        </div>
+
+        <div class="card component-card mb-0">
+          <div class="card-body">
+            <div class="card-title">
+              Multi Select
+            </div>
+            <!-- Tree Root -->
+            <div class="hs-accordion-treeview-root max-w-[400px] max-h-52 overflow-y-auto" data-simplebar>
+              <!-- 1st Level Accordion Group -->
+              <div class="hs-accordion-group treeview-root" data-hs-accordion-always-open>
+                <!-- 1st Level Accordion -->
+                <div class="hs-accordion" id="hs-basic-tree-heading-one">
+                  <!-- 1st Level Accordion Heading -->
+                  <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                    <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-collapse-one">
+                      <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                    </button>
+                    <span class="text-16 text-gray-800 dark:text-neutral-200">
+                      Components
+                    </span>
+                  </div>
+                  <!-- End 1st Level Accordion Heading -->
+
+                  <!-- 1st Level Collapse -->
+                  <div id="hs-basic-tree-collapse-one" class="hidden hs-accordion-content w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-heading-one">
+                    <!-- 2nd Level Accordion Group -->
+                    <div class="hs-accordion-group ps-7">
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-one">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-one">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            Mui
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-one" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-one">
+                          <!-- 3rd Level Accordion Group -->
+                          <div class="hs-accordion-group ps-7">
+
+                            <!-- 3rd Level Accordion -->
+                            <div class="hs-accordion" id="hs-basic-tree-sub-level-two-heading-three">
+                              <!-- 3rd Level Heading -->
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Alert
+                                </span>
+                              </div>
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Avatar
+                                </span>
+                              </div>
+                              <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                                <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                  Button
+                                </span>
+                              </div>
+                              <!-- End 3rd Level Heading -->
+
+                            </div>
+                            <!-- End 3rd Level Accordion -->
+                          </div>
+                          <!-- End 3rd Level Accordion Group -->
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- Ed 2nd Level Nested Accordion -->
+
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-two">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-two">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            Flexbox
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-two">
+                          <div class="ms-3 ps-3">
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                Flex Between
+                              </span>
+                            </div>
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                Flex Center
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- End 2nd Level Nested Accordion -->
+
+                    </div>
+                    <!-- 2nd Level Accordion Group -->
+                  </div>
+                  <!-- End 1st Level Collapse -->
+                </div>
+                <!-- End 1st Level Accordion -->
+
+                <!-- 1st Level Accordion -->
+                <div class="hs-accordion" id="hs-basic-tree-heading-two">
+                  <!-- 1st Level Accordion Heading -->
+                  <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                    <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-collapse-two">
+                      <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                      <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                    </button>
+                    <span class="text-16 text-gray-800 dark:text-neutral-200">
+                      Documents
+                    </span>
+                  </div>
+                  <!-- End 1st Level Accordion Heading -->
+
+                  <!-- 1st Level Collapse -->
+                  <div id="hs-basic-tree-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-heading-two">
+                    <div class="ms-3 ps-3">
+                      <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                        <span class="text-16 text-gray-800 dark:text-neutral-200">
+                          OSS
+                        </span>
+                      </div>
+
+                      <!-- 2nd Level Nested Accordion -->
+                      <div class="hs-accordion" id="hs-basic-tree-sub-heading-two">
+                        <!-- 2nd Level Accordion Heading -->
+                        <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 px-2 rounded-[4px] cursor-pointer flex items-center gap-x-3">
+                          <button class="hs-accordion-toggle" aria-controls="hs-basic-tree-sub-collapse-two">
+                            <i class="ri-arrow-right-s-line text-lg hs-accordion-active:hidden block"></i>
+                            <i class="ri-arrow-down-s-line text-lg hs-accordion-active:block hidden"></i>
+                          </button>
+                          <span class="text-16 text-gray-800 dark:text-neutral-200">
+                            MUI
+                          </span>
+                        </div>
+                        <!-- End 2nd Level Accordion Heading -->
+
+                        <!-- 2nd Level Collapse -->
+                        <div id="hs-basic-tree-sub-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-tree-sub-heading-two">
+                          <div class="ms-3 ps-3">
+                            <div class="hs-accordion-heading hs-accordion-selectable hs-accordion-selected:bg-primary-500/20 dark:hs-accordion-selected:hover:bg-primary-500 hover:bg-gray-900/5 dark:hover:bg-gray-100/5 ps-7 pe-2 rounded-[4px] cursor-pointer">
+                              <span class="text-16 text-gray-800 dark:text-neutral-200">
+                                index.js
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End 2nd Level Collapse -->
+                      </div>
+                      <!-- End 2nd Level Nested Accordion -->
+                      
+                    </div>
+                  </div>
+                  <!-- End 1st Level Collapse -->
+                   
+                </div>
+                <!-- End 1st Level Accordion -->
+
+                
+              </div>
+              <!-- End 1st Level Accordion Group -->
+            </div>
+            <!-- End Tree Root -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}

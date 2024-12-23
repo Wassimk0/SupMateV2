@@ -1,0 +1,627 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Dashboard Finance | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="grid grid-cols-1 mt-4 lg:grid-cols-2 gap-x-6">
+    
+    <div class="relative overflow-hidden card card-dark">
+      <div class="card-body m-[3px]">
+        <div>
+          <div class="flex items-center gap-2">
+            <h6 class="font-semibold leading-none">$21,350.25</h6>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">My Balance</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 py-8">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center rounded-lg size-10 bg-gray-50 dark:bg-gray-700">
+              <i class="text-xl leading-none ri-arrow-down-line text-success-500"></i>
+            </div>
+            <div>
+              <h6 class="leading-none text-16">14,210.15</h6>
+              <p class="text-gray-500 dark:text-gray-400">Income</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center rounded-lg size-10 bg-gray-50 dark:bg-gray-700">
+              <i class="text-xl leading-none ri-arrow-up-line text-error-500"></i>
+            </div>
+            <div>
+              <h6 class="leading-none text-16">7,352.17</h6>
+              <p class="text-gray-500 dark:text-gray-400">Expance</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary btn-sm min-w-[100px]">Send</button>
+          <button class="min-w-[100px] btn btn-outline-secondary dark:bg-transparent border-gray-200 focus:border-dark-25 hover:border-dark-25 hover:bg-transparent dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white">Receive</button>
+        </div>
+      </div>
+      <div class="absolute bottom-0 right-0 hidden md:block">
+        <img src={% static 'assets/images/illustration/finance-balance.svg' %} alt="finance-balance">
+      </div>
+    </div>
+
+    <div class="overflow-hidden card card-dark">
+      <div class="flex flex-col justify-between h-full card-body">
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <div id="average_deals_chart"></div>
+          </div>
+          <div>
+            <h6 class="mb-4 text-lg font-medium">Current Currency</h6>
+            <div class="flex flex-col space-y-4 font-medium">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center rounded-lg size-10 bg-gray-50 dark:bg-gray-700">
+                    <svg class="size-5 fill-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path>
+                    </svg>
+                  </div>
+                  <h6 class="font-semibold leading-none text-16">USD</h6>
+                </div>
+                <div class="text-end">
+                  <p>94.65%</p>
+                  <p class="font-normal text-success-500">+2.5%</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center rounded-lg size-10 bg-gray-50 dark:bg-gray-700">
+                    <svg class="size-5 fill-success-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M15 18.5c-2.51 0-4.68-1.42-5.76-3.5H15l1-2H8.58c-.05-.33-.08-.66-.08-1s.03-.67.08-1H15l1-2H9.24C10.32 6.92 12.5 5.5 15 5.5c1.61 0 3.09.59 4.23 1.57L21 5.3C19.41 3.87 17.3 3 15 3c-3.92 0-7.24 2.51-8.48 6H3l-1 2h4.06c-.04.33-.06.66-.06 1s.02.67.06 1H3l-1 2h4.52c1.24 3.49 4.56 6 8.48 6 2.31 0 4.41-.87 6-2.3l-1.78-1.77c-1.13.98-2.6 1.57-4.22 1.57z"></path>
+                    </svg>
+                  </div>
+                  <h6 class="font-semibold leading-none text-16">EURO</h6>
+                </div>
+                <div class="text-end">
+                  <p>26.37%</p>
+                  <p class="font-normal text-error-500">-1.56%</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center rounded-lg size-10 bg-gray-50 dark:bg-gray-700">
+                    <svg class="size-5 fill-warning-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M14 21c1.93 0 3.62-1.17 4-3l-1.75-.88C16 18.21 15.33 19 14 19H9.1c.83-1 1.5-2.34 1.5-4 0-.35-.03-.69-.08-1H14v-2H9.82C9 10.42 8 9.6 8 8c0-1.93 1.57-3.5 3.5-3.5 1.5 0 2.79.95 3.28 2.28L16.63 6c-.8-2.05-2.79-3.5-5.13-3.5C8.46 2.5 6 4.96 6 8c0 1.78.79 2.9 1.49 4H6v2h2.47c.08.31.13.64.13 1 0 2.7-2.6 4-2.6 4v2h8z"></path>
+                    </svg>
+                  </div>
+                  <h6 class="font-semibold leading-none text-16">GBP</h6>
+                </div>
+                <div class="text-end">
+                  <p>55.24%</p>
+                  <p class="font-normal text-success-500">+3.23%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-x-6">
+    <div class="lg:col-span-2">
+      <div class="card card-dark h-[calc(100%-24px)]">
+
+        <div class="card-body !pb-0">
+          
+          <div class="flex flex-wrap items-center justify-between gap-8 mb-4">
+            <h6 class="text-lg font-medium">Transactions</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-container">
+            <div id="transactions_chart" class="apex-charts" dir="ltr"></div>      
+          </div>
+
+        </div>
+      
+      </div>
+    </div>
+    
+    <div class="lg:col-start-3">
+      <div class="card card-dark overflow-hidden h-[calc(100%-24px)]">
+        <div class="h-full card-body">
+          <div class="flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-8 mb-4">
+              <h6 class="text-lg font-medium">Your Card</h6>
+              <div class="relative inline-flex hs-dropdown">
+                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[34px]">
+                  <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                </button>
+              
+                <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                  <div class="p-2">
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Create
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Edit
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Delete
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src={% static 'assets/images/debit-card.png' %} alt="debit-card">
+            <div class="flex flex-wrap items-center justify-between mt-4">
+              <span class="text-xs font-medium">Receivers:</span>
+              <img class="size-9 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/user-11.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/user-10.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/user-9.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/user-8.png' %} alt="">
+              <img class="size-9 rounded-full bg-white dark:bg-transparent p-[3px] border border-primary-500" src={% static 'assets/images/user/avatar.png' %} alt="">
+              <span class="border border-dashed size-9 p-[5px] cursor-pointer border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-900/5 ">
+                <i class="text-xl ri-add-line text-gray-900/50"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-x-6">
+    
+    <div class="flex flex-col">
+
+      <div class="card card-dark h-1/2">
+
+        <div class="flex flex-col justify-between card-body">
+
+          <h6 class="text-lg font-medium">Quick Transfer</h6>
+
+          <div class="mt-6 mb-4">
+            <div class="relative">
+              <input type="text" id="hs-inline-leading-pricing-select-label" name="inline-add-on" class="form-input form-input-sm !pe-[120px] placeholder:opacity-50" placeholder="4436  2548  2654  236">
+              <div class="absolute inset-y-0 flex items-center text-gray-500 end-0 pe-px">
+                <!-- Select -->
+                <select data-hs-select='{
+                  "placeholder": "Select",
+                  "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+                  "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer ps-[14px] pe-[43px] text-sm text-gray-400 dark:bg-gray-800 dark:placeholder-gray-500 border-s-2 border-gray-200 dark:border-gray-700",
+                  "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+                  "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+                  "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+                  "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"size-6\"><i class=\"ri-arrow-down-s-line font-bold text-gray-900/50 text-xl dark:text-gray-500\"></i></button></div>"
+                }' class="hidden">
+                  <option selected>Visa</option>
+                  <option>Master</option>
+                  <option>Credit</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary">Send Money</button>
+            <button ripple-opacity="0.3" ripple-color="black" class="text-black border-gray-200 btn ripple btn-outline-secondary dark:bg-transparent focus:border-dark-25 hover:border-dark-25 hover:bg-transparent dark:border-gray-700 hover:text-black dark:text-white dark:hover:border-white">Save Draft</button>
+          </div>
+
+        </div>
+      
+      </div>
+
+      <div class="card card-dark h-1/2">
+
+        <div class="flex flex-col justify-between card-body">
+
+          <div class="flex items-center justify-between mb-5">
+            <h6 class="text-lg font-medium">Installment</h6>
+            <a href="#!">View all</a>
+          </div>
+          
+          <div>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">Electricity Installments</p>
+            <div class='flex w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-700'>
+              <div class='w-7/12 h-full overflow-hidden bg-primary-500 origin-left-right'></div>
+            </div>
+            <div class="flex items-center justify-between gap-2 mt-1">
+              <p>Collected</p>
+              <span class="text-gray-500 dark:text-gray-400">$200.00 <span class="text-gray-900 dark:text-white">/ $300.00</span> </span>
+            </div>
+          </div>
+
+        </div>
+      
+      </div>
+    
+    </div>
+    
+    <div class="lg:col-span-2">
+      <div class="overflow-hidden card card-dark">
+        <div class="card-body">
+          <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
+            <h6 class="text-lg font-medium">Customer Transactions</h6>
+            <div class="flex gap-2">
+              <div class="flex items-center gap-2 px-2 py-1 text-sm leading-none text-gray-500 rounded-md bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <i class="text-xl ri-time-line"></i>
+                <span> 24 Aug - 31 Aug</span>
+              </div>
+              <div class="flex items-center justify-center text-gray-400 rotate-90 cursor-pointer size-10 hover:text-primary-500">
+                <i class="text-xl ri-sound-module-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-auto" data-simplebar>
+          <table class="table-bordered">
+            <thead>
+              <tr>
+                <th class="!ps-6">TRANSACTION</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>AMOUNT</th>
+              </tr>
+            </thead>
+            <tbody class="*:font-medium *:text-sm *:dark:text-gray-200">
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-2 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-13.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Arikunn</h6>
+                      <p class="text-xs font-normal">sbACR356LD</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p>31 Aug, 2022</p>
+                </td>
+                <td>
+                  <p>10:30 AM</p>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">$356.25</p>
+                </td>
+              </tr>
+              <tr class="*:py-3 bg-gray-50 dark:bg-gray-700">
+                <td>
+                  <div class="flex items-center gap-2 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-14.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Ikauwis</h6>
+                      <p class="text-xs font-normal">iziiMXDtjF</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p>30 Aug, 2022</p>
+                </td>
+                <td>
+                  <p>	01:30 PM</p>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">$165.58</p>
+                </td>
+              </tr>
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-2 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-15.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Dayet</h6>
+                      <p class="text-xs font-normal">Bfe_Rnaj3d</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p>	29 Aug, 2022</p>
+                </td>
+                <td>
+                  <p>07:30 PM</p>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">$463.25</p>
+                </td>
+              </tr>
+              <tr class="*:py-3 bg-gray-50 dark:bg-gray-700">
+                <td>
+                  <div class="flex items-center gap-2 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-13.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Ikauwis</h6>
+                      <p class="text-xs font-normal">3a2QN5oaji</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p>28 Aug, 2022</p>
+                </td>
+                <td>
+                  <p>04:30 PM</p>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">$185.58</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-x-6">
+    <div class="lg:col-span-2">
+      <div class="card card-dark h-[calc(100%-24px)]">
+        
+        <div class="card-body !px-4 !pb-2 flex flex-col justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-8 px-4">
+            <h6 class="text-lg font-medium">Investment</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <div id="apex_area1" class="apex-charts" dir="ltr"></div>      
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    <div class="lg:col-start-3">
+      <div class="card card-dark overflow-hidden h-[calc(100%-24px)] min-h-[370px]">
+        <div class="card-body">
+          <div class="flex items-center justify-between gap-8">
+            <h6 class="text-lg font-medium">Top Activity</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full pl-6 mt-6">
+            <div class="flex justify-center items-center size-[180px] text-white m-auto rounded-full relative flex-col border border-white bg-primary-500">
+              <p class="font-medium leading-6 text-16">$17,25,258.69</p>
+              <p class="text-xs">Asia</p>
+              <div class="flex justify-center items-center size-[120px] top-[60%] right-[60%] text-gray-900 dark:text-gray-200 m-auto rounded-full absolute flex-col border border-white bg-gray-200 dark:bg-gray-500">
+                <p class="font-medium leading-6 text-16">$2,525.25</p>
+                <p class="text-xs">Europe</p>
+              </div>
+              <div class="flex justify-center items-center size-[90px] top-[90%] text-white m-auto rounded-full absolute flex-col border border-white bg-gray-700">
+                <p class="font-medium leading-6 text-16">$525</p>
+                <p class="text-xs">Africa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-6">
+
+    <div class="overflow-hidden card card-dark">
+      <div class="card-body">
+        <div class="flex items-center justify-between gap-8">
+          <h6 class="text-lg font-medium">My Savings</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <div class="flex flex-col space-y-3 font-medium">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-12 rounded-xl bg-gray-50 dark:bg-gray-700">
+                  <svg class="size-6 text-primary-500" focusable="false" aria-hidden="true" viewBox="0 0 22 22">
+                    <path d="M11.0533 12.9687C11.5065 12.9687 11.8736 12.6009 11.8736 12.1484V11.726C12.7907 11.5294 13.4408 10.966 13.5893 10.1087C13.8963 8.33357 12.1936 7.84508 11.2789 7.58381L11.0514 7.51843C10.0771 7.23477 10.1018 7.0666 10.1346 6.91894C10.191 6.59853 10.815 6.52031 11.3761 6.6062C11.6056 6.64081 11.8572 6.72154 12.0976 6.80488C12.5237 6.95229 12.9929 6.72539 13.1414 6.29875C13.2901 5.87054 13.0639 5.40297 12.6357 5.25408C12.3396 5.1522 12.098 5.08682 11.8745 5.0378V4.60156C11.8745 4.14916 11.5072 3.78125 11.0541 3.78125C10.601 3.78125 10.2338 4.14912 10.2338 4.60156V5.01139C9.31426 5.20859 8.66621 5.78281 8.51855 6.64004C8.21094 8.39551 9.87617 8.88359 10.5529 9.09277L10.7913 9.16201C11.9922 9.50551 11.9726 9.62097 11.9365 9.82974C11.9146 10.151 11.2912 10.233 10.7293 10.1428C10.4463 10.1018 10.0812 9.97051 9.75723 9.85566L9.57676 9.79004C9.1502 9.64238 8.67852 9.86387 8.53086 10.2904C8.3791 10.717 8.60058 11.1846 8.99434 11.3363L9.16931 11.3979C9.48751 11.5122 9.84114 11.6271 10.1972 11.706V12.1484C10.233 12.5996 10.598 12.9687 11.0533 12.9687ZM20.0562 9.28555C19.7181 9.28555 19.3906 9.40412 19.1309 9.62056L12.6956 14.9854C11.7654 15.7606 10.2429 15.761 9.31221 14.9855L2.8707 9.61777C2.61099 9.40133 2.28336 9.28276 1.94539 9.28276C1.14723 9.28555 0.5 9.92949 0.5 10.7293V18.875C0.5 20.3228 1.6751 21.5 3.125 21.5H18.875C20.3249 21.5 21.5 20.3241 21.5 18.8746V10.7293C21.5 9.92949 20.852 9.28555 20.0562 9.28555ZM19.5312 18.875C19.5312 19.2368 19.2368 19.5312 18.875 19.5312H3.125C2.76316 19.5312 2.46875 19.2368 2.46875 18.875V11.849L8.05098 16.5002C8.87949 17.1852 9.92539 17.5666 11 17.5666C12.0746 17.5666 13.1226 17.1883 13.9519 16.4994L19.5312 11.849V18.875ZM5.09375 9.76543V2.79687C5.09375 2.61616 5.24116 2.46875 5.42187 2.46875H16.5781C16.7588 2.46875 16.9062 2.61616 16.9062 2.79687V9.76133L18.2893 8.60879C18.4689 8.46113 18.6658 8.34629 18.875 8.24785V2.79687C18.875 1.53031 17.8455 0.5 16.5781 0.5H5.42187C4.15572 0.5 3.125 1.53031 3.125 2.79687V8.24785C3.3327 8.3467 3.53274 8.46236 3.71152 8.61137L5.09375 9.76543Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold leading-[27px]">$23,560</h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400">Emergency</p>
+                </div>
+              </div>
+              <button type="button" class="btn-dark-icon-hover size-10">
+                <i class="text-xl text-gray-400 ri-arrow-right-s-line dark:text-gray-300"></i>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-12 rounded-xl bg-gray-50 dark:bg-gray-700">
+                  <svg class="size-6 text-success-500" focusable="false" aria-hidden="true" viewBox="0 0 22 17">
+                    <path d="M11.813 2.63311L9.88074 4.64749L7.83178 2.64686C6.59584 1.43583 4.62709 1.34164 3.46079 2.29899L3.45095 2.30724C1.93319 3.53374 1.85663 5.7303 3.20559 7.0503H3.20668L9.84792 13.4784L10.0958 13.2653C10.2745 13.8428 10.5443 14.3825 10.887 14.8706L10.6865 15.0666C10.2125 15.51 9.45053 15.51 9.01303 15.0666L1.94777 8.19843C-0.0913388 6.20468 0.0176716 2.90811 2.31199 1.05461C4.101 -0.413891 6.76355 -0.290484 8.60105 1.0632C8.78334 1.19727 8.92553 1.34336 9.1224 1.50114L9.84792 2.22199L10.5406 1.50114C10.712 1.33752 10.8906 1.18627 11.0802 1.04842C12.9104 -0.291172 15.5391 -0.408734 17.3875 1.05461C18.9516 2.34092 19.4839 4.31749 18.9844 6.07405C18.463 5.8128 17.9016 5.6753 17.3146 5.58249C17.6135 4.43093 17.2599 3.1453 16.25 2.30861C14.9958 1.3272 13.0635 1.4513 11.813 2.63311ZM11 11.55C11 8.81718 13.3516 6.56905 16.25 6.56905C19.1484 6.56905 21.5 8.81718 21.5 11.55C21.5 14.2828 19.1484 16.5 16.25 16.5C13.3516 16.5 11 14.2828 11 11.55ZM16.8333 9.31906C16.8333 9.04749 16.5708 8.76905 16.25 8.76905C15.9292 8.76905 15.6667 9.04749 15.6667 9.31906V10.9691H13.9167C13.5958 10.9691 13.3333 11.2475 13.3333 11.5191C13.3333 11.8525 13.5958 12.0691 13.9167 12.0691H15.6667V13.7191C15.6667 14.0525 15.9292 14.2691 16.25 14.2691C16.5708 14.2691 16.8333 14.0525 16.8333 13.7191V12.0691H18.5833C18.9042 12.0691 19.1667 11.8525 19.1667 11.5191C19.1667 11.2475 18.9042 10.9691 18.5833 10.9691H16.8333V9.31906Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold leading-[27px]">$19,489</h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400">Health</p>
+                </div>
+              </div>
+              <button type="button" class="btn-dark-icon-hover size-10">
+                <i class="text-xl text-gray-400 ri-arrow-right-s-line dark:text-gray-300"></i>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-12 rounded-xl bg-gray-50 dark:bg-gray-700">
+                  <svg class="size-6 text-error-500" focusable="false" aria-hidden="true" viewBox="0 0 22 17">
+                    <path d="M2.25 13.2C2.25 13.5025 2.51104 13.75 2.83333 13.75H10.238C10.5187 14.3516 10.8687 14.9084 11.299 15.4H2.83333C1.54453 15.4 0.5 14.4134 0.5 13.2V5.4175C0.5 5.10812 0.568505 4.80562 0.701104 4.52375L2.21755 1.30659C2.59198 0.511844 3.4276 0 4.35 0H12.9833C13.9057 0 14.7406 0.512187 15.1161 1.30659L16.6328 4.52375C16.7641 4.80562 16.8333 5.10812 16.8333 5.4175V5.52406C16.6401 5.50687 16.4469 5.5 16.25 5.5C15.2948 5.5 14.387 5.69594 13.574 6.05H2.25V13.2ZM12.9833 1.65H9.54167V4.4H14.6604L13.5156 1.97656C13.4245 1.77787 13.213 1.65 12.9833 1.65ZM2.67437 4.4H7.79167V1.65H4.35C4.11922 1.65 3.91031 1.77787 3.81661 1.97656L2.67437 4.4ZM21.5 11.55C21.5 14.2828 19.1484 16.5 16.25 16.5C13.3516 16.5 11 14.2828 11 11.55C11 8.81719 13.3516 6.6 16.25 6.6C19.1484 6.6 21.5 8.81719 21.5 11.55ZM17.8797 10.0616L15.6667 12.1481L14.6203 11.1616C14.3943 10.945 14.0224 10.945 13.7964 11.1616C13.5667 11.3747 13.5667 11.7253 13.7964 11.9384L15.2547 13.3134C15.4807 13.53 15.8526 13.53 16.0786 13.3134L18.7036 10.8384C18.9333 10.6253 18.9333 10.2747 18.7036 10.0616C18.4776 9.845 18.1057 9.845 17.8797 10.0616Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold leading-[27px]">$18,889</h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400">Investment</p>
+                </div>
+              </div>
+              <button type="button" class="btn-dark-icon-hover size-10">
+                <i class="text-xl text-gray-400 ri-arrow-right-s-line dark:text-gray-300"></i>
+              </button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-12 rounded-xl bg-gray-50 dark:bg-gray-700">
+                  <svg class="size-6 text-warning-500" focusable="false" aria-hidden="true" viewBox="0 0 19 22">
+                    <path d="M18.3733 19.5312C18.4858 15.9403 15.9288 12.9646 12.5409 12.3125L9.18581 16.7873L5.83073 12.3125C2.44284 12.9277 -0.100129 15.9403 0.0106132 19.5312C0.0106132 20.6186 0.879324 21.5 1.96665 21.5H16.4041C17.4915 21.5 18.3733 20.6182 18.3733 19.5312ZM1.981 19.5312L1.97908 19.4696C1.91116 17.2994 3.16361 15.3951 5.07207 14.5805L8.78385 19.5312H1.981ZM16.3923 19.5312H9.58776L13.3001 14.5807C15.2085 15.394 16.4607 17.2984 16.3931 19.4697L16.3923 19.5312ZM0.557352 3.771L0.818621 3.83252V6.23193C0.531512 6.40215 0.326434 6.70566 0.326434 7.0625C0.326434 7.40601 0.516131 7.69332 0.782527 7.87256L0.141863 10.4258C0.0700859 10.7088 0.229227 11 0.454813 11H2.16721C2.3928 11 2.55174 10.7078 2.47996 10.4627L1.83909 7.87461C2.10569 7.69414 2.29518 7.40703 2.29518 7.0625C2.29518 6.70361 2.09011 6.40133 1.803 6.23193V4.07369L3.93581 4.58639V6.40625C3.93581 9.3081 6.28395 11.6193 9.18581 11.6193C12.0877 11.6193 14.4358 9.31016 14.4358 6.40625V4.58598L17.8093 3.771C18.5579 3.59155 18.5579 2.66357 17.8093 2.479L9.99997 0.592285C9.73542 0.530762 9.46061 0.5 9.18991 0.5C8.91921 0.5 8.6444 0.530762 8.3778 0.592285L0.560223 2.479C-0.186262 2.65865 -0.186262 3.59176 0.557352 3.771ZM5.90456 5.06094L8.36878 5.65648C8.90198 5.77953 9.46061 5.77953 9.99423 5.65648L12.4671 5.06094V6.40625C12.4671 8.21504 10.9946 9.6875 9.18581 9.6875C7.37702 9.6875 5.90456 8.21504 5.90456 6.40625V5.06094Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6 class="text-lg font-semibold leading-[27px]">$21,489</h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400">Education</p>
+                </div>
+              </div>
+              <button type="button" class="btn-dark-icon-hover size-10">
+                <i class="text-xl text-gray-400 ri-arrow-right-s-line dark:text-gray-300"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-dark overflow-hidden h-[calc(100%-24px)]">
+      <div class="flex flex-col justify-between h-full card-body">
+        <div class="flex items-center justify-between gap-8">
+          <h6 class="text-lg font-medium">Audits</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="audits_chart"></div>
+        </div>
+        <div>
+          <h6 class="text-xl leading-6">50%</h6>
+          <p class="mb-1 text-gray-500 dark:text-gray-400">Access Grant</p>
+          <div class="flex w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-700">
+            <div class="w-6/12 h-full overflow-hidden bg-primary-500 origin-left-right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden card card-dark">
+      <div class="card-body">
+        <div class="flex items-center justify-between gap-8 mb-6">
+          <h6 class="text-lg font-medium">Reports</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="reports_chart"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/dashboard-finance.js' %}></script>
+{% endblock js %}

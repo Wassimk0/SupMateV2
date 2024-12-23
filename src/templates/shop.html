@@ -1,0 +1,21 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>Contact Us | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="relative min-h-screen">
+  <div class="container py-12 md:py-20">
+    <div class="text-center">
+      <h2 class="text-[42px] lg:text-5xl font-bold">Page Not Found!</h2>
+      <p class="text-lg font-normal text-description mt-4">Don't Panic! Learn How to Turn Page Not Found into a
+        <br/> Roadmap for Online Success.</p>
+        <div>
+          <img src={% static 'assets/images/products/error.svg' %} class="mx-auto py-20" alt="">
+          <button class="btn ripple btn-primary ">Go Home<div class="rippleContainer"></div></button>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

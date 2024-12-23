@@ -1,0 +1,11 @@
+{% load static %}
+<div x-data="loader()" x-init="" x-show="showLoader" class="fixed inset-0 flex items-center justify-center h-screen bg-white dark:bg-gray-900 z-[1003]">
+    <div class="relative">
+        <div class="loader-shadow before:absolute before:top-[-2px] before:left-[-2px] before:w-[calc(100%+4px)] before:h-[calc(100%+4px)] before:rounded-full
+      after:absolute after:top-[-2px] after:left-[-2px] after:w-[calc(100%+4px)] after:h-[calc(100%+4px)] after:rounded-full after:filter after:blur-[30px] after:opacity-65 animate-loader">
+            <div class="bg-white text-gray-900 relative rounded-full box-border overflow-hidden p-8 w-[100px] h-[100px] transition-shadow duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] z-10 ">
+                <img src={% static "assets/images/favicon.ico" %} alt="logo">
+            </div>
+        </div>
+    </div>
+</div>

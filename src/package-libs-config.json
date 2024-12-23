@@ -1,0 +1,6 @@
+{
+    "packagesToCopy": [
+        "ripple-js",
+        "swiper"
+    ]
+}

@@ -1,0 +1,217 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>About Us | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% include "partials/ui-header.html" %}
+<div class="relative min-h-screen">
+  <div class="container">
+    <div class="mt-20">
+      <div class="grid grid-cols-12 items-end gap-6 lg:gap-0">
+        <div class="col-span-12 lg:col-span-6">
+          <h2 class="text-[42px] md:text-5xl font-black md:leading-tight">
+            We build bridges between
+            <span class="italic">Companies and Customers</span>
+          </h2>
+        </div>
+        <div class="col-span-12 lg:col-span-6 lg:pl-20 xl:pl-0">
+          <p class="text-lg font-normal text-description pr-3">To build software that gives customer-facing teams at small-and medium-sized businesses the ability to create fruitful and enduring relationships with customer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- img -->
+  <div class="mt-14">
+    <img src={% static 'assets/images/about-page/about-hero.png' %} class="w-full" alt="">
+  </div>
+  <!-- who are -->
+  <div class="container py-20">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 lg:col-span-5">
+        <h2 class="text-[42px] md:text-[52px] font-bold leading-tight">Who we are?</h2>
+        <p class="text-16 font-normal text-description mt-6 xl:pr-14">QuickFrame is a pre-designed UI used to build web app front-ends. It includes ready-to-use components like menus, charts, tables, and forms for efficient UI design and development.</p>
+        <div class="py-10 md:py-12">
+          <div class="flex gap-5 md:gap-7">
+            <div class="text-center">
+              <div class="percent relative">
+                <svg class="w-20 h-20 rotate-[-90deg]">
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-300 stroke-[4px] fill-none"></circle>
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-500 stroke-[4px] fill-none" style="stroke-dasharray: 219.91px; stroke-dashoffset: calc(219.91px - (219.91px * 70) / 100);"></circle>
+                </svg>
+                <div class="number absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <p class="font-semibold text-sm text-black dark:text-white">70%</p>
+                </div>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mx-auto mt-2">Design</p>
+            </div>
+            <div class="text-center">
+              <div class="percent relative">
+                <svg class="w-20 h-20 rotate-[-90deg]">
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-300 stroke-[4px] fill-none"></circle>
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-500 stroke-[4px] fill-none" style="stroke-dasharray: 219.91px; stroke-dashoffset: calc(219.91px - (219.91px * 56) / 100);"></circle>
+                </svg>
+                <div class="number absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <p class="font-semibold text-sm text-black dark:text-white">56%</p>
+                </div>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mx-auto mt-2">Development</p>
+            </div>
+            <div class="text-center">
+              <div class="percent relative">
+                <svg class="w-20 h-20 rotate-[-90deg]">
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-300 stroke-[4px] fill-none"></circle>
+                  <circle cx="40" cy="40" r="35" class="stroke-gray-500 stroke-[4px] fill-none" style="stroke-dasharray: 219.91px; stroke-dashoffset: calc(219.91px - (219.91px * 70) / 100);"></circle>
+                </svg>
+                <div class="number absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <p class="font-semibold text-sm text-black dark:text-white">30%</p>
+                </div>
+              </div>
+              <p class="text-sm font-medium text-gray-900 mx-auto mt-2">Marketing</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary btn-text-icon">
+          Check our Work
+          <span>
+            <svg class="w-6 fill-primary-600 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="KeyboardArrowRightIcon">
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex items-end">
+            <img src={% static 'assets/images/about-page/about-1.jpg' %} class="rounded-2xl" alt="">
+          </div>
+          <div>
+            <img src={% static 'assets/images/about-page/about-2.jpg' %} class="rounded-2xl w-full lg:w-auto" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- team -->
+  <div class="container py-10 lg:py-20">
+    <div class="text-center md:max-w-[440px] mx-auto">
+      <h2 class="text-[42px] md:text-[52px] font-bold leading-tight">Meet Our Team</h2>
+      <p class="text-16 font-normal text-description mt-6">If you face any problem, our support team will help you
+        within a business working day.</p>
+    </div>
+    <!-- swiper -->
+    <div class="pt-10">
+      <div class="swiper teamSwiper">
+        <div class="swiper-wrapper pb-8">
+          <div class="swiper-slide">
+            <div class="card card-dark text-center p-8">
+              <div>
+                <img src={% static 'assets/images/about-page/t-1.png' %} class="w-full" alt="">
+              </div>
+              <p class="text-lg font-semibold mt-4">Lucian Obrien</p>
+              <p class="text-sm text-description">Lucian Obrien</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card card-dark text-center p-8">
+              <div>
+                <img src={% static 'assets/images/about-page/t-2.png' %} class="w-full" alt="">
+              </div>
+              <p class="text-lg font-semibold mt-4">Reech Chung</p>
+              <p class="text-sm text-description">Full Stack Developer</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card card-dark text-center p-8">
+              <div>
+                <img src={% static 'assets/images/about-page/t-3.png' %} class="w-full" alt="">
+              </div>
+              <p class="text-lg font-semibold mt-4">Harrison Stain</p>
+              <p class="text-sm text-description">Ui Designer</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card card-dark text-center p-8">
+              <div>
+                <img src={% static 'assets/images/about-page/t-4.png' %} class="w-full" alt="">
+              </div>
+              <p class="text-lg font-semibold mt-4">Harrison Stain</p>
+              <p class="text-sm text-description">Marketer</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card card-dark text-center p-8">
+              <div>
+                <img src={% static 'assets/images/about-page/t-1.png' %} class="w-full" alt="">
+              </div>
+              <p class="text-lg font-semibold mt-4">Lucian Obrien</p>
+              <p class="text-sm text-description">Lucian Obrien</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination tPagination flex justify-center items-center"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- review -->
+<div class="bg-gray-50 dark:bg-gray-800">
+  <div class="container py-20">
+    <div class="text-center mx-auto">
+      <h2 class="text-[42px] md:text-[52px] font-bold leading-tight">What Our Customer Says</h2>
+    </div>
+    <!-- swiper -->
+    <div class="swiper testSwiper">
+      <div class="swiper-wrapper pb-8">
+        <div class="swiper-slide">
+          <div>
+            <img src={% static 'assets/images/about-page/quo.svg' %} class="mt-12 mx-auto" alt="">
+            <p class="text-lg lg:text-2xl font-medium text-center mt-5 mb-12 mx-auto lg:max-w-[760px]">
+              QuickFrame Admin Template is a user-friendly website template with a modern design and responsive layout. It offers pre-built customizable components and modules to create a unique admin interface for your web applications.
+            </p>
+            <div class="text-center mx-auto">
+              <img src={% static 'assets/images/about-page/r-1png.png' %} class="mx-auto" alt="">
+              <p class="text-lg font-semibold mt-8">Lucian Obrien</p>
+              <p class="text-sm text-description">UX Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src={% static 'assets/images/about-page/quo.svg' %} class="mt-12 mx-auto" alt="">
+            <p class="text-lg lg:text-2xl font-medium text-center mt-5 mb-12 mx-auto lg:max-w-[760px]">
+              QuickFrame Admin Template is a user-friendly website template with a modern design and responsive layout. It offers pre-built customizable components and modules to create a unique admin interface for your web applications.
+            </p>
+            <div class="text-center mx-auto">
+              <img src={% static 'assets/images/about-page/r-1png.png' %} class="mx-auto" alt="">
+              <p class="text-lg font-semibold mt-8">Lucian Obrien</p>
+              <p class="text-sm text-description">UX Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src={% static 'assets/images/about-page/quo.svg' %} class="mt-12 mx-auto" alt="">
+            <p class="text-lg lg:text-2xl font-medium text-center mt-5 mb-12 mx-auto lg:max-w-[760px]">
+              QuickFrame Admin Template is a user-friendly website template with a modern design and responsive layout. It offers pre-built customizable components and modules to create a unique admin interface for your web applications.
+            </p>
+            <div class="text-center mx-auto">
+              <img src={% static 'assets/images/about-page/r-1png.png' %} class="mx-auto" alt="">
+              <p class="text-lg font-semibold mt-8">Lucian Obrien</p>
+              <p class="text-sm text-description">UX Designer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" hidden md:inline-block">
+        <div class="swiper-button-next !w-14 !h-14  bg-white dark:bg-gray-700 rounded-full p-3  after:text-black after:!text-sm after:font-bold"></div>
+        <div class="swiper-button-prev !w-14 !h-14  bg-white dark:bg-gray-700 rounded-full p-3  after:text-black after:!text-sm after:font-bold"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "partials/ui-footer.html" %}
+{% endblock content %}
+{% block js %}
+<script type="module" src={% static 'vite/assets/js/about-us.js' %}></script>
+{% endblock js %}

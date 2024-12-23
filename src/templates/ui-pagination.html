@@ -1,0 +1,481 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Pagination | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Pagination" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Circular
+            </div>
+            
+            <nav class="pagination justify-center">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item bg-gray-700 text-white border-gray-700 hover:!bg-gray-700" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item bg-gray-200 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+  
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Circular Outlined
+            </div>
+            
+            <nav class="pagination justify-center">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item bg-primary-100 text-primary-500 !border-primary-500 hover:!bg-primary-200" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item bg-gray-200 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item bg-gray-100 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Rounded
+            </div>
+            
+            <nav class="pagination justify-center">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item !rounded-lg" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-gray-700 text-white border-gray-700 hover:!bg-gray-700" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item !rounded-lg" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-gray-200 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+  
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Rounded Outlined
+            </div>
+            
+            <nav class="pagination justify-center">
+              <button type="button" class="page-item !rounded-lg" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-primary-100 text-primary-500 !border-primary-500 hover:!bg-primary-200" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item !rounded-lg" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-gray-200 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item !rounded-lg" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-gray-700"></i>
+              </button>
+              <button type="button" class="page-item !rounded-lg bg-gray-100 text-gray-500 border-gray-700 hover:!bg-gray-200" aria-current="page">1</button>
+              <button type="button" class="page-item !rounded-lg">2</button>
+              <button type="button" class="page-item !rounded-lg">3</button>
+              <button type="button" class="page-item !rounded-lg">4</button>
+              <button type="button" class="page-item !rounded-lg">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item !rounded-lg">15</button>
+              <button type="button" class="page-item !rounded-lg">
+                <i class="ri-arrow-right-s-line text-xl text-gray-700"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Sizes
+            </div>
+            
+            <nav class="pagination pagination-sm justify-center">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination pagination-lg justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">15</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Ranges
+            </div>
+            
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item">1</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" 
+              aria-current="page">6</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">11</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item">1</button>
+              <button type="button" class="page-item">2</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" 
+              aria-current="page">6</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">10</button>
+              <button type="button" class="page-item">11</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item">1</button>
+              <button type="button" class="page-item">2</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">5</button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" 
+              aria-current="page">6</button>
+              <button type="button" class="page-item">7</button>
+
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">10</button>
+              <button type="button" class="page-item">11</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+  
+          </div>
+        </div>
+
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Buttons
+            </div>
+            
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item" disabled>
+                <i class="ri-skip-left-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item" disabled>
+                <i class="ri-arrow-left-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item">1</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">6</button>
+              <button type="button" class="page-item">7</button>
+              <button type="button" class="page-item">8</button>
+              <button type="button" class="page-item">9</button>
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" 
+              aria-current="page">10</button>
+              <button type="button" class="page-item">
+                <i class="ri-arrow-right-s-line text-xl text-primary-500"></i>
+              </button>
+              <button type="button" class="page-item">
+                <i class="ri-skip-right-line text-xl text-primary-500"></i>
+              </button>
+            </nav>
+            <nav class="pagination justify-center mt-6">
+              <button type="button" class="page-item bg-primary-500 text-white border-primary-500 hover:!bg-primary-600" 
+              aria-current="page">1</button>
+              <button type="button" class="page-item">2</button>
+              <button type="button" class="page-item">3</button>
+              <button type="button" class="page-item">4</button>
+              <button type="button" class="page-item">5</button>
+              <div class="page-item limit">
+                …
+              </div>
+              <button type="button" class="page-item">10</button>
+            </nav>
+          </div>
+        </div>
+
+        <div class="card component-card !bg-transparent">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Table
+            </div>
+            <div class="p-4 ">
+              <div class="flex items-center md:justify-end gap-2">
+                <div class="flex items-center">
+                  <label for="custom_length">Rows per page:</label>
+
+                  <!-- Select -->
+                  <select id="custom_length" data-hs-select='{
+                            "placeholder": "Select option...",
+                            "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                            "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                            "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                            "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                            "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                            "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                        }' class="hidden">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                  </select>
+                </div>
+                <div class="inline-block me-7">
+                  <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                </div>
+                <div class="custom-pagination-controls">
+                  <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                    <i class="ri-arrow-left-s-line"></i>
+                  </button>
+                  <span id="custom_page_info"></span>
+                  <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                    <i class="ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   </div>
+{% endblock content %}

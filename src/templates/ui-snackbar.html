@@ -1,0 +1,169 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Snackbar | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Snackbar" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Simple
+            </div>
+            
+            <div class="flex justify-center items-center gap-2">
+  
+              <div x-data="{ isOpen: false }">
+                  <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                    Simple Snackbar
+                  </button>
+  
+                  <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed bottom-6 start-6 ms-6 transition-all duration-300 ease-in-out">
+                    <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                      <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                    </div>  
+                  </div>
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              With Action
+            </div>
+            
+            <div class="flex justify-center items-center gap-2">
+  
+              <div x-data="{ isOpen: false }">
+                  <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                    With Action Snackbar
+                  </button>
+  
+                  <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed bottom-6 start-6 ms-6 transition-all duration-300 ease-in-out">
+                    <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                      <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                      <button @click="isOpen = false" type="button" class="absolute right-0 mr-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-200">
+                        <i class="ri-close-line"></i>
+                      </button>
+                    </div>  
+                  </div>
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Positioned Snackbar
+            </div>
+            
+            <div class="flex justify-center items-center gap-2 mb-4">
+  
+              <div x-data="{ isOpen: false }">
+                  <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                    Top-Center
+                  </button>
+  
+                  <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed top-6 start-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out">
+                    <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                      <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                    </div>  
+                  </div>
+              </div>
+  
+            </div>
+
+            <div class="flex justify-between items-center gap-2 mb-4">
+  
+              <div x-data="{ isOpen: false }">
+                  <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                    Top-Left
+                  </button>
+  
+                  <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed top-6 start-6 transition-all duration-300 ease-in-out">
+                    <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                      <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                    </div>  
+                  </div>
+              </div>
+
+              <div x-data="{ isOpen: false }">
+                <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                  Top-Right
+                </button>
+
+                <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed top-6 right-6 transition-all duration-300 ease-in-out">
+                  <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                    <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                  </div>  
+                </div>
+              </div>
+  
+            </div>
+
+            <div class="flex justify-between items-center gap-2 mb-4">
+
+              <div x-data="{ isOpen: false }">
+                <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                  Bottom-Left
+                </button>
+
+                <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed bottom-6 start-6 transition-all duration-300 ease-in-out">
+                  <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                    <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                  </div>  
+                </div>
+              </div>
+
+              <div x-data="{ isOpen: false }">
+                <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                  Bottom-Right
+                </button>
+
+                <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed bottom-6 end-6 transition-all duration-300 ease-in-out">
+                  <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                    <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                  </div>  
+                </div>
+              </div>
+
+            </div>
+
+            <div class="flex justify-center items-center gap-2">
+
+              <div x-data="{ isOpen: false }">
+                <button @click="isOpen = true; setTimeout(() => isOpen = false, 3000)" class="text-white bg-primary-500 border-primary-500 btn hover:bg-primary-600 hover:text-white hover:border-primary-600 focus:bg-primary-600 focus:text-white focus:border-primary-600">
+                  Bottom-Center
+                </button>
+
+                <div x-show="isOpen" x-init="setTimeout(() => isOpen = false, 3000)" class="fixed bottom-6 start-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out">
+                  <div class=" relative md:min-w-72 bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900 text-sm rounded-2xl px-4 py-1.5 shadow-tooltip">
+                    <p class="py-2 toast-message">This is QuickFrame Snackbar</p>
+                  </div>  
+                </div>
+              </div>
+
+            </div>
+  
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}

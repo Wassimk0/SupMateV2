@@ -1,0 +1,113 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>Login | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="relative min-h-screen">
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+    <div class="bg-primary-500 flex items-center justify-center h-full">
+      <div class="text-white p-8 sm:p-12 max-w-[700px]">
+        <h3 class="mt-6 text-4xl font-semibold max-w-[450px] leading-[54px]">Hi, Welcome Back!</h3>
+        <div class="my-8">
+          <h6 class="text-xl font-semibold leading-[30px]">You are in a good company</h6>
+          <p class="text-sm leading-[21px]">A product is something a brand is something that is bought by the customer.</p>
+        </div>
+        <img src={% static 'assets/images/footer-brands.svg' %} alt="footer-brands">
+      </div>
+    </div>
+    <div class="bg-white dark:bg-gray-800 dark:text-white flex items-center justify-center h-full">
+      <div class="p-8 max-w-[550px] w-full">
+        <h5 class="text-2xl md:text-3xl font-semibold">Sign In</h5>
+        <p class="mt-2 mb-12 text-sm text-gray-500 dark:text-gray-400">New user?
+          <a href="register.html" class="text-primary-500">Create an Account</a>
+        </p>
+        <form x-data="{ 
+          email: '', 
+          password: '', 
+          emailError: false,
+          passwordError: false,
+          hasInteractedWithEmail: false,
+          hasInteractedWithPassword: false,
+          showPassword: false,
+          validateField(field) {
+            if (field === 'password') {
+              this.passwordError = this.password.trim() === '';
+            } else if (field === 'email') {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                this.emailError = !emailPattern.test(this.email);
+            } 
+          },
+          validateAllFields() {
+              this.hasInteractedWithEmail = true;
+              this.hasInteractedWithPassword = true;
+              this.validateField('email');
+              this.validateField('password');
+          },
+          validateAndSubmit() {
+              this.validateAllFields();
+              // Redirect to index.html if there are no errors
+              if (!this.emailError && !this.passwordError) {
+                window.location.href = 'index.html';
+              }
+          },
+          togglePassword() {
+            this.showPassword = !this.showPassword;
+          }
+        }" @submit.prevent="validateAndSubmit">
+          <div>
+            <h6 class="text-16 font-semibold mb-3 leading-6">Login with your email id</h6>
+            <div>
+                <input type="email" id="emailInput" autocomplete="username" x-model="email" @blur="hasInteractedWithEmail = true; validateField('email')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': emailError && hasInteractedWithEmail, 'focus:!ring-error-500': emailError && hasInteractedWithEmail }" value="jason@ui-lib.com" placeholder="Enter your work email" >
+                <p x-show="emailError && hasInteractedWithEmail" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Email is Required!</p>
+            </div>
+            <div class="mt-4">
+              <div class="relative">
+                <span class="toggle-password absolute end-[14px] top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-400 text-16 leading-normal cursor-pointer" @click="togglePassword">
+                  <i :class="showPassword ? 'ri-eye-off-fill' : 'ri-eye-fill'"></i>
+                </span>
+                <input autocomplete="current-password" id="password-field-1" :type="showPassword ? 'text' : 'password'" x-model="password" @blur="hasInteractedWithPassword = true; validateField('password')" :class="{ 'form-input form-input-sm !px-3.5 !leading-[18px] placeholder:opacity-50': true, '!border-error-500': passwordError && hasInteractedWithPassword, 'focus:!ring-error-500': passwordError && hasInteractedWithPassword }" value="123456" placeholder="Password" >
+              </div>
+              <p x-show="passwordError && hasInteractedWithPassword" class="mt-1 px-3.5 text-xs text-error-500 leading-5">Password is required</p>
+            </div>
+
+            <div class="flex items-center justify-between my-3">
+              <div class="flex items-center">
+                <input type="checkbox" class="text-primary-500" name="hs-default-checkbox-55" id="hs-default-checkbox-55" checked>
+                <label for="hs-default-checkbox-55" class="ms-2 text-sm font-medium cursor-pointer text-gray-900 dark:text-white">Remember me</label>
+              </div>
+              <a href="forget-password.html" class="text-error-500 text-13 font-medium leading-[19px]">Forget Password?</a>
+            </div>
+
+            <button type="submit" ripple-opacity="0.3" ripple-color="white" class="btn ripple btn-primary w-full mt-6">Sign In</button>
+          </div>
+        </form>
+
+        <div class="py-8 flex items-center text-sm text-gray-500 before:flex-1 before:border-t before:border-gray-200 before:me-5 after:flex-1 after:border-t after:border-gray-200 after:ms-5 dark:text-gray-400 dark:before:border-gray-700 dark:after:border-gray-700">OR</div>
+        
+        <div class="flex justify-center gap-4 flex-wrap">
+          <button class="size-11 rounded-lg border border-gray-200 dark:border-gray-700 flex justify-center items-center">
+            <svg class="size-[18px]" focusable="false" aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.8444 6.4332H15.2V6.4H8V9.6H12.5212C11.8616 11.4628 10.0892 12.8 8 12.8C5.3492 12.8 3.2 10.6508 3.2 8C3.2 5.3492 5.3492 3.2 8 3.2C9.2236 3.2 10.3368 3.6616 11.1844 4.4156L13.4472 2.1528C12.0184 0.8212 10.1072 0 8 0C3.582 0 0 3.582 0 8C0 12.418 3.582 16 8 16C12.418 16 16 12.418 16 8C16 7.4636 15.9448 6.94 15.8444 6.4332Z" fill="#FFC107"></path>
+              <path d="M0.921875 4.2764L3.55028 6.204C4.26148 4.4432 5.98388 3.2 7.99948 3.2C9.22308 3.2 10.3363 3.6616 11.1839 4.4156L13.4467 2.1528C12.0179 0.8212 10.1067 0 7.99948 0C4.92668 0 2.26188 1.7348 0.921875 4.2764Z" fill="#FF3D00"></path>
+              <path d="M7.99993 15.9995C10.0663 15.9995 11.9439 15.2087 13.3635 13.9227L10.8875 11.8275C10.0573 12.4588 9.04291 12.8003 7.99993 12.7995C5.91913 12.7995 4.15233 11.4727 3.48673 9.62109L0.87793 11.6311C2.20193 14.2219 4.89073 15.9995 7.99993 15.9995Z" fill="#4CAF50"></path>
+              <path d="M15.8444 6.43359H15.2V6.40039H8V9.60039H12.5212C12.2057 10.487 11.6373 11.2617 10.8864 11.8288L10.8876 11.828L13.3636 13.9232C13.1884 14.0824 16 12.0004 16 8.00039C16 7.46399 15.9448 6.94039 15.8444 6.43359Z" fill="#1976D2"></path>
+            </svg>
+          </button>
+          <button class="size-11 rounded-lg border border-gray-200 dark:border-gray-700 flex justify-center items-center">
+            <svg class="size-[18px] fill-[#2475ef]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M16.5,6h-3a1,1,0,0,0-1,1v3h4a.35.35,0,0,1,.34.46l-.74,2.2a.5.5,0,0,1-.47.34H12.5v7.5a.5.5,0,0,1-.5.5H9.5a.5.5,0,0,1-.5-.5V13H7.5a.5.5,0,0,1-.5-.5v-2a.5.5,0,0,1,.5-.5H9V7a4,4,0,0,1,4-4h3.5a.5.5,0,0,1,.5.5v2A.5.5,0,0,1,16.5,6Z"></path>
+            </svg>
+          </button>
+          <button class="size-11 rounded-lg border border-gray-200 dark:border-gray-700 flex justify-center items-center">
+            <svg class="size-[18px] fill-[#45abf7]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M22,6.45a8,8,0,0,1-1.85,1.78c0,.18,0,.36,0,.55A12.2,12.2,0,0,1,7.78,21a12.24,12.24,0,0,1-5.45-1.26.25.25,0,0,1-.15-.23V19.4a.26.26,0,0,1,.26-.26A8.86,8.86,0,0,0,7.56,17.3a4.37,4.37,0,0,1-3.89-2.56.26.26,0,0,1,.26-.36,4,4,0,0,0,1.52-.14A4.36,4.36,0,0,1,2,10.43a.26.26,0,0,1,.36-.26,4,4,0,0,0,1.58.34A4.28,4.28,0,0,1,2.23,5.57a.54.54,0,0,1,.91-.18,12.36,12.36,0,0,0,8.41,3.88,4,4,0,0,1-.12-1,4.36,4.36,0,0,1,7.51-2.94,8.69,8.69,0,0,0,2.39-.83.17.17,0,0,1,.18,0,.17.17,0,0,1,0,.18,4.37,4.37,0,0,1-1.76,2,8.58,8.58,0,0,0,2-.48.16.16,0,0,1,.18,0A.17.17,0,0,1,22,6.45Z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,195 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Radio Button | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Radio Button" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Colors
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Primary
+                </span>
+              </div>
+  
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-warning-icon-hover size-9">
+                  <input type="radio" class="radio-warning" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Warning
+                </span>
+              </div>
+  
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-error-icon-hover size-9">
+                  <input type="radio" class="radio-error" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Error
+                </span>
+              </div>
+  
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-info-icon-hover size-9">
+                  <input type="radio" class="radio-info" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Info
+                </span>
+              </div>
+  
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-default" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  default
+                </span>
+              </div>
+
+            </div>
+
+            
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Sizes
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover size-12">
+                  <input type="radio" class="radio-primary size-6" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Large
+                </span>
+              </div>
+
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary size-[20px]" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Medium
+                </span>
+              </div>
+
+              <div class="hs-tooltip inline-block [--placement:bottom]">
+                <div class="btn-primary-icon-hover size-8">
+                  <input type="radio" class="radio-primary size-4" name="hs-default-radio" id="hs-default-radio">
+                </div>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0" role="tooltip">
+                  Small
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Label
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+
+              <div class="flex items-center">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-01">
+                </div>
+                <label for="hs-default-radio-01" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Female</label>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-02">
+                </div>
+                <label for="hs-default-radio-02" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Male</label>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-03">
+                </div>
+                <label for="hs-default-radio-03" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Other</label>
+              </div>
+
+            </div>
+
+            
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Label placement
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+
+              <div class="flex items-center flex-col">
+                <label for="hs-default-radio-top" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Top</label>
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-top">
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <label for="hs-default-radio-start" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Start</label>
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-start">
+                </div>
+              </div>
+              
+              <div class="flex items-center flex-col">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-bottom">
+                </div>
+                <label for="hs-default-radio-bottom" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">Bottom</label>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="btn-primary-icon-hover size-9">
+                  <input type="radio" class="radio-primary" name="hs-default-radio-01" id="hs-default-radio-end">
+                </div>
+                <label for="hs-default-radio-end" class="ms-2 text-6 cursor-pointer text-gray-900 dark:text-white">End</label>
+              </div>
+
+            </div>
+
+            
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+   </div>
+{% endblock content %}

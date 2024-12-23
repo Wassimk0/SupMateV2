@@ -1,0 +1,513 @@
+{% extends "partials/page-layout.html" %} {% load static %}
+{% block title %}
+<title>File Management | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+      <div class="card card-dark mt-6" id="FileManager">
+        <div class="card-body">
+          <div class="flex flex-wrap sm:items-center flex-col sm:flex-row sm:justify-between gap-4">
+            <h6 class="text-lg leading-[27px] font-semibold">File Manager</h6>
+            <div class="flex flex-wrap items-center gap-4 flex-1 justify-end">
+              <div class="relative sm:max-w-72 w-full rounded-xl">
+                <div class="absolute top-3 flex items-center ps-4 pointer-events-none ">
+                  <i class="ri-search-line text-lg leading-none text-gray-500 dark:text-gray-100/50"></i>
+                </div>
+                <input type="search" id="default-search" class="block w-full py-2.5 ps-10 pr-4 text-sm text-gray-900 border border-gray-200 focus:ring-0 focus:outline-none rounded-md placeholder:font-light bg-transparent placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:border-primary-500 dark:focus:border-primary-500 hover:border-black dark:hover:border-white" placeholder="Search Folder" required="">
+              </div>
+              <button ripple-opacity="0.1" ripple-color="white" class="ripple btn btn-primary w-full sm:w-max justify-center sm:justify-start flex items-center gap-1">
+                <i class="ri-add-line text-xl"></i>
+                New Folder
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="file_manager_table">
+        <div class="main_delete_selected hidden">
+          <div class="flex justify-between items-center gap-2 px-6 min-h-16 bg-gray-50 dark:bg-gray-700">
+            <div class="custom-select-info font-semibold" id="custom_select_info">0 Selected</div>
+            <button type="button" class="delete_selected hs-dropdown-toggle btn-dark-icon-hover size-10">
+              <i class="ri-delete-bin-7-fill text-lg text-gray-400 dark:text-gray-300"></i>
+            </button>
+          </div>
+        </div>
+        <div data-simplebar>
+          <table id="FileManagerDataTable" class="table !w-full">
+            <thead class="!bg-gray-100 dark:!bg-gray-700">
+              <tr class="*:!px-4 *:!py-3 *:!leading-4">
+                <td class="max-w-10">
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" id="select_all" class="all-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <th class="dark:!text-white !text-sm !font-semibold">
+                  Folder Name
+                </th>
+                <th class="dark:!text-white !text-sm !font-semibold">
+                  File Items
+                </th>
+                <th class="dark:!text-white !text-sm !font-semibold">
+                  File Size
+                </th>
+                <th class="dark:!text-white !text-sm !font-semibold">
+                  Created Date
+                </th>
+                <td class="max-w-10"></td>
+              </tr>
+            </thead>
+            <tbody class="*:border-b *:border-gray-200">
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Designs</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">125 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">13.2 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">16 DEC, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Photos</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">1024 Images</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">	10 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">	14 DEC, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Movies</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">45 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">	120 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">12 DEC, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">MP3 Music</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">125 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">3.2 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">05 DEC, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Videos</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">10 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">13.2 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">01 DEC, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Others</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">15 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">26 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">25 NOV, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Apps APK</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">	16 apk</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">890 MB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">22 NOV, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Personal</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">985 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">52 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">15 NOV, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:!p-4 *:!leading-5">
+                <td>
+                  <div class="btn-primary-icon-hover size-9">
+                    <input type="checkbox" class="row-checkbox size-[15px] text-primary-500">
+                  </div>
+                </td>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <i class="ri-folder-fill text-gray-500 dark:text-gray-200 text-xl"></i>
+                    <h6 class="text-sm font-semibold">Development</h6>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">55 Files</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">17.6 GB</p>
+                </td>
+                <td>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">	03 NOV, 2022</p>
+                </td>
+                <td>
+                  <div class="hs-dropdown relative flex justify-end">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="ri-more-2-fill text-lg text-gray-400 dark:text-gray-400"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-eye-fill"></i>
+                          View
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-pencil-fill"></i>
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item delete_selected" href="#">
+                          <i class=" text-lg text-gray-600 leading-none ri-delete-bin-7-line"></i>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex items-center flex-wrap md:justify-end gap-y-2 gap-x-6 px-4 min-h-14">
+          <div class="flex items-center">
+            <label for="custom_length">Rows per page:</label>
+            <!-- Select -->
+            <select id="custom_length" data-hs-select='{
+                      "placeholder": "Select option...",
+                      "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                      "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                      "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                      "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-white dark:focus:bg-gray-100/10",
+                      "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                      "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                  }' class="hidden">
+              <option value="5" selected>5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+            </select>
+          </div>
+          <div class="inline-block me-7">
+            <div class="custom-info" id="custom_info">0 - 0 of 0</div>
+          </div>
+          <div class="custom-pagination-controls">
+            <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <span id="custom_page_info"></span>
+            <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/table-file-manager.js' %}></script>
+{% endblock js %}

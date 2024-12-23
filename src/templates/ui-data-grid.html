@@ -1,0 +1,164 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Data Grid | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Data Grid" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+      <div class="flex flex-col gap-4 min-h-[calc(100vh-212px)]">
+        <div class="grid grid-cols-1 gap-4">
+            <div class="card component-card">
+                <div class="card-body">
+                    <div class="mb-4 card-title">
+                        Basic
+                    </div>
+                    <div id="ui-data-grid-table-main">
+                        <div class="responsive-table">
+                            <table id="ui-data-grid-table" class="table !w-full">
+                                <thead>
+                                    <tr>
+                                        <td><input type="checkbox" id="select_all" class="all-checkbox" /></td>
+                                        <th>ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Age</th>
+                                        <th>Full Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>1</td>
+                                        <td>John</td>
+                                        <td>Snow</td>
+                                        <td>35</td>
+                                        <td>John Snow</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>2</td>
+                                        <td>Cersei</td>
+                                        <td>Lannister</td>
+                                        <td>42</td>
+                                        <td>Cersei Lannister</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>3</td>
+                                        <td>Jaime</td>
+                                        <td>Lannister</td>
+                                        <td>45</td>
+                                        <td>Jaime</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>4</td>
+                                        <td>Arya</td>
+                                        <td>Stark</td>
+                                        <td>16</td>
+                                        <td>Arya Stark</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>5</td>
+                                        <td>Daenerys</td>
+                                        <td>Targaryen</td>
+                                        <td></td>
+                                        <td>Daenerys Targaryen</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>6</td>
+                                        <td></td>
+                                        <td>Melisandre</td>
+                                        <td>150</td>
+                                        <td>Melisandre</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>7</td>
+                                        <td>Ferrara</td>
+                                        <td>Clifford</td>
+                                        <td>44</td>
+                                        <td>Ferrara Clifford</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>8</td>
+                                        <td>Rossini</td>
+                                        <td>Frances</td>
+                                        <td>36</td>
+                                        <td>Rossini Frances</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>9</td>
+                                        <td>Harvey</td>
+                                        <td>Roxie</td>
+                                        <td>65</td>
+                                        <td>Harvey Roxie</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="row-checkbox" /></td>
+                                        <td>10</td>
+                                        <td>Jon</td>
+                                        <td>Snow</td>
+                                        <td>35</td>
+                                        <td>Jon Snow</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex justify-between items-center gap-6">
+                            <div>
+                                <div class="custom-select-info" id="custom_select_info">0 rows selected</div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center">
+                                    <label for="custom_length">Rows per page:</label>
+                                    
+                                    <!-- Select -->
+                                    <select id="custom_length" data-hs-select='{
+                                        "placeholder": "Select option...",
+                                        "toggleTag": "<button class=\"cursor-pointer\" type=\"button\" aria-expanded=\"false\"></button>",
+                                        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1 ps-2 pe-6 flex gap-x-2 text-nowrap w-full cursor-pointer text-start text-sm",
+                                        "dropdownClasses": "min-w-[65px] p-2 z-50 w-full max-h-72 bg-white dark:bg-gray-800 shadow-table rounded-lg overflow-hidden overflow-y-auto",
+                                        "optionClasses": "py-2 px-4 w-full text-sm text-gray-800 cursor-pointer hs-selected:bg-primary-500/5 dark:hs-selected:bg-primary-500/30 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 dark:hover:bg-gray-100/5 dark:text-neutral-200 dark:focus:bg-gray-100/10",
+                                        "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span></div>",
+                                        "extraMarkup": "<div class=\"absolute top-1/2 end-1 -translate-y-1/2\"><i class=\"ri-arrow-down-s-fill text-xl text-gray-900/100 dark:text-gray-100/50 \"></i></div>"
+                                    }' class="hidden">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                                <div class="inline-block me-7">
+                                    <div class="custom-info" id="custom_info">Showing 0 - 0 of 0 entries</div>
+                                </div>
+                                <div class="custom-pagination-controls">
+                                    <button id="custom_prev" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </button>
+                                    <span id="custom_page_info"></span>
+                                    <button id="custom_next" class="alert-close size-10 cursor-pointer disabled:opacity-30 disabled:pointer-events-none" disabled>
+                                        <i class="ri-arrow-right-s-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+   </div>
+{% endblock content %}
+{% block js %}
+<script type="module" src={% static 'vite/assets/js/ui-data-grid.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,160 @@
+{% load static %}
+<div class="card card-dark overflow-hidden">
+    <div class="card-body">
+      <div class="flex justify-between items-center gap-8 mb-6">
+        <h6 class="font-semibold text-lg leading-[27px]">Messages</h6>
+        <div ripple-opacity="0.1" ripple-color="black" class="ripple size-9 border border-gray-200 dark:border-gray-100/5 bg-gray-50 dark:bg-gray-700 p-2 rounded-full flex items-center justify-center cursor-pointer">
+          <i class="ri-add-line text-2xl text-gray-900/60 dark:text-gray-100/50"></i>
+        </div>
+      </div>
+      <div class="relative border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-xl px-4 flex items-center">
+        <i class="ri-search-line text-lg leading-none text-gray-500 dark:text-gray-100/50"></i>
+        <input placeholder="Search..." type="text" class="w-full h-[43px] bg-transparent border-0 focus:outline-offset-0 focus:ring-0 text-sm focus:outline-0 placeholder:opacity-50 dark:placeholder:text-white">
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-2 mb-2 px-6 text-gray-500 dark:text-gray-400">
+        <i class="ri-pushpin-fill text-lg"></i>
+        <p>Pinned</p>
+      </div>
+      <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+        <img class="size-10 rounded-full" src={% static 'assets/images/user/user-19.png' %} alt="user">
+        <div class="w-full">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium leading-[21px]">Aiony Haust</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+          </div>
+          <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+            <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Tell me about somthing?</p>
+            <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+        <img class="size-10 rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+        <div class="w-full">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium leading-[21px]">Yev Ledenov</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+          </div>
+          <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+            <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+            <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="border-gray-200 dark:border-gray-700">
+      <div class="mt-6">
+        <div class="flex items-center gap-2 mb-2 px-6 text-gray-500 dark:text-gray-400">
+          <i class="ri-pushpin-fill text-lg"></i>
+          <p>All Messages</p>
+        </div>
+        <div class="h-[calc(100vh-420px)] lg:h-[calc(100vh-536px)]" data-simplebar>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-19.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Aiony Haust</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Tell me about somthing?</p>
+                <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Yev Ledenov</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <i class="ri-check-double-line text-primary-500 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-6.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Vicky Hladynets</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <span class="size-[18px] rounded-full bg-primary-500 text-white text-xs font-medium flex items-center justify-center">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Julian Wan</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Thank You</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-18.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Aiony Haust</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Tell me about somthing?</p>
+                <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Yev Ledenov</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <i class="ri-check-double-line text-primary-500 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-6.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Vicky Hladynets</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">1 year ago</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <span class="size-[18px] rounded-full bg-primary-500 text-white text-xs font-medium flex items-center justify-center">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
+            <img class="size-10 rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+            <div class="w-full">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-medium leading-[21px]">Julian Wan</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Thank You</p>
+              </div>
+              <div class="flex items-center justify-between mt-1 text-gray-500 dark:text-gray-400">
+                <p class="text-xs"><span class="text-gray-900 dark:text-white">You: </span> Can you send some demo?</p>
+                <i class="ri-check-double-line text-gray-400 text-lg leading-none"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

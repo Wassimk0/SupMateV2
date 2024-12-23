@@ -1,0 +1,847 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+  <title>Dashboard CRM | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+  <div class="mt-6 overflow-hidden card card-dark">
+    <div class="grid grid-cols-1 lg:grid-cols-3">
+
+      <div class="card-body">
+        <div class="flex items-center gap-2">
+          <h6 class="font-semibold leading-[42px]">1,352</h6>
+          <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+4.67%</p>
+        </div>
+        <p class="text-gray-500 dark:text-gray-400">Campaign Sent</p>
+        <div class="chart-container">
+          <div id="daily_sales_chart" class="-mt-5 complete-chart"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between h-full border-gray-200 border-dashed card-body lg:border-x border-y lg:border-y-0 dark:border-gray-700">
+
+        <div>
+          <div class="flex items-center gap-2">
+            <h6 class="font-semibold leading-[42px]"><span class="text-lg font-medium text-gray-400">$</span>51,352</h6>
+            <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+12.5%</p>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">Average Deals</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-4 mt-4">
+          <div class="size[130px]">
+            <div id="average_deals_chart"></div>
+          </div>
+          <div class="flex flex-col space-y-2 min-w-[120px] font-medium">
+            <div class="flex items-center justify-between">
+              <p class="text-gray-500 dark:text-gray-400">Cloths</p>
+              <p>$2,658</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-gray-500 dark:text-gray-400">Foods</p>
+              <p>$6,687</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-gray-500 dark:text-gray-400">Others</p>
+              <p>$4,348</p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="flex flex-col justify-between h-full card-body">
+
+        <div>
+          <div class="flex items-center gap-2">
+            <h6 class="font-semibold leading-[42px]"><span class="text-lg font-medium text-gray-400">$</span>51,352</h6>
+            <p class="bg-error-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-error-500 font-medium leading-3">-2.65%</p>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">Annual Profit</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <p class="font-semibold">$100,500 to Goal</p>
+            <span class="text-gray-500 dark:text-gray-400">75%</span>
+          </div>
+          <div class='flex w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-700'>
+            <div class='w-7/12 h-full overflow-hidden bg-success-500 origin-left-right'></div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid grid-rows-1 lg:grid-cols-3 gap-x-6">
+    <div class="lg:col-span-2">
+      <div class="card card-dark h-[calc(100%-24px)]">
+
+        <div class="md:flex items-center justify-between gap-8 sm:flex-nowrap">
+          <div x-data="{ activeTab: 'basic-tabs-1' }">
+            <nav class="flex flex-col md:flex-row gap-2">
+              
+              <button 
+                type="button" 
+                class="nav-item rounded-b-xl !p-6 text-start hs-tab-active:bg-gray-50 dark:hs-tab-active:bg-gray-700 dark:text-gray-400"
+                x-on:click="activeTab = 'basic-tabs-1'"
+                x-bind:class="{ 'bg-gray-50 dark:bg-gray-700': activeTab === 'basic-tabs-1' }"
+              >
+                <p class="leading-[14px] font-medium text-gray-500 dark:text-gray-400">Revenue</p>
+              </button>
+
+              <button 
+                type="button" 
+                class="nav-item rounded-b-xl !p-6 text-start hs-tab-active:bg-gray-50 dark:hs-tab-active:bg-gray-700 dark:text-gray-400"
+                x-on:click="activeTab = 'basic-tabs-2'"
+                x-bind:class="{ 'bg-gray-50 dark:bg-gray-700': activeTab === 'basic-tabs-2' }"
+              >
+                <p class="leading-[14px] font-medium text-gray-500 dark:text-gray-400">Users</p>
+              </button>
+
+              <button 
+                type="button" 
+                class="nav-item rounded-b-xl !p-6 text-start hs-tab-active:bg-gray-50 dark:hs-tab-active:bg-gray-700 dark:text-gray-400"
+                x-on:click="activeTab = 'basic-tabs-3'"
+                x-bind:class="{ 'bg-gray-50 dark:bg-gray-700': activeTab === 'basic-tabs-3' }"
+              >
+                <p class="leading-[14px] font-medium text-gray-500 dark:text-gray-400">Deals</p>
+              </button>
+
+              <button 
+                type="button" 
+                class="nav-item rounded-b-xl !p-6 text-start hs-tab-active:bg-gray-50 dark:hs-tab-active:bg-gray-700 dark:text-gray-400"
+                x-on:click="activeTab = 'basic-tabs-4'"
+                x-bind:class="{ 'bg-gray-50 dark:bg-gray-700': activeTab === 'basic-tabs-4' }"
+              >
+                <p class="leading-[14px] font-medium text-gray-500 dark:text-gray-400">Profit</p>
+              </button>
+
+            </nav>
+          </div>
+          <div class="relative inline-flex hs-dropdown me-6">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body !pt-4 !pb-2 flex flex-col justify-between">
+
+          <div>
+            <div class="flex items-center gap-2">
+              <h6 class="font-semibold leading-[42px]">22,356</h6>
+              <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+4.67%</p>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400">Last month</p>
+          </div>
+
+        </div>
+
+        <div class="px-4 chart-container">
+          <div id="apex_area1" class="apex-charts" dir="ltr"></div>      
+        </div>
+      
+      </div>
+    </div>
+    
+    <div class="lg:col-start-3">
+      <div class="overflow-hidden card card-dark">
+        <div class="card-body">
+          <div class="flex items-center justify-between gap-8">
+            <h6 class="text-lg font-medium">Most Leads</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6 h-[136px]">
+          <div id="browser_session_chart"></div> 
+        </div>
+        <div class="overflow-auto" data-simplebar>
+          <table class="table-bordered">
+            <tbody>
+              <tr class="*:text-gray-900 *:dark:text-white">
+                <td>
+                  <div class="flex items-center gap-2 ps-6 min-w-28">
+                    <div class="flex items-center justify-center size-6">
+                      <i class="text-xl ri-mail-line text-primary-500"></i>
+                    </div>
+                    <p class="font-medium">Email</p>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">500 vs 1000</p>
+                </td>
+                <td class="pe-6">
+                  <p >60%</p>
+                </td>
+              </tr>
+              <tr class="*:text-gray-900 *:dark:text-white">
+                <td>
+                  <div class="flex items-center gap-2 ps-6 min-w-28">
+                    <div class="flex items-center justify-center size-6">
+                      <i class="text-2xl ri-phone-line text-success-500"></i>
+                    </div>
+                    <p class="font-medium">Call</p>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">360 vs 965</p>
+                </td>
+                <td class="pe-6">
+                  <p >10%</p>
+                </td>
+              </tr>
+              <tr class="*:text-gray-900 *:dark:text-white">
+                <td>
+                  <div class="flex items-center gap-2 ps-6 min-w-28">
+                    <div class="flex items-center justify-center size-6">
+                      <i class="text-xl text-gray-500 ri-user-line"></i>
+                    </div>
+                    <p class="font-medium">Social</p>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">3684 vs 5000</p>
+                </td>
+                <td class="pe-6">
+                  <p >20%</p>
+                </td>
+              </tr>
+              <tr class="*:text-gray-900 *:dark:text-white">
+                <td>
+                  <div class="flex items-center gap-2 ps-6 min-w-28">
+                    <div class="flex items-center justify-center size-6">
+                      <svg class="fill-gray-300" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="m11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z"></path>
+                      </svg>
+                    </div>
+                    <p class="font-medium">Other</p>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">469 vs 678</p>
+                </td>
+                <td class="pe-6">
+                  <p >10%</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-x-6">
+    <div class="lg:col-span-2">
+      <div class="card card-dark">
+        <div class="card-body">
+          
+          <div class="flex items-center justify-between gap-8">
+            <h6 class="text-lg font-medium">Deal Status</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="overflow-auto" data-simplebar>
+          <table class="table-bordered">
+            <thead>
+              <tr>
+                <th class="!ps-6">SALES REPRESENTATIVE</th>
+                <th>COMPANY NAME</th>
+                <th>STATUS</th>
+                <th>DEAL VALUE</th>
+              </tr>
+            </thead>
+            <tbody class="*:font-medium *:text-sm *:dark:text-gray-200">
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-11.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Astole Banne</h6>
+                      <p class="text-xs font-normal">Sales Manager</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">Absternet LLC</p>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block bg-success-50 dark:bg-gray-700 font-normal">
+                    <p class="text-success-500">Deal won</p>
+                  </div>
+                </td>
+                <td>
+                  <p>	203.50K</p>
+                </td>
+              </tr>
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-11.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Lisa Bee</h6>
+                      <p class="text-xs font-normal">Sales Manager</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">Nike</p>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block bg-error-50 dark:bg-gray-700 font-normal">
+                    <p class="text-error-500">Stuck</p>
+                  </div>
+                </td>
+                <td>
+                  <p>283.50K</p>
+                </td>
+              </tr>
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6">
+                    <div class="flex items-center justify-center min-w-[35px] h-10">
+                      <img class="size-10" src={% static 'assets/images/user/user-11.png' %} alt="user">
+                    </div>
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm text-gray-900 dark:text-white">Stuward Canne</h6>
+                      <p class="text-xs font-normal">Sales Manager</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="text-gray-900 dark:text-white">Absternet LLC</p>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block dark:bg-gray-700 font-normal">
+                    <p class="text-warning-500">Pending</p>
+                  </div>
+                </td>
+                <td>
+                  <p>	203.50K</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+    <div class="lg:col-start-3">
+      <div class="card card-dark">
+        <div class="font-medium card-body ">
+          
+          <div class="flex items-center justify-between gap-8">
+            <h6 class="text-lg font-medium">Deal Type</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6">
+            <div id="deal_type_chart"></div> 
+          </div>
+
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-x-6">
+
+    <div class="overflow-hidden card card-dark">
+      <div class="card-body">
+        <div class="flex items-center justify-between gap-8 pb-6">
+          <h6 class="text-lg font-medium">Avg. Call Duration</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-xl leading-6 text-primary-500">10m: 52s</p>
+          <p class="text-gray-500 dark:text-gray-400">Base on 100 calls</p>
+        </div>
+      </div>
+      <div class="chart-container">
+        <div id="completed_goals_chart" class="complete-chart"></div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden card card-dark">
+      <div class="card-body">
+        <div class="flex items-center justify-between gap-8">
+          <h6 class="text-lg font-medium">Sales Forecast</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-container">
+          <div id="sales_forecast_chart" class="complete-chart !min-h-[220px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden card card-dark">
+      <div class="card-body">
+        <div class="flex items-center justify-between gap-8">
+          <h6 class="text-lg font-medium">Deal Forecast by Owner</h6>
+          <div class="relative inline-flex hs-dropdown">
+            <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+              <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+            </button>
+          
+            <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+              <div class="p-2">
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Create
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Edit
+                </a>
+                <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 mb-4 *:font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 justify-between">
+          <p>Owner</p>
+          <p>Deal Won</p>
+        </div>
+        <div class="space-y-5">
+          <div class="flex items-center justify-between gap-2 font-medium text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-3">
+              <img class="size-[35px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="Image Description">
+              <div class="flex flex-col justify-between gap-0.5">
+                <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Astole Banne</h6>
+                <p class="text-xs">$25,360</p>
+              </div>
+            </div>
+            <p>$25,000</p>
+          </div>
+          <div class="flex items-center justify-between gap-2 font-medium text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-3">
+              <img class="size-[35px] rounded-full" src={% static 'assets/images/user/user-16.png' %} alt="Image Description">
+              <div class="flex flex-col justify-between gap-0.5">
+                <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Jhone Abela</h6>
+                <p class="text-xs">$25,360</p>
+              </div>
+            </div>
+            <p>$25,000</p>
+          </div>
+          <div class="flex items-center justify-between gap-2 font-medium text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-3">
+              <img class="size-[35px] rounded-full" src={% static 'assets/images/user/user-17.png' %} alt="Image Description">
+              <div class="flex flex-col justify-between gap-0.5">
+                <h6 class="text-sm font-semibold text-gray-900 dark:text-white">Lisa Been</h6>
+                <p class="text-xs">$25,360</p>
+              </div>
+            </div>
+            <p>$25,000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-x-6">
+    <div class="lg:col-span-2">
+      <div class="overflow-hidden card card-dark">
+        <div class="card-body">
+
+          <div class="flex items-center justify-between gap-2">
+            <h6 class="text-lg font-medium">Recent Leads</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        
+        <div class="pb-2 overflow-auto" data-simplebar>
+          <table class="table-bordered">
+            <thead>
+              <tr>
+                <th class="!ps-6">NAME</th>
+                <th>EMAIL OR PHONE</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody class="*:font-medium *:text-sm *:dark:text-gray-200">
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6 min-w-48">
+                    <img class="rounded-full size-10" src={% static 'assets/images/user/user-11.png' %} alt="Image Description">
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm font-medium text-gray-900 dark:text-white">Astole Banne</h6>
+                      <p class="text-xs font-normal">$25,360.00</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="text-sm font-medium text-gray-900 dark:text-white">	
+                    astole@gmail.com
+                  </h6>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block bg-success-50 font-normal dark:bg-gray-700">
+                    <p class="text-success-600">Won Lead</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="relative inline-flex hs-dropdown">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Create
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6 min-w-48">
+                    <img class="rounded-full size-10" src={% static 'assets/images/user/user-17.png' %} alt="Image Description">
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm font-medium text-gray-900 dark:text-white">Taslon Abela</h6>
+                      <p class="text-xs font-normal">$25,360.00</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="text-sm font-medium text-gray-900 dark:text-white">	
+                    taslon@gmail.com
+                  </h6>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block dark:bg-gray-700 font-normal">
+                    <p class="text-warning-600">Cold Lead</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="relative inline-flex hs-dropdown">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Create
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="*:py-3">
+                <td>
+                  <div class="flex items-center gap-4 ps-6 min-w-48">
+                    <img class="rounded-full size-10" src={% static 'assets/images/user/user-18.png' %} alt="Image Description">
+                    <div class="flex flex-col justify-between gap-0.5">
+                      <h6 class="text-sm font-medium text-gray-900 dark:text-white">Tofan Andy</h6>
+                      <p class="text-xs font-normal">$25,360.00</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="text-sm font-medium text-gray-900 dark:text-white">	
+                    tofan@gmail.com
+                  </h6>
+                </td>
+                <td>
+                  <div class="py-[3px] px-3 rounded-md inline-block bg-error-50 font-normal dark:bg-gray-700">
+                    <p class="text-error-600">New Lead</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="relative inline-flex hs-dropdown">
+                    <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                      <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                    </button>
+                  
+                    <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                      <div class="p-2">
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Create
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Edit
+                        </a>
+                        <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+    <div class="lg:col-start-3">
+      <div class="overflow-hidden card card-dark">
+        <div class="card-body">
+
+          <div class="flex items-center justify-between gap-2">
+            <h6 class="text-lg font-medium">To-do list</h6>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                <div class="p-2">
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Create
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Edit
+                  </a>
+                  <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex items-center gap-2 px-6">
+          <p id="progress-text" class="font-medium text-primary-500">25%</p>
+          <div class='flex w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-700'>
+            <div id="progress-bar" class='w-3/12 h-full overflow-hidden bg-primary-500 origin-left-right'></div>
+          </div>
+        </div>
+
+        <ul id="todo-list" class="flex flex-col *:px-4 py-4 space-y-2 text-gray-500">
+          <li class="flex items-center justify-between" data-index="0">
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-[42px]">
+                <input type="checkbox" class="size-[18px] text-primary-500 checkbox" checked>
+              </div>
+              <p class="font-medium">Design a poster for a company</p>
+            </div>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-9">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100 p-2" aria-labelledby="hs-dropdown-with-dividers">
+                <div data-action="delete" ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="cursor-pointer ripple dropdown-item">
+                  Delete
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="flex items-center justify-between" data-index="2">
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-[42px]">
+                <input type="checkbox" class="size-[18px] text-primary-500 checkbox">
+              </div>
+              <p class="font-medium">Analyze Data</p>
+            </div>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-9">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100 p-2" aria-labelledby="hs-dropdown-with-dividers">
+                <div data-action="delete" ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="cursor-pointer ripple dropdown-item">
+                  Delete
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="flex items-center justify-between" data-index="3">
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-[42px]">
+                <input type="checkbox" class="size-[18px] text-primary-500 checkbox">
+              </div>
+              <p class="font-medium">YouTube campaign</p>
+            </div>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-9">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100 p-2" aria-labelledby="hs-dropdown-with-dividers">
+                <div data-action="delete" ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="cursor-pointer ripple dropdown-item">
+                  Delete
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="flex items-center justify-between" data-index="4">
+            <div class="flex items-center">
+              <div class="btn-primary-icon-hover size-[42px]">
+                <input type="checkbox" class="size-[18px] text-primary-500 checkbox">
+              </div>
+              <p class="font-medium">Assaign employee</p>
+            </div>
+            <div class="relative inline-flex hs-dropdown">
+              <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-9">
+                <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+              </button>
+            
+              <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100 p-2" aria-labelledby="hs-dropdown-with-dividers">
+                <div data-action="delete" ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="cursor-pointer ripple dropdown-item">
+                  Delete
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/dashboard-crm.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,144 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Invoice Details | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+    <div class="mt-6">
+      <div class="card card-dark">
+        <div class="grid grid-cols-12 md:p-6 md:gap-6">
+          <div class="col-span-12 md:col-span-7 p-6 md:p-0">
+            <div class="flex justify-between">
+              <div>
+                <img src={% static 'assets/images/fed.svg' %} alt="">
+              </div>
+              <div class="ltr:text-right rtl:text-left">
+                <p class="text-16 font-semibold">Invoice #</p>
+                <p class="text-sm text-description">3682303</p>
+              </div>
+            </div>
+            <div class="py-6 flex justify-between">
+              <div class="text-sm space-y-1">
+                <p class="font-semibold">Bill To:</p>
+                <p class="text-16 font-semibold">Pixy Krovasky</p>
+                <p class="text-description max-w-40">8692 Wild Rose Drive
+                  Livonia, MI 48150</p>
+              </div>
+              <p class="max-w-32 ltr:text-right rtl:text-left">45 Roker Terrace
+                Latheronwheel
+                KW5 8NW, London
+                United Kingdom</p>
+            </div>
+            <p class="mb-2 text-sm">
+              <span class="font-semibold">Issue Date: </span>
+              <span class="text-description"> 03/10/2018</span>
+            </p>
+            <p class="text-sm">
+              <span class="font-semibold">Due date: </span>
+              <span class="text-description"> 07/10/2018</span>
+            </p>
+            <div>
+              <div class="overflow-x-auto mt-6">
+                <table class="table border-spacing-0">
+                  <thead>
+                    <tr class="*:font-normal *:bg-white *:dark:bg-gray-800 border-b dark:border-gray-700">
+                      <th class="ltr:pl-0 rtl:pr-0 py-1.5 text-description">Description</th>
+                      <th class="py-1.5 text-description"> Hours</th>
+                      <th class="py-1.5 text-description">Rate </th>
+                      <th class="ltr:pr-0 rtl:pl-0 py-1.5 text-description ltr:text-right rtl:text-left">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="*:py-2.5 *:text-black *:dark:text-white">
+                      <td class="ltr:pl-0 rtl:pr-0"> Minimal Design </td>
+                      <td> 80 </td>
+                      <td> $40.00 </td>
+                      <td class="ltr:pr-0 rtl:pl-0 ltr:text-right rtl:text-left"> $3200.00 </td>
+                    </tr>
+                    <tr class="*:py-2.5 *:text-black *:dark:text-white border-b dark:border-gray-700">
+                      <td class="ltr:pl-0 rtl:pr-0">Logo Design </td>
+                      <td> 32 </td>
+                      <td> $50.00 </td>
+                      <td class="ltr:pr-0 rtl:pl-0 ltr:text-right rtl:text-left"> $2200.00 </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="text-sm font-medium md:max-w-52 ltr:ml-auto rtl:mr-auto my-6 space-y-2">
+                <div class="flex justify-between">
+                  <p>Subtotal:</p>
+                  <p class="ltr:text-left rtl:text-right">$ 20,600</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>Vat 0%:</p>
+                  <p class="ltr:text-left rtl:text-right">$ 00.00</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>Sub total 0%:</p>
+                  <p class="ltr:text-left rtl:text-right">$ 20,600</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>Total:</p>
+                  <p class="ltr:text-left rtl:text-right">$ 20,600</p>
+                </div>
+              </div>
+              <div class="flex gap-2 ltr:justify-end rtl:justify-start">
+                <button class="btn btn-outline-secondary dark:bg-transparent border-gray-200 hover:border-gray-100 hover:bg-transparent dark:border-gray-700 text-black hover:text-black dark:text-white dark:hover:border-white gap-1.5 flex">
+                  <span>
+                    <svg class="w-5 dark:fill-white MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bbh01c" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M19,18.5v1a.5.5,0,0,1-.5.5H5.5a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h13A.5.5,0,0,1,19,18.5Zm-7.35-2.65a.48.48,0,0,0,.7,0l5.79-5.79a.5.5,0,0,0,0-.71l-.2-.2A.49.49,0,0,0,17.58,9H15V3.5a.5.5,0,0,0-.5-.5h-5a.5.5,0,0,0-.5.5V9H6.42a.49.49,0,0,0-.36.15l-.2.2a.5.5,0,0,0,0,.71Z"></path>
+                    </svg>
+                  </span>
+                  <span>PDF</span>
+                </button>
+                <button ripple-opacity="0.3" ripple-background="#000" class="btn ripple btn-primary">Print Invoice<div class="rippleContainer"></div></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-5 p-6 md:p-0">
+            <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip chip-success !py-1">Approved</span>
+                <span class="chip chip-primary !py-1">Pending Payment</span>
+              </div>
+              <div class="mt-6">
+                <p class="text-16 font-semibold">Payment Details:</p>
+                <div class="mt-4">
+                  <p class="text-description">Paypal:</p>
+                  <p class="font-medium">UI.lib@gmail.com</p>
+                </div>
+                <div class="mt-4">
+                  <p class="text-description">Account:</p>
+                  <p class="font-medium">Nl24IBAN34553477847370033 AMB NLANBZTC</p>
+                </div>
+                <div class="mt-4">
+                  <p class="text-description">Payment Term:</p>
+                  <p class="font-medium">14 Days . Due in 7 days</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-16 font-semibold">Payment Overview:</p>
+                <div class="mt-4">
+                  <p class="text-description">Project Name:</p>
+                  <p class="font-medium">UI.lib@gmail.com</p>
+                </div>
+                <div class="mt-4">
+                  <p class="text-description">Account:</p>
+                  <p class="font-medium">SRB Themes Dashboard <span class="text-primary-500">View Project</span></p>
+                </div>
+                <div class="mt-4">
+                  <p class="text-description">Completed By:</p>
+                  <p class="font-medium">UI.lib</p>
+                </div>
+                <div class="mt-4">
+                  <p class="text-description">Time Spent:</p>
+                  <p class="font-medium">120 Hours . 20$ / h rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}

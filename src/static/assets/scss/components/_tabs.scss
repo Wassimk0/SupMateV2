@@ -1,0 +1,11 @@
+.tabs {
+    nav {
+        @apply flex flex-wrap gap-x-8 gap-y-4 border-b border-gray-100 dark:border-gray-700;
+        .nav-item {
+            @apply py-3 border-b-2 border-transparent text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
+        }
+    }
+    .tab-content {
+        @apply mt-4 p-6 bg-white dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white shadow-z1;
+    }
+}

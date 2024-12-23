@@ -1,0 +1,749 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Dashboard Logistics | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+      <div class="grid grid-cols-1 grid-rows-1 xl:grid-cols-5 gap-x-6 mt-4">
+        <div class="xl:col-span-2">
+          <div class="card card-dark overflow-hidden h-[calc(100%-24px)]">
+            <div class="card-body flex flex-col justify-between !pb-16 bg-primary-500 text-white">
+              <div class="flex items-center justify-between gap-8">
+                <h6 class="text-lg font-medium leading-none">Last Month Shipment</h6>
+                
+                <div class="relative inline-flex hs-dropdown">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="average_positions_chart" class="last_month_shipment"></div>
+            </div>
+
+            <div class="card-body -mt-[88px] h-[calc(100%-175px)]">
+              <div class="grid h-full grid-cols-1 gap-4 sm:grid-cols-2">
+                <div class="card card-dark !mb-0 !shadow-sm !bg-gray-50 dark:!bg-gray-900 overflow-hidden h-[184px]">
+                  <div class="flex flex-col justify-between h-full card-body">
+        
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h6 class="text-2xl font-semibold leading-6">$50K</h6>
+                        <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+4.67%</p>
+                      </div>
+                      <p class="text-gray-500 dark:text-gray-400">Total Online Sales</p>
+                    </div>
+                    <div>
+                      <div class="flex items-center justify-between gap-2 mb-2">
+                        <p class="font-semibold text-xs leading-[18px]">$100K to Goal</p>
+                        <span class="text-gray-500 dark:text-gray-400 text-xs leading-[18px]">75%</span>
+                      </div>
+                      <div class='flex w-full h-2 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-700'>
+                        <div class='w-7/12 h-full overflow-hidden bg-primary-500 origin-left-right'></div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="card card-dark !mb-0 !shadow-sm !bg-gray-50 dark:!bg-gray-900 overflow-hidden h-[184px]">
+                  <div class="flex flex-col justify-between h-full card-body">
+        
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h6 class="text-2xl font-semibold leading-6">$12.65K</h6>
+                        <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+2.19%</p>
+                      </div>
+                      <p class="text-gray-500 dark:text-gray-400">Total Shipments</p>
+                    </div>
+                    <div class="-mx-2 -mb-6 chart-container">
+                      <div id="daily_sales_chart" class="complete-chart"></div>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="card card-dark !mb-0 !shadow-sm !bg-gray-50 dark:!bg-gray-900 overflow-hidden h-[184px]">
+                  <div class="flex flex-col justify-between h-full card-body">
+        
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h6 class="text-2xl font-semibold leading-6">$5K</h6>
+                        <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+3.33%</p>
+                      </div>
+                      <p class="text-gray-500 dark:text-gray-400">Monthly Earning</p>
+                    </div>
+                    <div class="-mx-2 -mb-6 chart-container">
+                      <div id="monthly_earning_chart" class="complete-chart"></div>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="card card-dark !mb-0 !shadow-sm !bg-gray-50 dark:!bg-gray-900 overflow-hidden h-[184px]">
+                  <div class="flex flex-col justify-between h-full card-body">
+        
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h6 class="text-2xl font-semibold leading-6">$568</h6>
+                        <p class="bg-error-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-error-500 font-medium leading-3">-1.9%</p>
+                      </div>
+                      <p class="text-gray-500 dark:text-gray-400">New Customer</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 font-medium">Top Customers</p>
+                      <div class="flex items-center -space-x-1.5 rtl:space-x-reverse">
+                        <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 z-30" src={% static 'assets/images/user/user-11.png' %} alt="User">
+                        <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 z-20" src={% static 'assets/images/user/user-10.png' %} alt="User">
+                        <img class="size-9 rounded-full bg-white dark:bg-gray-600 p-0.5 z-10" src={% static 'assets/images/user/user-13.png' %} alt="User">
+                        <div class="flex items-center justify-center text-white bg-gray-400 rounded-full size-9 dark:bg-gray-600 dark:text-black text-7">+2</div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="xl:col-span-3 xl:col-start-3">
+          <div class="overflow-hidden card card-dark">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+
+              <div class="flex flex-col justify-between h-full border-b border-gray-200 border-dashed card-body lg:border-e lg:border-b-0 dark:border-gray-700">
+    
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h6 class="font-semibold leading-[42px]"><span class="text-lg font-medium text-gray-400">$</span>51,352</h6>
+                    <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+12.5%</p>
+                  </div>
+                  <p class="text-gray-500 dark:text-gray-400">Expected Earning of this year</p>
+                </div>
+                <div class="flex items-center justify-between gap-4 mt-12 -space-x-4">
+                  <div id="average_deals_chart"></div>
+                  <div class="flex flex-col space-y-2 min-w-[120px] font-medium">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-500 dark:text-gray-400">Truck</p>
+                      <p>$2,658</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-500 dark:text-gray-400">Ship</p>
+                      <p>$6,687</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-500 dark:text-gray-400">Flight</p>
+                      <p>$4,348</p>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+
+              <div class="card-body">
+                <h6 class="text-lg font-medium leading-[27px]">Shipping orders</h6>
+                <p class="text-gray-500 dark:text-gray-400">This Month</p>
+                <div class="chart-container">
+                  <div id="earning_year_chart" class="-mt-5 complete-chart"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="overflow-hidden card card-dark">
+            <div class="flex flex-col justify-between h-full card-body">
+              <div class="grid grid-cols-1 grid-rows-1 sm:grid-cols-5 gap-x-6">
+                <div class="sm:col-span-2">
+                  <img class="w-full max-w-64" src={% static 'assets/images/illustration/quick-gude.svg' %} alt="quick-gude">
+                </div>
+                <div class="sm:col-span-3 sm:col-start-3 sm:ps-6">
+                  <div class="p-4">
+                    <h6 class="text-[22px] leading-7 font-semibold">Logistics is simple but not easy.</h6>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400">The information about package is as important as the delivery package itself.</p>
+                    <div class="flex items-center gap-2 md:gap-4 mt-12">
+                      <button ripple-opacity="0.3" class="btn btn-primary ripple whitespace-nowrap">Start Now</button>
+                      <button ripple-opacity="0.3" class="text-gray-900 btn ripple btn-secondary hover:bg-gray-200 focus:bg-gray-200 dark:text-white bg-gray-main dark:bg-gray-700 whitespace-nowrap">Quick Guide</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-rows-1 lg:grid-cols-3 gap-x-6">
+        <div class="lg:col-span-2">
+          <div class="card card-dark">
+            <div class="card-body !px-4 !pb-2 flex flex-col justify-between">
+
+              <div class="flex items-center justify-between gap-8 px-4">
+                <h6 class="text-lg font-medium leading-none">Company Progress</h6>
+                
+                <div class="relative inline-flex hs-dropdown">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 p-4">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h6 class="text-[22px] font-semibold leading-[33px] text-primary-500">$18,469</h6>
+                    <p class="bg-error-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-error-500 font-medium leading-3">-2.37%</p>
+                  </div>
+                  <p class="text-gray-500 dark:text-gray-400">This month</p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h6 class="text-[22px] font-semibold leading-[33px]">$22,356</h6>
+                    <p class="bg-success-50 dark:bg-gray-700 rounded-2xl text-xs py-1 px-1.5 text-success-500 font-medium leading-3">+4.67%</p>
+                  </div>
+                  <p class="text-gray-500 dark:text-gray-400">Last month</p>
+                </div>
+              </div>
+              
+              <div class="px-3 chart-container">
+                <div id="company_progress_chart" class="apex-charts" dir="ltr"></div>      
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="lg:col-start-3">
+          <div class="card card-dark">
+            <div class="font-medium card-body ">
+              
+              <div class="flex items-center justify-between gap-8 mb-8">
+                <div class="leading-6">
+                  <h6 class="text-lg leading-[23px]">Role Management</h6>
+                  <p class="text-gray-500 dark:text-gray-400 text-xs mt-1.5">The important 5 logistics role</p>
+                </div>
+                <div class="relative inline-flex hs-dropdown">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-2 space-y-6">
+
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-3">
+                    <img class="rounded size-10" src={% static 'assets/images/role/1.png' %} alt="role">
+                    <div class="flex flex-col justify-between gap-1.5">
+                      <h6 class="font-semibold leading-4 text-gray-900 text-16 dark:text-white">Material sourcing</h6>
+                      <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Material sourcing involves</p>
+                    </div>
+                  </div>
+                  <div class="size-[25px] rounded bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
+                    <svg class="size-[17px] fill-gray-400 dark:fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="10" cy="8" r="4"></circle>
+                      <path d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-3">
+                    <img class="rounded size-10" src={% static 'assets/images/role/2.png' %} alt="role">
+                    <div class="flex flex-col justify-between gap-1.5">
+                      <h6 class="font-semibold leading-4 text-gray-900 text-16 dark:text-white">Transportation</h6>
+                      <p class="text-xs font-normal text-gray-500 dark:text-gray-400">The best carrier based cost</p>
+                    </div>
+                  </div>
+                  <div class="size-[25px] rounded bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
+                    <svg class="size-[17px] fill-gray-400 dark:fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="10" cy="8" r="4"></circle>
+                      <path d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-3">
+                    <img class="rounded size-10" src={% static 'assets/images/role/3.png' %} alt="role">
+                    <div class="flex flex-col justify-between gap-1.5">
+                      <h6 class="font-semibold leading-4 text-gray-900 text-16 dark:text-white">Order fulfillment</h6>
+                      <p class="text-xs font-normal text-gray-500 dark:text-gray-400">The process comprise order</p>
+                    </div>
+                  </div>
+                  <div class="size-[25px] rounded bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
+                    <svg class="size-[17px] fill-gray-400 dark:fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="10" cy="8" r="4"></circle>
+                      <path d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-3">
+                    <img class="rounded size-10" src={% static 'assets/images/role/4.png' %} alt="role">
+                    <div class="flex flex-col justify-between gap-1.5">
+                      <h6 class="font-semibold leading-4 text-gray-900 text-16 dark:text-white">Warehousing</h6>
+                      <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Planners consider warehouse</p>
+                    </div>
+                  </div>
+                  <div class="size-[25px] rounded bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
+                    <svg class="size-[17px] fill-gray-400 dark:fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="10" cy="8" r="4"></circle>
+                      <path d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-3">
+                    <img class="rounded size-10" src={% static 'assets/images/role/5.png' %} alt="role">
+                    <div class="flex flex-col justify-between gap-1.5">
+                      <h6 class="font-semibold leading-4 text-gray-900 text-16 dark:text-white">Supply management</h6>
+                      <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Logistics is an important link</p>
+                    </div>
+                  </div>
+                  <div class="size-[25px] rounded bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
+                    <svg class="size-[17px] fill-gray-400 dark:fill-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="10" cy="8" r="4"></circle>
+                      <path d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+              </div>
+ 
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-rows-1 lg:grid-cols-3 gap-x-6">
+        <div class="overflow-hidden card card-dark">
+          <div class="card-body">
+
+            <div class="flex items-center justify-between gap-2 mb-8">
+              <div class="leading-6">
+                <h6 class="text-lg leading-[23px]">Our Transportation</h6>
+                <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Total 5,200 vehicles</p>
+              </div>
+              <div class="relative inline-flex hs-dropdown">
+                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                  <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                </button>
+              
+                <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                  <div class="p-2">
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Create
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Edit
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Delete
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded size-10" src={% static 'assets/images/transportation/1.png' %} alt="transportation">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Ships</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">500 ships</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">5,03,68,258</h6>
+                  <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Tons</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded size-10" src={% static 'assets/images/transportation/2.png' %} alt="transportation">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Planes</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">25 planes</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">23,36,569</h6>
+                  <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Tons</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded size-10" src={% static 'assets/images/transportation/3.png' %} alt="transportation">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Trucks</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">2500 Trucks</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">3,65,66,547</h6>
+                  <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Tons</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded size-10" src={% static 'assets/images/transportation/4.png' %} alt="transportation">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Trains</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">1000 trains</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">1,02,36,482</h6>
+                  <p class="text-xs font-normal text-gray-500 dark:text-gray-400">Tons</p>
+                </div>
+              </div>
+
+            </div>
+          
+          </div>
+          
+        </div>
+        <div class="lg:col-span-2">
+          <div class="card card-dark">
+            <div class="card-body !px-4 !pb-2">
+              
+              <div class="flex items-center justify-between gap-8 px-4">
+                <h6 class="text-lg font-medium leading-none">Top Selling Categories</h6>
+                
+                <div class="relative inline-flex hs-dropdown">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <div id="apex_area1" class="apex-charts"></div>      
+              </div>
+              
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+ 
+      <div class="grid grid-rows-1 lg:grid-cols-3 gap-x-6">
+        <div class="overflow-hidden card card-dark">
+          <div class="card-body">
+
+            <div class="flex items-center justify-between gap-2 mb-8">
+              <div class="leading-6">
+                <h6 class="text-lg leading-[23px]">Visits by country</h6>
+                <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Total 200 countries visits</p>
+              </div>
+              <div class="relative inline-flex hs-dropdown">
+                <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                  <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                </button>
+              
+                <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                  <div class="p-2">
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Create
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Edit
+                    </a>
+                    <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                      Delete
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded-full size-10" src={% static 'assets/images/flags/usa-round.png' %} alt="flags">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">USA</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">30% visits</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">68,258</h6>
+                  <p class="text-xs font-medium text-success-500">4.67</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded-full size-10" src={% static 'assets/images/flags/uk-round.png' %} alt="flags">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">UK</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">20% visits</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">50,683</h6>
+                  <p class="text-xs font-medium text-success-500">2.59</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded-full size-10" src={% static 'assets/images/flags/germany-round.png' %} alt="flags">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Germany</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">28% visits</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">62,053</h6>
+                  <p class="text-xs font-medium text-error-500">-1.18</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded-full size-10" src={% static 'assets/images/flags/spain-round.png' %} alt="flags">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">Spain</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">18% visits</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">40,369</h6>
+                  <p class="text-xs font-medium text-error-500">-2.98</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <img class="rounded-full size-10" src={% static 'assets/images/flags/china-round.png' %} alt="flags">
+                  <div class="flex flex-col justify-between gap-1.5">
+                    <h6 class="font-semibold leading-4 text-16">China</h6>
+                    <p class="text-xs font-normal text-gray-500 dark:text-gray-400">4% visits</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end justify-between gap-2">
+                  <h6 class="text-sm leading-[21px]">3,258</h6>
+                  <p class="text-xs font-medium text-success-500">1.22</p>
+                </div>
+              </div>
+            
+            </div>
+          
+          </div>
+          
+        </div>
+        <div class="lg:col-span-2">
+          <div class="card card-dark">
+            <div class="card-body">
+              
+              <div class="flex items-center justify-between gap-8">
+                <div>
+                  <h6 class="text-lg font-medium leading-none">Shipment History</h6>
+                  <p class="text-xs leading-6 text-gray-500 dark:text-gray-400">50+ Active Shipments</p>
+                </div>
+                <div class="relative inline-flex hs-dropdown">
+                  <button id="hs-dropdown-with-dividers" type="button" class="hs-dropdown-toggle btn-dark-icon-hover size-[30px]">
+                    <i class="text-lg text-gray-400 ri-more-2-fill dark:text-gray-300"></i>
+                  </button>
+                
+                  <div class="hs-dropdown-menu max-h-40 overflow-y-auto transition-[opacity,margin] duration opacity-0 hidden hs-dropdown-open:opacity-100" aria-labelledby="hs-dropdown-with-dividers">
+                    <div class="p-2">
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Create
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Edit
+                      </a>
+                      <a ripple-opacity="0.3" ripple-color="black" ripple-press-expand-time="1" ripple-release-expand-time="1" ripple-leave-collapse-time="1" class="ripple dropdown-item" href="#">
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="overflow-auto mt-2 pb-[18px]" data-simplebar>
+              <table class="table-bordered">
+                <thead>
+                  <tr>
+                    <th class="!ps-6">NAME & ID</th>
+                    <th>CLIENTS NAME</th>
+                    <th class="text-center">ADDRESS</th>
+                    <th class="text-center">STATUS</th>
+                  </tr>
+                </thead>
+                <tbody class="*:font-medium *:text-sm *:dark:text-gray-200">
+                  <tr class="*:py-3">
+                    <td>
+                      <div class="flex items-center gap-4 ps-6 min-w-48">
+                        <img class="rounded-full size-10" src={% static 'assets/images/products/apple-watch.png' %} alt="products">
+                        <div class="flex flex-col justify-between gap-0.5">
+                          <h6 class="text-sm text-gray-900 dark:text-white">Apple Watch</h6>
+                          <p class="text-xs font-normal">#2nwyIZT4NB</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex flex-col justify-between gap-0.5">
+                        <h6 class="text-sm text-gray-900 dark:text-white">Astole Banne</h6>
+                        <p class="text-xs font-normal">$560.00</p>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <p>Rome, Italy.</p>
+                    </td>
+                    <td class="text-center">
+                      <div class="py-[3px] px-3 rounded-md inline-block bg-success-50 font-normal dark:bg-gray-700">
+                        <p class="text-success-600">Delivered</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="*:py-3">
+                    <td>
+                      <div class="flex items-center gap-4 ps-6 min-w-48">
+                        <img class="rounded-full size-10" src={% static 'assets/images/products/shoe-1.png' %} alt="products">
+                        <div class="flex flex-col justify-between gap-0.5">
+                          <h6 class="text-sm text-gray-900 dark:text-white">Nike Shoes</h6>
+                          <p class="text-xs font-normal">#AWlad2dGlu</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex flex-col justify-between gap-0.5">
+                        <h6 class="text-sm text-gray-900 dark:text-white">Talon Abela</h6>
+                        <p class="text-xs font-normal">$250.50</p>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <p>Bangkok, Singapore</p>
+                    </td>
+                    <td class="text-center">
+                      <div class="py-[3px] px-3 rounded-md inline-block bg-primary-50 font-normal dark:bg-gray-700">
+                        <p class="text-primary-600">Shipping</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="*:py-3">
+                    <td>
+                      <div class="flex items-center gap-4 ps-6 min-w-48">
+                        <img class="rounded-full size-10" src={% static 'assets/images/products/sunglass.png' %} alt="products">
+                        <div class="flex flex-col justify-between gap-0.5">
+                          <h6 class="text-sm text-gray-900 dark:text-white">Ribbon Glass</h6>
+                          <p class="text-xs font-normal">#4ImWEnfPKm</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex flex-col justify-between gap-0.5">
+                        <h6 class="text-sm text-gray-900 dark:text-white">Tofan Andy</h6>
+                        <p class="text-xs font-normal">$150.25</p>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <p>Paris, France</p>
+                    </td>
+                    <td class="text-center">
+                      <div class="py-[3px] px-3 rounded-md inline-block bg-error-50 font-normal dark:bg-gray-700">
+                        <p class="text-error-600">Delayed</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="*:py-3">
+                    <td>
+                      <div class="flex items-center gap-4 ps-6 min-w-48">
+                        <img class="rounded-full size-10" src={% static 'assets/images/products/headset.png' %} alt="products">
+                        <div class="flex flex-col justify-between gap-0.5">
+                          <h6 class="text-sm text-gray-900 dark:text-white">Apple Watch</h6>
+                          <p class="text-xs font-normal">#AGFWcs-QXe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex flex-col justify-between gap-0.5">
+                        <h6 class="text-sm text-gray-900 dark:text-white">Jhon Ables</h6>
+                        <p class="text-xs font-normal">$799.25</p>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <p>New York, USA</p>
+                    </td>
+                    <td class="text-center">
+                      <div class="py-[3px] px-3 rounded-md inline-block bg-success-50 font-normal dark:bg-gray-700">
+                        <p class="text-success-600">Delivered</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+{% endblock content %}
+{% block js %}
+  <script type="module" src={% static 'vite/assets/js/dashboard-logistics.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,579 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Stepper | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Stepper" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="mb-12 card component-card !bg-transparent">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Horizontal Linear
+          </div>
+          <!-- Stepper -->
+          <div data-hs-stepper="">
+            <!-- Stepper Nav -->
+            <ul class="relative flex flex-row gap-x-2">
+              <li class="flex items-center flex-1 gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+                "index": 1,
+                "isOptional": true
+              }'>
+                <span class="inline-flex items-center text-xs align-middle min-w-7 min-h-7 group">
+                  <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
+                    <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="text-sm font-normal text-gray-500 ms-2 dark:text-white">
+                    Select campaign settings
+                  </span>
+                </span>
+                <div class="flex-1 w-full h-px bg-gray-300 group-last:hidden hs-stepper-success:bg-primary-500 hs-stepper-completed:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500"></div>
+              </li>
+        
+              <li class="flex items-center flex-1 gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+                "index": 2,
+                "isOptional": true
+              }'>
+                <span class="inline-flex items-center text-xs align-middle min-w-7 min-h-7 group">
+                  <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+                    <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="text-sm font-normal text-gray-500 ms-2 dark:text-white">
+                    Create an ad group <br>Optional
+                  </span>
+                </span>
+                <div class="flex-1 w-full h-px bg-gray-300 group-last:hidden hs-stepper-success:bg-primary-500 hs-stepper-completed:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500"></div>
+              </li>
+        
+              <li class="flex items-center flex-1 gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+                  "index": 3,
+                  "isOptional": true
+                }'>
+                <span class="inline-flex items-center text-xs align-middle min-w-7 min-h-7 group">
+                  <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
+                    <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="text-sm font-normal text-gray-500 ms-2 dark:text-white">
+                    Create an ad
+                  </span>
+                </span>
+                <div class="flex-1 w-full h-px bg-gray-300 group-last:hidden hs-stepper-success:bg-primary-500 hs-stepper-completed:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500"></div>
+              </li>
+              <!-- End Item -->
+            </ul>
+            <!-- End Stepper Nav -->
+        
+            <!-- Stepper Content -->
+            <div class="mt-5 sm:mt-8">
+              <!-- First Contnet -->
+              <div data-hs-stepper-content-item='{
+                "index": 1
+              }'>
+                <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                  <h3 class="text-sm font-medium">
+                    First content
+                  </h3>
+                </div>
+              </div>
+              <!-- End First Contnet -->
+        
+              <!-- First Contnet -->
+              <div data-hs-stepper-content-item='{
+                "index": 2
+              }' style="display: none;">
+                <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                  <h3 class="text-sm font-medium">
+                    Second content
+                  </h3>
+                </div>
+              </div>
+              <!-- End First Contnet -->
+        
+              <!-- First Contnet -->
+              <div data-hs-stepper-content-item='{
+                "index": 3
+              }' style="display: none;">
+                <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                  <h3 class="text-sm font-medium">
+                    Third content
+                  </h3>
+                </div>
+              </div>
+              <!-- End First Contnet -->
+        
+              <!-- Final Contnet -->
+              <div data-hs-stepper-content-item='{
+                "isFinal": true
+              }' style="display: none;">
+                <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                  <h3 class="text-sm font-medium">
+                    All steps completed - you're finished
+                  </h3>
+                </div>
+              </div>
+              <!-- End Final Contnet -->
+        
+              <!-- Button Group -->
+              <div class="flex items-center justify-between mt-5 gap-x-2">
+                <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-back-btn="">
+                  Back
+                </button>
+                <div class="flex items-center justify-center gap-2">
+                  <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-skip-btn="">
+                    Skip
+                  </button>
+                  <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-next-btn="">
+                    Next
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </button>
+                  <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-finish-btn="" style="display: none;">
+                    Finish
+                  </button>
+                </div>
+                <button type="reset" class="btn btn-primary btn-text-icon" data-hs-stepper-reset-btn="" style="display: none;">
+                  Reset
+                </button>
+              </div>
+              <!-- End Button Group -->
+            </div>
+            <!-- End Stepper Content -->
+          </div>
+          <!-- End Stepper -->
+        </div>
+      </div>
+
+      <div class="mb-12 card component-card !bg-transparent">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Alternative Label
+          </div>
+
+          <!-- Stepper -->
+           <div data-hs-stepper="">
+             <ul class="relative flex flex-col gap-2 mt-20 md:flex-row">
+               <!-- Item -->
+               <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                "index": 1,
+                "isOptional": true
+              }'>
+                 <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                    <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                      <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
+                      <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                   <div class="w-px h-full mt-2 bg-gray-200 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden dark:bg-neutral-700"></div>
+                 </div>
+                 <div class="pb-5 grow md:grow-0 md:mt-3">
+                   <p class="text-sm text-gray-500 dark:text-neutral-500">
+                      Select campaign settings
+                   </p>
+                 </div>
+               </li>
+               <!-- End Item -->
+   
+               <!-- Item -->
+               <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                "index": 2,
+                "isOptional": true
+              }'>
+                 <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                    <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                      <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+                      <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                   <div class="w-px h-full mt-2 bg-gray-200 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden dark:bg-neutral-700"></div>
+                 </div>
+                 <div class="pb-5 grow md:grow-0 md:mt-3">
+                   <p class="text-sm text-gray-500 dark:text-neutral-500">
+                      Create an ad group <br>Optional
+                   </p>
+                 </div>
+               </li>
+               <!-- End Item -->
+
+                <!-- Item -->
+                <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                  "index": 3,
+                  "isOptional": true
+                }'>
+                   <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                      <span class="flex items-center justify-center font-medium text-white bg-gray-400 rounded-full size-6 shrink-0 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
+                        <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                     <div class="w-px h-full mt-2 bg-gray-200 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden dark:bg-neutral-700"></div>
+                   </div>
+                   <div class="pb-5 grow md:grow-0 md:mt-3">
+                     <span class="block text-sm font-medium text-gray-800 dark:text-white">
+                       Step
+                     </span>
+                     <p class="text-sm text-gray-500 dark:text-neutral-500">
+                        Create an ad
+                     </p>
+                   </div>
+                 </li>
+                 <!-- End Item -->
+   
+             </ul>
+             <!-- Stepper Content -->
+              <div class="mt-5 sm:mt-8">
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 1
+                }'>
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      First content
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 2
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      Second content
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 3
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      Third content
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- Final Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "isFinal": true
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      All steps completed - you're finished
+                    </h3>
+                  </div>
+                </div>
+                <!-- End Final Contnet -->
+          
+                <!-- Button Group -->
+                <div class="flex items-center justify-between mt-5 gap-x-2">
+                  <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-back-btn="">
+                    Back
+                  </button>
+                  <div class="flex items-center justify-center gap-2">
+                    <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-skip-btn="">
+                      Skip
+                    </button>
+                    <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-next-btn="">
+                      Next
+                      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6"></path>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-finish-btn="" style="display: none;">
+                      Finish
+                    </button>
+                  </div>
+                  <button type="reset" class="btn btn-primary btn-text-icon" data-hs-stepper-reset-btn="" style="display: none;">
+                    Reset
+                  </button>
+                </div>
+                <!-- End Button Group -->
+              </div>
+              <!-- End Stepper Content -->
+           </div>
+          <!-- End Stepper -->
+          
+        </div>
+      </div>
+
+      <div class="mb-12 card component-card !bg-transparent">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Customized Stepper
+          </div>
+
+          <!-- Stepper -->
+           <div data-hs-stepper="">
+             <ul class="relative flex flex-col gap-2 mt-20 md:flex-row">
+               <!-- Item -->
+               <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                "index": 1,
+                "isOptional": true
+              }'>
+                 <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                    <span class="flex items-center justify-center font-medium size-3 shrink-0 text-primary-500">
+                      <span class="bg-gray-200 rounded-full hs-stepper-success:hidden hs-stepper-completed:hidden size-2 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600"></span>
+                      <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                   <div class="mt-2 w-px h-full md:mt-0 md:ms-2 md:w-full md:h-[3px] md:flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"></div>
+                 </div>
+                 <div class="pb-5 grow md:grow-0 md:mt-3">
+                   <p class="text-sm text-gray-500 dark:text-neutral-500">
+                      Select campaign settings
+                   </p>
+                 </div>
+               </li>
+               <!-- End Item -->
+   
+               <!-- Item -->
+               <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                "index": 2,
+                "isOptional": true
+              }'>
+                 <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                    <span class="flex items-center justify-center font-medium size-3 shrink-0 text-primary-500">
+                      <span class="bg-gray-200 rounded-full hs-stepper-success:hidden hs-stepper-completed:hidden size-2 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600"></span>
+                      <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                   <div class="mt-2 w-px h-full md:mt-0 md:ms-2 md:w-full md:h-[3px] md:flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"></div>
+                 </div>
+                 <div class="pb-5 grow md:grow-0 md:mt-3">
+                   <p class="text-sm text-gray-500 dark:text-neutral-500">
+                    Create an ad group
+                   </p>
+                 </div>
+               </li>
+               <!-- End Item -->
+
+                <!-- Item -->
+                <li class="flex flex-1 md:shrink md:basis-0 group gap-x-2 md:block" data-hs-stepper-nav-item='{
+                  "index": 3,
+                  "isOptional": true
+                }'>
+                   <div class="flex flex-col items-center text-xs align-middle min-w-7 min-h-7 md:w-full md:inline-flex md:flex-wrap md:flex-row">
+                      <span class="flex items-center justify-center font-medium size-3 shrink-0 text-primary-500">
+                        <span class="bg-gray-200 rounded-full hs-stepper-success:hidden hs-stepper-completed:hidden size-2 group-focus:bg-gray-200 dark:bg-gray-400 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-primary-500 hs-stepper-active:text-white hs-stepper-success:bg-primary-500 hs-stepper-success:text-white hs-stepper-completed:bg-primary-500 hs-stepper-completed:group-focus:bg-primary-600 dark:hs-stepper-active:bg-primary-500 dark:hs-stepper-success:bg-primary-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600"></span>
+                        <svg class="hidden shrink-0 size-4 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                     <div class="mt-2 w-px h-full md:mt-0 md:ms-2 md:w-full md:h-[3px] md:flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"></div>
+                   </div>
+                   <div class="pb-5 grow md:grow-0 md:mt-3">
+                     <p class="text-sm text-gray-500 dark:text-neutral-500">
+                        Create an ad
+                     </p>
+                   </div>
+                 </li>
+                 <!-- End Item -->
+   
+             </ul>
+             <!-- Stepper Content -->
+              <div class="mt-5 sm:mt-8">
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 1
+                }'>
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      Step 1
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 2
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      Step 2
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- First Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "index": 3
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      Step 3
+                    </h3>
+                  </div>
+                </div>
+                <!-- End First Contnet -->
+          
+                <!-- Final Contnet -->
+                <div data-hs-stepper-content-item='{
+                  "isFinal": true
+                }' style="display: none;">
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800">
+                    <h3 class="text-sm font-medium">
+                      All steps completed - you're finished
+                    </h3>
+                  </div>
+                </div>
+                <!-- End Final Contnet -->
+          
+                <!-- Button Group -->
+                <div class="flex items-center justify-between mt-5 gap-x-2">
+                  <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-back-btn="">
+                    Back
+                  </button>
+                  <div class="flex items-center justify-center gap-2">
+                    <button type="button" class="btn btn-text-icon btn-gray-icon-hover rounded-[10px] text-sm font-medium" data-hs-stepper-skip-btn="">
+                      Skip
+                    </button>
+                    <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-next-btn="">
+                      Next
+                      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6"></path>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-text-icon" data-hs-stepper-finish-btn="" style="display: none;">
+                      Finish
+                    </button>
+                  </div>
+                  <button type="reset" class="btn btn-primary btn-text-icon" data-hs-stepper-reset-btn="" style="display: none;">
+                    Reset
+                  </button>
+                </div>
+                <!-- End Button Group -->
+              </div>
+              <!-- End Stepper Content -->
+           </div>
+          <!-- End Stepper -->
+          
+        </div>
+      </div>
+
+      <div class="mb-12 card component-card !bg-transparent">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Vertical Stepper
+          </div>
+
+            <div x-data="stepper()" x-init="init()">
+              <ul class="stepper-list flex flex-col gap-2">
+                  <!-- Step 1 -->
+                  <li class="stepper-item flex flex-1 md:shrink md:basis-0 group gap-x-2">
+                      <div class="stepper-steps flex flex-col items-center text-xs align-middle min-w-7 min-h-7">
+                          <span class="flex items-center justify-center font-medium rounded-full size-6 p-1 shrink-0"
+                              :class="{'bg-primary-500 text-white': currentStep >= 0, 'bg-gray-200 text-gray-500': currentStep < 0}">
+                              <span x-show="!stepSuccess[0]" class="step-number">1</span>
+                              <svg x-show="stepSuccess[0]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                  <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                          </span>
+                          <div class="w-px h-full mt-2 bg-gray-200"></div>
+                      </div>
+                      <div class="stepper-main w-full pb-5">
+                          <p class="stepper-title pb-2 text-sm text-gray-900 dark:text-white">Select campaign settings</p>
+                          <div class="stepper-content" x-show="currentStep === 0">
+                              <p class="text-sm text-gray-900 dark:text-white">
+                                  For each ad campaign that you create, you can control how much you're willing to spend on clicks and conversions, which networks and geographical locations you want your ads to show on, and more.
+                              </p>
+                              <div class="flex items-center gap-2 mt-6">
+                                  <button @click="nextStep()" :disabled="currentStep === steps.length - 1" type="button" class="next-button btn btn-primary btn-text-icon text-[13px] py-1 px-2 leading-5">Continue</button>
+                                  <button @click="prevStep()" :disabled="currentStep === 0" type="button" class="prev-button btn btn-text-icon btn-gray-icon-hover text-[13px] py-1 px-2 leading-5">Back</button>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <!-- Step 2 -->
+                  <li class="stepper-item flex flex-1 md:shrink md:basis-0 group gap-x-2">
+                      <div class="stepper-steps flex flex-col items-center text-xs align-middle min-w-7 min-h-7">
+                          <span class="flex items-center justify-center font-medium rounded-full size-6 p-1 shrink-0"
+                              :class="{'bg-primary-500 text-white': currentStep >= 1, 'bg-gray-200 text-gray-500': currentStep < 1}">
+                              <span x-show="!stepSuccess[1]" class="step-number">2</span>
+                              <svg x-show="stepSuccess[1]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                  <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                          </span>
+                          <div class="w-px h-full mt-2 bg-gray-200"></div>
+                      </div>
+                      <div class="stepper-main w-full pb-5">
+                          <p class="stepper-title pb-2 text-sm text-gray-900 dark:text-white">Create an ad group</p>
+                          <div class="stepper-content" x-show="currentStep === 1">
+                              <p class="text-sm text-gray-900 dark:text-white">An ad group contains one or more ads which target a shared set of keywords.</p>
+                              <div class="flex items-center gap-2 mt-6">
+                                  <button @click="nextStep()" :disabled="currentStep === steps.length - 1" type="button" class="next-button btn btn-primary btn-text-icon text-[13px] py-1 px-2 leading-5">Continue</button>
+                                  <button @click="prevStep()" :disabled="currentStep === 0" type="button" class="prev-button btn btn-text-icon btn-gray-icon-hover text-[13px] py-1 px-2 leading-5">Back</button>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <!-- Step 3 -->
+                  <li class="stepper-item flex flex-1 md:shrink md:basis-0 group gap-x-2">
+                      <div class="stepper-steps flex flex-col items-center text-xs align-middle min-w-7 min-h-7">
+                          <span class="flex items-center justify-center font-medium rounded-full size-6 p-1 shrink-0"
+                              :class="{'bg-primary-500 text-white': currentStep >= 2, 'bg-gray-200 text-gray-500': currentStep < 2}">
+                              <span x-show="!stepSuccess[2]" class="step-number">3</span>
+                              <svg x-show="stepSuccess[2]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                  <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                          </span>
+                      </div>
+                      <div class="stepper-main w-full pb-5">
+                          <div>
+                            <p class="text-sm text-gray-900 dark:text-white">Create an ad</p>
+                            <p class="pb-2 text-sm text-gray-500">Last step</p>
+                          </div>
+                          <div class="stepper-content" x-show="currentStep === 2">
+                              <p class="text-sm text-gray-900 dark:text-white">
+                                Try out different ad text to see what brings in the most customers, and learn how to enhance your ads using features like ad extensions. If you run into any problems with your ads, find out how to tell if they're running and how to resolve approval issues.
+                              </p>
+                              <div class="flex items-center gap-2 mt-6">
+                                  <button  type="button" class="next-button btn btn-primary btn-text-icon text-[13px] py-1 px-2 leading-5" @click="finishModal = true, nextStep()">Finish</button>
+                                  <button @click="prevStep()" :disabled="currentStep === 0" type="button" class="prev-button btn btn-text-icon btn-gray-icon-hover text-[13px] py-1 px-2 leading-5">Back</button>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <!-- Reset Content -->
+                  <div class="p-6 bg-gray-50 rounded-xl dark:bg-gray-800" x-show="finishModal">
+                    <h3 class="text-sm font-medium mb-4">
+                      All steps completed - you're finished
+                    </h3>
+                    <button type="button" class="next-button btn btn-primary btn-text-icon text-[13px] py-1 px-2 leading-5" @click="reset()">Reset</button>
+                  </div>
+              </ul>          
+            </div>
+        </div>
+      </div>
+
+    </div>
+   </div>
+{% endblock content %}
+{% block js %} 
+<script src={% static '/public/js/ui-stepper.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,258 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Tabs | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Tabs" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+   <div class="container">
+
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Basic
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-component-item-1" data-hs-tab="#basic-tabs-component-1" aria-controls="basic-tabs-component-1" role="tab">
+                  Item One
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-component-item-2" data-hs-tab="#basic-tabs-component-2" aria-controls="basic-tabs-component-2" role="tab">
+                  Item Two
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-component-item-3" data-hs-tab="#basic-tabs-component-3" aria-controls="basic-tabs-component-3" role="tab">
+                  Item Three
+                </button>
+              </nav>
+            
+              <div class="tab-content">
+                <div id="basic-tabs-component-1" role="tabpanel" aria-labelledby="basic-tabs-component-item-1">
+                  Item One
+                </div>
+                <div id="basic-tabs-component-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-component-item-2">
+                  Item Two
+                </div>
+                <div id="basic-tabs-component-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-component-item-3">
+                  Item Three
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Secondary Color
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-gray-900 dark:hs-tab-active:border-white hs-tab-active:text-gray-900 dark:hs-tab-active:text-white dark:text-gray-400 active" id="basic-tabs-secondary-item-1" data-hs-tab="#basic-tabs-secondary-1" aria-controls="basic-tabs-secondary-1" role="tab">
+                  Item One
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-gray-900 dark:hs-tab-active:border-white hs-tab-active:text-gray-900 dark:hs-tab-active:text-white dark:text-gray-400" id="basic-tabs-secondary-item-2" data-hs-tab="#basic-tabs-secondary-2" aria-controls="basic-tabs-secondary-2" role="tab">
+                  Item Two
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-gray-900 dark:hs-tab-active:border-white hs-tab-active:text-gray-900 dark:hs-tab-active:text-white dark:text-gray-400" id="basic-tabs-secondary-item-3" data-hs-tab="#basic-tabs-secondary-3" aria-controls="basic-tabs-secondary-3" role="tab">
+                  Item Three
+                </button>
+              </nav>
+            
+              <div class="tab-content">
+                <div id="basic-tabs-secondary-1" role="tabpanel" aria-labelledby="basic-tabs-secondary-item-1">
+                  Item One
+                </div>
+                <div id="basic-tabs-secondary-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-secondary-item-2">
+                  Item Two
+                </div>
+                <div id="basic-tabs-secondary-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-secondary-item-3">
+                  Item Three
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Scrollable
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <div class="swiper scrollableSwiper !px-10 w-full">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                        Item One
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                        Item Two
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+                        Item Three
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-4" data-hs-tab="#basic-tabs-4" aria-controls="basic-tabs-4" role="tab">
+                        Item Four
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-5" data-hs-tab="#basic-tabs-5" aria-controls="basic-tabs-5" role="tab">
+                        Item Five
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-6" data-hs-tab="#basic-tabs-6" aria-controls="basic-tabs-6" role="tab">
+                        Item Six
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-7" data-hs-tab="#basic-tabs-7" aria-controls="basic-tabs-7" role="tab">
+                        Item Seven
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-button-prev after:hidden bg-gray-50 !left-0 !size-10">
+                    <i class="ri-arrow-left-s-line text-xl text-primary-500 leading-none"></i>
+                  </div>
+                  <div class="swiper-button-next after:hidden bg-gray-50 !right-0 !size-10">
+                    <i class="ri-arrow-right-s-line text-xl text-primary-500 leading-none"></i>
+                  </div>
+                </div>
+              </nav>
+              <div class="tab-content sr-only">
+                <div id="basic-tabs-1" role="tabpanel" aria-labelledby="basic-tabs-item-1">
+                  Item One
+                </div>
+                <div id="basic-tabs-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-2">
+                  Item Two
+                </div>
+                <div id="basic-tabs-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-3">
+                  Item Three
+                </div>
+                <div id="basic-tabs-4" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-4">
+                  Item Four
+                </div>
+                <div id="basic-tabs-5" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-5">
+                  Item Five
+                </div>
+                <div id="basic-tabs-6" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-6">
+                  Item Six
+                </div>
+                <div id="basic-tabs-7" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-7">
+                  Item Seven
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Icon
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                  <i class="ri-phone-fill text-2xl fill-current"></i>
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                  <i class="ri-heart-fill text-2xl fill-current"></i>
+                </button>
+                <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+                  <i class="ri-account-circle-fill text-2xl fill-current"></i>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Icon With Label
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                  <div class="flex flex-col">
+                    <i class="ri-phone-fill text-2xl fill-current"></i>
+                    <span>RECENT</span>
+                  </div>
+                </button>
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                  <div class="flex flex-col">
+                    <i class="ri-heart-fill text-2xl fill-current"></i>
+                    <span>FAVORITES</span>
+                  </div>
+                </button>
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+                  <div class="flex flex-col">
+                    <i class="ri-account-circle-fill text-2xl fill-current"></i>
+                    <span>NEARBY</span>
+                  </div>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Icon position
+            </div>
+            <div class="tabs">
+              <nav class="nav" aria-label="Tabs" role="tablist">
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+                  <div class="flex flex-col">
+                    <i class="ri-phone-fill text-2xl fill-current"></i>
+                    <span class="uppercase">TOP</span>
+                  </div>
+                </button>
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                  <div class="flex flex-row items-center h-full gap-2">
+                    <svg class="size-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M6.5 5.5 12 11l7-7-1-1-6 6-4.5-4.5H11V3H5v6h1.5V5.5zm17.21 11.17C20.66 13.78 16.54 12 12 12 7.46 12 3.34 13.78.29 16.67c-.18.18-.29.43-.29.71s.11.53.29.71l2.48 2.48c.18.18.43.29.71.29.27 0 .52-.11.7-.28.79-.74 1.69-1.36 2.66-1.85.33-.16.56-.5.56-.9v-3.1c1.45-.48 3-.73 4.6-.73 1.6 0 3.15.25 4.6.72v3.1c0 .39.23.74.56.9.98.49 1.87 1.12 2.67 1.85.18.18.43.28.7.28.28 0 .53-.11.71-.29l2.48-2.48c.18-.18.29-.43.29-.71s-.12-.52-.3-.7z"></path>
+                    </svg>
+                    <span class="uppercase">Start</span>
+                  </div>
+                </button>
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+                  <div class="flex flex-row items-center h-full gap-2">
+                    <span class="uppercase">End</span>
+                    <i class="ri-heart-fill text-2xl fill-current"></i>
+                  </div>
+                </button>
+                <button type="button" class="!pt-0 !pb-2 nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+                  <div class="flex flex-col">
+                    <span class="uppercase">Bottom</span>
+                    <i class="ri-account-circle-fill text-2xl fill-current"></i>
+                  </div>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+   </div>
+{% endblock content %}
+{% block js %}
+<script type="module" src={% static 'vite/assets/js/ui-tabs.js' %}></script>
+{% endblock js %}

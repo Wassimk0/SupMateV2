@@ -1,0 +1,955 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Textfield | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Textfield" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+  <div class="container px-6 max-w-[1200px] mx-auto">
+    <div class="py-20">
+      <div class="tabs">
+        <nav class="nav" aria-label="Tabs" role="tablist">
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400 active" id="basic-tabs-item-1" data-hs-tab="#basic-tabs-1" aria-controls="basic-tabs-1" role="tab">
+            Outlined
+          </button>
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-2" data-hs-tab="#basic-tabs-2" aria-controls="basic-tabs-2" role="tab">
+            Filled
+          </button>
+          <button type="button" class="nav-item hs-tab-active:font-semibold hs-tab-active:border-primary-500 hs-tab-active:text-primary-500 dark:text-gray-400" id="basic-tabs-item-3" data-hs-tab="#basic-tabs-3" aria-controls="basic-tabs-3" role="tab">
+            Standard
+          </button>
+        </nav>
+      
+        <div class="tab-content !px-0 !bg-transparent !shadow-none !mt-5">
+
+          <div id="basic-tabs-1" role="tabpanel" aria-labelledby="basic-tabs-item-1">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+              <div>
+
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Basic
+                    </div>
+                    <div class="space-y-6">
+                      <input type="text" class="form-input" placeholder="Name">
+                      <input type="text" value="Nabed Khan" class="form-input" placeholder="Name">
+                      <input type="password" class="form-input" value="123456" placeholder="Password">
+                      <input type="email" class="form-input" placeholder="Email" disabled>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      With Helper Text
+                    </div>
+                    <div class="space-y-6">
+                      <div>
+                        <input type="text" class="form-input" placeholder="Helper text" value="Nabed Khan">
+                        <span class="text-gray-500 text-xs mx-3.5 pt-[3px]">Some important text</span>
+                      </div>
+                      <div>
+                        <input type="text" class="form-input error" placeholder="Error" value="Hello World">
+                        <span class="text-error-500 text-xs mx-3.5 pt-[3px]">Incorrect entry.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div>
+                
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      With Adornment
+                    </div>
+                    <div class="space-y-6">
+                      
+                      <div class="relative">
+                        <span class="absolute start-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal">kg</span>
+                        <input type="text" class="form-input !ps-10" placeholder="With Normal TextField">
+                      </div>
+  
+                      <div class="relative">
+                        <span class="toggle-password absolute end-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal" data-target="#password-field-1">
+                          <i class="ri-eye-fill text-2xl cursor-pointer"></i>
+                        </span>
+                        <input id="password-field-1" type="password" class="form-input !pe-10" placeholder="Password">
+                      </div>
+                      
+                      <div class="relative">
+                        <span class="absolute start-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal">
+                          <svg class="size-6 fill-gray-500 dark:fill-gray-400 " aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M2 17h20v2H2v-2zm1.15-4.05L4 11.47l.85 1.48 1.3-.75-.85-1.48H7v-1.5H5.3l.85-1.47L4.85 7 4 8.47 3.15 7l-1.3.75.85 1.47H1v1.5h1.7l-.85 1.48 1.3.75zm6.7-.75 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H15v-1.5h-1.7l.85-1.47-1.3-.75L12 8.47 11.15 7l-1.3.75.85 1.47H9v1.5h1.7l-.85 1.48zM23 9.22h-1.7l.85-1.47-1.3-.75L20 8.47 19.15 7l-1.3.75.85 1.47H17v1.5h1.7l-.85 1.48 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H23v-1.5z"></path>
+                          </svg>
+                        </span>
+                        <input id="password-field-2" value="123456" type="password" class="form-input !px-10" placeholder="Password">
+                        <span class="toggle-password absolute end-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal" data-target="#password-field-2">
+                          <i class="ri-eye-fill text-2xl cursor-pointer"></i>
+                        </span>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Select
+                    </div>
+                    <!-- Select -->
+                    <select data-hs-select='{
+                      "placeholder": "Select",
+                      "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+                      "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-[15px] ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+                      "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+                      "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+                      "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+                      "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-fill font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+                    }' class="hidden">
+                      <option selected>$</option>
+                      <option>€</option>
+                      <option>฿</option>
+                      <option>¥</option>
+                    </select>
+                    <!-- End Select -->
+                     <!-- Select -->
+                    <select placeholder="Native select" class="bg-transparent mt-6 relative flex items-center gap-x-2 text-nowrap w-full cursor-pointer border py-[15px] ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-900 hover:border-gray-900 dark:hover:border-white rounded-lg focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500">
+                      <option selected>$</option>
+                      <option>€</option>
+                      <option>฿</option>
+                      <option>¥</option>
+                    </select>
+                    <!-- End Select -->
+                  </div>
+                </div>
+  
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Size
+                    </div>
+                    <div class="space-y-6">
+                      <input type="text" class="form-input form-input-sm" value="Small" placeholder="Size">
+                      <input type="text" class="form-input" value="Medium" placeholder="Size">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          
+          </div>
+
+          <div id="basic-tabs-2" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-2">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+              <div>
+              
+                <div class="card component-card !bg-transparent">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Basic
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input type="text" id="hs-floating-input-name" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Name">
+                        <label for="hs-floating-input-name" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Name</label>
+                      </div>
+
+                      <div class="relative">
+                        <input value="Nabed Khan" type="text" id="hs-floating-input-name-11" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Name">
+                        <label for="hs-floating-input-name-11" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Name</label>
+                      </div>
+
+                      <div class="relative">
+                        <input value="123456" type="password" id="hs-floating-input-name-12" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Password">
+                        <label for="hs-floating-input-name-12" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Password</label>
+                      </div>
+
+                      <div class="relative">
+                        <input type="email" id="hs-floating-input-name-13" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Email" disabled>
+                        <label for="hs-floating-input-name-13" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Email</label>
+                      </div>
+
+                    </div>
+    
+                  </div>
+                </div>
+
+                <div class="card component-card !bg-transparent">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Select
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <!-- Floating Select -->
+                      <div class="relative">
+                        <select data-hs-select='{
+                          "placeholder": "Select",
+                          "toggleTag": "<div><label class=\"absolute -top-2 p-4 -start-1 text-sm text-gray-500 font-medium \">Select</label> <button type=\"button\" aria-expanded=\"false\"></button></div>",
+                          "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative text-nowrap min-h-[56px] flex items-end w-full cursor-pointer border pt-[15px] pb-1 ps-[14px] pe-[43px] text-16 border-gray-200 text-gray-900 rounded-lg bg-gray-100 dark:bg-gray-800 focus:border-primary-500 dark:focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-500 dark:focus:ring-primary-500",
+                          "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+                          "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+                          "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+                          "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-fill font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+                        }'
+                          >
+                          <option selected>$</option>
+                          <option>€</option>
+                          <option>฿</option>
+                          <option>¥</option>
+                        </select>
+                      </div>
+                      <!-- End Floating Select -->
+
+                      <!-- Floating Select -->
+                      <div class="relative">
+                        <select class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2">
+                          <option selected="">Open this select menu</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                        <label class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Native select</label>
+                      </div>
+                      <!-- End Floating Select -->
+
+                    </div>
+    
+                  </div>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div class="card component-card !bg-transparent">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      With Adornment
+                    </div>
+
+                    <form>
+                      <div class="space-y-6">
+  
+                        <div class="relative">
+                          <span class="absolute start-[14px] top-9 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal">kg</span>
+                          <input type="text" id="hs-floating-input-name-210" class="peer p-4 ps-10 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                            focus:pt-6
+                            focus:pb-2
+                            [&:not(:placeholder-shown)]:pt-6
+                            [&:not(:placeholder-shown)]:pb-2
+                            autofill:pt-6
+                            autofill:pb-2" placeholder="Name">
+                          <label for="hs-floating-input-name-210" class="absolute top-0 start-0 -translate-y-1.5 scale-90 p-4 h-full text-sm text-gray-500 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                            peer-focus:scale-90
+                            peer-focus:-translate-y-1.5
+                            peer-focus:text-sm
+                            peer-focus:font-medium
+                            peer-focus:ps-4
+                            peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                            peer-[:not(:placeholder-shown)]:ps-4
+                            peer-[:not(:placeholder-shown)]:scale-90
+                            peer-[:not(:placeholder-shown)]:text-sm
+                            peer-[:not(:placeholder-shown)]:font-medium
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                            peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">With Normal TextField</label>
+                        </div>
+  
+                        <div class="relative" x-data="{ 
+                          showPassword: false,
+                          togglePassword() {
+                            this.showPassword = !this.showPassword;
+                          }
+                        }">
+                          <span class="absolute end-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal cursor-pointer" @click="togglePassword">
+                            <i :class="showPassword ? 'ri-eye-off-fill' : 'ri-eye-fill'" class="text-2xl"></i>
+                          </span>
+                          <input :type="showPassword ? 'text' : 'password'" value="Nabed Khan" id="hs-floating-input-name-211" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                            focus:pt-6
+                            focus:pb-2
+                            [&:not(:placeholder-shown)]:pt-6
+                            [&:not(:placeholder-shown)]:pb-2
+                            autofill:pt-6
+                            autofill:pb-2" placeholder="Name">
+                          <label for="hs-floating-input-name-211" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                            peer-focus:scale-90
+                            peer-focus:-translate-y-1.5
+                            peer-focus:text-sm
+                            peer-focus:font-medium
+                            peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                            peer-[:not(:placeholder-shown)]:scale-90
+                            peer-[:not(:placeholder-shown)]:text-sm
+                            peer-[:not(:placeholder-shown)]:font-medium
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                            peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Password</label>
+                        </div>
+  
+                        <div class="relative" x-data="{ 
+                          showPassword: false,
+                          togglePassword() {
+                            this.showPassword = !this.showPassword;
+                          }
+                        }">
+                          <span class="absolute start-[14px] top-9 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal">
+                            <svg class="size-6" focusable="false" aria-hidden="true" viewBox="0 0 24 24" >
+                              <path d="M2 17h20v2H2v-2zm1.15-4.05L4 11.47l.85 1.48 1.3-.75-.85-1.48H7v-1.5H5.3l.85-1.47L4.85 7 4 8.47 3.15 7l-1.3.75.85 1.47H1v1.5h1.7l-.85 1.48 1.3.75zm6.7-.75 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H15v-1.5h-1.7l.85-1.47-1.3-.75L12 8.47 11.15 7l-1.3.75.85 1.47H9v1.5h1.7l-.85 1.48zM23 9.22h-1.7l.85-1.47-1.3-.75L20 8.47 19.15 7l-1.3.75.85 1.47H17v1.5h1.7l-.85 1.48 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H23v-1.5z"></path>
+                            </svg>
+                          </span>
+                          <span class="absolute end-[14px] top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-16 leading-normal cursor-pointer" @click="togglePassword">
+                            <i :class="showPassword ? 'ri-eye-off-fill' : 'ri-eye-fill'" class="text-2xl"></i>
+                          </span>
+                          <input :type="showPassword ? 'text' : 'password'" id="hs-floating-input-name-214" value="123456" class="peer p-4 ps-10 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                            focus:pt-6
+                            focus:pb-2
+                            [&:not(:placeholder-shown)]:pt-6
+                            [&:not(:placeholder-shown)]:pb-2
+                            autofill:pt-6
+                            autofill:pb-2" placeholder="Name">
+                          <label for="hs-floating-input-name-214" class="absolute top-0 start-0 -translate-y-1.5 scale-90 p-4 h-full text-sm text-gray-500 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                            peer-focus:scale-90
+                            peer-focus:-translate-y-1.5
+                            peer-focus:text-sm
+                            peer-focus:font-medium
+                            peer-focus:ps-4
+                            peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                            peer-[:not(:placeholder-shown)]:ps-4
+                            peer-[:not(:placeholder-shown)]:scale-90
+                            peer-[:not(:placeholder-shown)]:text-sm
+                            peer-[:not(:placeholder-shown)]:font-medium
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                            peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Password</label>
+                        </div>
+  
+                      </div>
+                    </form>
+    
+                  </div>
+                </div>
+                
+                <div class="card component-card !bg-transparent">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      With Helper Text
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input type="text" value="Nabed Khan" id="hs-floating-input-name-21" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Name">
+                        <label for="hs-floating-input-name" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-medium
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-medium
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Helper text</label>
+                          <span class="text-gray-500 text-xs mx-3.5 pt-[3px]">Some important text</span>
+                      </div>
+
+                      <div class="relative">
+                        <input type="text" value="Hello World" id="hs-floating-input-name-22" class="peer p-4 block w-full border-transparent rounded-lg bg-error-100 text-16 leading-[22px] placeholder:text-transparent focus:border-error-500 focus:ring-error-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-error-200 dark:bg-error-900/20 dark:border-error-800 dark:text-white dark:focus:ring-error-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Name">
+                        <label for="hs-floating-input-name" class="absolute top-0 start-0 p-4 h-full text-16 text-error-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-error-500 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-medium
+                          peer-focus:text-error-500 dark:peer-focus:text-error-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-medium
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-error-500 dark:peer-[:not(:placeholder-shown)]:text-error-500">Error</label>
+                          <span class="text-error-500 text-xs mx-3.5 pt-[3px]">Incorrect entry.</span>
+                      </div>
+
+                    </div>
+    
+                  </div>
+                </div>
+
+                <div class="card component-card !bg-transparent">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Basic
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input type="text" value="Small" id="hs-floating-input-name-31" class="peer px-3 py-2.5 block w-full border-transparent min-h-11 rounded-lg bg-gray-100 text-sm placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-2.5
+                          focus:pb-1.5
+                          [&:not(:placeholder-shown)]:pt-2.5
+                          [&:not(:placeholder-shown)]:pb-1.5
+                          autofill:pt-2.5
+                          autofill:pb-1.5" placeholder="Size">
+                        <label for="hs-floating-input-name" class="absolute top-0 start-0 px-3 py-2 h-full text-sm text-gray-500 min-h-11 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-0.5
+                          peer-focus:text-xs
+                          peer-focus:font-medium
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-xs
+                          peer-[:not(:placeholder-shown)]:font-medium
+                          peer-[:not(:placeholder-shown)]:-translate-y-0.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Size</label>
+                      </div>
+
+                      <div class="relative">
+                        <input type="text" value="Medium" id="hs-floating-input-name-235" class="peer p-4 block w-full border-transparent rounded-lg bg-gray-100 text-16 leading-[22px] placeholder:text-transparent focus:border-primary-500 focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-white dark:focus:ring-primary-500
+                          focus:pt-6
+                          focus:pb-2
+                          [&:not(:placeholder-shown)]:pt-6
+                          [&:not(:placeholder-shown)]:pb-2
+                          autofill:pt-6
+                          autofill:pb-2" placeholder="Name">
+                        <label for="hs-floating-input-name-235" class="absolute top-0 start-0 p-4 h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-gray-400 peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                          peer-focus:scale-90
+                          peer-focus:-translate-y-1.5
+                          peer-focus:text-sm
+                          peer-focus:font-semibold
+                          peer-focus:text-primary-500 dark:peer-focus:text-primary-500
+                          peer-[:not(:placeholder-shown)]:scale-90
+                          peer-[:not(:placeholder-shown)]:text-sm
+                          peer-[:not(:placeholder-shown)]:font-semibold
+                          peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">Size</label>
+                      </div>
+
+                    </div>
+    
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="basic-tabs-3" class="hidden" role="tabpanel" aria-labelledby="basic-tabs-item-3">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+              <div>
+                
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Basic
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input 
+                          type="text" 
+                          id="floating-input-31" 
+                          placeholder="Name" 
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         />
+                        <label for="floating-input-31" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Name
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+  
+                      <div class="relative">
+                        <input 
+                          type="text" 
+                          id="floating-input-32" 
+                          placeholder="Name" 
+                          value="Nabed Khan"
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         />
+                        <label for="floating-input-32" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Name
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+  
+                      <div class="relative">
+                        <input 
+                          type="Password" 
+                          id="floating-input-33" 
+                          placeholder="Password" 
+                          value="123456"
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         />
+                        <label for="floating-input-33" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Password
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+  
+                      <div class="relative">
+                        <input 
+                          type="email" 
+                          id="floating-input-34" 
+                          placeholder="Email" 
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         disabled />
+                        <label for="floating-input-34" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Email
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+
+                    </div>
+                    
+
+                  </div>
+                </div>
+
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      With Helper Text
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div>
+                        <div class="relative">
+                          <input 
+                            type="text" 
+                            id="floating-input-35" 
+                            placeholder="Helper text" 
+                            value="Nabed Khan"
+                            class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                              disabled:pointer-events-none disabled:opacity-50
+                              autofill:pt-6
+                              autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                              [&:not(:placeholder-shown)]:pt-6 
+                              [&:not(:placeholder-shown)]:pb-[1px]"
+                           />
+                          <label for="floating-input-35" 
+                            class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                              peer-focus:scale-90 
+                              peer-focus:-translate-y-1.5
+                              peer-focus:pb-5
+                              peer-focus:text-sm 
+                              peer-focus:font-medium 
+                              peer-focus:text-primary-500 dark:text-gray-400 
+                              peer-disabled:text-gray-200
+                              dark:peer-focus:text-primary-500 
+                              peer-[:not(:placeholder-shown)]:scale-90 
+                              peer-[:not(:placeholder-shown)]:pb-5 
+                              peer-[:not(:placeholder-shown)]:text-sm 
+                              peer-[:not(:placeholder-shown)]:font-medium 
+                              peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                            peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                            Helper text
+                          </label>
+                          <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                        </div>
+                        <span class="text-gray-500 text-xs pt-[3px]">Some important text</span>
+                      </div>
+
+                      <div>
+                        <div class="relative">
+                          <input 
+                            type="text" 
+                            id="floating-input-36" 
+                            placeholder="Error" 
+                            value="Hello World"
+                            class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b dark:hover:border-white ring-0 shadow-none focus:ring-0 border-error-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                              disabled:pointer-events-none disabled:opacity-50
+                              autofill:pt-6
+                              autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                              [&:not(:placeholder-shown)]:pt-6 
+                              [&:not(:placeholder-shown)]:pb-[1px]"
+                           />
+                          <label for="floating-input-36" 
+                            class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-error-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                              peer-focus:scale-90 
+                              peer-focus:-translate-y-1.5
+                              peer-focus:pb-5
+                              peer-focus:text-sm 
+                              peer-focus:font-medium 
+                              peer-focus:text-error-500 dark:text-error-400 
+                              peer-disabled:text-error-200
+                              dark:peer-focus:text-error-500 
+                              peer-[:not(:placeholder-shown)]:scale-90 
+                              peer-[:not(:placeholder-shown)]:pb-5 
+                              peer-[:not(:placeholder-shown)]:text-sm 
+                              peer-[:not(:placeholder-shown)]:font-medium 
+                              peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                            peer-[:not(:placeholder-shown)]:text-error-500 dark:peer-[:not(:placeholder-shown)]:text-error-400">
+                            Error
+                          </label>
+                          <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-error-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                        </div>
+                        <span class="text-error-500 text-xs pt-[3px]">Incorrect entry.</span>
+                      </div>
+                      
+                    </div>
+                    
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div>
+                
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Select
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input 
+                          type="text" 
+                          id="floating-input-37" 
+                          placeholder="Name" 
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         />
+                        <label for="floating-input-37" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Name
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+
+                      <!-- Floating Select -->
+                      <div class="relative">
+                        <select data-hs-select='{
+                          "placeholder": "Select",
+                          "toggleTag": "<div><label class=\"absolute -top-2 p-4 ps-1 -start-1 text-sm text-gray-500 font-medium \">Select</label> <button type=\"button\" aria-expanded=\"false\"></button></div>",
+                          "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 relative text-nowrap min-h-[56px] flex items-end w-full cursor-pointer pt-[15px] pb-1 pe-[43px] text-16 text-gray-900 dark:text-white dark:placeholder-gray-500",
+                          "dropdownClasses": "max-h-72 absolute z-50 w-full p-2 bg-white dark:bg-gray-800 shadow-drop-down dark:shadow-dark-drop-down rounded-lg mt-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:border-neutral-700",
+                          "optionClasses": "flex items-center gap-x-3 py-1.5 px-4 rounded-lg text-6 text-gray-900 hover:bg-gray-100 hs-combo-box-selected:bg-primary-50 dark:hs-combo-box-selected:bg-primary-500/10 focus:outline-none focus:bg-gray-200 dark:text-white dark:hover:bg-gray-700/30 dark:focus:bg-gray-700",
+                          "optionTemplate": "<div><div class=\"flex items-center\"><div class=\"text-gray-800 dark:text-neutral-200 \" data-title></div></div></div>",
+                          "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><button class=\"btn-secondary-icon-hover size-6\"><i class=\"ri-arrow-down-s-fill font-bold text-gray-900/50 text-xl dark:text-gray-100/50:rotate-180\"></i></button></div>"
+                        }'
+                          >
+                          <option selected>$</option>
+                          <option>€</option>
+                          <option>฿</option>
+                          <option>¥</option>
+                        </select>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+
+                      </div>
+                      <!-- End Floating Select -->
+  
+
+                    </div>
+                    
+
+                  </div>
+                </div>
+
+                <div class="card component-card">
+                  <div class="card-body">
+                    <div class="mb-4 card-title">
+                      Size
+                    </div>
+
+                    <div class="space-y-6">
+
+                      <div class="relative">
+                        <input 
+                          type="text" 
+                          id="floating-input-38" 
+                          placeholder="Size" 
+                          value="Small"
+                          class="peer px-0 pt-4 pb-2 min-h-[45px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-3
+                            autofill:pb-0.5 focus:pt-3 focus:pb-0.5 
+                            [&:not(:placeholder-shown)]:pt-3 
+                            [&:not(:placeholder-shown)]:pb-0.5"
+                         />
+                        <label for="floating-input-38" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-xs 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5
+                            peer-[:not(:placeholder-shown)]:text-xs 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Size
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+
+                      <div class="relative">
+                        <input 
+                          type="text" 
+                          id="floating-input-39" 
+                          placeholder="Size" 
+                          value="Medium"
+                          class="peer px-0 pt-4 pb-2 min-h-[56px] block w-full border-0 border-b hover:border-0 hover:border-b-2 hover:border-gray-900 dark:hover:border-white ring-0 shadow-none focus:ring-0 border-gray-400 bg-transparent text-16 leading-[22px] placeholder:text-transparent 
+                            disabled:pointer-events-none disabled:opacity-50
+                            autofill:pt-6
+                            autofill:pb-[1px] focus:pt-6 focus:pb-[1px] 
+                            [&:not(:placeholder-shown)]:pt-6 
+                            [&:not(:placeholder-shown)]:pb-[1px]"
+                         />
+                        <label for="floating-input-39" 
+                          class="absolute top-0 start-0 pt-4 pb-2 flex items-end h-full text-16 text-gray-500 leading-6 font-medium truncate pointer-events-none transition-all duration-300 origin-[0_0] 
+                            peer-focus:scale-90 
+                            peer-focus:-translate-y-1.5
+                            peer-focus:pb-5
+                            peer-focus:text-sm 
+                            peer-focus:font-medium 
+                            peer-focus:text-primary-500 dark:text-gray-400 
+                            peer-disabled:text-gray-200
+                            dark:peer-focus:text-primary-500 
+                            peer-[:not(:placeholder-shown)]:scale-90 
+                            peer-[:not(:placeholder-shown)]:pb-5 
+                            peer-[:not(:placeholder-shown)]:text-sm 
+                            peer-[:not(:placeholder-shown)]:font-medium 
+                            peer-[:not(:placeholder-shown)]:-translate-y-1.5 
+                          peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-gray-400">
+                          Size
+                        </label>
+                        <div class="absolute inset-0 pointer-events-none border-b-2 border-transparent transition-all duration-300 after:absolute after:-bottom-0.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-primary-500 after:duration-300 peer-focus:after:scale-x-100"></div>
+                      </div>
+
+                    </div>
+                    
+
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block js %}
+<script src={% static 'vite/assets/js/ui-textfield.js' %}></script>
+{% endblock js %}

@@ -1,0 +1,140 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Accordian | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+  {% with title="Accordian" %}
+    {% include "partials/ui-breadcrumb.html" %}
+  {% endwith %}
+   <div class="container">
+
+    <div class="py-16">
+
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Basic
+          </div>
+          <!-- Accordian Style 1 Start -->
+          <div class="hs-accordion-group tw-accordion space-y-4" data-hs-accordion-always-open>
+            <div class="hs-accordion" id="hs-basic-heading-one">
+              <button class="hs-accordion-toggle hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100">
+                What admin theme does?
+                <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+              </button>
+              <div id="hs-basic-collapse-one" class="hs-accordion-content hidden">
+                <div class="mt-4">
+                  <p>
+                    By Uko to save tons and more to time money projects are listed and outstanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-accordion" id="hs-basic-heading-two">
+              <button class="hs-accordion-toggle hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100">
+                What admin theme does?
+                <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+              </button>
+              <div id="hs-basic-heading-two" class="hs-accordion-content hidden">
+                <div class="mt-4">
+                  <p>
+                    By Uko to save tons and more to time money projects are listed and outstanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          <!-- Accordian Style 1 End -->
+        </div>
+      </div>
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Controlled
+          </div>
+          <div class="hs-accordion-group tw-accordion space-y-4">
+            <div class="hs-accordion active" id="hs-basic-heading-three">
+              <button class="hs-accordion-toggle hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100">
+                What admin theme does?
+                <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+              </button>
+              <div id="hs-basic-heading-three" class="hs-accordion-content">
+                <div class="mt-4">
+                  <p>
+                    By Uko to save tons and more to time money projects are listed and outstanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-accordion" id="hs-basic-heading-four">
+              <button class="hs-accordion-toggle hs-accordion-active:text-gray-700 dark:hs-accordion-active:text-gray-100">
+                What admin theme does?
+                <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+              </button>
+              <div id="hs-basic-heading-four" class="hs-accordion-content hidden">
+                <div class="mt-4">
+                  <p>
+                    By Uko to save tons and more to time money projects are listed and outstanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="card component-card">
+        <div class="card-body">
+          <div class="mb-4 card-title">
+            Outlined Variant
+          </div>
+          <div class="space-y-4">
+            <!-- Accordian Style 2 Start -->
+             <div class="hs-accordion-group tw-accordion">
+               <div class="hs-accordion hs-accordion-active:border-primary-500 hs-accordion-active:border-l-[3px] !p-0 active pointer-events-none" id="hs-basic-heading-five">
+                 <button class="hs-accordion-toggle dark:hs-accordion-active:text-gray-100 py-3 px-6 hs-accordion-active:text-primary-500 hs-accordion-active:bg-gray-50 dark:hs-accordion-active:bg-gray-900">
+                   What admin theme does?
+                   <i class="ri-arrow-down-s-line text-16 hs-accordion-active:hidden block"></i>
+                   <i class="ri-arrow-up-s-line text-16 hs-accordion-active:block hidden"></i>
+                 </button>
+                 <div id="hs-basic-heading-five" class="hs-accordion-content">
+                   <div class="p-6 pt-4">
+                     <p>
+                       The vows and named is he seven his origin myself any is decision-making. The interface of Jeni’s is simple and clean, with the section includes questions that are very specific to their customer group. First thing first, you need to sort out what explicit. The advice is to see mails and phone call data, then make a rundown of the top questions that show up continually.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            <div class="hs-accordion-group tw-accordion">
+            
+              <div class="hs-accordion hs-accordion-active:border-primary-500 hs-accordion-active:border-l-[3px] !p-0" id="hs-basic-heading-six">
+                <button class="hs-accordion-toggle dark:hs-accordion-active:text-gray-100 py-3 px-6 hs-accordion-active:text-primary-500 hs-accordion-active:bg-gray-50 dark:hs-accordion-active:bg-gray-900">
+                  What admin theme does?
+                  <i class="ri-arrow-down-s-line text-16 fill-current hs-accordion-active:hidden block"></i>
+                  <i class="ri-arrow-up-s-line text-16 fill-current hs-accordion-active:block hidden"></i>
+                </button>
+                <div id="hs-basic-heading-six" class="hs-accordion-content hidden">
+                  <div class="p-6 pt-4">
+                    <p>
+                      The vows and named is he seven his origin myself any is decision-making. The interface of Jeni’s is simple and clean, with the section includes questions that are very specific to their customer group. First thing first, you need to sort out what explicit. The advice is to see mails and phone call data, then make a rundown of the top questions that show up continually.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            <!-- Accordian Style 2 End -->
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+{% endblock content %}

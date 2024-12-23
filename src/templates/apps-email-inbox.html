@@ -1,0 +1,240 @@
+{% extends "partials/main-layout.html" %} {% load static %}
+{% block title %}
+<title>Apps Email Inbox | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+      <div class="mt-6 overflow-hidden card card-dark">
+
+        <div class="flex" x-data="{
+          activeTab: window.location.hash ? window.location.hash.substring(1) : 'all-mail',
+          changeTab(tab) {
+              this.activeTab = tab;
+              window.location.hash = tab;
+          }
+      }">
+
+          <div class="hidden lg:block">
+            {% include "partials/apps-email-sidebar.html" %}
+          </div>
+
+          <div class="w-full lg:w-[calc(100%-260px)]">
+            <div class="flex justify-between gap-2 border-b border-gray-200 card-body dark:border-gray-700">
+              <div class="flex items-center gap-2">
+                <div class="size-[36px] flex lg:hidden items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer" tabindex="0" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-email-sidebar" data-hs-overlay="#hs-offcanvas-email-sidebar">
+                  <i class="text-lg ri-menu-line"></i>
+                </div>
+                <input type="checkbox" class="size-[15px] text-primary-500 hidden sm:block">
+                <div class="size-[36px] flex xl:hidden items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                  <i class="text-lg ri-more-2-fill"></i>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    More
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 16 16" fill="none">
+                    <path d="M14.9524 0.125C15.4232 0.125 15.875 0.490564 15.875 1.04281V5.99507C15.875 6.35452 15.5836 6.64575 15.2243 6.64575H10.2788C9.72625 6.64575 9.36035 6.19363 9.36035 5.72251C9.36035 5.49733 9.44388 5.26767 9.63054 5.08099L14.2841 0.396882C14.4976 0.208499 14.7284 0.125 14.9524 0.125Z" fill="currentColor"></path>
+                    <path opacity="0.4" d="M11.6292 11.852C12.2565 11.852 12.7144 12.3625 12.7144 12.9368C12.7144 14.1262 9.94499 15.3267 7.72479 15.3267C3.53625 15.3267 0.125 11.9155 0.125 7.72694C0.125 3.53839 3.53625 0.154297 7.72479 0.154297C9.57807 0.154297 11.3329 0.85861 12.6974 2.04253L11.1618 3.57913C10.204 2.79369 8.99459 2.33546 7.72344 2.33546C4.73341 2.33546 2.29938 4.76882 2.29938 7.75952C2.29938 10.7502 4.73206 13.152 7.72242 13.152C10.2036 13.152 10.7569 11.852 11.6292 11.852Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Reload
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 16 15" fill="none">
+                    <path d="M15.875 1.23438V2.71094C15.875 2.98164 15.6535 3.20312 15.3828 3.20312H0.617188C0.346115 3.20312 0.125 2.98164 0.125 2.71094V1.23438C0.125 0.6902 0.5652 0.25 1.10938 0.25H14.8906C15.4351 0.25 15.875 0.6902 15.875 1.23438Z" fill="currentColor"></path>
+                    <path opacity="0.4" d="M1.10938 12.5547C1.10938 13.3699 1.77044 14.0312 2.58594 14.0312H13.4141C14.2296 14.0312 14.8906 13.3702 14.8906 12.5547V3.20312H1.10938V12.5547ZM5.04688 5.66406C5.04688 5.39336 5.26836 5.17188 5.53906 5.17188H10.4609C10.7316 5.17188 10.9531 5.39336 10.9531 5.66406V6.64844C10.9531 6.91914 10.7316 7.14062 10.4609 7.14062H5.53906C5.26836 7.14062 5.04688 6.91914 5.04688 6.64844V5.66406Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Archive
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 14 15" fill="none">
+                    <path d="M7.15674 7.71944C7.15674 7.80709 7.08792 7.8759 7.00028 7.8759C6.91263 7.8759 6.84382 7.80709 6.84382 7.71944V4.65597C6.84382 4.56833 6.91263 4.49951 7.00028 4.49951C7.08792 4.49951 7.15674 4.56833 7.15674 4.65597V7.71944ZM6.625 10.1265C6.625 9.91846 6.79228 9.75118 7.00028 9.75118C7.20827 9.75118 7.37556 9.91846 7.37556 10.1265C7.37556 10.3345 7.20827 10.5017 7.00028 10.5017C6.79228 10.5017 6.625 10.3345 6.625 10.1265Z" fill="currentColor" stroke="currentColor"></path>
+                    <path opacity="0.4" d="M3.84393 1.07679C4.21319 0.707482 4.71374 0.5 5.23617 0.5H8.76463C9.28706 0.5 9.78761 0.707482 10.1569 1.07679L13.4228 4.34404C13.792 4.7133 13.9999 5.21385 13.9999 5.73628V9.26474C13.9999 9.78718 13.792 10.2877 13.4228 10.657L10.1569 13.9229C9.78761 14.2921 9.28706 14.5 8.76463 14.5H5.23617C4.71374 14.5 4.21319 14.2921 3.84393 13.9229L0.576682 10.657C0.207479 10.2877 0 9.78718 0 9.26474V5.73628C0 5.21385 0.207479 4.7133 0.576682 4.34404L3.84393 1.07679ZM6.34394 4.63124V7.69472C6.34394 8.08312 6.63661 8.35117 7.0004 8.35117C7.36419 8.35117 7.65686 8.08312 7.65686 7.69472V4.63124C7.65686 4.29207 7.36419 3.97478 7.0004 3.97478C6.63661 3.97478 6.34394 4.29207 6.34394 4.63124ZM7.0004 9.22645C6.51626 9.22645 6.12512 9.64221 6.12512 10.1017C6.12512 10.6105 6.51626 10.977 7.0004 10.977C7.48454 10.977 7.87568 10.6105 7.87568 10.1017C7.87568 9.64221 7.48454 9.22645 7.0004 9.22645Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Report
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 12 15" fill="none">
+                    <path d="M7.9292 1.20296L7.9292 1.20296L7.93009 1.20476L8.12294 1.59605L8.26043 1.875H8.57143H11.1429C11.3309 1.875 11.5 2.0329 11.5 2.25C11.5 2.4671 11.3309 2.625 11.1429 2.625H0.857143C0.669651 2.625 0.5 2.46679 0.5 2.25C0.5 2.03321 0.669651 1.875 0.857143 1.875H3.42857H3.73957L3.87706 1.59605L4.06991 1.20476L4.06992 1.20476L4.0708 1.20296C4.13316 1.07513 4.25801 1 4.3875 1H7.6125C7.74199 1 7.86684 1.07513 7.9292 1.20296Z" fill="currentColor" stroke="currentColor"></path>
+                    <path opacity="0.4" d="M11.1431 12.75C11.1431 13.7152 10.3744 14.5 9.42885 14.5H2.57171C1.62483 14.5 0.857422 13.7152 0.857422 12.75V3.125H11.1431V12.75ZM3.85742 5.3125C3.85742 5.07187 3.66456 4.875 3.42885 4.875C3.19314 4.875 3.00028 5.07187 3.00028 5.3125V11.4375C3.00028 11.6781 3.19314 11.875 3.42885 11.875C3.66456 11.875 3.85742 11.6781 3.85742 11.4375V5.3125ZM6.42885 5.3125C6.42885 5.07187 6.23599 4.875 6.00028 4.875C5.76456 4.875 5.57171 5.07187 5.57171 5.3125V11.4375C5.57171 11.6781 5.76456 11.875 6.00028 11.875C6.23599 11.875 6.42885 11.6781 6.42885 11.4375V5.3125ZM9.00028 5.3125C9.00028 5.07187 8.80742 4.875 8.57171 4.875C8.33599 4.875 8.14314 5.07187 8.14314 5.3125V11.4375C8.14314 11.6781 8.33599 11.875 8.57171 11.875C8.80742 11.875 9.00028 11.6781 9.00028 11.4375V5.3125Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Trash
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 16 16" fill="none">
+                    <path opacity="0.4" d="M15.8688 6.35425C15.8196 5.79746 15.5335 5.28066 15.0783 4.94536L13.9062 4.07788V6.52651V7.8062L15.8688 6.35425ZM15.875 13.9062V7.57241L9.18125 12.5312C8.8398 12.7865 8.42451 12.9219 8 12.9219C7.57549 12.9219 7.16021 12.7865 6.81875 12.5312L0.125 7.57241V13.9062C0.125 14.9921 1.00786 15.875 2.09375 15.875H13.9062C14.9921 15.875 15.875 14.9921 15.875 13.9062ZM2.09375 7.8062V6.52651V4.07788L0.921728 4.94536C0.466455 5.28066 0.180371 5.79746 0.131152 6.35425L2.09375 7.8062ZM9.03052 0.466455C8.73213 0.244971 8.37222 0.125 8 0.125C7.62778 0.125 7.26787 0.244971 6.96948 0.463379L6.09893 1.10938H9.90107L9.03052 0.466455ZM5.53906 4.0625C5.26836 4.0625 5.04688 4.28398 5.04688 4.55469C5.04688 4.82539 5.26836 5.04688 5.53906 5.04688H10.4609C10.7316 5.04688 10.9531 4.82539 10.9531 4.55469C10.9531 4.28398 10.7316 4.0625 10.4609 4.0625H5.53906ZM5.53906 6.03125C5.26836 6.03125 5.04688 6.25273 5.04688 6.52344C5.04688 6.79414 5.26836 7.01562 5.53906 7.01562H10.4609C10.7316 7.01562 10.9531 6.79414 10.9531 6.52344C10.9531 6.25273 10.7316 6.03125 10.4609 6.03125H5.53906Z" fill="currentColor"></path>
+                    <path d="M3.07812 1.10938C2.53364 1.10938 2.09375 1.54927 2.09375 2.09375V7.8062L7.4063 11.7406C7.57856 11.8667 7.78774 11.9375 8 11.9375C8.21226 11.9375 8.42144 11.8698 8.5937 11.7406L13.9062 7.8062V2.09375C13.9062 1.54927 13.4664 1.10938 12.9219 1.10938H3.07812ZM5.53906 4.0625H10.4609C10.7316 4.0625 10.9531 4.28398 10.9531 4.55469C10.9531 4.82539 10.7316 5.04688 10.4609 5.04688H5.53906C5.26836 5.04688 5.04688 4.82539 5.04688 4.55469C5.04688 4.28398 5.26836 4.0625 5.53906 4.0625ZM5.53906 6.03125H10.4609C10.7316 6.03125 10.9531 6.25273 10.9531 6.52344C10.9531 6.79414 10.7316 7.01562 10.4609 7.01562H5.53906C5.26836 7.01562 5.04688 6.79414 5.04688 6.52344C5.04688 6.25273 5.26836 6.03125 5.53906 6.03125Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Read All
+                  </span>
+                </div>
+                <div ripple-opacity="0.1" ripple-color="black" class="hidden xl:flex ripple btn-gray-icon-hover size-[33px] hs-tooltip [--placement:bottom]">
+                  <svg class="size-4" focusable="false" aria-hidden="true" viewBox="0 0 16 14" fill="none">
+                    <path d="M11.5 2.53516C11.5 1.9291 11.7305 1.34786 12.1407 0.919307C12.5509 0.490757 13.1073 0.25 13.6875 0.25C14.2677 0.25 14.8241 0.490757 15.2343 0.919307C15.6445 1.34786 15.875 1.9291 15.875 2.53516C15.875 3.14122 15.6445 3.72246 15.2343 4.15101C14.8241 4.57956 14.2677 4.82031 13.6875 4.82031C13.1073 4.82031 12.5509 4.57956 12.1407 4.15101C11.7305 3.72246 11.5 3.14122 11.5 2.53516Z" fill="currentColor"></path>
+                    <path opacity="0.4" d="M11.5437 2.07812C11.5164 2.22666 11.5 2.37805 11.5 2.53516C11.5 3.65774 12.2738 4.5918 13.2965 4.78318L7.65 9.20781C7.33828 9.45061 6.91172 9.45061 6.6 9.20781L0.65 4.54609C0.319141 4.28616 0.125 3.88054 0.125 3.44922C0.125 2.69226 0.712891 2.07812 1.4375 2.07812H11.5437ZM0.125 11.2188V5.27734L6.075 9.93906C6.69844 10.4275 7.55156 10.4275 8.175 9.93906L14.125 5.27734V11.2188C14.125 12.2271 13.3402 13.0469 12.375 13.0469H1.875C0.909766 13.0469 0.125 12.2271 0.125 11.2188Z" fill="currentColor"></path>
+                  </svg>
+                  <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                    Unread All
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="relative flex items-center px-4 border border-gray-200 dark:border-gray-600 rounded-xl">
+                  <i class="text-lg leading-none text-gray-500 ri-search-line dark:text-gray-100/50"></i>
+                  <input placeholder="Search email" type="text" class="w-full h-[43px] bg-transparent border-0 focus:outline-offset-0 focus:ring-0 text-sm focus:outline-0 placeholder:opacity-50 dark:placeholder:text-white">
+                </div>
+                <div class="items-center hidden lg:flex">
+                  <p class="mr-4 text-gray-400">1-10 of 50</p>
+                  <div class="flex items-center">
+                    <div class="btn-gray-icon-hover size-7 hs-tooltip [--placement:bottom]">
+                      <i class="ri-arrow-left-s-line text-2xl text-gray-400"></i>
+                      <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                        Previous Page
+                      </span>
+                    </div>
+                    <div class="btn-gray-icon-hover size-7 hs-tooltip [--placement:bottom]">
+                      <i class="ri-arrow-right-s-line text-2xl text-gray-400"></i>
+                      <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                        Next Page
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div x-show="activeTab === 'all-mail'">
+              <div x-data="{ items: Array.from({ length: 10 }) }">
+                <template x-for="(item, index) in items" :key="index">
+                  <a href="apps-email-details.html">
+                    <div class="relative flex items-center justify-between gap-6 p-6 border-b border-gray-200 cursor-pointer group whitespace-nowrap dark:border-gray-700 hover:bg-gray-100">
+                      <div class="flex items-center gap-4">
+                        <input type="checkbox" class="size-[15px] text-primary-500 hidden sm:block">
+                        <div class="size-[25px] hidden sm:flex items-center justify-center text-gray-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <i class="text-xl ri-star-line"></i>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Starred
+                          </span>
+                        </div>
+                        <img class="size-[25px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+                        <h6 class="text-sm font-semibold">Penni Nojel</h6>
+                      </div>
+                      <p class="text-gray-500 truncate dark:text-dark-light">
+                        How to Choose the Perfect Shopify Theme and Build Your Online Store Fast!
+                      </p>
+                      <span class="text-xs text-gray-500 dark:text-dark-light">1:45 PM</span>
+                      <div class="absolute right-0 z-10 items-center hidden h-full -translate-y-1/2 bg-gray-100 top-1/2 group-hover:flex pe-6">
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 16 15" fill="none">
+                            <path d="M15.875 1.23438V2.71094C15.875 2.98164 15.6535 3.20312 15.3828 3.20312H0.617188C0.346115 3.20312 0.125 2.98164 0.125 2.71094V1.23438C0.125 0.6902 0.5652 0.25 1.10938 0.25H14.8906C15.4351 0.25 15.875 0.6902 15.875 1.23438Z" fill="currentColor"></path>
+                            <path opacity="0.4" d="M1.10938 12.5547C1.10938 13.3699 1.77044 14.0312 2.58594 14.0312H13.4141C14.2296 14.0312 14.8906 13.3702 14.8906 12.5547V3.20312H1.10938V12.5547ZM5.04688 5.66406C5.04688 5.39336 5.26836 5.17188 5.53906 5.17188H10.4609C10.7316 5.17188 10.9531 5.39336 10.9531 5.66406V6.64844C10.9531 6.91914 10.7316 7.14062 10.4609 7.14062H5.53906C5.26836 7.14062 5.04688 6.91914 5.04688 6.64844V5.66406Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 12 15" fill="none">
+                            <path d="M7.9292 1.20296L7.9292 1.20296L7.93009 1.20476L8.12294 1.59605L8.26043 1.875H8.57143H11.1429C11.3309 1.875 11.5 2.0329 11.5 2.25C11.5 2.4671 11.3309 2.625 11.1429 2.625H0.857143C0.669651 2.625 0.5 2.46679 0.5 2.25C0.5 2.03321 0.669651 1.875 0.857143 1.875H3.42857H3.73957L3.87706 1.59605L4.06991 1.20476L4.06992 1.20476L4.0708 1.20296C4.13316 1.07513 4.25801 1 4.3875 1H7.6125C7.74199 1 7.86684 1.07513 7.9292 1.20296Z" fill="currentColor" stroke="currentColor"></path>
+                            <path opacity="0.4" d="M11.1431 12.75C11.1431 13.7152 10.3744 14.5 9.42885 14.5H2.57171C1.62483 14.5 0.857422 13.7152 0.857422 12.75V3.125H11.1431V12.75ZM3.85742 5.3125C3.85742 5.07187 3.66456 4.875 3.42885 4.875C3.19314 4.875 3.00028 5.07187 3.00028 5.3125V11.4375C3.00028 11.6781 3.19314 11.875 3.42885 11.875C3.66456 11.875 3.85742 11.6781 3.85742 11.4375V5.3125ZM6.42885 5.3125C6.42885 5.07187 6.23599 4.875 6.00028 4.875C5.76456 4.875 5.57171 5.07187 5.57171 5.3125V11.4375C5.57171 11.6781 5.76456 11.875 6.00028 11.875C6.23599 11.875 6.42885 11.6781 6.42885 11.4375V5.3125ZM9.00028 5.3125C9.00028 5.07187 8.80742 4.875 8.57171 4.875C8.33599 4.875 8.14314 5.07187 8.14314 5.3125V11.4375C8.14314 11.6781 8.33599 11.875 8.57171 11.875C8.80742 11.875 9.00028 11.6781 9.00028 11.4375V5.3125Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 16 14" fill="none">
+                            <path d="M11.5 2.53516C11.5 1.9291 11.7305 1.34786 12.1407 0.919307C12.5509 0.490757 13.1073 0.25 13.6875 0.25C14.2677 0.25 14.8241 0.490757 15.2343 0.919307C15.6445 1.34786 15.875 1.9291 15.875 2.53516C15.875 3.14122 15.6445 3.72246 15.2343 4.15101C14.8241 4.57956 14.2677 4.82031 13.6875 4.82031C13.1073 4.82031 12.5509 4.57956 12.1407 4.15101C11.7305 3.72246 11.5 3.14122 11.5 2.53516Z" fill="currentColor"></path>
+                            <path opacity="0.4" d="M11.5437 2.07812C11.5164 2.22666 11.5 2.37805 11.5 2.53516C11.5 3.65774 12.2738 4.5918 13.2965 4.78318L7.65 9.20781C7.33828 9.45061 6.91172 9.45061 6.6 9.20781L0.65 4.54609C0.319141 4.28616 0.125 3.88054 0.125 3.44922C0.125 2.69226 0.712891 2.07812 1.4375 2.07812H11.5437ZM0.125 11.2188V5.27734L6.075 9.93906C6.69844 10.4275 7.55156 10.4275 8.175 9.93906L14.125 5.27734V11.2188C14.125 12.2271 13.3402 13.0469 12.375 13.0469H1.875C0.909766 13.0469 0.125 12.2271 0.125 11.2188Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </template>
+              </div>
+            </div>
+            <div x-show="activeTab === 'inbox'">
+              <div x-data="{ items: Array.from({ length: 5 }) }">
+                <template x-for="(item, index) in items" :key="index">
+                  <a href="apps-email-details.html">
+                    <div class="relative flex items-center justify-between gap-6 p-6 border-b border-gray-200 cursor-pointer group whitespace-nowrap dark:border-gray-700 hover:bg-gray-100">
+                      <div class="flex items-center gap-4">
+                        <input type="checkbox" class="size-[15px] text-primary-500 hidden sm:block">
+                        <div class="size-[25px] hidden sm:flex items-center justify-center text-gray-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <i class="text-xl ri-star-line"></i>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Starred
+                          </span>
+                        </div>
+                        <img class="size-[25px] rounded-full" src={% static 'assets/images/user/user-11.png' %} alt="user">
+                        <h6 class="text-sm font-semibold">Penni Nojel</h6>
+                      </div>
+                      <p class="text-gray-500 truncate dark:text-dark-light">
+                        How to Choose the Perfect Shopify Theme and Build Your Online Store Fast!
+                      </p>
+                      <span class="text-xs text-gray-500 dark:text-dark-light">1:45 PM</span>
+                      <div class="absolute right-0 z-10 items-center hidden h-full -translate-y-1/2 bg-gray-100 top-1/2 group-hover:flex pe-6">
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 16 15" fill="none">
+                            <path d="M15.875 1.23438V2.71094C15.875 2.98164 15.6535 3.20312 15.3828 3.20312H0.617188C0.346115 3.20312 0.125 2.98164 0.125 2.71094V1.23438C0.125 0.6902 0.5652 0.25 1.10938 0.25H14.8906C15.4351 0.25 15.875 0.6902 15.875 1.23438Z" fill="currentColor"></path>
+                            <path opacity="0.4" d="M1.10938 12.5547C1.10938 13.3699 1.77044 14.0312 2.58594 14.0312H13.4141C14.2296 14.0312 14.8906 13.3702 14.8906 12.5547V3.20312H1.10938V12.5547ZM5.04688 5.66406C5.04688 5.39336 5.26836 5.17188 5.53906 5.17188H10.4609C10.7316 5.17188 10.9531 5.39336 10.9531 5.66406V6.64844C10.9531 6.91914 10.7316 7.14062 10.4609 7.14062H5.53906C5.26836 7.14062 5.04688 6.91914 5.04688 6.64844V5.66406Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 12 15" fill="none">
+                            <path d="M7.9292 1.20296L7.9292 1.20296L7.93009 1.20476L8.12294 1.59605L8.26043 1.875H8.57143H11.1429C11.3309 1.875 11.5 2.0329 11.5 2.25C11.5 2.4671 11.3309 2.625 11.1429 2.625H0.857143C0.669651 2.625 0.5 2.46679 0.5 2.25C0.5 2.03321 0.669651 1.875 0.857143 1.875H3.42857H3.73957L3.87706 1.59605L4.06991 1.20476L4.06992 1.20476L4.0708 1.20296C4.13316 1.07513 4.25801 1 4.3875 1H7.6125C7.74199 1 7.86684 1.07513 7.9292 1.20296Z" fill="currentColor" stroke="currentColor"></path>
+                            <path opacity="0.4" d="M11.1431 12.75C11.1431 13.7152 10.3744 14.5 9.42885 14.5H2.57171C1.62483 14.5 0.857422 13.7152 0.857422 12.75V3.125H11.1431V12.75ZM3.85742 5.3125C3.85742 5.07187 3.66456 4.875 3.42885 4.875C3.19314 4.875 3.00028 5.07187 3.00028 5.3125V11.4375C3.00028 11.6781 3.19314 11.875 3.42885 11.875C3.66456 11.875 3.85742 11.6781 3.85742 11.4375V5.3125ZM6.42885 5.3125C6.42885 5.07187 6.23599 4.875 6.00028 4.875C5.76456 4.875 5.57171 5.07187 5.57171 5.3125V11.4375C5.57171 11.6781 5.76456 11.875 6.00028 11.875C6.23599 11.875 6.42885 11.6781 6.42885 11.4375V5.3125ZM9.00028 5.3125C9.00028 5.07187 8.80742 4.875 8.57171 4.875C8.33599 4.875 8.14314 5.07187 8.14314 5.3125V11.4375C8.14314 11.6781 8.33599 11.875 8.57171 11.875C8.80742 11.875 9.00028 11.6781 9.00028 11.4375V5.3125Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                        <div class="size-9 flex items-center justify-center text-gray-500 hover:text-primary-500 cursor-pointer hs-tooltip [--placement:bottom]">
+                          <svg class="fill-current size-5" focusable="false" aria-hidden="true" viewBox="0 0 16 14" fill="none">
+                            <path d="M11.5 2.53516C11.5 1.9291 11.7305 1.34786 12.1407 0.919307C12.5509 0.490757 13.1073 0.25 13.6875 0.25C14.2677 0.25 14.8241 0.490757 15.2343 0.919307C15.6445 1.34786 15.875 1.9291 15.875 2.53516C15.875 3.14122 15.6445 3.72246 15.2343 4.15101C14.8241 4.57956 14.2677 4.82031 13.6875 4.82031C13.1073 4.82031 12.5509 4.57956 12.1407 4.15101C11.7305 3.72246 11.5 3.14122 11.5 2.53516Z" fill="currentColor"></path>
+                            <path opacity="0.4" d="M11.5437 2.07812C11.5164 2.22666 11.5 2.37805 11.5 2.53516C11.5 3.65774 12.2738 4.5918 13.2965 4.78318L7.65 9.20781C7.33828 9.45061 6.91172 9.45061 6.6 9.20781L0.65 4.54609C0.319141 4.28616 0.125 3.88054 0.125 3.44922C0.125 2.69226 0.712891 2.07812 1.4375 2.07812H11.5437ZM0.125 11.2188V5.27734L6.075 9.93906C6.69844 10.4275 7.55156 10.4275 8.175 9.93906L14.125 5.27734V11.2188C14.125 12.2271 13.3402 13.0469 12.375 13.0469H1.875C0.909766 13.0469 0.125 12.2271 0.125 11.2188Z" fill="currentColor"></path>
+                          </svg>
+                          <span class="opacity-0 hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible" role="tooltip">
+                            Archive
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </template>
+              </div>
+            </div>
+            <div x-show="activeTab === 'sent'">
+              <div x-data="{ items: Array.from({ length: 2 }) }">
+                <div class="my-16 flex items-center justify-center px-4">
+                  There is no conversation
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="hs-offcanvas-email-sidebar" class="hs-overlay hs-overlay-backdrop-open:bg-transparent dark:hs-overlay-backdrop-open:bg-transparent hs-overlay-backdrop-open:bg-modal dark:hs-overlay-backdrop-open:bg-modal hidden fixed top-0 start-0 bottom-0 z-[80]" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-email-sidebar-label">
+            <div class="h-full p-0 bg-white dark:bg-gray-800">
+              {% include "partials/apps-email-sidebar.html" %}
+            </div>
+          </div>
+        
+        </div>
+
+      </div>
+
+{% endblock content %}

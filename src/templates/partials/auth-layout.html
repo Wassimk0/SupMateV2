@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr" x-cloak>
+
+    <head>
+        {% block title %}{% endblock title %}
+        {% include "partials/title-meta.html" %}
+        {% block css %}{% endblock css %}
+        {% include "partials/head-css.html" %}
+    </head>
+
+    <body x-data="{ open: false }" class="text-base text-gray-900 dark:text-gray-200 font-body bg-body dark:bg-gray-900">
+
+        {% include "partials/loader.html" %}
+        {% block content %}{% endblock content %}
+        {% include "partials/vendor-scripts.html" %}
+        {% block js %}{% endblock js %}
+
+    </body>
+
+</html>

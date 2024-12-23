@@ -1,0 +1,37 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>Verify Code | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="relative min-h-screen">
+  <div class="container">
+    <div class="py-8 lg:p-12 md:min-w-[550px] text-center">
+      <img class="mx-auto" src={% static 'assets/images/pages/email.svg' %} alt="email">
+      <h2 class="mt-8 pt-1.5 mb-4 text-[36px] sm:text-[52px] font-bold leading-[54px] dark:text-white sm:leading-[78px]">Check your email!</h2>
+      <p class="text-sm md:text-lg lg:leading-[27px] max-w-[650px] mx-auto text-gray-500 dark:text-gray-400">
+        Please check your email inbox for a 5-digit verification code we have sent to your registered email address. Enter the code in the field below to confirm your email and complete the verification process.
+      </p>
+      <div class="max-w-md my-12 mx-auto">
+        <div class="flex flex-row items-center justify-center gap-2 md:gap-4 mx-auto w-full mb-12">
+          <input class="size-[50px] md:size-[70px] flex flex-col items-center justify-center border-none text-center px-5 outline-none rounded-2xl focus:ring-0 text-lg font-semibold bg-gray-25 placeholder:font-semibold placeholder:text-2xl" maxlength="1" placeholder="-" value="5" type="text">
+          <input class="size-[50px] md:size-[70px] flex flex-col items-center justify-center border-none text-center px-5 outline-none rounded-2xl focus:ring-0 text-lg font-semibold bg-gray-25 placeholder:font-semibold placeholder:text-2xl" maxlength="1" placeholder="-" type="text">
+          <input class="size-[50px] md:size-[70px] flex flex-col items-center justify-center border-none text-center px-5 outline-none rounded-2xl focus:ring-0 text-lg font-semibold bg-gray-25 placeholder:font-semibold placeholder:text-2xl" maxlength="1" placeholder="-" type="text">
+          <input class="size-[50px] md:size-[70px] flex flex-col items-center justify-center border-none text-center px-5 outline-none rounded-2xl focus:ring-0 text-lg font-semibold bg-gray-25 placeholder:font-semibold placeholder:text-2xl" maxlength="1" placeholder="-" type="text">
+          <input class="size-[50px] md:size-[70px] flex flex-col items-center justify-center border-none text-center px-5 outline-none rounded-2xl focus:ring-0 text-lg font-semibold bg-gray-25 placeholder:font-semibold placeholder:text-2xl" maxlength="1" placeholder="-" type="text">
+        </div>
+        <button type="submit" ripple-opacity="0.3" ripple-color="white" class="btn ripple btn-primary w-full text-sm font-semibold leading-6">Verify</button>
+        <p class="mt-8 text-16 leading-[21px]">
+          Don’t have a code?
+          <a href="#!" class="text-error-500">Resend code</a>
+        </p>
+        <a href="register.html">
+          <button class="btn btn-sm !py-[3px] btn-text-primary text-sm text-primary-500 leading-[21px] mx-auto flex items-center justify-center">
+            <i class="ri-arrow-left-s-line text-2xl"></i> Return to sign in </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

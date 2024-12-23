@@ -1,0 +1,82 @@
+{% extends "partials/component-layout.html" %} {% load static %}
+{% block title %}
+<title>UI Popover | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+{% with title="Popover" %}
+{% include "partials/ui-breadcrumb.html" %}
+{% endwith %}
+  <div class="container">
+    <div class="py-20">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Basic
+            </div>
+
+            <div class="flex justify-center">
+              <div class="hs-tooltip popover [--trigger:click] [--placement:bottom]">
+                <button class="btn btn-primary hs-tooltip-toggle">Open Popover</button>
+                <span class="hs-tooltip-content popover-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 invisible max-w-[400px]" role="tooltip">
+                  <h6 class="text-4">The content of the Popover.</h6>
+                  <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odio fugit suscipit iste est beatae vero quia hic explicabo mollitia?</p>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Mouse over interaction
+            </div>
+
+            <div class="flex justify-center">
+              <div class="hs-tooltip popover [--placement:bottom]">
+                <div class="text-primary-500 font-semibold cursor-pointer hs-tooltip-toggle">Hover with a Popover</div>
+                <span class="hs-tooltip-content popover-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 invisible max-w-[400px]" role="tooltip">
+                  <h6 class="text-4">The content of the Popover.</h6>
+                  <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odio fugit suscipit iste est beatae vero quia hic explicabo mollitia?</p>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card component-card">
+          <div class="card-body">
+            <div class="mb-4 card-title">
+              Transition
+            </div>
+
+            <div class="flex justify-center gap-4">
+              <div class="hs-tooltip popover [--trigger:click] [--placement:bottom]">
+                <button class="btn btn-primary hs-tooltip-toggle">Zoom</button>
+                <span class="hs-tooltip-content popover-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 invisible max-w-[400px]" role="tooltip">
+                  <h6 class="text-4">The content of the Popover.</h6>
+                  <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odio fugit suscipit iste est beatae vero quia hic explicabo mollitia?</p>
+                </span>
+              </div>
+              <div class="hs-tooltip popover [--trigger:click] [--placement:bottom]">
+                <button class="btn btn-primary hs-tooltip-toggle">Fade</button>
+                <span class="hs-tooltip-content popover-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 invisible max-w-[400px]" role="tooltip">
+                  <h6 class="text-4">The content of the Popover.</h6>
+                  <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odio fugit suscipit iste est beatae vero quia hic explicabo mollitia?</p>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock content %}

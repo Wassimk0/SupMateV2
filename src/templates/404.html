@@ -1,0 +1,22 @@
+{% extends "partials/auth-layout.html" %} {% load static %}
+{% block title %}
+<title>404 | QuickFrame - Admin & Dashboards Templates</title>
+{% endblock title %}
+{% block content %}
+
+<div class="container py-12">
+  <div class="text-center">
+    <h2 class="text-[42px] sm:text-[52px] font-bold leading-[63px] dark:text-white sm:leading-[78px]">Page Not Found!</h2>
+    <p class="text-lg leading-[27px] text-gray-500 dark:text-gray-400 mt-2">
+      Don't Panic! Learn How to Turn Page Not Found into a
+      <br>
+      Roadmap for Online Success.
+    </p>
+    <div class="py-20 max-w-[600px] mx-auto">
+      <img class="w-full" src={% static 'assets/images/pages/error.svg' %} alt="404">
+    </div>
+    <a href="/" ripple-opacity="0.3" ripple-color="black" class="btn ripple btn-primary !py-[5px] mt-2">Go Home</a>
+  </div>
+</div>
+
+{% endblock content %}
